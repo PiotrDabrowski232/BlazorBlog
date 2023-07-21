@@ -13,7 +13,9 @@ builder.Services.AddSingleton<WeatherForecastService>();
 
 //DbContext
 
-builder.Services.AddDbContext<BlogDbContext>(options => options.UseSqlServer("Data Source=(localdb)\\MSSQLLocalDB;Initial Catalog=BlogDatabase;Integrated Security=True;Connect Timeout=30;Encrypt=False;TrustServerCertificate=False;ApplicationIntent=ReadWrite;MultiSubnetFailover=False"));
+builder.Services.AddDbContext<BlogDbContext>(options => options.UseSqlServer("Data Source=(localdb)\\MSSQLLocalDB;Initial Catalog=BlogDatabase;" +
+                                                                            "Integrated Security=True;Connect Timeout=30;Encrypt=False;TrustServerCertificate=False;" +
+                                                                            "ApplicationIntent=ReadWrite;MultiSubnetFailover=False"));
 
 
 
