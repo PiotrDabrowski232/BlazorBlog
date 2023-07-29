@@ -16,6 +16,12 @@
 
   <ItemGroup>
     <ProjectReference Include="..\Blog.Data\Blog.Data.csproj" />
+    <ProjectReference Include="..\Blog.Logic\Blog.Logic.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Configuration\" />
+    <Folder Include="Controllers\" />
   </ItemGroup>
 
 </Project>

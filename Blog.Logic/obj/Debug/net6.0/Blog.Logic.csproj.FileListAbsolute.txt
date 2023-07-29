@@ -69,3 +69,13 @@ C:\Users\piecz\Desktop\Blog\Blog.Logic\obj\Debug\net6.0\refint\Blog.Logic.dll
 C:\Users\piecz\Desktop\Blog\Blog.Logic\obj\Debug\net6.0\Blog.Logic.pdb
 C:\Users\piecz\Desktop\Blog\Blog.Logic\obj\Debug\net6.0\Blog.Logic.genruntimeconfig.cache
 C:\Users\piecz\Desktop\Blog\Blog.Logic\obj\Debug\net6.0\ref\Blog.Logic.dll
+C:\Users\piecz\Desktop\Blog\Blog.Logic\bin\Debug\net6.0\Blog.Data.deps.json
+C:\Users\piecz\Desktop\Blog\Blog.Logic\bin\Debug\net6.0\Blog.Data.runtimeconfig.json
+C:\Users\piecz\Desktop\Blog\Blog.Logic\bin\Debug\net6.0\Blog.Data.exe
+C:\Users\piecz\Desktop\Blog\Blog.Logic\bin\Debug\net6.0\Microsoft.AspNetCore.Http.Abstractions.dll
+C:\Users\piecz\Desktop\Blog\Blog.Logic\bin\Debug\net6.0\Microsoft.AspNetCore.Http.Features.dll
+C:\Users\piecz\Desktop\Blog\Blog.Logic\bin\Debug\net6.0\Microsoft.AspNetCore.Mvc.Abstractions.dll
+C:\Users\piecz\Desktop\Blog\Blog.Logic\bin\Debug\net6.0\Microsoft.AspNetCore.Routing.Abstractions.dll
+C:\Users\piecz\Desktop\Blog\Blog.Logic\bin\Debug\net6.0\Microsoft.Net.Http.Headers.dll
+C:\Users\piecz\Desktop\Blog\Blog.Logic\bin\Debug\net6.0\Blog.Data.dll
+C:\Users\piecz\Desktop\Blog\Blog.Logic\bin\Debug\net6.0\Blog.Data.pdb

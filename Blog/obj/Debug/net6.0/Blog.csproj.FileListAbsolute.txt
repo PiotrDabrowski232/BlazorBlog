@@ -91,3 +91,8 @@ C:\Users\piecz\Desktop\Blog\Blog\bin\Debug\net6.0\runtimes\win\lib\netcoreapp3.0
 C:\Users\piecz\Desktop\Blog\Blog\bin\Debug\net6.0\Blog.Data.dll
 C:\Users\piecz\Desktop\Blog\Blog\bin\Debug\net6.0\Blog.Data.pdb
 C:\Users\piecz\Desktop\Blog\Blog\obj\Debug\net6.0\Blog.csproj.CopyComplete
+C:\Users\piecz\Desktop\Blog\Blog\bin\Debug\net6.0\Blog.Logic.deps.json
+C:\Users\piecz\Desktop\Blog\Blog\bin\Debug\net6.0\Blog.Logic.runtimeconfig.json
+C:\Users\piecz\Desktop\Blog\Blog\bin\Debug\net6.0\Blog.Logic.exe
+C:\Users\piecz\Desktop\Blog\Blog\bin\Debug\net6.0\Blog.Logic.dll
+C:\Users\piecz\Desktop\Blog\Blog\bin\Debug\net6.0\Blog.Logic.pdb

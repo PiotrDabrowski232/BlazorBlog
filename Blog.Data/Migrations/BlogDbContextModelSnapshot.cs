@@ -22,6 +22,27 @@ namespace Blog.Data.Migrations
 
             SqlServerModelBuilderExtensions.UseIdentityColumns(modelBuilder);
 
+            modelBuilder.Entity("Blog.Data.Models.Posts", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+
+                    b.Property<string>("Description")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Title")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("post");
+                });
+
             modelBuilder.Entity("Blog.Data.Models.User", b =>
                 {
                     b.Property<Guid>("Id")
@@ -54,12 +75,53 @@ namespace Blog.Data.Migrations
 
                     b.Property<string>("UserName")
                         .IsRequired()
-                        .HasMaxLength(20)
-                        .HasColumnType("nvarchar(20)");
+                        .HasColumnType("nvarchar(max)");
 
                     b.HasKey("Id");
 
                     b.ToTable("users");
+                });
+
+            modelBuilder.Entity("Blog.Data.Models.UserPosts", b =>
+                {
+                    b.Property<Guid>("IdUser")
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<Guid>("IdPost")
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<int>("postsId")
+                        .HasColumnType("int");
+
+                    b.Property<Guid>("usersId")
+                        .HasColumnType("uniqueidentifier");
+
+                    b.HasKey("IdUser", "IdPost");
+
+                    b.HasIndex("postsId");
+
+                    b.HasIndex("usersId");
+
+                    b.ToTable("usersposts");
+                });
+
+            modelBuilder.Entity("Blog.Data.Models.UserPosts", b =>
+                {
+                    b.HasOne("Blog.Data.Models.Posts", "posts")
+                        .WithMany()
+                        .HasForeignKey("postsId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("Blog.Data.Models.User", "users")
+                        .WithMany()
+                        .HasForeignKey("usersId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("posts");
+
+                    b.Navigation("users");
                 });
 #pragma warning restore 612, 618
         }

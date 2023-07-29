@@ -13,10 +13,13 @@ namespace Blog.Data.Data
         public BlogDbContext(DbContextOptions<BlogDbContext> options) : base(options) { }
 
         public DbSet<User> users { get; set; }
+        public DbSet<Posts> post { get; set; }
+        public DbSet<UserPosts> usersposts { get; set; }
 
-        protected override void OnModelCreating(ModelBuilder modelBuilder)
+        protected override void OnModelCreating(ModelBuilder builder)
         {
-            modelBuilder.Entity<User>().Property(x => x.UserName).HasMaxLength(20);
+            base.OnModelCreating(builder);
+            builder.ApplyConfigurationsFromAssembly(typeof(BlogDbContext).Assembly);
         }
     }
 }
