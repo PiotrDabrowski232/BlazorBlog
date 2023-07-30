@@ -79,3 +79,8 @@ C:\Users\piecz\Desktop\Blog\Blog.Logic\bin\Debug\net6.0\Microsoft.AspNetCore.Rou
 C:\Users\piecz\Desktop\Blog\Blog.Logic\bin\Debug\net6.0\Microsoft.Net.Http.Headers.dll
 C:\Users\piecz\Desktop\Blog\Blog.Logic\bin\Debug\net6.0\Blog.Data.dll
 C:\Users\piecz\Desktop\Blog\Blog.Logic\bin\Debug\net6.0\Blog.Data.pdb
+C:\Users\piecz\Desktop\Blog\Blog.Logic\bin\Debug\net6.0\AutoMapper.dll
+C:\Users\piecz\Desktop\Blog\Blog.Logic\bin\Debug\net6.0\AutoMapper.Extensions.Microsoft.DependencyInjection.dll
+C:\Users\piecz\Desktop\Blog\Blog.Logic\bin\Debug\net6.0\xunit.abstractions.dll
+C:\Users\piecz\Desktop\Blog\Blog.Logic\bin\Debug\net6.0\xunit.core.dll
+C:\Users\piecz\Desktop\Blog\Blog.Logic\bin\Debug\net6.0\xunit.execution.dotnet.dll

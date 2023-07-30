@@ -8,25 +8,36 @@ using Microsoft.EntityFrameworkCore;
 using Blog.Data.Repositories.Interfaces;
 using Blog.Data.Repositories;
 using Blog.Data.Models;
+using Blazorise;
+using Blazorise.Bootstrap;
+using Blazorise.Icons.FontAwesome;
 
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddRazorPages();
 builder.Services.AddServerSideBlazor();
-builder.Services.AddSingleton<WeatherForecastService>();
-
 builder.Services.AddControllers();
+
+
+// Dependency Injections Reposiotries
 builder.Services.AddScoped<IUserRepository, UserRepository>();
+
+
+// Dependency Injections Services
+builder.Services.AddSingleton<WeatherForecastService>();
 builder.Services.AddScoped<IUserService, UserService>();
+
+
 //DbContext
 var connectionString = builder.Configuration.GetConnectionString("DefaultConnection");
 builder.Services.AddDbContext<BlogDbContext>(options => options.UseSqlServer(connectionString));
 
+
+//Automapper
+builder.Services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());
+
 var app = builder.Build();
-
-
-
 
 // Configure the HTTP request pipeline.
 if (!app.Environment.IsDevelopment())

@@ -1,16 +1,17 @@
 ﻿using Blog.Data.Models;
+using Blog.Logic.Dto;
 
 namespace Blog.Logic.Services.Interfaces
 {
     public interface IUserService
     {
-        public IEnumerable<User> GetAll();
+        public IEnumerable<UserDto> GetAll();
 
-        public User GetUser();
+        public UserDto GetUser();
 
-        public void Add(User user);
+        public void Add(UserDto user);
 
-        public User Edit(User user);
+        public User Edit(UserDto user);
 
         public void Delete(int id);
     }

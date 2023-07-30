@@ -1,5 +1,7 @@
-﻿using Blog.Data.Models;
+﻿using AutoMapper;
+using Blog.Data.Models;
 using Blog.Data.Repositories.Interfaces;
+using Blog.Logic.Dto;
 using Blog.Logic.Services.Interfaces;
 using System;
 using System.Collections.Generic;
@@ -12,15 +14,19 @@ namespace Blog.Logic.Services
     public class UserService : IUserService
     {
         private readonly IUserRepository _userRepository;
+        private readonly IMapper _mapper;
 
-        public UserService(IUserRepository userRepository)
+        public UserService(IUserRepository userRepository, IMapper mapper)
         {
             _userRepository= userRepository;
+            _mapper= mapper;
         }
 
-        public void Add(User user)
+        public void Add(UserDto userDto)
         {
-            throw new NotImplementedException();
+            User user = _mapper.Map<User>(userDto);
+            user.Id = Guid.NewGuid();
+            _userRepository.Add(user);
         }
 
         public void Delete(int id)
@@ -28,17 +34,17 @@ namespace Blog.Logic.Services
             throw new NotImplementedException();
         }
 
-        public User Edit(User user)
+        public User Edit(UserDto user)
         {
             throw new NotImplementedException();
         }
 
-        public IEnumerable<User> GetAll()
+        public IEnumerable<UserDto> GetAll()
         {
             throw new NotImplementedException();
         }
 
-        public User GetUser()
+        public UserDto GetUser()
         {
             throw new NotImplementedException();
         }

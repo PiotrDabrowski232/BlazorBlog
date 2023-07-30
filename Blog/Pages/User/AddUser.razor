@@ -1,0 +1,111 @@
+﻿@page "/AddUser"
+
+@using Blog.Logic.Dto;
+@inject Blog.Logic.Services.Interfaces.IUserService _userService
+@inject NavigationManager NavManager
+
+@code{
+    private UserDto user = new UserDto();
+    private ValidationMessageStore _validationMessageStore = default!;
+    private EditContext _editContext = default!;
+
+    protected override void OnInitialized()
+    {
+        _editContext = new EditContext(user);
+        _validationMessageStore = new ValidationMessageStore(_editContext);
+    }
+
+    private bool Validate()
+    {
+        var valid = _editContext.Validate();
+        _validationMessageStore.Clear();
+        if (valid)
+        {
+            _editContext.NotifyValidationStateChanged();
+        }
+        return valid;
+    }
+
+    private void ClearInputs()
+    {
+        user.Name = string.Empty;
+        user.UserName = string.Empty;
+        user.Surname = string.Empty;
+        user.Email = string.Empty;
+        user.Password = string.Empty;
+        user.ConfirmedPassword = string.Empty;
+        user.City = string.Empty;
+        user.Country = string.Empty;
+    }
+
+    private void AddUserForm()
+    {
+        if (Validate())
+        {
+            _userService.Add(user);
+        }
+    }
+}
+
+<h1>User Creator</h1>
+
+<p>Specify your User Account</p>
+
+<EditForm Model="user">
+
+    <label>
+        User Name:<br />
+        <InputText @bind-Value="user.UserName" /><br /><br />
+    </label><br />
+
+    <label>
+        Name:<br />
+        <InputText @bind-Value="user.Name" /><br /><br />
+    </label><br />
+
+    <label>
+        Surname:<br />
+        <InputText @bind-Value="user.Surname" /><br /><br />
+    </label><br />
+    
+    <label>
+        Email:<br />
+        <input type="email" @bind="user.Email" /><br /><br />
+    </label><br />
+
+    <label>
+        Password:<br />
+        <input type="password" @bind="user.Password" /><br /><br />
+    </label><br />
+
+    <label>
+        Confirm Password:<br />
+        <input type="password" @bind="user.ConfirmedPassword" /><br /><br />
+    </label><br />
+
+    <label>
+        Gender:<br />
+        <InputSelect @bind-Value="user.Gender">
+            @foreach (var gender in Enum.GetValues(typeof(Blog.Data.Models.Enums.Gender)))
+            {
+                <option value="@gender">@gender</option>
+            }
+        </InputSelect>
+    </label><br />
+
+    <label>
+         Country:<br />
+        <InputText @bind-Value="user.Country" /><br /><br />
+    </label><br />
+
+    <label>
+         City:<br />
+        <InputText @bind-Value="user.City" /><br /><br />
+    </label><br />
+
+    <input type="submit" value="Submit" @onclick="AddUserForm" />
+
+    <DataAnnotationsValidator />
+    <ValidationSummary />
+
+</EditForm>
