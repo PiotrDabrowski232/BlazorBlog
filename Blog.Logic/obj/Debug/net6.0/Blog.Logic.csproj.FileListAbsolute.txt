@@ -84,3 +84,8 @@ C:\Users\piecz\Desktop\Blog\Blog.Logic\bin\Debug\net6.0\AutoMapper.Extensions.Mi
 C:\Users\piecz\Desktop\Blog\Blog.Logic\bin\Debug\net6.0\xunit.abstractions.dll
 C:\Users\piecz\Desktop\Blog\Blog.Logic\bin\Debug\net6.0\xunit.core.dll
 C:\Users\piecz\Desktop\Blog\Blog.Logic\bin\Debug\net6.0\xunit.execution.dotnet.dll
+C:\Users\piecz\Desktop\Blog\Blog.Logic\bin\Debug\net6.0\Blog.Shared.deps.json
+C:\Users\piecz\Desktop\Blog\Blog.Logic\bin\Debug\net6.0\Blog.Shared.runtimeconfig.json
+C:\Users\piecz\Desktop\Blog\Blog.Logic\bin\Debug\net6.0\Blog.Shared.exe
+C:\Users\piecz\Desktop\Blog\Blog.Logic\bin\Debug\net6.0\Blog.Shared.dll
+C:\Users\piecz\Desktop\Blog\Blog.Logic\bin\Debug\net6.0\Blog.Shared.pdb

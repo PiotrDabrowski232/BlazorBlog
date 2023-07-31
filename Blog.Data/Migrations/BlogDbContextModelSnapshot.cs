@@ -43,6 +43,38 @@ namespace Blog.Data.Migrations
                     b.ToTable("post");
                 });
 
+            modelBuilder.Entity("Blog.Data.Models.Roles", b =>
+                {
+                    b.Property<Guid>("RoleId")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<string>("Name")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("RoleId");
+
+                    b.ToTable("roles");
+
+                    b.HasData(
+                        new
+                        {
+                            RoleId = new Guid("00000001-0000-0000-0000-000000000000"),
+                            Name = "BasicUser"
+                        },
+                        new
+                        {
+                            RoleId = new Guid("00000002-0000-0000-0000-000000000000"),
+                            Name = "Admin"
+                        },
+                        new
+                        {
+                            RoleId = new Guid("00000003-0000-0000-0000-000000000000"),
+                            Name = "SuperUser"
+                        });
+                });
+
             modelBuilder.Entity("Blog.Data.Models.User", b =>
                 {
                     b.Property<Guid>("Id")
@@ -72,6 +104,11 @@ namespace Blog.Data.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
+                    b.Property<Guid>("RoleId")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("uniqueidentifier")
+                        .HasDefaultValue(new Guid("00000001-0000-0000-0000-000000000000"));
+
                     b.Property<string>("Surname")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
@@ -81,6 +118,8 @@ namespace Blog.Data.Migrations
                         .HasColumnType("nvarchar(max)");
 
                     b.HasKey("Id");
+
+                    b.HasIndex("RoleId");
 
                     b.ToTable("users");
                 });
@@ -106,6 +145,17 @@ namespace Blog.Data.Migrations
                     b.HasIndex("usersId");
 
                     b.ToTable("usersposts");
+                });
+
+            modelBuilder.Entity("Blog.Data.Models.User", b =>
+                {
+                    b.HasOne("Blog.Data.Models.Roles", "Role")
+                        .WithMany()
+                        .HasForeignKey("RoleId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Role");
                 });
 
             modelBuilder.Entity("Blog.Data.Models.UserPosts", b =>

@@ -1382,11 +1382,17 @@
       },
       "Blog.Data/1.0.0": {
         "dependencies": {
+          "Blog.Shared": "1.0.0",
           "Microsoft.EntityFrameworkCore": "7.0.9",
           "Microsoft.EntityFrameworkCore.SqlServer": "7.0.9"
         },
         "runtime": {
           "Blog.Data.dll": {}
+        }
+      },
+      "Blog.Shared/1.0.0": {
+        "runtime": {
+          "Blog.Shared.dll": {}
         }
       }
     }
@@ -2357,6 +2363,11 @@
       "hashPath": "xunit.extensibility.execution.2.5.0.nupkg.sha512"
     },
     "Blog.Data/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "Blog.Shared/1.0.0": {
       "type": "project",
       "serviceable": false,
       "sha512": ""

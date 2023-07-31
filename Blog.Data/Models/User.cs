@@ -19,5 +19,8 @@ namespace Blog.Data.Models
         [Required] public string Password { get; set; }
         public string Country { get; set; }
         public string City { get; set; }
+
+        public Guid RoleId { get; set; }
+        public virtual Roles Role { get; set; }
     }
 }

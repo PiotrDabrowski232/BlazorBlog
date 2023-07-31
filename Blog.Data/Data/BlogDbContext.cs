@@ -15,6 +15,7 @@ namespace Blog.Data.Data
         public DbSet<User> users { get; set; }
         public DbSet<Posts> post { get; set; }
         public DbSet<UserPosts> usersposts { get; set; }
+        public DbSet<Roles> roles { get; set; }
 
         protected override void OnModelCreating(ModelBuilder builder)
         {

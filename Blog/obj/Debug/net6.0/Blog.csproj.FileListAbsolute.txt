@@ -112,3 +112,8 @@ C:\Users\piecz\Desktop\Blog\Blog\bin\Debug\net6.0\Microsoft.AspNetCore.Component
 C:\Users\piecz\Desktop\Blog\Blog\bin\Debug\net6.0\Microsoft.AspNetCore.Metadata.dll
 C:\Users\piecz\Desktop\Blog\Blog\bin\Debug\net6.0\Microsoft.JSInterop.dll
 C:\Users\piecz\Desktop\Blog\Blog\bin\Debug\net6.0\System.IO.Pipelines.dll
+C:\Users\piecz\Desktop\Blog\Blog\bin\Debug\net6.0\Blog.Shared.deps.json
+C:\Users\piecz\Desktop\Blog\Blog\bin\Debug\net6.0\Blog.Shared.runtimeconfig.json
+C:\Users\piecz\Desktop\Blog\Blog\bin\Debug\net6.0\Blog.Shared.exe
+C:\Users\piecz\Desktop\Blog\Blog\bin\Debug\net6.0\Blog.Shared.dll
+C:\Users\piecz\Desktop\Blog\Blog\bin\Debug\net6.0\Blog.Shared.pdb

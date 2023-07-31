@@ -69,3 +69,8 @@ C:\Users\piecz\Desktop\Blog\Blog.Data\obj\Debug\net6.0\refint\Blog.Data.dll
 C:\Users\piecz\Desktop\Blog\Blog.Data\obj\Debug\net6.0\Blog.Data.pdb
 C:\Users\piecz\Desktop\Blog\Blog.Data\obj\Debug\net6.0\Blog.Data.genruntimeconfig.cache
 C:\Users\piecz\Desktop\Blog\Blog.Data\obj\Debug\net6.0\ref\Blog.Data.dll
+C:\Users\piecz\Desktop\Blog\Blog.Data\bin\Debug\net6.0\Blog.Shared.deps.json
+C:\Users\piecz\Desktop\Blog\Blog.Data\bin\Debug\net6.0\Blog.Shared.runtimeconfig.json
+C:\Users\piecz\Desktop\Blog\Blog.Data\bin\Debug\net6.0\Blog.Shared.exe
+C:\Users\piecz\Desktop\Blog\Blog.Data\bin\Debug\net6.0\Blog.Shared.dll
+C:\Users\piecz\Desktop\Blog\Blog.Data\bin\Debug\net6.0\Blog.Shared.pdb

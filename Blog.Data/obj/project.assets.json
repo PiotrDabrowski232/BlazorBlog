@@ -1155,6 +1155,16 @@
             "rid": "win"
           }
         }
+      },
+      "Blog.Shared/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v6.0",
+        "compile": {
+          "bin/placeholder/Blog.Shared.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Blog.Shared.dll": {}
+        }
       }
     }
   },
@@ -3500,10 +3510,16 @@
         "useSharedDesignerContext.txt",
         "version.txt"
       ]
+    },
+    "Blog.Shared/1.0.0": {
+      "type": "project",
+      "path": "../Blog.Shared/Blog.Shared.csproj",
+      "msbuildProject": "../Blog.Shared/Blog.Shared.csproj"
     }
   },
   "projectFileDependencyGroups": {
     "net6.0": [
+      "Blog.Shared >= 1.0.0",
       "Microsoft.EntityFrameworkCore >= 7.0.9",
       "Microsoft.EntityFrameworkCore.SqlServer >= 7.0.9",
       "Microsoft.EntityFrameworkCore.Tools >= 7.0.9"
@@ -3541,7 +3557,11 @@
       "frameworks": {
         "net6.0": {
           "targetAlias": "net6.0",
-          "projectReferences": {}
+          "projectReferences": {
+            "C:\\Users\\piecz\\Desktop\\Blog\\Blog.Shared\\Blog.Shared.csproj": {
+              "projectPath": "C:\\Users\\piecz\\Desktop\\Blog\\Blog.Shared\\Blog.Shared.csproj"
+            }
+          }
         }
       },
       "warningProperties": {

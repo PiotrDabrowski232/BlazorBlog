@@ -2580,6 +2580,7 @@
         "type": "project",
         "framework": ".NETCoreApp,Version=v6.0",
         "dependencies": {
+          "Blog.Shared": "1.0.0",
           "Microsoft.EntityFrameworkCore": "7.0.9",
           "Microsoft.EntityFrameworkCore.SqlServer": "7.0.9"
         },
@@ -2607,6 +2608,16 @@
         },
         "runtime": {
           "bin/placeholder/Blog.Logic.dll": {}
+        }
+      },
+      "Blog.Shared/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v6.0",
+        "compile": {
+          "bin/placeholder/Blog.Shared.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Blog.Shared.dll": {}
         }
       }
     }
@@ -7945,6 +7956,11 @@
       "type": "project",
       "path": "../Blog.Logic/Blog.Logic.csproj",
       "msbuildProject": "../Blog.Logic/Blog.Logic.csproj"
+    },
+    "Blog.Shared/1.0.0": {
+      "type": "project",
+      "path": "../Blog.Shared/Blog.Shared.csproj",
+      "msbuildProject": "../Blog.Shared/Blog.Shared.csproj"
     }
   },
   "projectFileDependencyGroups": {
