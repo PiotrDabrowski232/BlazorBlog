@@ -117,3 +117,11 @@ C:\Users\piecz\Desktop\Blog\Blog\bin\Debug\net6.0\Blog.Shared.runtimeconfig.json
 C:\Users\piecz\Desktop\Blog\Blog\bin\Debug\net6.0\Blog.Shared.exe
 C:\Users\piecz\Desktop\Blog\Blog\bin\Debug\net6.0\Blog.Shared.dll
 C:\Users\piecz\Desktop\Blog\Blog\bin\Debug\net6.0\Blog.Shared.pdb
+C:\Users\piecz\Desktop\Blog\Blog\bin\Debug\net6.0\Microsoft.AspNet.Identity.Core.dll
+C:\Users\piecz\Desktop\Blog\Blog\bin\Debug\net6.0\Microsoft.AspNetCore.Cryptography.Internal.dll
+C:\Users\piecz\Desktop\Blog\Blog\bin\Debug\net6.0\FluentValidation.dll
+C:\Users\piecz\Desktop\Blog\Blog\bin\Debug\net6.0\FluentValidation.AspNetCore.dll
+C:\Users\piecz\Desktop\Blog\Blog\bin\Debug\net6.0\FluentValidation.DependencyInjectionExtensions.dll
+C:\Users\piecz\Desktop\Blog\Blog\obj\Debug\net6.0\Blog.MvcApplicationPartsAssemblyInfo.cs
+C:\Users\piecz\Desktop\Blog\Blog\bin\Debug\net6.0\Blazored.FluentValidation.dll
+C:\Users\piecz\Desktop\Blog\Blog\bin\Debug\net6.0\Microsoft.AspNetCore.Authentication.JwtBearer.dll

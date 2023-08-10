@@ -3,11 +3,7 @@ using Blog.Data.Models;
 using Blog.Data.Repositories.Interfaces;
 using Blog.Logic.Dto;
 using Blog.Logic.Services.Interfaces;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using Microsoft.AspNetCore.Identity;
 
 namespace Blog.Logic.Services
 {
@@ -15,17 +11,22 @@ namespace Blog.Logic.Services
     {
         private readonly IUserRepository _userRepository;
         private readonly IMapper _mapper;
+        private readonly IPasswordHasher<User> _passwordHasher;
 
-        public UserService(IUserRepository userRepository, IMapper mapper)
+
+        public UserService(IUserRepository userRepository, IMapper mapper, IPasswordHasher<User> passwordHasher)
         {
             _userRepository= userRepository;
             _mapper= mapper;
+            _passwordHasher= passwordHasher;
         }
 
         public void Add(UserDto userDto)
         {
             User user = _mapper.Map<User>(userDto);
             user.Id = Guid.NewGuid();
+            user.Password = _passwordHasher.HashPassword(user, user.Password);
+
             _userRepository.Add(user);
         }
 

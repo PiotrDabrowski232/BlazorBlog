@@ -1,6 +1,5 @@
 ﻿@page "/AddUser"
 
-@using Blog.Logic.Dto;
 @inject Blog.Logic.Services.Interfaces.IUserService _userService
 @inject NavigationManager NavManager
 
@@ -43,6 +42,7 @@
         if (Validate())
         {
             _userService.Add(user);
+            ClearInputs();
         }
     }
 }
@@ -57,6 +57,7 @@
         User Name:<br />
         <InputText @bind-Value="user.UserName" /><br /><br />
     </label><br />
+    <ValidationMessage For="@(() => user.UserName)" />
 
     <label>
         Name:<br />
@@ -104,6 +105,7 @@
     </label><br />
 
     <input type="submit" value="Submit" @onclick="AddUserForm" />
+    
 
     <DataAnnotationsValidator />
     <ValidationSummary />
