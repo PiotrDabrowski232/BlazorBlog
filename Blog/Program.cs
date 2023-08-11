@@ -30,11 +30,13 @@ builder.Services.AddControllers().AddFluentValidation();
 
 // Dependency Injections Reposiotries
 builder.Services.AddScoped<IUserRepository, UserRepository>();
+builder.Services.AddScoped<IRoleRepository, RoleReposiotry>();
 
 
 // Dependency Injections Services
 builder.Services.AddSingleton<WeatherForecastService>();
 builder.Services.AddScoped<IUserService, UserService>();
+builder.Services.AddScoped<IRoleService, RoleService>();
 builder.Services.AddScoped<IPasswordHasher<User>, PasswordHasher<User>>();
 builder.Services.AddScoped<IValidator<UserDto>, UserDtoValidator>();
 
@@ -43,8 +45,10 @@ var connectionString = builder.Configuration.GetConnectionString("DefaultConnect
 builder.Services.AddDbContext<BlogDbContext>(options => options.UseSqlServer(connectionString));
 
 // Authentication
-var authenticationSettings = new AuthenticationSettiongs();
-builder.Configuration.GetSection("Authentication").Bind(authenticationSettings);
+var authenticationSettiongs = new AuthenticationSettiongs();
+builder.Configuration.GetSection("Authentication").Bind(authenticationSettiongs);
+
+builder.Services.AddSingleton(authenticationSettiongs);
 builder.Services.AddAuthentication(option =>
 {
     option.DefaultAuthenticateScheme = "Bearer";
@@ -56,9 +60,9 @@ builder.Services.AddAuthentication(option =>
     cfg.SaveToken = true;
     cfg.TokenValidationParameters = new Microsoft.IdentityModel.Tokens.TokenValidationParameters
     {
-        ValidIssuer = authenticationSettings.JwtIssuer,
-        ValidAudience = authenticationSettings.JwtIssuer,
-        IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(authenticationSettings.JwtKey))
+        ValidIssuer = authenticationSettiongs.JwtIssuer,
+        ValidAudience = authenticationSettiongs.JwtIssuer,
+        IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(authenticationSettiongs.JwtKey))
     };
 });
 

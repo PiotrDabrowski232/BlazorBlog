@@ -27,12 +27,4 @@
     <ProjectReference Include="..\Blog.Logic\Blog.Logic.csproj" />
   </ItemGroup>
 
-  <ItemGroup>
-    <Folder Include="Configuration\" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <None Include="Pages\User\Loginto.razor" />
-  </ItemGroup>
-
 </Project>

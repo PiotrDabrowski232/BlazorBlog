@@ -11,6 +11,8 @@ namespace Blog.Logic.AutoMapper
             CreateMap<User, UserDto>();
             CreateMap<UserDto, User>();
 
+            CreateMap<User, LoginUserDto>();
+            CreateMap<LoginUserDto, User>();
         }
     }
 }

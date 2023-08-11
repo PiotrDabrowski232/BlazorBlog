@@ -11,12 +11,30 @@
 
     private void Login()
     {
-
+        string cos = _userService.VerifyUser(user);
     }
 }
-<h3>Login</h3>
-<h3>Login</h3>
-<h3>Login</h3>
-<h3>Login</h3>
-<h3>Login</h3>
+<h3>Login Panel</h3>
+
+<EditForm Model="user">
+
+
+    <label>
+        Email:<br />
+        <input type="email" @bind="user.Email" /><br /><br />
+    </label><br />
+
+    <label>
+        Password:<br />
+        <input type="password" @bind="user.Password" /><br /><br />
+    </label><br />
+
+ 
+
+    <input type="submit" value="Submit" @onclick="Login" />
+
+
+
+</EditForm>
+
 
