@@ -31,8 +31,4 @@
     <Folder Include="Configuration\" />
   </ItemGroup>
 
-  <ItemGroup>
-    <None Include="Pages\User\Loginto.razor" />
-  </ItemGroup>
-
 </Project>
