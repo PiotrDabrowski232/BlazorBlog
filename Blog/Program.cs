@@ -16,7 +16,6 @@ using Blog.Logic.Dto;
 using Blog.Logic.Dto.Validators;
 using FluentValidation;
 using FluentValidation.AspNetCore;
-using Blog.Logic.Authentication;
 using Microsoft.IdentityModel.Tokens;
 using System.Text;
 
@@ -30,11 +29,16 @@ builder.Services.AddControllers().AddFluentValidation();
 
 // Dependency Injections Reposiotries
 builder.Services.AddScoped<IUserRepository, UserRepository>();
+builder.Services.AddScoped<IRoleRepository, RoleReposiotry>();
+builder.Services.AddScoped<IUserPostRepository, UserPostRepository>();
+builder.Services.AddScoped<IPostRepository, PostRepository>();
 
 
 // Dependency Injections Services
 builder.Services.AddSingleton<WeatherForecastService>();
 builder.Services.AddScoped<IUserService, UserService>();
+builder.Services.AddScoped<IRoleService, RoleService>();
+builder.Services.AddScoped<IPostService, PostService>();
 builder.Services.AddScoped<IPasswordHasher<User>, PasswordHasher<User>>();
 builder.Services.AddScoped<IValidator<UserDto>, UserDtoValidator>();
 
@@ -42,25 +46,7 @@ builder.Services.AddScoped<IValidator<UserDto>, UserDtoValidator>();
 var connectionString = builder.Configuration.GetConnectionString("DefaultConnection");
 builder.Services.AddDbContext<BlogDbContext>(options => options.UseSqlServer(connectionString));
 
-// Authentication
-var authenticationSettings = new AuthenticationSettiongs();
-builder.Configuration.GetSection("Authentication").Bind(authenticationSettings);
-builder.Services.AddAuthentication(option =>
-{
-    option.DefaultAuthenticateScheme = "Bearer";
-    option.DefaultScheme = "Bearer";
-    option.DefaultChallengeScheme = "Bearer";
-}).AddJwtBearer(cfg =>
-{
-    cfg.RequireHttpsMetadata = false;
-    cfg.SaveToken = true;
-    cfg.TokenValidationParameters = new Microsoft.IdentityModel.Tokens.TokenValidationParameters
-    {
-        ValidIssuer = authenticationSettings.JwtIssuer,
-        ValidAudience = authenticationSettings.JwtIssuer,
-        IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(authenticationSettings.JwtKey))
-    };
-});
+
 
 //Automapper
 builder.Services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());

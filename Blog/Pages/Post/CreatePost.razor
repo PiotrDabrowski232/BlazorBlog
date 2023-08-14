@@ -1,0 +1,47 @@
+﻿@page "/CreatePost"
+
+
+<h3>Create Post</h3>
+
+@inject Blog.Logic.Services.Interfaces.IPostService _postService
+
+@code {
+
+    PostDto post = new PostDto();
+
+   
+    private void SendPost()
+    {
+        try
+        {
+            _postService.Add(post);
+        }
+        catch(Exception e)
+        {
+            
+        }
+    }
+}
+
+
+
+<EditForm Model="post">
+
+
+    <label>
+        Title:<br />
+        <input type="text" @bind="post.Title" /><br /><br />
+    </label><br />
+
+    <label>
+        Description:<br />
+        <input type="text" @bind="post.Description" /><br /><br />
+    </label><br />
+
+
+
+    <input type="submit" value="Submit" @onclick="SendPost" />
+
+
+
+</EditForm>

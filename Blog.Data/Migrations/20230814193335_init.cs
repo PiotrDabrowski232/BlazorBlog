@@ -8,7 +8,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 namespace Blog.Data.Migrations
 {
     /// <inheritdoc />
-    public partial class UserRoles : Migration
+    public partial class init : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
@@ -17,8 +17,7 @@ namespace Blog.Data.Migrations
                 name: "post",
                 columns: table => new
                 {
-                    Id = table.Column<int>(type: "int", nullable: false)
-                        .Annotation("SqlServer:Identity", "1, 1"),
+                    Id = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
                     Title = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     Description = table.Column<string>(type: "nvarchar(max)", nullable: false)
                 },
@@ -72,7 +71,7 @@ namespace Blog.Data.Migrations
                     IdUser = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
                     IdPost = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
                     usersId = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
-                    postsId = table.Column<int>(type: "int", nullable: false)
+                    postsId = table.Column<Guid>(type: "uniqueidentifier", nullable: false)
                 },
                 constraints: table =>
                 {

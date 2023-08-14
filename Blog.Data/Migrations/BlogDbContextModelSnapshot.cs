@@ -24,11 +24,9 @@ namespace Blog.Data.Migrations
 
             modelBuilder.Entity("Blog.Data.Models.Posts", b =>
                 {
-                    b.Property<int>("Id")
+                    b.Property<Guid>("Id")
                         .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
-
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+                        .HasColumnType("uniqueidentifier");
 
                     b.Property<string>("Description")
                         .IsRequired()
@@ -132,8 +130,8 @@ namespace Blog.Data.Migrations
                     b.Property<Guid>("IdPost")
                         .HasColumnType("uniqueidentifier");
 
-                    b.Property<int>("postsId")
-                        .HasColumnType("int");
+                    b.Property<Guid>("postsId")
+                        .HasColumnType("uniqueidentifier");
 
                     b.Property<Guid>("usersId")
                         .HasColumnType("uniqueidentifier");

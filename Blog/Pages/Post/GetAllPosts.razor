@@ -1,0 +1,34 @@
+﻿@page "/AllPosts"
+
+
+<h3>Create Post</h3>
+
+@inject Blog.Logic.Services.Interfaces.IPostService _postService
+
+@code {
+    IEnumerable<PostDto> posts;
+
+    protected override async Task OnInitializedAsync()
+    {
+        posts = _postService.GetAll();
+    }
+}
+
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>Title</th>
+            <th>Body Of Post</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var post in posts)
+        {
+            <tr>
+                <td>@post.Title</td>
+                <td>@post.Description</td>
+            </tr>
+        }
+    </tbody>
+</table>

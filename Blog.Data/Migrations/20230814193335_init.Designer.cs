@@ -12,8 +12,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Blog.Data.Migrations
 {
     [DbContext(typeof(BlogDbContext))]
-    [Migration("20230731160636_User-Roles")]
-    partial class UserRoles
+    [Migration("20230814193335_init")]
+    partial class init
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -27,11 +27,9 @@ namespace Blog.Data.Migrations
 
             modelBuilder.Entity("Blog.Data.Models.Posts", b =>
                 {
-                    b.Property<int>("Id")
+                    b.Property<Guid>("Id")
                         .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
-
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+                        .HasColumnType("uniqueidentifier");
 
                     b.Property<string>("Description")
                         .IsRequired()
@@ -135,8 +133,8 @@ namespace Blog.Data.Migrations
                     b.Property<Guid>("IdPost")
                         .HasColumnType("uniqueidentifier");
 
-                    b.Property<int>("postsId")
-                        .HasColumnType("int");
+                    b.Property<Guid>("postsId")
+                        .HasColumnType("uniqueidentifier");
 
                     b.Property<Guid>("usersId")
                         .HasColumnType("uniqueidentifier");

@@ -32,12 +32,24 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcSW5kZXgucmF6b3I=
 build_metadata.AdditionalFiles.CssScope = 
 
+[C:/Users/piecz/Desktop/Blog/Blog/Pages/Post/CreatePost.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcUG9zdFxDcmVhdGVQb3N0LnJhem9y
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/piecz/Desktop/Blog/Blog/Pages/Post/GetAllPosts.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcUG9zdFxHZXRBbGxQb3N0cy5yYXpvcg==
+build_metadata.AdditionalFiles.CssScope = 
+
 [C:/Users/piecz/Desktop/Blog/Blog/Pages/User/AddUser.razor]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcVXNlclxBZGRVc2VyLnJhem9y
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Users/piecz/Desktop/Blog/Blog/Pages/User/LogUser.razor]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcVXNlclxMb2dVc2VyLnJhem9y
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/piecz/Desktop/Blog/Blog/Pages/User/LogUser2.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcVXNlclxMb2dVc2VyMi5yYXpvcg==
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Users/piecz/Desktop/Blog/Blog/Shared/SurveyPrompt.razor]
@@ -66,4 +78,8 @@ build_metadata.AdditionalFiles.CssScope =
 
 [C:/Users/piecz/Desktop/Blog/Blog/Pages/_Layout.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcX0xheW91dC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/piecz/Desktop/Blog/Blog/Pages/_ViewImports.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcX1ZpZXdJbXBvcnRzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
