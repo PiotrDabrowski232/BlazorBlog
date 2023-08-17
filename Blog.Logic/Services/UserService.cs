@@ -3,6 +3,7 @@ using Blog.Data.Models;
 using Blog.Data.Repositories.Interfaces;
 using Blog.Logic.Authentication;
 using Blog.Logic.Dto;
+using Blog.Logic.Dto.UserDtos;
 using Blog.Logic.Exceptions;
 using Blog.Logic.Services.Interfaces;
 using Microsoft.AspNetCore.Identity;
@@ -18,17 +19,15 @@ namespace Blog.Logic.Services
         private readonly IUserRepository _userRepository;
         private readonly IRoleRepository _roleRepository;
         private readonly IMapper _mapper;
-        private readonly AuthenticationSettiongs _auhenticationSetings;
         private readonly IPasswordHasher<User> _passwordHasher;
 
 
-        public UserService(IUserRepository userRepository, IMapper mapper, IPasswordHasher<User> passwordHasher, IRoleRepository roleRepository, AuthenticationSettiongs auhenticationSetings)
+        public UserService(IUserRepository userRepository, IMapper mapper, IPasswordHasher<User> passwordHasher, IRoleRepository roleRepository)
         {
             _userRepository = userRepository;
             _mapper = mapper;
             _passwordHasher = passwordHasher;
             _roleRepository = roleRepository;
-            _auhenticationSetings= auhenticationSetings;
         }
 
         public void Add(UserDto userDto)
@@ -55,15 +54,15 @@ namespace Blog.Logic.Services
             throw new NotImplementedException();
         }
 
-        public UserDto GetUser(string email)
+        public UserDto GetUserByEmail(string email)
         {
             var user = _userRepository.GetAll().FirstOrDefault(u => email == u.Email);
             return _mapper.Map<UserDto>(user);
         }
 
-        public string VerifyUser(LoginUserDto LoginDto)
+        public LoginUserDto VerifyUser(LoginUserDto LoginDto)
         {
-            var user = _mapper.Map<User>(GetUser(LoginDto.Email));
+            var user = _mapper.Map<User>(GetUserByEmail(LoginDto.Email));
 
             if (user is null)
             {
@@ -77,25 +76,12 @@ namespace Blog.Logic.Services
                 throw new BadRequestException("invalid username or password");
             }
 
-            var claims = new List<Claim>()
-            {
-                new Claim(ClaimTypes.NameIdentifier, user.Id.ToString()),
-                new Claim(ClaimTypes.Name, user.UserName),
-                new Claim(ClaimTypes.Role, _roleRepository.Get(user.RoleId).Name),
-            };
+            LoginDto.Username = user.UserName;
+            LoginDto.Role = _mapper.Map<RoleDto>(_roleRepository.Get(user.RoleId));
 
-            var key = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(_auhenticationSetings.JwtKey));
-            var cred = new SigningCredentials(key, SecurityAlgorithms.HmacSha256);
-            var expires = DateTime.Now.AddDays(_auhenticationSetings.JwtExpired);
 
-            var token = new JwtSecurityToken(_auhenticationSetings.JwtIssuer,
-                _auhenticationSetings.JwtIssuer,
-                claims,
-                expires,
-                signingCredentials: cred);
+            return LoginDto;
 
-            var tokenHandler = new JwtSecurityTokenHandler();
-            return tokenHandler.WriteToken(token);
         }
     }
 }

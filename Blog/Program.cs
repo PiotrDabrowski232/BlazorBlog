@@ -2,22 +2,18 @@ using Blog.Data;
 using Blog.Data.Data;
 using Blog.Logic.Services.Interfaces;
 using Blog.Logic.Services;
-using Microsoft.AspNetCore.Components;
-using Microsoft.AspNetCore.Components.Web;
 using Microsoft.EntityFrameworkCore;
 using Blog.Data.Repositories.Interfaces;
 using Blog.Data.Repositories;
 using Blog.Data.Models;
-using Blazorise;
-using Blazorise.Bootstrap;
-using Blazorise.Icons.FontAwesome;
 using Microsoft.AspNetCore.Identity;
-using Blog.Logic.Dto;
 using Blog.Logic.Dto.Validators;
 using FluentValidation;
 using FluentValidation.AspNetCore;
-using Microsoft.IdentityModel.Tokens;
-using System.Text;
+using Blog.Logic.Dto.UserDtos;
+using Microsoft.AspNetCore.Components.Server.ProtectedBrowserStorage;
+using Microsoft.AspNetCore.Components.Authorization;
+using Blog.Logic.Authentication;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -25,6 +21,15 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddRazorPages();
 builder.Services.AddServerSideBlazor();
 builder.Services.AddControllers().AddFluentValidation();
+
+
+//Authentication 
+builder.Services.AddAuthenticationCore();
+builder.Services.AddScoped<ProtectedSessionStorage>();
+builder.Services.AddScoped<AuthenticationStateProvider, CustomAuthenticationStateProvider>();
+builder.Services.AddSingleton<UserSession>();
+
+
 
 
 // Dependency Injections Reposiotries
