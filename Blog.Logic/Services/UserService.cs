@@ -1,6 +1,7 @@
 ﻿using AutoMapper;
 using Blog.Data.Models;
 using Blog.Data.Repositories.Interfaces;
+using Blog.Logic.Authentication;
 using Blog.Logic.Dto;
 using Blog.Logic.Exceptions;
 using Blog.Logic.Services.Interfaces;
@@ -17,15 +18,17 @@ namespace Blog.Logic.Services
         private readonly IUserRepository _userRepository;
         private readonly IRoleRepository _roleRepository;
         private readonly IMapper _mapper;
+        private readonly AuthenticationSettiongs _auhenticationSetings;
         private readonly IPasswordHasher<User> _passwordHasher;
 
 
-        public UserService(IUserRepository userRepository, IMapper mapper, IPasswordHasher<User> passwordHasher, IRoleRepository roleRepository)
+        public UserService(IUserRepository userRepository, IMapper mapper, IPasswordHasher<User> passwordHasher, IRoleRepository roleRepository, AuthenticationSettiongs auhenticationSetings)
         {
             _userRepository = userRepository;
             _mapper = mapper;
             _passwordHasher = passwordHasher;
             _roleRepository = roleRepository;
+            _auhenticationSetings= auhenticationSetings;
         }
 
         public void Add(UserDto userDto)
@@ -73,7 +76,26 @@ namespace Blog.Logic.Services
             {
                 throw new BadRequestException("invalid username or password");
             }
-            return "verify";
+
+            var claims = new List<Claim>()
+            {
+                new Claim(ClaimTypes.NameIdentifier, user.Id.ToString()),
+                new Claim(ClaimTypes.Name, user.UserName),
+                new Claim(ClaimTypes.Role, _roleRepository.Get(user.RoleId).Name),
+            };
+
+            var key = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(_auhenticationSetings.JwtKey));
+            var cred = new SigningCredentials(key, SecurityAlgorithms.HmacSha256);
+            var expires = DateTime.Now.AddDays(_auhenticationSetings.JwtExpired);
+
+            var token = new JwtSecurityToken(_auhenticationSetings.JwtIssuer,
+                _auhenticationSetings.JwtIssuer,
+                claims,
+                expires,
+                signingCredentials: cred);
+
+            var tokenHandler = new JwtSecurityTokenHandler();
+            return tokenHandler.WriteToken(token);
         }
     }
 }

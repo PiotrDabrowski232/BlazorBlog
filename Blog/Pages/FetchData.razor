@@ -1,5 +1,5 @@
 ﻿@page "/fetchdata"
-
+@attribute [Authorize(Roles = "BasicUser")]
 <PageTitle>Weather forecast</PageTitle>
 
 @using Blog.Data

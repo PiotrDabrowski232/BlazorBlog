@@ -1,6 +1,6 @@
 ﻿using AutoMapper;
 using Blog.Data.Models;
-using Blog.Logic.Dto;
+using Blog.Logic.Dto.UserDtos;
 
 namespace Blog.Logic.AutoMapper
 {
@@ -11,6 +11,8 @@ namespace Blog.Logic.AutoMapper
             CreateMap<User, UserDto>();
             CreateMap<UserDto, User>();
 
+            CreateMap<User, LoginUserDto>();
+            CreateMap<LoginUserDto, User>();
         }
     }
 }

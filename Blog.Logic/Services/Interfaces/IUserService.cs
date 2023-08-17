@@ -1,5 +1,5 @@
 ﻿using Blog.Data.Models;
-using Blog.Logic.Dto;
+using Blog.Logic.Dto.UserDtos;
 using Microsoft.AspNet.Identity;
 
 namespace Blog.Logic.Services.Interfaces
@@ -8,13 +8,13 @@ namespace Blog.Logic.Services.Interfaces
     {
         public IEnumerable<UserDto> GetAll();
 
-        public UserDto GetUser(string email);
+        public UserDto GetUserByEmail(string email);
 
         public void Add(UserDto user);
 
         public User Edit(UserDto user);
         public void Delete(int id);
 
-        public string VerifyUser(LoginUserDto dto);
+        public LoginUserDto VerifyUser(LoginUserDto dto);
     }
 }

@@ -1,5 +1,9 @@
 ﻿@inherits LayoutComponentBase
 
+@using Blog.Logic.Authentication
+@inject NavigationManager NavManager
+@inject AuthenticationStateProvider authenticationStateProvider
+
 <PageTitle>Blog</PageTitle>
 
 <div class="page">
@@ -10,6 +14,15 @@
     <main>
         <div class="top-row px-4">
             <a href="https://docs.microsoft.com/aspnet/" target="_blank">About</a>
+
+            <AuthorizeView>
+                <Authorized> 
+                    <a  @onclick="Logout" href="javascript:void(0)">Logout</a>
+                </Authorized>
+                <NotAuthorized>
+                    <a href="LogUser">Login</a>
+                </NotAuthorized>
+            </AuthorizeView>
         </div>
 
         <article class="content px-4">
@@ -17,3 +30,15 @@
         </article>
     </main>
 </div>
+
+
+@code{
+    private async Task Logout()
+    {
+        var customAuthenticationStateProvider = (CustomAuthenticationStateProvider)authenticationStateProvider;
+
+        await customAuthenticationStateProvider.UpdateAuthenticationState(null);
+
+        NavManager.NavigateTo("/", true);
+    }
+}

@@ -1,4 +1,5 @@
 ﻿using Blog.Data.Data;
+using Blog.Logic.Dto.UserDtos;
 using FluentValidation;
 
 namespace Blog.Logic.Dto.Validators
