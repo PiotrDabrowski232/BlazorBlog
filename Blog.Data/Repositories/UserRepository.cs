@@ -9,5 +9,6 @@ namespace Blog.Data.Repositories
         public UserRepository(BlogDbContext context) : base(context)
         {
         }
+
     }
 }

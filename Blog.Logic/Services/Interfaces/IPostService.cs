@@ -14,5 +14,7 @@ namespace Blog.Logic.Services.Interfaces
         public void Add(PostDto post);
         public PostDto Edit(PostDto post);
         public void Delete(Guid id);
+        public IEnumerable<PostDto> GetAllEditableAndDeletableByUser(string userEmail);
+
     }
 }

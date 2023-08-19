@@ -29,8 +29,8 @@ namespace Blog.Logic.Services
             {
                 IdPost = post.Id,
                 posts = post,
-                IdUser = Guid.Parse("14a92f1c-9110-4604-a96f-0452675a2050"),
-                users = _userRepository.GetAll().FirstOrDefault(u => u.Id.Equals(Guid.Parse("14a92f1c-9110-4604-a96f-0452675a2050"))),
+                IdUser = _userRepository.GetAll().FirstOrDefault(u => u.Email.Equals(postDto.CreatedBy)).Id,
+                users = _userRepository.GetAll().FirstOrDefault(u => u.Email.Equals(postDto.CreatedBy)),
             };
 
             _userPostRepository.Add(userPost);
@@ -48,8 +48,35 @@ namespace Blog.Logic.Services
 
         public IEnumerable<PostDto> GetAll()
         {
-            var posts = _postRepository.GetAll();
-            return _mapper.Map<IEnumerable<PostDto>>(posts);
+            var posts = _mapper.Map<IEnumerable<PostDto>>(_postRepository.GetAll());
+
+            foreach(var post in posts)
+            {
+                var userId = _userPostRepository.GetUsersByPostId(post.Id);
+
+                post.CreatedBy = _userRepository.Get(userId.First().IdUser).UserName;
+                
+            }
+
+            return posts;
+        }
+
+        public IEnumerable<PostDto> GetAllEditableAndDeletableByUser(string userEmail)
+        {
+            var posts = GetAll();
+            List<PostDto> result = new List<PostDto>();
+
+            var user = _userRepository.GetAll().FirstOrDefault(u => userEmail == u.Email);
+
+            foreach (var post in posts)
+            {
+                if(post.CreatedBy == user.UserName)
+                {
+                    result.Add(post);
+                }
+            }
+
+            return result;
         }
     }
 }

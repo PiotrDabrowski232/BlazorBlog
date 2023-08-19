@@ -6,8 +6,8 @@ namespace Blog.Data.Repositories
 {
     public class GenericRepository<T> : IGenericRepository<T> where T : class
     {
-        private readonly BlogDbContext _context;
-        public GenericRepository(BlogDbContext context)
+        protected readonly BlogDbContext _context;
+        protected GenericRepository(BlogDbContext context)
         {
             _context = context;
         }

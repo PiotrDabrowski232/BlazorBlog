@@ -1,7 +1,7 @@
 ﻿@page "/AllPosts"
 
 
-<h3>Create Post</h3>
+<h3>Posts created by our users</h3>
 
 @inject Blog.Logic.Services.Interfaces.IPostService _postService
 
@@ -29,7 +29,7 @@
             <tr>
                 <td>@post.Title</td>
                 <td>@post.Description</td>
-                <td></td>
+                <td>@post.CreatedBy</td>
             </tr>
         }
     </tbody>

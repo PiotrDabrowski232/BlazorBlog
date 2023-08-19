@@ -13,11 +13,10 @@
 
     <main>
         <div class="top-row px-4">
-            <a href="https://docs.microsoft.com/aspnet/" target="_blank">About</a>
-
             <AuthorizeView>
                 <Authorized> 
-                    <a  @onclick="Logout" href="javascript:void(0)">Logout</a>
+                    
+                    <a @onclick="Logout" href="javascript:void(0)"><h4>@context.User.Identity.Name</h4></a>
                 </Authorized>
                 <NotAuthorized>
                     <a href="LogUser">Login</a>
@@ -40,5 +39,6 @@
         await customAuthenticationStateProvider.UpdateAuthenticationState(null);
 
         NavManager.NavigateTo("/", true);
+        
     }
 }

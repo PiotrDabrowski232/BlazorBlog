@@ -8,22 +8,20 @@
 @code {
 
     PostDto post = new PostDto();
+    
+    [CascadingParameter]
+    private Task<AuthenticationState> authenticationState { get; set; }
 
-   
     private void SendPost()
     {
-        try
-        {
-            _postService.Add(post);
-        }
-        catch(Exception e)
-        {
-            
-        }
+        post.CreatedBy = authenticationState.Result.User.Identity.Name;
+
+        _postService.Add(post);
     }
 }
 
 
+<h4>@authenticationState.Result.User.Identity.Name Add Post Panel</h4>
 
 <EditForm Model="post">
 
