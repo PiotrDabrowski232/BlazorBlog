@@ -15,8 +15,7 @@
         <div class="top-row px-4">
             <AuthorizeView>
                 <Authorized> 
-                    
-                    <a @onclick="Logout" href="javascript:void(0)"><h4>@context.User.Identity.Name</h4></a>
+                    <a href="UserInformation">@context.User.Identity.Name</a>
                 </Authorized>
                 <NotAuthorized>
                     <a href="LogUser">Login</a>

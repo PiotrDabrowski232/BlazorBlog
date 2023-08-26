@@ -10,5 +10,10 @@ namespace Blog.Data.Repositories
         {
         }
 
+        public User GetByUserEmail(string email)
+        {
+            return _context.Set<User>().FirstOrDefault(x => x.Email.Equals(email));
+        }
+
     }
 }

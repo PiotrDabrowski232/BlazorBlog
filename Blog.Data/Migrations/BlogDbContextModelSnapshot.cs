@@ -36,7 +36,12 @@ namespace Blog.Data.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
+                    b.Property<Guid>("UserId")
+                        .HasColumnType("uniqueidentifier");
+
                     b.HasKey("Id");
+
+                    b.HasIndex("UserId");
 
                     b.ToTable("post");
                 });
@@ -122,27 +127,15 @@ namespace Blog.Data.Migrations
                     b.ToTable("users");
                 });
 
-            modelBuilder.Entity("Blog.Data.Models.UserPosts", b =>
+            modelBuilder.Entity("Blog.Data.Models.Posts", b =>
                 {
-                    b.Property<Guid>("IdUser")
-                        .HasColumnType("uniqueidentifier");
+                    b.HasOne("Blog.Data.Models.User", "User")
+                        .WithMany("Posts")
+                        .HasForeignKey("UserId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
 
-                    b.Property<Guid>("IdPost")
-                        .HasColumnType("uniqueidentifier");
-
-                    b.Property<Guid>("postsId")
-                        .HasColumnType("uniqueidentifier");
-
-                    b.Property<Guid>("usersId")
-                        .HasColumnType("uniqueidentifier");
-
-                    b.HasKey("IdUser", "IdPost");
-
-                    b.HasIndex("postsId");
-
-                    b.HasIndex("usersId");
-
-                    b.ToTable("usersposts");
+                    b.Navigation("User");
                 });
 
             modelBuilder.Entity("Blog.Data.Models.User", b =>
@@ -156,23 +149,9 @@ namespace Blog.Data.Migrations
                     b.Navigation("Role");
                 });
 
-            modelBuilder.Entity("Blog.Data.Models.UserPosts", b =>
+            modelBuilder.Entity("Blog.Data.Models.User", b =>
                 {
-                    b.HasOne("Blog.Data.Models.Posts", "posts")
-                        .WithMany()
-                        .HasForeignKey("postsId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.HasOne("Blog.Data.Models.User", "users")
-                        .WithMany()
-                        .HasForeignKey("usersId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.Navigation("posts");
-
-                    b.Navigation("users");
+                    b.Navigation("Posts");
                 });
 #pragma warning restore 612, 618
         }

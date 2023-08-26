@@ -1,9 +1,12 @@
 ﻿@page "/AllPosts"
 
+@using Blog.Logic.Dto.PostDtos;
+@inject Blog.Logic.Services.Interfaces.IPostService _postService
+
+
 
 <h3>Posts created by our users</h3>
 
-@inject Blog.Logic.Services.Interfaces.IPostService _postService
 
 @code {
     IEnumerable<PostDto> posts;

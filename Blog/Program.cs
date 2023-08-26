@@ -27,7 +27,7 @@ builder.Services.AddControllers().AddFluentValidation();
 builder.Services.AddAuthenticationCore();
 builder.Services.AddScoped<ProtectedSessionStorage>();
 builder.Services.AddScoped<AuthenticationStateProvider, CustomAuthenticationStateProvider>();
-builder.Services.AddSingleton<UserSession>();
+builder.Services.AddScoped<UserSession>();
 
 
 
@@ -35,12 +35,12 @@ builder.Services.AddSingleton<UserSession>();
 // Dependency Injections Reposiotries
 builder.Services.AddScoped<IUserRepository, UserRepository>();
 builder.Services.AddScoped<IRoleRepository, RoleReposiotry>();
-builder.Services.AddScoped<IUserPostRepository, UserPostRepository>();
 builder.Services.AddScoped<IPostRepository, PostRepository>();
 
 
+
 // Dependency Injections Services
-builder.Services.AddSingleton<WeatherForecastService>();
+builder.Services.AddScoped<WeatherForecastService>();
 builder.Services.AddScoped<IUserService, UserService>();
 builder.Services.AddScoped<IRoleService, RoleService>();
 builder.Services.AddScoped<IPostService, PostService>();
@@ -49,7 +49,8 @@ builder.Services.AddScoped<IValidator<UserDto>, UserDtoValidator>();
 
 //DbContext
 var connectionString = builder.Configuration.GetConnectionString("DefaultConnection");
-builder.Services.AddDbContext<BlogDbContext>(options => options.UseSqlServer(connectionString));
+builder.Services.AddDbContext<BlogDbContext>(options => options.UseSqlServer(connectionString)
+.UseQueryTrackingBehavior(QueryTrackingBehavior.NoTracking));
 
 
 

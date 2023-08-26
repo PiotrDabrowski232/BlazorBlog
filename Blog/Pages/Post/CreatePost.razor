@@ -1,9 +1,12 @@
 ﻿@page "/CreatePost"
 
+@using Blog.Logic.Dto.PostDtos;
+@inject Blog.Logic.Services.Interfaces.IPostService _postService
+
+
 
 <h3>Create Post</h3>
 
-@inject Blog.Logic.Services.Interfaces.IPostService _postService
 
 @code {
 

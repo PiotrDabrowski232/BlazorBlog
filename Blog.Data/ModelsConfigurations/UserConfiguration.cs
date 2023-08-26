@@ -20,6 +20,11 @@ namespace Blog.Data.ModelsConfigurations
 
             builder.Property(x => x.RoleId)
                 .HasDefaultValue(1.ToGuid());
+
+            builder.HasMany(x => x.Posts)
+                .WithOne(x => x.User)
+                .HasForeignKey(x => x.UserId);
+
         }
     }
 }

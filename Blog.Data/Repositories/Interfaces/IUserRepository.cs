@@ -9,7 +9,7 @@ namespace Blog.Data.Repositories.Interfaces
 {
     public interface IUserRepository : IGenericRepository<User>
     {
-
+        public User GetByUserEmail(string email);
 
     }
 }

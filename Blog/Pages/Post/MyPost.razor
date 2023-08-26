@@ -1,9 +1,11 @@
 ﻿@page "/MyPost"
+@using Blog.Logic.Dto.PostDtos;
 
 
 <h3>Posts created by our users</h3>
 
 @inject Blog.Logic.Services.Interfaces.IPostService _postService
+@inject NavigationManager navManager
 
 @code {
 
@@ -15,7 +17,26 @@
     protected override async Task OnInitializedAsync()
     {
         var username = authenticationState.Result.User.Identity.Name;
-        posts = _postService.GetAllEditableAndDeletableByUser(username);
+        await LoadPostsAsync(username);
+    }
+
+    private async Task LoadPostsAsync(string username)
+    {
+        while (true)
+        {
+            posts = await _postService.GetAllEditableAndDeletableByUser(username);
+            StateHasChanged();
+            await Task.Delay(2000);
+        }
+    }
+    private void PassToEdit(string id)
+    {
+        navManager.NavigateTo($"EditPost/{id}", forceLoad: true);
+    }
+
+    private void DeletePost(Guid id)
+    {
+        _postService.Delete(id);
     }
 }
 
@@ -36,7 +57,7 @@
                 <td>@post.Id</td>
                 <td>@post.Title</td>
                 <td>@post.Description</td>
-                <td><button>Edit</button> <button>Delete</button></td>
+                <td><button @onclick="() => PassToEdit(post.Id.ToString())">Edit</button> <button @onclick="() => DeletePost(post.Id)">Delete</button></td>
             </tr>
         }
     </tbody>

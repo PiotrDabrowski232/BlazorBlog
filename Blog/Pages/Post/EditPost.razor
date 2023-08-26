@@ -1,0 +1,60 @@
+﻿@page "/EditPost/{postId}"
+
+
+@using Blog.Logic.Dto.PostDtos;
+@inject Blog.Logic.Services.Interfaces.IPostService _postService
+@inject Microsoft.AspNetCore.Components.NavigationManager NavigationManager
+
+
+
+<h3>Edit Your Post</h3>
+
+@code {
+
+    [Parameter]
+    public string postId { get; set; }
+
+    EditPostDto post = new EditPostDto();
+
+    bool isUpdateSuccessful = false;
+
+    protected override async Task OnInitializedAsync()
+    {
+        post = _postService.GetByPostId(postId);
+    }
+
+    protected async Task Edit()
+    {
+         _postService.Edit(post);
+        isUpdateSuccessful = true;
+        StateHasChanged();
+
+        await Task.Delay(2000);
+        NavigationManager.NavigateTo("/MyPost");
+    }
+}
+
+
+<EditForm Model="post">
+
+
+    <label>
+        Title:<br />
+        <input type="text" @bind-value="@post.Title" /><br /><br />
+    </label><br />
+
+    <label>
+        Description:<br />
+        <input type="text"  @bind-value="@post.Description" /><br /><br />
+    </label><br />
+
+
+
+    <input type="submit" value="Submit" @onclick="Edit" />
+
+</EditForm>
+
+    @if (isUpdateSuccessful)
+{
+    <h2>The entity has been successfully amended</h2>
+}

@@ -1,0 +1,22 @@
+﻿@page "/UserInformation"
+
+@inject Blog.Logic.Services.Interfaces.IUserService _userService
+@inject NavigationManager NavManager
+@using Blog.Logic.Authentication;
+@using Blog.Logic.Dto.UserDtos
+
+@code{
+    private UserDto userDto = new UserDto();
+
+    [CascadingParameter]
+    private Task<AuthenticationState> authenticationState { get; set; }
+
+
+    protected override void OnInitialized()
+    {
+        var user = authenticationState.Result.User.Identity.Name;
+        userDto = _userService.GetUserByEmail(user);
+    }
+}
+
+<h1>Your Account</h1>

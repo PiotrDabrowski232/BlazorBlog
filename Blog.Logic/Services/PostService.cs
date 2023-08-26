@@ -1,7 +1,7 @@
 ﻿using AutoMapper;
 using Blog.Data.Models;
 using Blog.Data.Repositories.Interfaces;
-using Blog.Logic.Dto;
+using Blog.Logic.Dto.PostDtos;
 using Blog.Logic.Services.Interfaces;
 
 namespace Blog.Logic.Services
@@ -10,73 +10,72 @@ namespace Blog.Logic.Services
     {
         private readonly IPostRepository _postRepository;
         private readonly IMapper _mapper;
-        private readonly IUserPostRepository _userPostRepository;
         private readonly IUserRepository _userRepository;
-        public PostService(IPostRepository postRepository, IMapper mapper, IUserPostRepository userPostRepository, IUserRepository userRepository)
+        public PostService(IPostRepository postRepository, IMapper mapper, IUserRepository userRepository)
         {
             _postRepository = postRepository;
             _mapper = mapper;
-            _userPostRepository = userPostRepository;
             _userRepository = userRepository;
         }
 
+        #region private methods
+
+        #endregion private methods
+
+
+        #region public methods
         public void Add(PostDto postDto)
         {
+            postDto.Id = Guid.NewGuid();
             var post = _mapper.Map<Posts>(postDto);
-            post.Id = Guid.NewGuid();
 
-            UserPosts userPost = new UserPosts()
-            {
-                IdPost = post.Id,
-                posts = post,
-                IdUser = _userRepository.GetAll().FirstOrDefault(u => u.Email.Equals(postDto.CreatedBy)).Id,
-                users = _userRepository.GetAll().FirstOrDefault(u => u.Email.Equals(postDto.CreatedBy)),
-            };
+            post.UserId = _userRepository.GetByUserEmail(postDto.CreatedBy).Id;
 
-            _userPostRepository.Add(userPost);
+            _postRepository.Add(post);
+
         }
 
         public void Delete(Guid id)
         {
-            throw new NotImplementedException();
+            _postRepository.Remove(_mapper.Map<Posts>(GetByPostId(id.ToString())));
         }
 
-        public PostDto Edit(PostDto post)
+        public void Edit(EditPostDto postDto)
         {
-            throw new NotImplementedException();
+            var post = _mapper.Map<Posts>(postDto);
+            post.UserId = _postRepository.Get(post.Id).UserId;
+            _postRepository.Update(post);
         }
 
         public IEnumerable<PostDto> GetAll()
         {
-            var posts = _mapper.Map<IEnumerable<PostDto>>(_postRepository.GetAll());
+            var postsDto = _mapper.Map<IEnumerable<PostDto>>(_postRepository.GetAll());
 
-            foreach(var post in posts)
+            var user = _userRepository.GetAll();
+
+            foreach(var post in postsDto)
             {
-                var userId = _userPostRepository.GetUsersByPostId(post.Id);
-
-                post.CreatedBy = _userRepository.Get(userId.First().IdUser).UserName;
+                post.CreatedBy = user.FirstOrDefault(x => x.Id.Equals(post.UserId)).Surname;
                 
             }
-
-            return posts;
+            return postsDto;
         }
 
-        public IEnumerable<PostDto> GetAllEditableAndDeletableByUser(string userEmail)
+        public Task<IEnumerable<PostDto>> GetAllEditableAndDeletableByUser(string userEmail)
         {
-            var posts = GetAll();
-            List<PostDto> result = new List<PostDto>();
-
             var user = _userRepository.GetAll().FirstOrDefault(u => userEmail == u.Email);
 
-            foreach (var post in posts)
-            {
-                if(post.CreatedBy == user.UserName)
-                {
-                    result.Add(post);
-                }
-            }
+            var result = GetAll().Where(post => post.UserId == user.Id);
 
-            return result;
+            return Task.FromResult(result);
+        }
+
+        public EditPostDto GetByPostId(string Id)
+        {
+            var post = _mapper.Map<EditPostDto>(_postRepository.GetAll().FirstOrDefault(p => Id.Equals(p.Id.ToString())));
+
+            return post;
         }
     }
+    #endregion public method
 }

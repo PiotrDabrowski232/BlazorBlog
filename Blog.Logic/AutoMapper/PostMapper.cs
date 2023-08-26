@@ -1,6 +1,6 @@
 ﻿using AutoMapper;
 using Blog.Data.Models;
-using Blog.Logic.Dto;
+using Blog.Logic.Dto.PostDtos;
 
 namespace Blog.Logic.AutoMapper
 {
@@ -10,6 +10,9 @@ namespace Blog.Logic.AutoMapper
         {
             CreateMap<Posts, PostDto>();
             CreateMap<PostDto, Posts>();
+
+            CreateMap<Posts, EditPostDto>();
+            CreateMap<EditPostDto, Posts>();
         }
     }
 }
