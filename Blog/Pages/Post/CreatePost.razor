@@ -4,10 +4,6 @@
 @inject Blog.Logic.Services.Interfaces.IPostService _postService
 
 
-
-<h3>Create Post</h3>
-
-
 @code {
 
     PostDto post = new PostDto();
@@ -24,25 +20,20 @@
 }
 
 
-<h4>@authenticationState.Result.User.Identity.Name Add Post Panel</h4>
+<h4>Add Post for others</h4>
 
 <EditForm Model="post">
 
+    <div class="mb-3">
+        <label for="Title" class="form-label">Title</label>
+        <input type="text" class="form-control" placeholder="Title" @bind="@post.Title">
+    </div>
+    <div class="mb-3">
+        <label class="form-label">Tell others what you think</label>
+        <textarea class="form-control"  rows="25" @bind="post.Description"></textarea>
+    </div>
 
-    <label>
-        Title:<br />
-        <input type="text" @bind="post.Title" /><br /><br />
-    </label><br />
-
-    <label>
-        Description:<br />
-        <input type="text" @bind="post.Description" /><br /><br />
-    </label><br />
-
-
-
-    <input type="submit" value="Submit" @onclick="SendPost" />
-
+    <button type="button" class="btn btn-primary btn-lg" @onclick="SendPost">Publish</button>
 
 
 </EditForm>

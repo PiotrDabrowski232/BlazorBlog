@@ -1,0 +1,62 @@
+﻿@page "/Login"
+
+@using Blog.Logic.Dto.UserDtos
+@using Blog.Logic.Authentication
+
+@inject IJSRuntime JS
+@inject AuthenticationStateProvider authenticationStateProvider
+@inject Blog.Logic.Services.Interfaces.IUserService _userService
+@inject NavigationManager NavManager
+
+@code {
+    public LoginUserDto user = new LoginUserDto();
+    private string displayAfterSucces = "none";
+
+    private async Task Authenticate()
+    {
+        try
+        {
+            var userAccount = _userService.VerifyUser(user);
+            var customAuthStateProvider = (CustomAuthenticationStateProvider)authenticationStateProvider;
+
+            await customAuthStateProvider.UpdateAuthenticationState(new UserSession
+        {
+            Email = userAccount.Email,
+            Role = userAccount.Role
+        });
+
+            NavManager.NavigateTo("/", true);
+
+        }catch(Exception e)
+        {
+            displayAfterSucces = "block";
+        }
+    }
+}
+
+
+<div class="alert alert-danger" style="display:@displayAfterSucces;" role="alert">
+    Incorect Password or Email
+</div>
+
+<div style="margin-top:25vh;">
+
+    <EditForm Model="user">
+
+            <div class="form-floating mb-3 mt-5 col-sm-3 mx-auto">
+                <input type="text" class="form-control" id="email" placeholder="" name="email" @bind="user.Email">
+                <label for="email">Email</label>
+            </div>
+
+            <div class="form-floating mt-2 mb-5 col-sm-3 mx-auto">
+                <input type="password" class="form-control" id="password" placeholder="" name="password" @bind="user.Password">
+                <label for="pwd">Password</label>
+            </div>
+
+
+        <button type="button" @onclick="Authenticate" class="btn btn-outline-primary" style="margin-left: 50vw; margin-bottom:4vh; margin-top:4vh;">Primary</button>
+            
+    </EditForm>
+
+</div>
+

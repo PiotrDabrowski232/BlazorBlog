@@ -1,12 +1,14 @@
 ﻿@page "/UserInformation"
 
 @inject Blog.Logic.Services.Interfaces.IUserService _userService
-@inject NavigationManager NavManager
+@inject AuthenticationStateProvider authenticationStateProvider
+@inject NavigationManager navManager
 @using Blog.Logic.Authentication;
 @using Blog.Logic.Dto.UserDtos
 
 @code{
     private UserDto userDto = new UserDto();
+    private bool deleteWanted = false;
 
     [CascadingParameter]
     private Task<AuthenticationState> authenticationState { get; set; }
@@ -15,8 +17,60 @@
     protected override void OnInitialized()
     {
         var user = authenticationState.Result.User.Identity.Name;
-        userDto = _userService.GetUserByEmail(user);
+        userDto = _userService.GetUserByContainedString<UserDto>(user);
+    }
+
+    private async Task Logout()
+    {
+        var customAuthenticationStateProvider = (CustomAuthenticationStateProvider)authenticationStateProvider;
+
+        await customAuthenticationStateProvider.UpdateAuthenticationState(null);
+
+        navManager.NavigateTo("/", true);
+    }
+
+    private void ChangePassword(string email)
+    {
+        navManager.NavigateTo($"/ChangePassword/{email}");
+    }
+
+    private void ToggleDelete()
+    {
+        
     }
 }
 
 <h1>Your Account</h1>
+
+<h5>Name:</h5>
+<p>@userDto.Name</p>
+
+<h5>Surname:</h5>
+<p>@userDto.Surname</p>
+
+<h5>Email:</h5>
+<p>@userDto.Email</p>
+
+<h5>Username:</h5>
+<p>@userDto.UserName</p>
+
+<h5>Country:</h5>
+<p>@userDto.Country</p>
+
+<h5>City:</h5>
+<p>@userDto.City</p>
+
+
+
+<h5>Features:</h5>
+<a @onclick="Logout" href="javascript:void(0)">LogOut</a>
+<br />
+<a @onclick="() => ChangePassword(userDto.Email)" href="javascript:void(0)">Change Password</a>
+<br />
+<a @onclick="() => ToggleDelete()" href="javascript:void(0)">Delete Account</a>
+
+@if (deleteWanted)
+{
+    <h1>deleted clicked Your account will be permamently deleted</h1>
+}
+

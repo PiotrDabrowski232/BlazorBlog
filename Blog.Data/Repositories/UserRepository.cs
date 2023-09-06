@@ -1,6 +1,7 @@
 ﻿using Blog.Data.Data;
 using Blog.Data.Models;
 using Blog.Data.Repositories.Interfaces;
+using Microsoft.IdentityModel.Tokens;
 
 namespace Blog.Data.Repositories
 {
@@ -10,10 +11,14 @@ namespace Blog.Data.Repositories
         {
         }
 
-        public User GetByUserEmail(string email)
+        public User GetById(Guid id)
         {
-            return _context.Set<User>().FirstOrDefault(x => x.Email.Equals(email));
+            return _context.Set<User>().FirstOrDefault(x => x.Id.Equals(id));
         }
 
+        public User GetByContainedString(string containString)
+        {
+            return _context.Set<User>().FirstOrDefault(x => x.Email.Equals(containString) || x.UserName.Equals(containString));
+        }
     }
 }

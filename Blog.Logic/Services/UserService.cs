@@ -30,13 +30,14 @@ namespace Blog.Logic.Services
             _roleRepository = roleRepository;
         }
 
-        public void Add(UserDto userDto)
+        public Task Add(UserDto userDto)
         {
             User user = _mapper.Map<User>(userDto);
             user.Id = Guid.NewGuid();
             user.Password = _passwordHasher.HashPassword(user, user.Password);
 
-            _userRepository.Add(user);
+            return _userRepository.Add(user);
+            
         }
 
         public void Delete(int id)
@@ -49,20 +50,43 @@ namespace Blog.Logic.Services
             throw new NotImplementedException();
         }
 
+        public Task ChangePassword(PasswordUserDto userDto)
+        {
+            var user = GetUserByContainedString<User>(userDto.Email);
+            var result = _passwordHasher.VerifyHashedPassword(user, user.Password, userDto.OldPassword);
+            
+            if (result == PasswordVerificationResult.Failed)
+            {
+                throw new NotImplementedException();
+            }
+            else
+            {
+                user.Password = _passwordHasher.HashPassword(null, userDto.NewPassword);
+                _userRepository.Update(user);
+            }
+
+            return Task.FromResult(result);
+
+        }
         public IEnumerable<UserDto> GetAll()
         {
             throw new NotImplementedException();
         }
 
-        public UserDto GetUserByEmail(string email)
+        public T GetUserById<T>(Guid id) where T : class
         {
-            var user = _userRepository.GetAll().FirstOrDefault(u => email == u.Email);
-            return _mapper.Map<UserDto>(user);
+            return _mapper.Map<T>(_userRepository.GetById(id));
         }
+
+        public T GetUserByContainedString<T>(string email) where T : class
+        {
+            return _mapper.Map<T>(_userRepository.GetByContainedString(email));
+        }
+
 
         public LoginUserDto VerifyUser(LoginUserDto LoginDto)
         {
-            var user = _mapper.Map<User>(GetUserByEmail(LoginDto.Email));
+            var user = _mapper.Map<User>(_userRepository.GetByContainedString(LoginDto.Email));
 
             if (user is null)
             {

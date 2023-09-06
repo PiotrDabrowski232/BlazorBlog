@@ -1,39 +1,40 @@
 ﻿@page "/"
 
-@inject IJSRuntime JS
-
-<PageTitle>Index</PageTitle>
-
-<AuthorizeView>
-
-    <Authorized>
-        <h1>Hello, @context.User.Identity.Name!</h1>
-    </Authorized>
-    
-    <NotAuthorized>
-        <h1>Hello, Guest!</h1>
-    </NotAuthorized>
-
-</AuthorizeView>
+@using Blog.Logic.Dto.PostDtos;
+@inject Blog.Logic.Services.Interfaces.IPostService _postService
 
 
-<AuthorizeView>
-    <Authorized>
-       <br /><br />
-       <button class="btn btn-outline-primary" @onclick-"DisplayGreetingAlert"> Display greeting alert</button>
-    </Authorized>
-</AuthorizeView>
 
+@code {
+    IEnumerable<PostDto> posts;
 
-@code{
-    [CascadingParameter]
-    private Task<AuthenticationState> authenticationState{ get; set; }
-
-    private async Task DisplayGreetingAlert()
+    protected override async Task OnInitializedAsync()
     {
-        var authState = await authenticationState;
-        var message = $"hello {authenticationState.Result.User.Identity.Name}";
-        JS.InvokeVoidAsync("alert", message);
+        posts = _postService.GetAll();
     }
-
 }
+
+
+
+
+<div class="container m-0 p-0">
+
+    <div class="card-columns">
+
+        @foreach (var post in posts)
+        {
+
+            <div class="card d-inline-block w-25" style="margin-left: 5.9vw; margin-top:3.2vh; height:auto;">
+
+                <div class="card-body">
+                    <h5 class="card-title">@post.Title</h5>
+                    <p class="card-text">@post.Description.Substring(0,50) ...</p>
+                    <p class="card-text"><small class="text-muted">Author: @post.CreatedBy</small></p>
+                </div>
+            
+            </div>
+        }
+
+    </div>
+
+</div>

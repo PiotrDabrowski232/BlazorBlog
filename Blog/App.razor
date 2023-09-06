@@ -1,4 +1,7 @@
-﻿<CascadingAuthenticationState>
+﻿@inject AuthenticationStateProvider authenticationStateProvider
+@using Blog.Logic.Authentication;
+
+<CascadingAuthenticationState>
 <Router AppAssembly="@typeof(App).Assembly">
     <Found Context="routeData">
         <AuthorizeRouteView RouteData="@routeData" DefaultLayout="@typeof(MainLayout)">
@@ -6,9 +9,10 @@
                 You are not authorized to access this page
             </NotAuthorized>
 
-            <Authorizing>
-                You are getting authorized
-            </Authorizing>
+                <Authorizing>
+                    You Are Getting Authorize
+                </Authorizing>
+
         </AuthorizeRouteView>
         <FocusOnNavigate RouteData="@routeData" Selector="h1" />
     </Found>
@@ -20,3 +24,5 @@
     </NotFound>
 </Router>
 </CascadingAuthenticationState>
+
+

@@ -7,14 +7,12 @@ namespace Blog.Logic.Services.Interfaces
     public interface IUserService
     {
         public IEnumerable<UserDto> GetAll();
-
-        public UserDto GetUserByEmail(string email);
-
-        public void Add(UserDto user);
-
+        public Task Add(UserDto user);
         public User Edit(UserDto user);
+        public Task ChangePassword(PasswordUserDto userDto);
         public void Delete(int id);
-
+        public T GetUserById<T>(Guid id) where T : class;
+        public T GetUserByContainedString<T>(string email) where T : class;
         public LoginUserDto VerifyUser(LoginUserDto dto);
     }
 }

@@ -29,7 +29,7 @@ namespace Blog.Logic.Services
             postDto.Id = Guid.NewGuid();
             var post = _mapper.Map<Posts>(postDto);
 
-            post.UserId = _userRepository.GetByUserEmail(postDto.CreatedBy).Id;
+            post.UserId = _userRepository.GetByContainedString(postDto.CreatedBy).Id;
 
             _postRepository.Add(post);
 

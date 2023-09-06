@@ -2,7 +2,6 @@
 
 @using Blog.Logic.Authentication
 @inject NavigationManager NavManager
-@inject AuthenticationStateProvider authenticationStateProvider
 
 <PageTitle>Blog</PageTitle>
 
@@ -18,7 +17,8 @@
                     <a href="UserInformation">@context.User.Identity.Name</a>
                 </Authorized>
                 <NotAuthorized>
-                    <a href="LogUser">Login</a>
+                    <a href="AddUser">Register</a>
+                    <a href="Login">Login</a>
                 </NotAuthorized>
             </AuthorizeView>
         </div>
@@ -30,14 +30,4 @@
 </div>
 
 
-@code{
-    private async Task Logout()
-    {
-        var customAuthenticationStateProvider = (CustomAuthenticationStateProvider)authenticationStateProvider;
 
-        await customAuthenticationStateProvider.UpdateAuthenticationState(null);
-
-        NavManager.NavigateTo("/", true);
-        
-    }
-}

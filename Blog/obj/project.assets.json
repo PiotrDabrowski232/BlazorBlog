@@ -8947,6 +8947,7 @@
       "Blazorise.Icons.FontAwesome >= 1.2.4",
       "Blog.Data >= 1.0.0",
       "Blog.Logic >= 1.0.0",
+      "FluentValidation >= 11.5.1",
       "Microsoft.AspNetCore.Authentication.JwtBearer >= 6.0.21",
       "Microsoft.EntityFrameworkCore.SqlServer >= 7.0.9",
       "Microsoft.EntityFrameworkCore.Tools >= 7.0.9"
@@ -9015,6 +9016,10 @@
           "Blazorise.Icons.FontAwesome": {
             "target": "Package",
             "version": "[1.2.4, )"
+          },
+          "FluentValidation": {
+            "target": "Package",
+            "version": "[11.5.1, )"
           },
           "Microsoft.AspNetCore.Authentication.JwtBearer": {
             "target": "Package",
