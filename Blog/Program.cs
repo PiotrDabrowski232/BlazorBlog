@@ -14,6 +14,7 @@ using Blog.Logic.Dto.UserDtos;
 using Microsoft.AspNetCore.Components.Server.ProtectedBrowserStorage;
 using Microsoft.AspNetCore.Components.Authorization;
 using Blog.Logic.Authentication;
+using Radzen;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -40,7 +41,6 @@ builder.Services.AddScoped<IPostRepository, PostRepository>();
 
 
 // Dependency Injections Services
-builder.Services.AddScoped<WeatherForecastService>();
 builder.Services.AddScoped<IUserService, UserService>();
 builder.Services.AddScoped<IRoleService, RoleService>();
 builder.Services.AddScoped<IPostService, PostService>();
@@ -56,6 +56,9 @@ builder.Services.AddDbContext<BlogDbContext>(options => options.UseSqlServer(con
 
 //Automapper
 builder.Services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());
+
+//Radzen
+builder.Services.AddRadzenComponents();
 
 var app = builder.Build();
 

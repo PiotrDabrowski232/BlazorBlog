@@ -333,6 +333,10 @@
               "suppressParent": "All",
               "target": "Package",
               "version": "[7.0.9, )"
+            },
+            "Radzen.Blazor": {
+              "target": "Package",
+              "version": "[4.15.10, )"
             }
           },
           "imports": [

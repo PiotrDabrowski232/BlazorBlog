@@ -38,6 +38,7 @@
     {
         
     }
+
 }
 
 <h1>Your Account</h1>
@@ -63,14 +64,9 @@
 
 
 <h5>Features:</h5>
-<a @onclick="Logout" href="javascript:void(0)">LogOut</a>
-<br />
-<a @onclick="() => ChangePassword(userDto.Email)" href="javascript:void(0)">Change Password</a>
-<br />
-<a @onclick="() => ToggleDelete()" href="javascript:void(0)">Delete Account</a>
 
-@if (deleteWanted)
-{
-    <h1>deleted clicked Your account will be permamently deleted</h1>
-}
-
+<div class="btn-group" role="group" aria-label="Basic mixed styles example">
+    <a @onclick="Logout" href="javascript:void(0)"><button type="button" class="btn btn-info">LogOut</button></a>
+    <a @onclick="() => ChangePassword(userDto.Email)" href="javascript:void(0)"><button type="button" class="btn btn-secondary">Change Password</button></a>
+    <a @onclick="() => ToggleDelete()" href="javascript:void(0)"><button type="button" class="btn btn-danger">Delete Account</button></a>
+</div>

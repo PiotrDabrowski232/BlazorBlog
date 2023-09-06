@@ -2,6 +2,7 @@
 
 @using Blog.Logic.Authentication
 @inject NavigationManager NavManager
+@inject AuthenticationStateProvider authenticationStateProvider
 
 <PageTitle>Blog</PageTitle>
 
@@ -13,9 +14,16 @@
     <main>
         <div class="top-row px-4">
             <AuthorizeView>
+
                 <Authorized> 
-                    <a href="UserInformation">@context.User.Identity.Name</a>
+                     <RadzenMenu>
+                        <RadzenMenuItem Text="@context.User.Identity.Name" Icon="account_circle">
+                            <RadzenMenuItem Text="Log Out" Click="Logout" Icon="logout"></RadzenMenuItem>
+                            <RadzenMenuItem Text="Account" Icon="info" Path="/UserInformation"></RadzenMenuItem>
+                        </RadzenMenuItem>
+                    </RadzenMenu>
                 </Authorized>
+
                 <NotAuthorized>
                     <a href="AddUser">Register</a>
                     <a href="Login">Login</a>
@@ -28,6 +36,21 @@
         </article>
     </main>
 </div>
+
+@code{
+
+    [CascadingParameter]
+    private Task<AuthenticationState> authenticationState { get; set; }
+
+    private async Task Logout()
+    {
+        var customAuthenticationStateProvider = (CustomAuthenticationStateProvider)authenticationStateProvider;
+
+        await customAuthenticationStateProvider.UpdateAuthenticationState(null);
+
+        NavManager.NavigateTo("/", true);
+    }
+}
 
 
 

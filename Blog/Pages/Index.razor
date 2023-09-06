@@ -28,10 +28,14 @@
 
                 <div class="card-body">
                     <h5 class="card-title">@post.Title</h5>
-                    <p class="card-text">@post.Description.Substring(0,50) ...</p>
+                    <p class="card-text">
+                        <span class="d-inline-block text-truncate" style="max-width: 85%;">
+                            @post.Description
+                        </span>
+                    </p>
                     <p class="card-text"><small class="text-muted">Author: @post.CreatedBy</small></p>
                 </div>
-            
+
             </div>
         }
 

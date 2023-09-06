@@ -125,3 +125,5 @@ C:\Users\piecz\Desktop\Blog\Blog\bin\Debug\net6.0\FluentValidation.DependencyInj
 C:\Users\piecz\Desktop\Blog\Blog\obj\Debug\net6.0\Blog.MvcApplicationPartsAssemblyInfo.cs
 C:\Users\piecz\Desktop\Blog\Blog\bin\Debug\net6.0\Blazored.FluentValidation.dll
 C:\Users\piecz\Desktop\Blog\Blog\bin\Debug\net6.0\Microsoft.AspNetCore.Authentication.JwtBearer.dll
+C:\Users\piecz\Desktop\Blog\Blog\bin\Debug\net6.0\Radzen.Blazor.dll
+C:\Users\piecz\Desktop\Blog\Blog\bin\Debug\net6.0\System.Linq.Dynamic.Core.dll
