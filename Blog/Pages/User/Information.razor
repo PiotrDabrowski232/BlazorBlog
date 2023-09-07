@@ -3,13 +3,13 @@
 @inject Blog.Logic.Services.Interfaces.IUserService _userService
 @inject AuthenticationStateProvider authenticationStateProvider
 @inject NavigationManager navManager
-@using Blog.Logic.Authentication
-@using Blog.Logic.Dto.UserDtos
 @inject DialogService DialogService
+@inject NotificationService NotificationService
+
 
 @code{
     private UserDto userDto = new UserDto();
-    private bool deleteWanted = false;
+    string passwordFromDelete;
 
     [CascadingParameter]
     private Task<AuthenticationState> authenticationState { get; set; }
@@ -37,13 +37,18 @@
 
     private void DeleteAccount()
     {
-        var result = _userService.SoftDelete(passwordFromDelete, userDto);
-        DialogService.Close(true);
+        try{
+            var result = _userService.SoftDelete(passwordFromDelete, userDto);
+            DialogService.Close(true);
+        }
+        catch(Exception e)
+        {
+            NotificationService.Notify(new NotificationMessage { Severity = NotificationSeverity.Warning, Summary = $"{e.Message} try again with the correct password", Duration = 4000 });
+            DialogService.Close(true);
+        }
     }
 
 
-
-    string passwordFromDelete;
     async Task ShowInlineDialog()
     {
         var result = await DialogService.OpenAsync("Account Deletion", ds =>

@@ -28,7 +28,6 @@
         {
             NotificationService.Notify(new NotificationMessage { Severity = NotificationSeverity.Success, Summary = "Account Added Successfully", Duration = 3000 });
             ClearInputs();
-            await Task.Delay(3000);
             NavManager.NavigateTo("/");
         }
     }

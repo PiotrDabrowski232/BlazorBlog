@@ -74,7 +74,7 @@ namespace Blog.Logic.Services
             
             if (result == PasswordVerificationResult.Failed)
             {
-                throw new NotImplementedException();
+                throw new Exception("Incorrect password");
             }
             else
             {
