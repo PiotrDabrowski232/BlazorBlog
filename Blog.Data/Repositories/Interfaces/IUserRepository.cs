@@ -13,6 +13,6 @@ namespace Blog.Data.Repositories.Interfaces
 
         public User GetByContainedString(string containString);
 
-
+        public void SoftDelete(string userEmail);
     }
 }

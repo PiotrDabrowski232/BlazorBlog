@@ -46,6 +46,22 @@ namespace Blog.Logic.Services
             throw new NotImplementedException();
         }
 
+        public Task SoftDelete(string password, UserDto user)
+        {
+            var samePasswords = _passwordHasher.VerifyHashedPassword(null, user.Password, password);
+
+            if (samePasswords == PasswordVerificationResult.Failed)
+            {
+                throw new Exception("Invalid Password");
+            }
+            else
+            {
+                _userRepository.SoftDelete(user.Email);
+                return Task.CompletedTask;
+            }
+
+        }
+
         public User Edit(UserDto user)
         {
             throw new NotImplementedException();
@@ -89,7 +105,7 @@ namespace Blog.Logic.Services
         {
             var user = _mapper.Map<User>(_userRepository.GetByContainedString(LoginDto.Email));
 
-            if (user is null)
+            if (user is null || user.IsDeleted)
             {
                 throw new BadRequestException("invalid username or password");
             }

@@ -3,8 +3,9 @@
 @inject Blog.Logic.Services.Interfaces.IUserService _userService
 @inject AuthenticationStateProvider authenticationStateProvider
 @inject NavigationManager navManager
-@using Blog.Logic.Authentication;
+@using Blog.Logic.Authentication
 @using Blog.Logic.Dto.UserDtos
+@inject DialogService DialogService
 
 @code{
     private UserDto userDto = new UserDto();
@@ -34,11 +35,31 @@
         navManager.NavigateTo($"/ChangePassword/{email}");
     }
 
-    private void ToggleDelete()
+    private void DeleteAccount()
     {
-        
+        var result = _userService.SoftDelete(passwordFromDelete, userDto);
+        DialogService.Close(true);
     }
 
+
+
+    string passwordFromDelete;
+    async Task ShowInlineDialog()
+    {
+        var result = await DialogService.OpenAsync("Account Deletion", ds =>
+    @<RadzenStack Gap="1.5rem">
+        <p>If You want delete <b>@userDto.UserName</b> account pass correct password and submit</p>
+        <RadzenStack Orientation="Orientation.Vertical" Gap="0.5rem" AlignItems="AlignItems.Start" JustifyContent="JustifyContent.SpaceBetween">
+            <RadzenPassword @bind-Value=@passwordFromDelete Placeholder="Enter password..." AutoComplete="false" />
+
+            <RadzenStack Orientation="Orientation.Horizontal">
+                <RadzenButton Text="Submit" Click="() => DeleteAccount()" Style="width: 80px;" />
+                <RadzenButton Text="Cancel" Click="() => ds.Close(false)" ButtonStyle="ButtonStyle.Light" />
+            </RadzenStack>
+
+        </RadzenStack>
+    </RadzenStack>);
+    }
 }
 
 <h1>Your Account</h1>
@@ -68,5 +89,7 @@
 <div class="btn-group" role="group" aria-label="Basic mixed styles example">
     <a @onclick="Logout" href="javascript:void(0)"><button type="button" class="btn btn-info">LogOut</button></a>
     <a @onclick="() => ChangePassword(userDto.Email)" href="javascript:void(0)"><button type="button" class="btn btn-secondary">Change Password</button></a>
-    <a @onclick="() => ToggleDelete()" href="javascript:void(0)"><button type="button" class="btn btn-danger">Delete Account</button></a>
+    <a @onclick="() => ShowInlineDialog()" href="javascript:void(0)"><button type="button" class="btn btn-danger">Delete Account</button></a>
 </div>
+
+

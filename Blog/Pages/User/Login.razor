@@ -7,6 +7,7 @@
 @inject AuthenticationStateProvider authenticationStateProvider
 @inject Blog.Logic.Services.Interfaces.IUserService _userService
 @inject NavigationManager NavManager
+@inject NotificationService NotificationService
 
 @code {
     public LoginUserDto user = new LoginUserDto();
@@ -29,15 +30,13 @@
 
         }catch(Exception e)
         {
-            displayAfterSucces = "block";
+            NotificationService.Notify(new NotificationMessage { Severity = NotificationSeverity.Error, Summary = $"{e.Message}", Duration = 4000 });
         }
     }
+    
 }
 
 
-<div class="alert alert-danger" style="display:@displayAfterSucces;" role="alert">
-    Incorect Password or Email
-</div>
 
 <div style="margin-top:25vh;">
 

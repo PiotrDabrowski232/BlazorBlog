@@ -20,5 +20,12 @@ namespace Blog.Data.Repositories
         {
             return _context.Set<User>().FirstOrDefault(x => x.Email.Equals(containString) || x.UserName.Equals(containString));
         }
+        
+
+        public void SoftDelete(string userEmail)
+        {
+            _context.Set<User>().Update(GetByContainedString(userEmail)).Entity.IsDeleted = true;
+            _context.SaveChanges(); 
+        }
     }
 }

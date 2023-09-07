@@ -4,10 +4,10 @@
 @inject NavigationManager NavManager
 @using Blog.Logic.Dto.UserDtos
 @using Blog.Logic.Dto.Validators
+@inject NotificationService NotificationService
 
 @code{
     private UserDto user = new UserDto();
-    private string displayAfterSucces = "none";
 
     private void ClearInputs()
     {
@@ -26,24 +26,16 @@
         var result =_userService.Add(user);
         if (result.IsCompletedSuccessfully)
         {
+            NotificationService.Notify(new NotificationMessage { Severity = NotificationSeverity.Success, Summary = "Account Added Successfully", Duration = 3000 });
             ClearInputs();
-            displayAfterSucces = "block";
-            await Task.Delay(2000);
+            await Task.Delay(3000);
             NavManager.NavigateTo("/");
         }
-    }
-    public void nothing()
-    {
-        
     }
 }
 
 
 <h3>Register User Account</h3>
-
-<div class="alert alert-success" style="display:@displayAfterSucces;" role="alert">
-    Sucess!!!!
-</div>
 
 <EditForm Model="user" OnValidSubmit="@AddUserForm">
 
