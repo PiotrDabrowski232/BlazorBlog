@@ -13,11 +13,11 @@ namespace Blog.Data.ModelsConfigurations
     {
         public void Configure(EntityTypeBuilder<Posts> builder)
         {
-            builder.HasKey(x => x.Id);
+            builder.HasKey(p => p.Id);
 
-            builder.HasOne(x => x.User)
-                .WithMany(x => x.Posts)
-                .HasForeignKey(x => x.UserId);
+            builder.HasOne(p => p.User)
+                .WithMany(p => p.Posts)
+                .HasForeignKey(p => p.UserId);
         }
     }
 }

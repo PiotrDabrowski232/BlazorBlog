@@ -35,6 +35,7 @@ namespace Blog.Logic.Services
             User user = _mapper.Map<User>(userDto);
             user.Id = Guid.NewGuid();
             user.Password = _passwordHasher.HashPassword(user, user.Password);
+            user.CreationDate = DateTime.Now;
 
             return _userRepository.Add(user);
             

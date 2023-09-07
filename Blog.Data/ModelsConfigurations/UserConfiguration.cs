@@ -14,17 +14,19 @@ namespace Blog.Data.ModelsConfigurations
     {
         public void Configure(EntityTypeBuilder<User> builder)
         {
-            builder.HasKey(x => x.Id);
+            builder.HasKey(u => u.Id);
 
-            builder.HasOne(x => x.Role);
+            builder.HasOne(u => u.Role);
 
-            builder.Property(x => x.RoleId)
+            builder.Property(u => u.RoleId)
                 .HasDefaultValue(1.ToGuid());
 
-            builder.HasMany(x => x.Posts)
-                .WithOne(x => x.User)
-                .HasForeignKey(x => x.UserId);
+            builder.HasMany(u => u.Posts)
+                .WithOne(u => u.User)
+                .HasForeignKey(u => u.UserId);
 
+            builder.Property(u => u.IsDeleted)
+                .HasDefaultValue(false);
         }
     }
 }

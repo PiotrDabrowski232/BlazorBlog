@@ -11,9 +11,9 @@ namespace Blog.Data.ModelsConfigurations
     {
         public void Configure(EntityTypeBuilder<Roles> builder)
         {
-            builder.HasKey(x => x.RoleId);
+            builder.HasKey(r => r.RoleId);
 
-            builder.Property(x => x.Name)
+            builder.Property(r => r.Name)
                 .IsRequired();
 
             var roles = new Roles[]

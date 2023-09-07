@@ -11,14 +11,17 @@ namespace Blog.Data.Models
     public class User
     {
         public Guid Id { get; set; }
-        [Required] public string UserName { get; set; }
-        [Required] public string Name { get; set; }
-        [Required] public string Surname { get; set; }
-        [Required] public Gender Gender { get; set; }
-        [Required] public string Email { get; set; }
-        [Required] public string Password { get; set; }
+        public string UserName { get; set; }
+        public string Name { get; set; }
+        public string Surname { get; set; }
+        public Gender Gender { get; set; }
+        public string Email { get; set; }
+        public string Password { get; set; }
         public string Country { get; set; }
         public string City { get; set; }
+        public bool IsDeleted { get; set; }
+        public DateTime CreationDate { get; set; }
+
         public Guid RoleId { get; set; }
         public virtual Roles Role { get; set; }
 

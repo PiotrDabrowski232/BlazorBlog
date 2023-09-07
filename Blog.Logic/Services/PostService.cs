@@ -28,7 +28,7 @@ namespace Blog.Logic.Services
         {
             postDto.Id = Guid.NewGuid();
             var post = _mapper.Map<Posts>(postDto);
-
+            post.CreationDate = DateTime.Now;
             post.UserId = _userRepository.GetByContainedString(postDto.CreatedBy).Id;
 
             _postRepository.Add(post);
