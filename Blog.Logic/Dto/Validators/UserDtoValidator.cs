@@ -1,7 +1,6 @@
 ﻿using Blog.Data.Data;
 using Blog.Logic.Dto.UserDtos;
 using FluentValidation;
-using Microsoft.IdentityModel.Tokens;
 
 namespace Blog.Logic.Dto.Validators
 {
@@ -29,15 +28,11 @@ namespace Blog.Logic.Dto.Validators
                 .WithMessage("Fill Surname Input");
 
             RuleFor(x => x.Password)
-            .NotEmpty()
-            .WithMessage("Fill Password Input")
-            .Unless(value =>
-                !string.IsNullOrEmpty(value.Password) &&
-                value.Password.Any(char.IsUpper) &&
-                value.Password.Any(char.IsLower) &&
-                value.Password.Any(c => !char.IsLetterOrDigit(c)) &&
-                value.Password.Length>=8)
-            .WithMessage("Password must contain at least one uppercase letter, one lowercase letter, and one special character, and 8 characters");
+                .NotEmpty().WithMessage("Fill Password Input")
+                .MinimumLength(8).WithMessage("Password should be longer than 8 characters")
+                .Matches("[A-Z]").WithMessage("Password should contain at least one uppercase letter")
+                .Matches("[a-z]").WithMessage("Password should contain at least one lowercase letter")
+                .Matches("[!@#$%^&*()_+{}|:;<>,.?~]").WithMessage("Password should contain at least one special character");
 
             RuleFor(x => x.ConfirmedPassword)
                 .Equal(e => e.Password)
