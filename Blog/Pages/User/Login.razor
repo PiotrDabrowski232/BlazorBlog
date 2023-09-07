@@ -11,7 +11,6 @@
 
 @code {
     public LoginUserDto user = new LoginUserDto();
-    private string displayAfterSucces = "none";
 
     private async Task Authenticate()
     {
@@ -33,28 +32,33 @@
             NotificationService.Notify(new NotificationMessage { Severity = NotificationSeverity.Error, Summary = $"{e.Message}", Duration = 4000 });
         }
     }
-    
+
 }
 
 
 
-<div style="margin-top:25vh;">
+<div style="margin-top:25vh; margin-left:32.5vw;">
 
-    <EditForm Model="user">
-            
-            <div class="form-floating mb-3 mt-5 col-sm-3 mx-auto">
-                <input type="email" class="form-control" id="email" placeholder="" name="email" @bind="user.Email">
-                <label for="email">Email</label>
-            </div>
+    <EditForm Model="user" OnValidSubmit="Authenticate">
 
-            <div class="form-floating mt-2 mb-5 col-sm-3 mx-auto">
-                <input type="password" class="form-control" id="password" placeholder="" name="password" @bind="user.Password">
-                <label for="pwd">Password</label>
-            </div>
+        <FluentValidationValidator />
 
+        <div class="form-group col-md-4 d-inline-block mb-2 ">
+            <label for="Email">Email</label>
+            <InputText type="email" class="form-control" placeholder="Email" @bind-Value="@user.Email" />
+            <ValidationMessage For="(()=> user.Email)" />
+        </div>
 
-        <button type="button" @onclick="Authenticate" class="btn btn-outline-primary" style="margin-left: 50vw; margin-bottom:4vh; margin-top:4vh;">Primary</button>
-            
+        <div class="form-group col-md-4 mb-2" style="margin-top:2vh;">
+            <label for="Password">Password</label>
+            <InputText type="Password" class="form-control" placeholder="Password" @bind-Value="@user.Password" />
+            <ValidationMessage For="(()=> user.Password)" />
+        </div>
+
+        <button type="submit" style="margin-left:15vw;" class="btn btn-outline-primary">Log In</button>
+
     </EditForm>
 
 </div>
+
+
