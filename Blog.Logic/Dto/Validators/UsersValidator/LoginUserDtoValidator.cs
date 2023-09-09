@@ -6,7 +6,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Blog.Logic.Dto.Validators
+namespace Blog.Logic.Dto.Validators.UserValidator
 {
     public class LoginUserDtoValidator : AbstractValidator<LoginUserDto>
     {

@@ -35,15 +35,18 @@
         navManager.NavigateTo($"/ChangePassword/{email}");
     }
 
-    private void DeleteAccount()
+    private async void DeleteAccount()
     {
         try{
             var result = _userService.SoftDelete(passwordFromDelete, userDto);
             DialogService.Close(true);
+            NotificationService.Notify(new NotificationMessage { Severity = NotificationSeverity.Warning, Summary = $"Your Account was deleted sucessfully", Detail = "Dear User, your account is in deletion mode, if you wish to recover it, please contact the administrator.", Duration = 4000 });
+            await Task.Delay(4000);
+            Logout();
         }
         catch(Exception e)
         {
-            NotificationService.Notify(new NotificationMessage { Severity = NotificationSeverity.Warning, Summary = $"{e.Message} try again with the correct password", Duration = 4000 });
+            NotificationService.Notify(new NotificationMessage { Severity = NotificationSeverity.Error, Summary = $"{e.Message} try again with the correct password", Duration = 4000 });
             DialogService.Close(true);
         }
     }

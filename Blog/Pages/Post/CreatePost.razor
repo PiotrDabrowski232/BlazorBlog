@@ -1,39 +1,58 @@
 ﻿@page "/CreatePost"
 
-@using Blog.Logic.Dto.PostDtos;
+
 @inject Blog.Logic.Services.Interfaces.IPostService _postService
+@inject Microsoft.AspNetCore.Components.NavigationManager NavManager
+@inject NotificationService NotificationService
 
 
 @code {
 
     PostDto post = new PostDto();
-    
+
     [CascadingParameter]
     private Task<AuthenticationState> authenticationState { get; set; }
 
-    private void SendPost()
+    private async void SendPost()
     {
-        post.CreatedBy = authenticationState.Result.User.Identity.Name;
+        try
+        {
 
-        _postService.Add(post);
+            post.CreatedBy = authenticationState.Result.User.Identity.Name;
+            _postService.Add(post);
+            NotificationService.Notify(new NotificationMessage { Severity = NotificationSeverity.Success, Summary = "Post Added Succesfully", Duration = 2500 });
+            await Task.Delay(2500);
+            NavManager.NavigateTo("/", true);
+        }
+        catch(Exception e)
+        {
+            NotificationService.Notify(new NotificationMessage { Severity = NotificationSeverity.Error, Summary = "Some Problems Occur", Duration = 3000 });
+        }
+
     }
 }
 
 
 <h4>Add Post for others</h4>
 
-<EditForm Model="post">
+<EditForm Model="post" style="width:100%; height:80vh;" OnValidSubmit="SendPost">
 
-    <div class="mb-3">
-        <label for="Title" class="form-label">Title</label>
-        <input type="text" class="form-control" placeholder="Title" @bind="@post.Title">
+    <FluentValidationValidator />
+    
+
+    <div class="form-group col-md-4 mb-2 w-100">
+        <label for="Title">Title</label>
+        <InputText type="Text" class="form-control" placeholder="Title" @bind-Value="@post.Title" />
     </div>
-    <div class="mb-3">
-        <label class="form-label">Tell others what you think</label>
-        <textarea class="form-control"  rows="25" @bind="post.Description"></textarea>
+
+    <div class="form-group col-md-4 mb-2 w-100 h-75">
+        <label for="Password">Password</label>
+        <InputTextArea type="Text" class="form-control" style="height:80%" placeholder="Description" @bind-Value="@post.Description" />
     </div>
 
-    <button type="button" class="btn btn-primary btn-lg" @onclick="SendPost">Publish</button>
+    <button type="submit" class="btn btn-primary btn-lg">Publish</button>
 
-
+    <div style="margin-top:2vh;">
+        <ValidationSummary />
+    </div>
 </EditForm>

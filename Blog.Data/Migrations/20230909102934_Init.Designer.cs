@@ -12,7 +12,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Blog.Data.Migrations
 {
     [DbContext(typeof(BlogDbContext))]
-    [Migration("20230907091141_Init")]
+    [Migration("20230909102934_Init")]
     partial class Init
     {
         /// <inheritdoc />
@@ -98,7 +98,7 @@ namespace Blog.Data.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<DateTime>("CreationDate")
+                    b.Property<DateTime?>("DeleteDay")
                         .HasColumnType("datetime2");
 
                     b.Property<string>("Email")

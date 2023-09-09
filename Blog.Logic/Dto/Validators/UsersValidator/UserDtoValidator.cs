@@ -2,7 +2,7 @@
 using Blog.Logic.Dto.UserDtos;
 using FluentValidation;
 
-namespace Blog.Logic.Dto.Validators
+namespace Blog.Logic.Dto.Validators.UserValidator
 {
     public class UserDtoValidator : AbstractValidator<UserDto>
     {

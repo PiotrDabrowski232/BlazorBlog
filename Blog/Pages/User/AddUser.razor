@@ -24,9 +24,10 @@
         var result =_userService.Add(user);
         if (result.IsCompletedSuccessfully)
         {
-            NotificationService.Notify(new NotificationMessage { Severity = NotificationSeverity.Success, Summary = "Account Added Successfully", Duration = 3000 });
+            NotificationService.Notify(new NotificationMessage { Severity = NotificationSeverity.Success, Summary = "Account Added Successfully", Duration = 2500 });
+            await Task.Delay(2500);
             ClearInputs();
-            NavManager.NavigateTo("/");
+            NavManager.NavigateTo("/", true);
         }
     }
 }

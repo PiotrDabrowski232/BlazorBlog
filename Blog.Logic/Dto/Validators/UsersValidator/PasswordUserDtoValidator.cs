@@ -6,7 +6,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Blog.Logic.Dto.Validators
+namespace Blog.Logic.Dto.Validators.UserValidator
 {
     public class PasswordUserDtoValidator : AbstractValidator<PasswordUserDto>
     {
@@ -18,7 +18,7 @@ namespace Blog.Logic.Dto.Validators
                 .Matches("[A-Z]").WithMessage("Password should contain at least one uppercase letter")
                 .Matches("[a-z]").WithMessage("Password should contain at least one lowercase letter")
                 .Matches("[!@#$%^&*()_+{}|:;<>,.?~]").WithMessage("Password should contain at least one special character")
-                .NotEqual(x => x.OldPassword).WithMessage("New Password should be different than old password"); 
+                .NotEqual(x => x.OldPassword).WithMessage("New Password should be different than old password");
 
             RuleFor(x => x.ConfirmedNewPassword)
                 .Equal(e => e.NewPassword).WithMessage("Both passwords should be the same");

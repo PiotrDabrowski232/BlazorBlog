@@ -95,7 +95,7 @@ namespace Blog.Data.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<DateTime>("CreationDate")
+                    b.Property<DateTime?>("DeleteDay")
                         .HasColumnType("datetime2");
 
                     b.Property<string>("Email")

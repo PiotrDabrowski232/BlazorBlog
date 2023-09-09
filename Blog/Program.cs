@@ -7,7 +7,6 @@ using Blog.Data.Repositories.Interfaces;
 using Blog.Data.Repositories;
 using Blog.Data.Models;
 using Microsoft.AspNetCore.Identity;
-using Blog.Logic.Dto.Validators;
 using FluentValidation;
 using FluentValidation.AspNetCore;
 using Blog.Logic.Dto.UserDtos;
@@ -15,6 +14,7 @@ using Microsoft.AspNetCore.Components.Server.ProtectedBrowserStorage;
 using Microsoft.AspNetCore.Components.Authorization;
 using Blog.Logic.Authentication;
 using Radzen;
+using Blog.Logic.Dto.Validators.UserValidator;
 
 var builder = WebApplication.CreateBuilder(args);
 

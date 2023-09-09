@@ -12,7 +12,5 @@ namespace Blog.Data.Repositories.Interfaces
         public User GetById(Guid id);
 
         public User GetByContainedString(string containString);
-
-        public void SoftDelete(string userEmail);
     }
 }

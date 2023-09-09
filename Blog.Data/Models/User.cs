@@ -20,7 +20,7 @@ namespace Blog.Data.Models
         public string Country { get; set; }
         public string City { get; set; }
         public bool IsDeleted { get; set; }
-        public DateTime CreationDate { get; set; }
+        public DateTime? DeleteDay { get; set; }
 
         public Guid RoleId { get; set; }
         public virtual Roles Role { get; set; }

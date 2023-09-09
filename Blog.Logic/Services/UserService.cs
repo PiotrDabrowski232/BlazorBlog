@@ -35,7 +35,6 @@ namespace Blog.Logic.Services
             User user = _mapper.Map<User>(userDto);
             user.Id = Guid.NewGuid();
             user.Password = _passwordHasher.HashPassword(user, user.Password);
-            user.CreationDate = DateTime.Now;
 
             return _userRepository.Add(user);
             
@@ -46,9 +45,9 @@ namespace Blog.Logic.Services
             throw new NotImplementedException();
         }
 
-        public Task SoftDelete(string password, UserDto user)
+        public Task SoftDelete(string password, UserDto userDto)
         {
-            var samePasswords = _passwordHasher.VerifyHashedPassword(null, user.Password, password);
+            var samePasswords = _passwordHasher.VerifyHashedPassword(null, userDto.Password, password);
 
             if (samePasswords == PasswordVerificationResult.Failed)
             {
@@ -56,7 +55,10 @@ namespace Blog.Logic.Services
             }
             else
             {
-                _userRepository.SoftDelete(user.Email);
+                var user = _mapper.Map<User>(userDto);
+                user.DeleteDay = DateTime.Now;
+                user.IsDeleted= true;
+                _userRepository.Update(user);
                 return Task.CompletedTask;
             }
 

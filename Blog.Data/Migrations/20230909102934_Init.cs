@@ -39,7 +39,7 @@ namespace Blog.Data.Migrations
                     Country = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     City = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     IsDeleted = table.Column<bool>(type: "bit", nullable: false, defaultValue: false),
-                    CreationDate = table.Column<DateTime>(type: "datetime2", nullable: false),
+                    DeleteDay = table.Column<DateTime>(type: "datetime2", nullable: true),
                     RoleId = table.Column<Guid>(type: "uniqueidentifier", nullable: false, defaultValue: new Guid("00000001-0000-0000-0000-000000000000"))
                 },
                 constraints: table =>

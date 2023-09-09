@@ -20,7 +20,7 @@
                     <div style="margin-right:4vw;">
                          <RadzenMenu>
                             <RadzenMenuItem Icon="account_circle">
-                                <RadzenMenuItem Text="Account" Icon="info" Path="/UserInformation"></RadzenMenuItem>
+                                <RadzenMenuItem Text="Account" Icon="info" Click="MoveToInfo"></RadzenMenuItem>
                                 <RadzenMenuItem Text="LogOut" Icon="logout" Click="Logout"></RadzenMenuItem>
                             </RadzenMenuItem>
                         </RadzenMenu>
@@ -54,6 +54,11 @@
         await customAuthenticationStateProvider.UpdateAuthenticationState(null);
 
         NavManager.NavigateTo("/", true);
+    }
+
+    private void MoveToInfo()
+    {
+        NavManager.NavigateTo("/UserInformation", true);
     }
 }
 
