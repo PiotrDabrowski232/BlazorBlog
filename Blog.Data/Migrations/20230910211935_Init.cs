@@ -84,6 +84,11 @@ namespace Blog.Data.Migrations
                     { new Guid("00000003-0000-0000-0000-000000000000"), "SuperUser" }
                 });
 
+            migrationBuilder.InsertData(
+                table: "users",
+                columns: new[] { "Id", "City", "Country", "DeleteDay", "Email", "Gender", "Name", "Password", "RoleId", "Surname", "UserName" },
+                values: new object[] { new Guid("00000001-0000-0000-0000-000000000000"), "City", "Country", null, "admin@o2.pl", 0, "Admin", "AQAAAAEAACcQAAAAEBDU71c8+fcaiTIOHxOllMb1YQRsFBUzkhV0/zTMHmv9rc4V6hOUA1CVZJobQ1J6Vg==", new Guid("00000002-0000-0000-0000-000000000000"), "Admin", "Admin" });
+
             migrationBuilder.CreateIndex(
                 name: "IX_post_UserId",
                 table: "post",

@@ -136,6 +136,22 @@ namespace Blog.Data.Migrations
                     b.HasIndex("RoleId");
 
                     b.ToTable("users");
+
+                    b.HasData(
+                        new
+                        {
+                            Id = new Guid("00000001-0000-0000-0000-000000000000"),
+                            City = "City",
+                            Country = "Country",
+                            Email = "admin@o2.pl",
+                            Gender = 0,
+                            IsDeleted = false,
+                            Name = "Admin",
+                            Password = "AQAAAAEAACcQAAAAEBDU71c8+fcaiTIOHxOllMb1YQRsFBUzkhV0/zTMHmv9rc4V6hOUA1CVZJobQ1J6Vg==",
+                            RoleId = new Guid("00000002-0000-0000-0000-000000000000"),
+                            Surname = "Admin",
+                            UserName = "Admin"
+                        });
                 });
 
             modelBuilder.Entity("Blog.Data.Models.Posts", b =>

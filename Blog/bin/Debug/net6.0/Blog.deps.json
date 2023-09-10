@@ -1709,8 +1709,10 @@
       "Blog.Data/1.0.0": {
         "dependencies": {
           "Blog.Shared": "1.0.0",
+          "Microsoft.AspNet.Identity.Core": "2.2.4",
           "Microsoft.EntityFrameworkCore": "7.0.9",
-          "Microsoft.EntityFrameworkCore.SqlServer": "7.0.9"
+          "Microsoft.EntityFrameworkCore.SqlServer": "7.0.9",
+          "Microsoft.Extensions.Identity.Core": "2.2.0"
         },
         "runtime": {
           "Blog.Data.dll": {}
