@@ -1,6 +1,5 @@
 ﻿@page "/"
 
-@using Blog.Logic.Dto.PostDtos;
 @inject Blog.Logic.Services.Interfaces.IPostService _postService
 
 
@@ -11,6 +10,28 @@
     protected override async Task OnInitializedAsync()
     {
         posts = _postService.GetAll();
+    }
+
+    public string TimeConverter(DateTime date)
+    {
+        var result = DateTime.Now - date;
+
+        if (result.TotalMinutes < 1)
+        {
+            return "The Newest";
+        }
+        else if (result.TotalDays >= 1)
+        {
+            return $"{(int)result.TotalDays} days ago";
+        }
+        else if (result.TotalHours >= 1)
+        {
+            return $"{(int)result.TotalHours}h ago";
+        }
+        else
+        {
+            return $"{(int)result.TotalMinutes}min ago";
+        }
     }
 }
 
@@ -34,6 +55,7 @@
                         </span>
                     </p>
                     <p class="card-text"><small class="text-muted">Author: @post.CreatedBy</small></p>
+                    <p class="card-text"><small class="text-body-secondary">Last Updated: @TimeConverter((DateTime)@post.CreationDate)</small></p>
                 </div>
 
             </div>
