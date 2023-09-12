@@ -16,9 +16,9 @@ namespace Blog.Data.Repositories
             return _context.Set<User>().FirstOrDefault(x => x.Id.Equals(id));
         }
 
-        public User GetByContainedString(string containString)
+        public User GetByEmail(string Email)
         {
-            return _context.Set<User>().FirstOrDefault(x => x.Email.Equals(containString) || x.UserName.Equals(containString));
+            return _context.Set<User>().First(x => Email == x.Email);
         }
         
     }

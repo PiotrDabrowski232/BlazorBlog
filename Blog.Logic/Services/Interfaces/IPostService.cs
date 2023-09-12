@@ -12,10 +12,9 @@ namespace Blog.Logic.Services.Interfaces
     {
         public IEnumerable<PostDto> GetAll();
         public void Add(PostDto post);
-        public void Edit(EditPostDto post);
+        public void UpdatePost(PostDto post);
         public void Delete(Guid id);
         public Task<IEnumerable<PostDto>> GetAllEditableAndDeletableByUser(string userEmail);
-
-        public EditPostDto GetByPostId(string Id);
+        public T GetByPostId<T>(string Id) where T : class;
     }
 }

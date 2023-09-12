@@ -1,9 +1,9 @@
 ﻿@page "/EditPost/{postId}"
 
 
-@using Blog.Logic.Dto.PostDtos;
 @inject Blog.Logic.Services.Interfaces.IPostService _postService
 @inject Microsoft.AspNetCore.Components.NavigationManager NavigationManager
+@inject NotificationService NotificationService
 
 
 
@@ -14,47 +14,49 @@
     [Parameter]
     public string postId { get; set; }
 
-    EditPostDto post = new EditPostDto();
-
-    bool isUpdateSuccessful = false;
+    PostDto post = new PostDto();
 
     protected override async Task OnInitializedAsync()
     {
-        post = _postService.GetByPostId(postId);
+        post = _postService.GetByPostId<PostDto>(postId);
     }
 
     protected async Task Edit()
     {
-         _postService.Edit(post);
-        isUpdateSuccessful = true;
-        StateHasChanged();
-
-        await Task.Delay(2000);
-        NavigationManager.NavigateTo("/MyPost");
+        try
+        {
+            _postService.UpdatePost(post);
+            StateHasChanged();
+            NotificationService.Notify(new NotificationMessage { Severity = NotificationSeverity.Success, Summary = "Post Updated Succesfully", Duration = 2500 });
+            await Task.Delay(2000);
+            NavigationManager.NavigateTo("/MyPost");
+        }
+        catch(Exception e)
+        {
+            NotificationService.Notify(new NotificationMessage { Severity = NotificationSeverity.Error, Summary = "Some Problems Occur", Duration = 3000 });
+        }
     }
 }
 
 
-<EditForm Model="post">
+<EditForm Model="post" style="width:100%; height:80vh;" OnValidSubmit="Edit">
+
+    <FluentValidationValidator />
 
 
-    <label>
-        Title:<br />
-        <input type="text" @bind-value="@post.Title" /><br /><br />
-    </label><br />
+    <div class="form-group col-md-4 mb-2 w-100">
+        <label for="Title">Title</label>
+        <InputText type="Text" class="form-control" placeholder="Title" @bind-Value="@post.Title" />
+    </div>
 
-    <label>
-        Description:<br />
-        <input type="text"  @bind-value="@post.Description" /><br /><br />
-    </label><br />
+    <div class="form-group col-md-4 mb-2 w-100 h-75">
+        <label for="Password">Password</label>
+        <InputTextArea type="Text" class="form-control" style="height:80%" placeholder="Description" @bind-Value="@post.Description" />
+    </div>
 
+    <button type="submit" class="btn btn-primary btn-lg">Publish</button>
 
-
-    <input type="submit" value="Submit" @onclick="Edit" />
-
+    <div style="margin-top:2vh;">
+        <ValidationSummary />
+    </div>
 </EditForm>
-
-    @if (isUpdateSuccessful)
-{
-    <h2>The entity has been successfully amended</h2>
-}

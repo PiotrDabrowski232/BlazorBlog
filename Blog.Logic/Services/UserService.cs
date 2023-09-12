@@ -99,13 +99,13 @@ namespace Blog.Logic.Services
 
         public T GetUserByContainedString<T>(string email) where T : class
         {
-            return _mapper.Map<T>(_userRepository.GetByContainedString(email));
+            return _mapper.Map<T>(_userRepository.GetByEmail(email));
         }
 
 
         public LoginUserDto VerifyUser(LoginUserDto LoginDto)
         {
-            var user = _mapper.Map<User>(_userRepository.GetByContainedString(LoginDto.Email));
+            var user = _userRepository.GetAll().FirstOrDefault(x => x.Email == LoginDto.Email);
 
             if (user is null || user.IsDeleted)
             {

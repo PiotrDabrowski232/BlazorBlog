@@ -29,7 +29,7 @@ namespace Blog.Logic.Services
             postDto.Id = Guid.NewGuid();
             var post = _mapper.Map<Posts>(postDto);
             post.CreationDate = DateTime.Now;
-            post.UserId = _userRepository.GetByContainedString(postDto.CreatedBy).Id;
+            post.UserId = _userRepository.GetByEmail(postDto.CreatedBy).Id;
 
             _postRepository.Add(post);
 
@@ -37,13 +37,14 @@ namespace Blog.Logic.Services
 
         public void Delete(Guid id)
         {
-            _postRepository.Remove(_mapper.Map<Posts>(GetByPostId(id.ToString())));
+            _postRepository.Remove(_mapper.Map<Posts>(GetByPostId<PostDto>(id.ToString())));
         }
 
-        public void Edit(EditPostDto postDto)
+        public void UpdatePost(PostDto postDto)
         {
             var post = _mapper.Map<Posts>(postDto);
             post.UserId = _postRepository.Get(post.Id).UserId;
+            post.CreationDate = DateTime.Now;
             _postRepository.Update(post);
         }
 
@@ -70,9 +71,9 @@ namespace Blog.Logic.Services
             return Task.FromResult(result);
         }
 
-        public EditPostDto GetByPostId(string Id)
+        public T GetByPostId<T>(string Id) where T : class
         {
-            var post = _mapper.Map<EditPostDto>(_postRepository.GetAll().FirstOrDefault(p => Id.Equals(p.Id.ToString())));
+            var post = _mapper.Map<T>(_postRepository.GetAll().FirstOrDefault(p => Id.Equals(p.Id.ToString())));
 
             return post;
         }

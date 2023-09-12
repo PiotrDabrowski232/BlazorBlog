@@ -11,6 +11,6 @@ namespace Blog.Data.Repositories.Interfaces
     {
         public User GetById(Guid id);
 
-        public User GetByContainedString(string containString);
+        public User GetByEmail(string Email);
     }
 }

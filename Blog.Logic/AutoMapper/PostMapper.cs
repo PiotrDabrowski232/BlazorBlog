@@ -10,9 +10,6 @@ namespace Blog.Logic.AutoMapper
         {
             CreateMap<Posts, PostDto>();
             CreateMap<PostDto, Posts>();
-
-            CreateMap<Posts, EditPostDto>();
-            CreateMap<EditPostDto, Posts>();
         }
     }
 }

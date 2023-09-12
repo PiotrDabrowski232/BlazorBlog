@@ -1,11 +1,9 @@
 ﻿@page "/MyPost"
-@using Blog.Logic.Dto.PostDtos;
-
-
-<h3>Posts created by our users</h3>
 
 @inject Blog.Logic.Services.Interfaces.IPostService _postService
 @inject NavigationManager navManager
+@inject NotificationService NotificationService
+
 
 @code {
 
@@ -37,6 +35,7 @@
     private void DeletePost(Guid id)
     {
         _postService.Delete(id);
+        NotificationService.Notify(new NotificationMessage { Severity = NotificationSeverity.Warning, Summary = $"{id} deleted sucessfully!", Duration = 2500 });
     }
 }
 
