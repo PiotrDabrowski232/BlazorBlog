@@ -46,6 +46,7 @@
             <th>Id</th>
             <th>Title</th>
             <th>Body Of Post</th>
+            <th>Date of last update</th>
             <th>Actions</th>
         </tr>
     </thead>
@@ -56,6 +57,7 @@
                 <td>@post.Id</td>
                 <td>@post.Title</td>
                 <td>@post.Description</td>
+                <td>@post.CreationDate</td>
                 <td><button @onclick="() => PassToEdit(post.Id.ToString())">Edit</button> <button @onclick="() => DeletePost(post.Id)">Delete</button></td>
             </tr>
         }

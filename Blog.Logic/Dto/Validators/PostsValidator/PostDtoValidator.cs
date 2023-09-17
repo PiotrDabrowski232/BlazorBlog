@@ -15,7 +15,7 @@ namespace Blog.Logic.Dto.Validators.PostsValidator
             RuleFor(p => p.Description)
                 .NotEmpty().WithMessage("You can't add Post without description")
                 .MinimumLength(50).WithMessage("Description should be longer than 50 characters")
-                .MaximumLength(250).WithMessage("Description should be no longer than 250 characters");
+                .MaximumLength(2500).WithMessage("Description should be no longer than 2500 characters");
         }
     }
 }

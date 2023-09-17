@@ -1,0 +1,25 @@
+﻿@page "/UsersAccounts"
+
+@attribute [Authorize(Roles = "Admin")]
+
+@inject NavigationManager navManager
+@inject NotificationService NotificationService
+@inject IUserService _userService
+
+
+@code {
+    IEnumerable<UserDto> users;
+
+    [CascadingParameter]
+    private Task<AuthenticationState> authenticationState { get; set; }
+
+    protected override async Task OnInitializedAsync()
+    {
+        var users = _userService.GetAll();
+    }
+}
+
+
+@foreach(var u in users){
+
+}

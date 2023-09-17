@@ -1,7 +1,7 @@
 ﻿@page "/"
 
 @inject Blog.Logic.Services.Interfaces.IPostService _postService
-
+@inject Microsoft.AspNetCore.Components.NavigationManager NavigationManager
 
 
 @code {
@@ -10,6 +10,11 @@
     protected override async Task OnInitializedAsync()
     {
         posts = _postService.GetAll();
+    }
+
+    private void CheckPost(string postId)
+    {
+        NavigationManager.NavigateTo($"/{postId}");
     }
 
     public string TimeConverter(DateTime date)
@@ -44,21 +49,24 @@
 
         @foreach (var post in posts)
         {
+                <div class="card d-inline-block w-25" style="margin-left: 5.9vw; margin-top:3.2vh; height:auto;">
 
-            <div class="card d-inline-block w-25" style="margin-left: 5.9vw; margin-top:3.2vh; height:auto;">
+                    <div class="card-body">
+                        <h5 class="card-title">@post.Title</h5>
+                        <p class="card-text">
+                            <span class="d-inline-block text-truncate" style="max-width: 85%;">
+                                @post.Description
+                            </span>
+                        </p>
+                        <p class="card-text"><small class="text-muted">Author: @post.CreatedBy</small></p>
+                        <p class="card-text"><small class="text-body-secondary">Last Updated: @TimeConverter((DateTime)@post.CreationDate)</small></p>
+                    </div>
+                    
+                    <RadzenStack Orientation="Orientation.Horizontal" JustifyContent="JustifyContent.End" >
+                    <a @onclick="() => CheckPost(post.Id.ToString())"><RadzenButton Variant="Variant.Flat" Text="Check Post" /></a>
+                    </RadzenStack>
 
-                <div class="card-body">
-                    <h5 class="card-title">@post.Title</h5>
-                    <p class="card-text">
-                        <span class="d-inline-block text-truncate" style="max-width: 85%;">
-                            @post.Description
-                        </span>
-                    </p>
-                    <p class="card-text"><small class="text-muted">Author: @post.CreatedBy</small></p>
-                    <p class="card-text"><small class="text-body-secondary">Last Updated: @TimeConverter((DateTime)@post.CreationDate)</small></p>
                 </div>
-
-            </div>
         }
 
     </div>

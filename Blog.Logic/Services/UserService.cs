@@ -89,7 +89,7 @@ namespace Blog.Logic.Services
         }
         public IEnumerable<UserDto> GetAll()
         {
-            throw new NotImplementedException();
+            return _mapper.Map<IEnumerable<UserDto>>(_userRepository.GetAll());
         }
 
         public T GetUserById<T>(Guid id) where T : class

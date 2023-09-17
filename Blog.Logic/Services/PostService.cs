@@ -73,8 +73,8 @@ namespace Blog.Logic.Services
 
         public T GetByPostId<T>(string Id) where T : class
         {
-            var post = _mapper.Map<T>(_postRepository.GetAll().FirstOrDefault(p => Id.Equals(p.Id.ToString())));
-
+            var post = _mapper.Map<T>(GetAll().FirstOrDefault(p => Id.Equals(p.Id.ToString())));
+            
             return post;
         }
     }
