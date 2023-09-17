@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "fQ0ZFp26j1lc+vZNHqMZ6czR03PEhVKCLqsOzBylBntt476qJ16q6HcWeamtDCfMOXtfBYmSBM9aQ2buvRmDNg==",
+  "dgSpecHash": "5jNR/JZVCusao+6WVArV6t3ZhhIgx9JiPgKpmOrMSjUcno6DCVmJ4QKTlVyrFTQKKUZfv+weM2GXqFxF9gnUNQ==",
   "success": true,
   "projectFilePath": "C:\\Users\\piecz\\Desktop\\Blog\\Blog\\Blog.csproj",
   "expectedPackageFiles": [
@@ -11,6 +11,7 @@
     "C:\\Users\\piecz\\.nuget\\packages\\blazored.fluentvalidation\\2.1.0\\blazored.fluentvalidation.2.1.0.nupkg.sha512",
     "C:\\Users\\piecz\\.nuget\\packages\\blazorise\\1.2.4\\blazorise.1.2.4.nupkg.sha512",
     "C:\\Users\\piecz\\.nuget\\packages\\blazorise.bootstrap\\1.2.4\\blazorise.bootstrap.1.2.4.nupkg.sha512",
+    "C:\\Users\\piecz\\.nuget\\packages\\blazorise.generator.features\\1.3.1\\blazorise.generator.features.1.3.1.nupkg.sha512",
     "C:\\Users\\piecz\\.nuget\\packages\\blazorise.icons.fontawesome\\1.2.4\\blazorise.icons.fontawesome.1.2.4.nupkg.sha512",
     "C:\\Users\\piecz\\.nuget\\packages\\blazorise.licensing\\1.1.0\\blazorise.licensing.1.1.0.nupkg.sha512",
     "C:\\Users\\piecz\\.nuget\\packages\\fluentvalidation\\11.5.1\\fluentvalidation.11.5.1.nupkg.sha512",

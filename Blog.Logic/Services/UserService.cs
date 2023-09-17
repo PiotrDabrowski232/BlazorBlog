@@ -1,16 +1,11 @@
 ﻿using AutoMapper;
 using Blog.Data.Models;
 using Blog.Data.Repositories.Interfaces;
-using Blog.Logic.Authentication;
 using Blog.Logic.Dto;
 using Blog.Logic.Dto.UserDtos;
 using Blog.Logic.Exceptions;
 using Blog.Logic.Services.Interfaces;
 using Microsoft.AspNetCore.Identity;
-using Microsoft.IdentityModel.Tokens;
-using System.IdentityModel.Tokens.Jwt;
-using System.Security.Claims;
-using System.Text;
 
 namespace Blog.Logic.Services
 {
@@ -87,9 +82,9 @@ namespace Blog.Logic.Services
             return Task.FromResult(result);
 
         }
-        public IEnumerable<UserDto> GetAll()
+        public IEnumerable<T> GetAll<T>() where T : class
         {
-            return _mapper.Map<IEnumerable<UserDto>>(_userRepository.GetAll());
+            return _mapper.Map<IEnumerable<T>>(_userRepository.GetAll());
         }
 
         public T GetUserById<T>(Guid id) where T : class

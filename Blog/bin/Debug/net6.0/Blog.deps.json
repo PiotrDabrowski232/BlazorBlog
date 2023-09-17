@@ -10,6 +10,7 @@
         "dependencies": {
           "Blazored.FluentValidation": "2.1.0",
           "Blazorise.Bootstrap": "1.2.4",
+          "Blazorise.Generator.Features": "1.3.1",
           "Blazorise.Icons.FontAwesome": "1.2.4",
           "Blog.Data": "1.0.0",
           "Blog.Logic": "1.0.0",
@@ -117,6 +118,14 @@
           "lib/net6.0/Blazorise.Bootstrap.dll": {
             "assemblyVersion": "1.2.4.0",
             "fileVersion": "1.2.4.0"
+          }
+        }
+      },
+      "Blazorise.Generator.Features/1.3.1": {
+        "runtime": {
+          "lib/netstandard2.0/Blazorise.Generator.Features.dll": {
+            "assemblyVersion": "1.3.1.0",
+            "fileVersion": "1.3.1.0"
           }
         }
       },
@@ -1797,6 +1806,13 @@
       "sha512": "sha512-CCVeff1RHcyPPKBdkpFbkcdgIJPaeuV/cUxxmIpIj/SKPjgJXE7pvJAAtrD/A9F2seyLDYt+j0cgenVVvdmFvA==",
       "path": "blazorise.bootstrap/1.2.4",
       "hashPath": "blazorise.bootstrap.1.2.4.nupkg.sha512"
+    },
+    "Blazorise.Generator.Features/1.3.1": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-9j0aIBKiZ841PLNSd5rO736vg5O6461BNVMiB5XihAco+Isvz2qTjaSDSdQ+fB1OvmpzLvQ1A11ZAbe8r1/1dw==",
+      "path": "blazorise.generator.features/1.3.1",
+      "hashPath": "blazorise.generator.features.1.3.1.nupkg.sha512"
     },
     "Blazorise.Icons.FontAwesome/1.2.4": {
       "type": "package",

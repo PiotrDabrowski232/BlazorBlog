@@ -2,24 +2,33 @@
 
 @attribute [Authorize(Roles = "Admin")]
 
+
 @inject NavigationManager navManager
 @inject NotificationService NotificationService
 @inject IUserService _userService
 
 
 @code {
-    IEnumerable<UserDto> users;
+    IEnumerable<AdminUserManagementDto> users;
 
     [CascadingParameter]
     private Task<AuthenticationState> authenticationState { get; set; }
 
     protected override async Task OnInitializedAsync()
     {
-        var users = _userService.GetAll();
+        users = _userService.GetAll<AdminUserManagementDto>();
+    }
+
+    private string isDeleted(bool yesOrNo)
+    {
+        string results = yesOrNo ? "Yes" : "No";
+        return results;
     }
 }
 
-
-@foreach(var u in users){
-
-}
+<RadzenDataGrid Data="@users" TItem="AdminUserManagementDto" AllowSorting="true" AllowMultiColumnSorting="true">
+    <Columns>
+        <RadzenDataGridColumn TItem="AdminUserManagementDto" Property="Id" Frozen="true" Title="Id" />
+        <RadzenDataGridColumn TItem="AdminUserManagementDto" Property="UserName" Title="User Name" />
+    </Columns>
+</RadzenDataGrid>

@@ -134,6 +134,15 @@
           "buildMultiTargeting/Blazorise.Bootstrap.props": {}
         }
       },
+      "Blazorise.Generator.Features/1.3.1": {
+        "type": "package",
+        "compile": {
+          "lib/netstandard2.0/Blazorise.Generator.Features.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard2.0/Blazorise.Generator.Features.dll": {}
+        }
+      },
       "Blazorise.Icons.FontAwesome/1.2.4": {
         "type": "package",
         "dependencies": {
@@ -3304,6 +3313,20 @@
         "staticwebassets/blazorise.bootstrap.min.css",
         "staticwebassets/modal.js",
         "staticwebassets/tooltip.js"
+      ]
+    },
+    "Blazorise.Generator.Features/1.3.1": {
+      "sha512": "9j0aIBKiZ841PLNSd5rO736vg5O6461BNVMiB5XihAco+Isvz2qTjaSDSdQ+fB1OvmpzLvQ1A11ZAbe8r1/1dw==",
+      "type": "package",
+      "path": "blazorise.generator.features/1.3.1",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "Blazorise.png",
+        "LICENSE.md",
+        "blazorise.generator.features.1.3.1.nupkg.sha512",
+        "blazorise.generator.features.nuspec",
+        "lib/netstandard2.0/Blazorise.Generator.Features.dll"
       ]
     },
     "Blazorise.Icons.FontAwesome/1.2.4": {
@@ -9134,6 +9157,7 @@
     "net6.0": [
       "Blazored.FluentValidation >= 2.1.0",
       "Blazorise.Bootstrap >= 1.2.4",
+      "Blazorise.Generator.Features >= 1.3.1",
       "Blazorise.Icons.FontAwesome >= 1.2.4",
       "Blog.Data >= 1.0.0",
       "Blog.Logic >= 1.0.0",
@@ -9203,6 +9227,10 @@
           "Blazorise.Bootstrap": {
             "target": "Package",
             "version": "[1.2.4, )"
+          },
+          "Blazorise.Generator.Features": {
+            "target": "Package",
+            "version": "[1.3.1, )"
           },
           "Blazorise.Icons.FontAwesome": {
             "target": "Package",
