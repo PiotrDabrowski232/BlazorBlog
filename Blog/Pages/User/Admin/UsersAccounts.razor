@@ -24,6 +24,17 @@
         string results = yesOrNo ? "Yes" : "No";
         return results;
     }
+
+    private string convertDate(DateTime? date, bool isDeleted)
+    {
+        string result;
+        if (isDeleted)
+            result = $"{(int)(DateTime.Now - (DateTime)date).TotalDays}";
+        else
+            result = "--";
+
+        return result;
+    }
 }
 
 
@@ -32,12 +43,19 @@
     <Columns>
         <RadzenDataGridColumn TItem="AdminUserManagementDto" Property="Id" Frozen="true" Title="Id" />
         <RadzenDataGridColumn TItem="AdminUserManagementDto" Property="UserName" Title="User Name" />
-        <RadzenDataGridColumn TItem="AdminUserManagementDto" Property="DeleteDay" Title="Delete Day"/>
+
+        <RadzenDataGridColumn TItem="AdminUserManagementDto" Title="Number of days after last removal">
+            <Template Context="user">
+                @convertDate(user.DeleteDay, user.IsDeleted)
+            </Template>
+        </RadzenDataGridColumn>
+
         <RadzenDataGridColumn TItem="AdminUserManagementDto" Title="Is Deleted?">
             <Template Context="user">
                 @isDeleted(user.IsDeleted)
             </Template>
         </RadzenDataGridColumn> 
+
         <RadzenDataGridColumn TItem="AdminUserManagementDto" Property="RoleId" Title="Role Id" />
 
     </Columns>
