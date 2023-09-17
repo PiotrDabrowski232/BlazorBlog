@@ -6,7 +6,7 @@ namespace Blog.Logic.Services.Interfaces
 {
     public interface IUserService
     {
-        public IEnumerable<T> GetAll<T>() where T : class;
+        public IEnumerable<AdminUserManagementDto> GetAllNormalUsers();
         public Task Add(UserDto user);
         public User Edit(UserDto user);
         public Task ChangePassword(PasswordUserDto userDto);

@@ -4,6 +4,7 @@ using Blog.Data.Repositories.Interfaces;
 using Blog.Logic.Dto;
 using Blog.Logic.Dto.UserDtos;
 using Blog.Logic.Exceptions;
+using Blog.Logic.Extensions;
 using Blog.Logic.Services.Interfaces;
 using Microsoft.AspNetCore.Identity;
 
@@ -24,6 +25,18 @@ namespace Blog.Logic.Services
             _passwordHasher = passwordHasher;
             _roleRepository = roleRepository;
         }
+
+        private IEnumerable<T> GetAll<T>() where T : class
+        {
+            return _mapper.Map<IEnumerable<T>>(_userRepository.GetAll());
+        }
+
+
+
+
+
+
+
 
         public Task Add(UserDto userDto)
         {
@@ -82,9 +95,10 @@ namespace Blog.Logic.Services
             return Task.FromResult(result);
 
         }
-        public IEnumerable<T> GetAll<T>() where T : class
+
+        public IEnumerable<AdminUserManagementDto> GetAllNormalUsers()
         {
-            return _mapper.Map<IEnumerable<T>>(_userRepository.GetAll());
+            return GetAll<AdminUserManagementDto>().Where(u=>u.RoleId != 2.ToGuid());
         }
 
         public T GetUserById<T>(Guid id) where T : class
