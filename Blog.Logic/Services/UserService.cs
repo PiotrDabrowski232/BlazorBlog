@@ -98,7 +98,21 @@ namespace Blog.Logic.Services
 
         public IEnumerable<AdminUserManagementDto> GetAllNormalUsers()
         {
-            return GetAll<AdminUserManagementDto>().Where(u=>u.RoleId != 2.ToGuid());
+            var roles = _roleRepository.GetAll().ToDictionary(r => r.RoleId, r => r.Name);
+
+            var filteredUsers = GetAll<AdminUserManagementDto>()
+                .Where(u => u.RoleId != 2.ToGuid())
+                .ToList(); 
+
+            foreach (var user in filteredUsers)
+            {
+                if (roles.TryGetValue(user.RoleId, out var roleName))
+                {
+                    user.RoleName = roleName;
+                }
+            }
+
+            return filteredUsers;
         }
 
         public T GetUserById<T>(Guid id) where T : class

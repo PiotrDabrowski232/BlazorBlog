@@ -16,7 +16,7 @@ namespace Blog.Logic.AutoMapper
 
             CreateMap<User, PasswordUserDto>();
             CreateMap<PasswordUserDto, User>();
-            
+
             CreateMap<User, AdminUserManagementDto>();
             CreateMap<AdminUserManagementDto, User>();
         }

@@ -13,5 +13,7 @@ namespace Blog.Logic.Dto.UserDtos
         public bool IsDeleted { get; set; }
         public DateTime? DeleteDay { get; set; }
         public Guid RoleId { get; set; }
+        public string RoleName { get; set; }
+
     }
 }

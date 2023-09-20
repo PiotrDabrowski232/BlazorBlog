@@ -40,8 +40,9 @@
 
 
 <RadzenDataGrid Data="@users" TItem="AdminUserManagementDto" AllowSorting="true" AllowMultiColumnSorting="true">
-    <Columns>
-        <RadzenDataGridColumn TItem="AdminUserManagementDto" Property="Id" Frozen="true" Title="Id" />
+    <Columns> 
+        
+        <RadzenDataGridColumn  TItem="AdminUserManagementDto" Property="Id" Frozen="true" Title="Id" />
         <RadzenDataGridColumn TItem="AdminUserManagementDto" Property="UserName" Title="User Name" />
 
         <RadzenDataGridColumn TItem="AdminUserManagementDto" Title="Number of days after last removal">
@@ -56,7 +57,17 @@
             </Template>
         </RadzenDataGridColumn> 
 
-        <RadzenDataGridColumn TItem="AdminUserManagementDto" Property="RoleId" Title="Role Id" />
+        <RadzenDataGridColumn TItem="AdminUserManagementDto" Property="RoleName" Title="Role Name" />
+
+        <RadzenDataGridColumn TItem="AdminUserManagementDto" Title="Actions">
+            <Template Context="user">
+                <div class="btn-group" role="group" aria-label="Basic example">
+                  <button type="button" class="btn btn-primary">Left</button>
+                  <button type="button" class="btn btn-primary">Middle</button>
+                  <button type="button" class="btn btn-primary">Right</button>
+                </div>
+            </Template>
+        </RadzenDataGridColumn> 
 
     </Columns>
 </RadzenDataGrid>
