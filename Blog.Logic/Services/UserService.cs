@@ -31,13 +31,6 @@ namespace Blog.Logic.Services
             return _mapper.Map<IEnumerable<T>>(_userRepository.GetAll());
         }
 
-
-
-
-
-
-
-
         public Task Add(UserDto userDto)
         {
             User user = _mapper.Map<User>(userDto);
@@ -59,7 +52,7 @@ namespace Blog.Logic.Services
 
             if (samePasswords == PasswordVerificationResult.Failed)
             {
-                throw new Exception("Invalid Password");
+                throw new InvalidInputException("Invalid Password");
             }
             else
             {
@@ -84,7 +77,7 @@ namespace Blog.Logic.Services
             
             if (result == PasswordVerificationResult.Failed)
             {
-                throw new Exception("Incorrect password");
+                throw new InvalidInputException("Incorrect password");
             }
             else
             {
@@ -125,29 +118,31 @@ namespace Blog.Logic.Services
             return _mapper.Map<T>(_userRepository.GetByEmail(email));
         }
 
-
         public LoginUserDto VerifyUser(LoginUserDto LoginDto)
         {
             var user = _userRepository.GetAll().FirstOrDefault(x => x.Email == LoginDto.Email);
 
             if (user is null || user.IsDeleted)
             {
-                throw new BadRequestException("invalid username or password");
+                throw new InvalidInputException("invalid username or password");
             }
 
             var result = _passwordHasher.VerifyHashedPassword(user, user.Password, LoginDto.Password);
 
             if (result == PasswordVerificationResult.Failed)
             {
-                throw new BadRequestException("invalid username or password");
+                throw new InvalidInputException("invalid username or password");
             }
 
             LoginDto.Username = user.UserName;
             LoginDto.Role = _mapper.Map<RoleDto>(_roleRepository.Get(user.RoleId));
 
-
             return LoginDto;
+        }
 
+        public async Task<int> GiveAccountBack(Guid id)
+        {
+            return await _userRepository.ChangeDeleteStatus(id);
         }
     }
 }

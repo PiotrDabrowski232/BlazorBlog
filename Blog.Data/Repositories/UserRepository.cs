@@ -20,6 +20,15 @@ namespace Blog.Data.Repositories
         {
             return _context.Set<User>().First(x => Email == x.Email);
         }
-        
+
+        public Task<int> ChangeDeleteStatus(Guid id)
+        {
+            var user = _context.Set<User>().FirstOrDefault(u => u.Id == id);
+
+            user.IsDeleted = false;
+            _context.Update(user);
+            return _context.SaveChangesAsync();
+        }
+
     }
 }

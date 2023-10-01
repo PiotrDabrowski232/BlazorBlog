@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "uNqslel455EXSWpPyVLLBCd5HZD8YIJbmNrekquO/RY=",
+  "Hash": "6SeKhM1kabvHmtQjTx/vRm3ELLjuGrUld99I/NCf1eg=",
   "Source": "Blog",
   "BasePath": "_content/Blog",
   "Mode": "Default",
@@ -10,7 +10,7 @@
     {
       "Name": "Blog\\wwwroot",
       "Source": "Blog",
-      "ContentRoot": "C:\\Users\\piecz\\Desktop\\Blog\\Blog\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\piecz\\Source\\Repos\\PiotrDabrowski232\\BlazorBlog\\Blog\\wwwroot\\",
       "BasePath": "_content/Blog",
       "Pattern": "**"
     }
@@ -1224,10 +1224,10 @@
       "OriginalItemSpec": "C:\\Users\\piecz\\.nuget\\packages\\radzen.blazor\\4.15.10\\staticwebassets\\Radzen.Blazor.js"
     },
     {
-      "Identity": "C:\\Users\\piecz\\Desktop\\Blog\\Blog\\obj\\Debug\\net6.0\\scopedcss\\bundle\\Blog.styles.css",
+      "Identity": "C:\\Users\\piecz\\Source\\Repos\\PiotrDabrowski232\\BlazorBlog\\Blog\\obj\\Debug\\net6.0\\scopedcss\\bundle\\Blog.styles.css",
       "SourceId": "Blog",
       "SourceType": "Computed",
-      "ContentRoot": "C:\\Users\\piecz\\Desktop\\Blog\\Blog\\obj\\Debug\\net6.0\\scopedcss\\bundle\\",
+      "ContentRoot": "C:\\Users\\piecz\\Source\\Repos\\PiotrDabrowski232\\BlazorBlog\\Blog\\obj\\Debug\\net6.0\\scopedcss\\bundle\\",
       "BasePath": "_content/Blog",
       "RelativePath": "Blog.styles.css",
       "AssetKind": "All",
@@ -1238,13 +1238,13 @@
       "AssetTraitValue": "ApplicationBundle",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "C:\\Users\\piecz\\Desktop\\Blog\\Blog\\obj\\Debug\\net6.0\\scopedcss\\bundle\\Blog.styles.css"
+      "OriginalItemSpec": "C:\\Users\\piecz\\Source\\Repos\\PiotrDabrowski232\\BlazorBlog\\Blog\\obj\\Debug\\net6.0\\scopedcss\\bundle\\Blog.styles.css"
     },
     {
-      "Identity": "C:\\Users\\piecz\\Desktop\\Blog\\Blog\\obj\\Debug\\net6.0\\scopedcss\\projectbundle\\Blog.bundle.scp.css",
+      "Identity": "C:\\Users\\piecz\\Source\\Repos\\PiotrDabrowski232\\BlazorBlog\\Blog\\obj\\Debug\\net6.0\\scopedcss\\projectbundle\\Blog.bundle.scp.css",
       "SourceId": "Blog",
       "SourceType": "Computed",
-      "ContentRoot": "C:\\Users\\piecz\\Desktop\\Blog\\Blog\\obj\\Debug\\net6.0\\scopedcss\\projectbundle\\",
+      "ContentRoot": "C:\\Users\\piecz\\Source\\Repos\\PiotrDabrowski232\\BlazorBlog\\Blog\\obj\\Debug\\net6.0\\scopedcss\\projectbundle\\",
       "BasePath": "_content/Blog",
       "RelativePath": "Blog.bundle.scp.css",
       "AssetKind": "All",
@@ -1255,13 +1255,13 @@
       "AssetTraitValue": "ProjectBundle",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "C:\\Users\\piecz\\Desktop\\Blog\\Blog\\obj\\Debug\\net6.0\\scopedcss\\projectbundle\\Blog.bundle.scp.css"
+      "OriginalItemSpec": "C:\\Users\\piecz\\Source\\Repos\\PiotrDabrowski232\\BlazorBlog\\Blog\\obj\\Debug\\net6.0\\scopedcss\\projectbundle\\Blog.bundle.scp.css"
     },
     {
-      "Identity": "C:\\Users\\piecz\\Desktop\\Blog\\Blog\\wwwroot\\css\\bootstrap\\bootstrap.min.css",
+      "Identity": "C:\\Users\\piecz\\Source\\Repos\\PiotrDabrowski232\\BlazorBlog\\Blog\\wwwroot\\css\\bootstrap\\bootstrap.min.css",
       "SourceId": "Blog",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\piecz\\Desktop\\Blog\\Blog\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\piecz\\Source\\Repos\\PiotrDabrowski232\\BlazorBlog\\Blog\\wwwroot\\",
       "BasePath": "_content/Blog",
       "RelativePath": "css/bootstrap/bootstrap.min.css",
       "AssetKind": "All",
@@ -1275,10 +1275,10 @@
       "OriginalItemSpec": "wwwroot\\css\\bootstrap\\bootstrap.min.css"
     },
     {
-      "Identity": "C:\\Users\\piecz\\Desktop\\Blog\\Blog\\wwwroot\\css\\bootstrap\\bootstrap.min.css.map",
+      "Identity": "C:\\Users\\piecz\\Source\\Repos\\PiotrDabrowski232\\BlazorBlog\\Blog\\wwwroot\\css\\bootstrap\\bootstrap.min.css.map",
       "SourceId": "Blog",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\piecz\\Desktop\\Blog\\Blog\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\piecz\\Source\\Repos\\PiotrDabrowski232\\BlazorBlog\\Blog\\wwwroot\\",
       "BasePath": "_content/Blog",
       "RelativePath": "css/bootstrap/bootstrap.min.css.map",
       "AssetKind": "All",
@@ -1292,10 +1292,10 @@
       "OriginalItemSpec": "wwwroot\\css\\bootstrap\\bootstrap.min.css.map"
     },
     {
-      "Identity": "C:\\Users\\piecz\\Desktop\\Blog\\Blog\\wwwroot\\css\\open-iconic\\font\\css\\open-iconic-bootstrap.min.css",
+      "Identity": "C:\\Users\\piecz\\Source\\Repos\\PiotrDabrowski232\\BlazorBlog\\Blog\\wwwroot\\css\\open-iconic\\font\\css\\open-iconic-bootstrap.min.css",
       "SourceId": "Blog",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\piecz\\Desktop\\Blog\\Blog\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\piecz\\Source\\Repos\\PiotrDabrowski232\\BlazorBlog\\Blog\\wwwroot\\",
       "BasePath": "_content/Blog",
       "RelativePath": "css/open-iconic/font/css/open-iconic-bootstrap.min.css",
       "AssetKind": "All",
@@ -1309,10 +1309,10 @@
       "OriginalItemSpec": "wwwroot\\css\\open-iconic\\font\\css\\open-iconic-bootstrap.min.css"
     },
     {
-      "Identity": "C:\\Users\\piecz\\Desktop\\Blog\\Blog\\wwwroot\\css\\open-iconic\\font\\fonts\\open-iconic.eot",
+      "Identity": "C:\\Users\\piecz\\Source\\Repos\\PiotrDabrowski232\\BlazorBlog\\Blog\\wwwroot\\css\\open-iconic\\font\\fonts\\open-iconic.eot",
       "SourceId": "Blog",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\piecz\\Desktop\\Blog\\Blog\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\piecz\\Source\\Repos\\PiotrDabrowski232\\BlazorBlog\\Blog\\wwwroot\\",
       "BasePath": "_content/Blog",
       "RelativePath": "css/open-iconic/font/fonts/open-iconic.eot",
       "AssetKind": "All",
@@ -1326,10 +1326,10 @@
       "OriginalItemSpec": "wwwroot\\css\\open-iconic\\font\\fonts\\open-iconic.eot"
     },
     {
-      "Identity": "C:\\Users\\piecz\\Desktop\\Blog\\Blog\\wwwroot\\css\\open-iconic\\font\\fonts\\open-iconic.otf",
+      "Identity": "C:\\Users\\piecz\\Source\\Repos\\PiotrDabrowski232\\BlazorBlog\\Blog\\wwwroot\\css\\open-iconic\\font\\fonts\\open-iconic.otf",
       "SourceId": "Blog",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\piecz\\Desktop\\Blog\\Blog\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\piecz\\Source\\Repos\\PiotrDabrowski232\\BlazorBlog\\Blog\\wwwroot\\",
       "BasePath": "_content/Blog",
       "RelativePath": "css/open-iconic/font/fonts/open-iconic.otf",
       "AssetKind": "All",
@@ -1343,10 +1343,10 @@
       "OriginalItemSpec": "wwwroot\\css\\open-iconic\\font\\fonts\\open-iconic.otf"
     },
     {
-      "Identity": "C:\\Users\\piecz\\Desktop\\Blog\\Blog\\wwwroot\\css\\open-iconic\\font\\fonts\\open-iconic.svg",
+      "Identity": "C:\\Users\\piecz\\Source\\Repos\\PiotrDabrowski232\\BlazorBlog\\Blog\\wwwroot\\css\\open-iconic\\font\\fonts\\open-iconic.svg",
       "SourceId": "Blog",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\piecz\\Desktop\\Blog\\Blog\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\piecz\\Source\\Repos\\PiotrDabrowski232\\BlazorBlog\\Blog\\wwwroot\\",
       "BasePath": "_content/Blog",
       "RelativePath": "css/open-iconic/font/fonts/open-iconic.svg",
       "AssetKind": "All",
@@ -1360,10 +1360,10 @@
       "OriginalItemSpec": "wwwroot\\css\\open-iconic\\font\\fonts\\open-iconic.svg"
     },
     {
-      "Identity": "C:\\Users\\piecz\\Desktop\\Blog\\Blog\\wwwroot\\css\\open-iconic\\font\\fonts\\open-iconic.ttf",
+      "Identity": "C:\\Users\\piecz\\Source\\Repos\\PiotrDabrowski232\\BlazorBlog\\Blog\\wwwroot\\css\\open-iconic\\font\\fonts\\open-iconic.ttf",
       "SourceId": "Blog",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\piecz\\Desktop\\Blog\\Blog\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\piecz\\Source\\Repos\\PiotrDabrowski232\\BlazorBlog\\Blog\\wwwroot\\",
       "BasePath": "_content/Blog",
       "RelativePath": "css/open-iconic/font/fonts/open-iconic.ttf",
       "AssetKind": "All",
@@ -1377,10 +1377,10 @@
       "OriginalItemSpec": "wwwroot\\css\\open-iconic\\font\\fonts\\open-iconic.ttf"
     },
     {
-      "Identity": "C:\\Users\\piecz\\Desktop\\Blog\\Blog\\wwwroot\\css\\open-iconic\\font\\fonts\\open-iconic.woff",
+      "Identity": "C:\\Users\\piecz\\Source\\Repos\\PiotrDabrowski232\\BlazorBlog\\Blog\\wwwroot\\css\\open-iconic\\font\\fonts\\open-iconic.woff",
       "SourceId": "Blog",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\piecz\\Desktop\\Blog\\Blog\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\piecz\\Source\\Repos\\PiotrDabrowski232\\BlazorBlog\\Blog\\wwwroot\\",
       "BasePath": "_content/Blog",
       "RelativePath": "css/open-iconic/font/fonts/open-iconic.woff",
       "AssetKind": "All",
@@ -1394,10 +1394,10 @@
       "OriginalItemSpec": "wwwroot\\css\\open-iconic\\font\\fonts\\open-iconic.woff"
     },
     {
-      "Identity": "C:\\Users\\piecz\\Desktop\\Blog\\Blog\\wwwroot\\css\\open-iconic\\FONT-LICENSE",
+      "Identity": "C:\\Users\\piecz\\Source\\Repos\\PiotrDabrowski232\\BlazorBlog\\Blog\\wwwroot\\css\\open-iconic\\FONT-LICENSE",
       "SourceId": "Blog",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\piecz\\Desktop\\Blog\\Blog\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\piecz\\Source\\Repos\\PiotrDabrowski232\\BlazorBlog\\Blog\\wwwroot\\",
       "BasePath": "_content/Blog",
       "RelativePath": "css/open-iconic/FONT-LICENSE",
       "AssetKind": "All",
@@ -1411,10 +1411,10 @@
       "OriginalItemSpec": "wwwroot\\css\\open-iconic\\FONT-LICENSE"
     },
     {
-      "Identity": "C:\\Users\\piecz\\Desktop\\Blog\\Blog\\wwwroot\\css\\open-iconic\\ICON-LICENSE",
+      "Identity": "C:\\Users\\piecz\\Source\\Repos\\PiotrDabrowski232\\BlazorBlog\\Blog\\wwwroot\\css\\open-iconic\\ICON-LICENSE",
       "SourceId": "Blog",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\piecz\\Desktop\\Blog\\Blog\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\piecz\\Source\\Repos\\PiotrDabrowski232\\BlazorBlog\\Blog\\wwwroot\\",
       "BasePath": "_content/Blog",
       "RelativePath": "css/open-iconic/ICON-LICENSE",
       "AssetKind": "All",
@@ -1428,10 +1428,10 @@
       "OriginalItemSpec": "wwwroot\\css\\open-iconic\\ICON-LICENSE"
     },
     {
-      "Identity": "C:\\Users\\piecz\\Desktop\\Blog\\Blog\\wwwroot\\css\\open-iconic\\README.md",
+      "Identity": "C:\\Users\\piecz\\Source\\Repos\\PiotrDabrowski232\\BlazorBlog\\Blog\\wwwroot\\css\\open-iconic\\README.md",
       "SourceId": "Blog",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\piecz\\Desktop\\Blog\\Blog\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\piecz\\Source\\Repos\\PiotrDabrowski232\\BlazorBlog\\Blog\\wwwroot\\",
       "BasePath": "_content/Blog",
       "RelativePath": "css/open-iconic/README.md",
       "AssetKind": "All",
@@ -1445,10 +1445,10 @@
       "OriginalItemSpec": "wwwroot\\css\\open-iconic\\README.md"
     },
     {
-      "Identity": "C:\\Users\\piecz\\Desktop\\Blog\\Blog\\wwwroot\\css\\site.css",
+      "Identity": "C:\\Users\\piecz\\Source\\Repos\\PiotrDabrowski232\\BlazorBlog\\Blog\\wwwroot\\css\\site.css",
       "SourceId": "Blog",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\piecz\\Desktop\\Blog\\Blog\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\piecz\\Source\\Repos\\PiotrDabrowski232\\BlazorBlog\\Blog\\wwwroot\\",
       "BasePath": "_content/Blog",
       "RelativePath": "css/site.css",
       "AssetKind": "All",
@@ -1462,10 +1462,10 @@
       "OriginalItemSpec": "wwwroot\\css\\site.css"
     },
     {
-      "Identity": "C:\\Users\\piecz\\Desktop\\Blog\\Blog\\wwwroot\\favicon.ico",
+      "Identity": "C:\\Users\\piecz\\Source\\Repos\\PiotrDabrowski232\\BlazorBlog\\Blog\\wwwroot\\favicon.ico",
       "SourceId": "Blog",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\piecz\\Desktop\\Blog\\Blog\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\piecz\\Source\\Repos\\PiotrDabrowski232\\BlazorBlog\\Blog\\wwwroot\\",
       "BasePath": "_content/Blog",
       "RelativePath": "favicon.ico",
       "AssetKind": "All",

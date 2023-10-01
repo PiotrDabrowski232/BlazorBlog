@@ -15,5 +15,6 @@ namespace Blog.Logic.Services.Interfaces
         public T GetUserById<T>(Guid id) where T : class;
         public T GetUserByContainedString<T>(string email) where T : class;
         public LoginUserDto VerifyUser(LoginUserDto dto);
+        public Task<int> GiveAccountBack(Guid id);
     }
 }

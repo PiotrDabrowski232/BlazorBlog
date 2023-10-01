@@ -38,6 +38,10 @@
             return $"{(int)result.TotalMinutes}min ago";
         }
     }
+    public IOrderedEnumerable<PostDto> SortByDate()
+    {
+        return posts.OrderByDescending(post => post.CreationDate);
+    }
 }
 
 
@@ -47,7 +51,7 @@
 
     <div class="card-columns">
 
-        @foreach (var post in posts)
+        @foreach (var post in SortByDate())
         {
                 <div class="card d-inline-block w-25" style="margin-left: 5.9vw; margin-top:3.2vh; height:auto;">
 

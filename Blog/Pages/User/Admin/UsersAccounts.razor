@@ -35,6 +35,23 @@
 
         return result;
     }
+
+    private Task ResetPassword()
+    {
+        return Task.CompletedTask;
+    }
+
+    private Task Reborn(Guid id)
+    {
+
+        var result = _userService.GiveAccountBack(id);
+        return Task.CompletedTask;
+    }
+
+    private Task ChangeRole()
+    {
+        return Task.CompletedTask;
+    }
 }
 
 
@@ -61,10 +78,10 @@
 
         <RadzenDataGridColumn TItem="AdminUserManagementDto" Title="Actions">
             <Template Context="user">
-                <div class="btn-group" role="group" aria-label="Basic example">
-                  <button type="button" class="btn btn-primary">Left</button>
-                  <button type="button" class="btn btn-primary">Middle</button>
-                  <button type="button" class="btn btn-primary">Right</button>
+                <div class="btn-group" role="group" aria-label="Basic mixed styles example">
+                    <a @onclick="() => ResetPassword()" href="javascript:void(0)"><button type="button" class="btn btn-info">Reset Password</button></a>
+                    <a @onclick="() => ChangeRole()" href="javascript:void(0)"><button type="button" class="btn btn-secondary">Change Role</button></a>
+                    <a @onclick="() => Reborn(user.Id)" href="javascript:void(0)"><button type="button" class="btn btn-danger">Reborn</button></a>
                 </div>
             </Template>
         </RadzenDataGridColumn> 

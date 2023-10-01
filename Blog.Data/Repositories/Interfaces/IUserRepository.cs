@@ -12,5 +12,7 @@ namespace Blog.Data.Repositories.Interfaces
         public User GetById(Guid id);
 
         public User GetByEmail(string Email);
+
+        public Task<int> ChangeDeleteStatus(Guid id);
     }
 }
