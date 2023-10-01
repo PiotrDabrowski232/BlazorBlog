@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "AdF8Se3g/5S7aQdihOAHp3JLV6x65zwVayJ/Av3bP4LTwm27g5U9HohtwsNDOZsXOCsenGWaelP77Yo5E5fPXA==",
+  "dgSpecHash": "+sI7rlXr3PJvWwWu7/PrYzPfaKLo1Jx88hB2fXBDtlvLIaKqcVo+Lg6iywVfOYahEbhkEbU1h3Q/ZSxMJ+RDsQ==",
   "success": true,
-  "projectFilePath": "C:\\Users\\piecz\\Desktop\\Blog\\Blog.Shared\\Blog.Shared.csproj",
+  "projectFilePath": "C:\\Users\\piecz\\Source\\Repos\\PiotrDabrowski232\\BlazorBlog\\Blog.Shared\\Blog.Shared.csproj",
   "expectedPackageFiles": [],
   "logs": []
 }

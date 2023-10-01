@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "2jigA8yk3gi/XNM7Ac1mm6mV8xtPe8dukTKNUkACh8kKg3mZ0Bw5sUGi+GNxgAWLZXovmR/TRFjLMq3riif30A==",
+  "dgSpecHash": "icJiWRpHgSuPgXs/eEqtndpe6fSbjkpUO+3fvl4MarICC7FORRE4R1NAjGFZ3Wi8VoNa/RvKZT2t6yR9y6CDSg==",
   "success": true,
-  "projectFilePath": "C:\\Users\\piecz\\Desktop\\Blog\\Blog.Logic\\Blog.Logic.csproj",
+  "projectFilePath": "C:\\Users\\piecz\\Source\\Repos\\PiotrDabrowski232\\BlazorBlog\\Blog.Logic\\Blog.Logic.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\piecz\\.nuget\\packages\\automapper\\12.0.1\\automapper.12.0.1.nupkg.sha512",
     "C:\\Users\\piecz\\.nuget\\packages\\automapper.extensions.microsoft.dependencyinjection\\12.0.1\\automapper.extensions.microsoft.dependencyinjection.12.0.1.nupkg.sha512",

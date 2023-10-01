@@ -14,11 +14,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\piecz\\Desktop\\Blog\\Blog.Shared\\Blog.Shared.csproj",
+      "projectUniqueName": "C:\\Users\\piecz\\Source\\Repos\\PiotrDabrowski232\\BlazorBlog\\Blog.Shared\\Blog.Shared.csproj",
       "projectName": "Blog.Shared",
-      "projectPath": "C:\\Users\\piecz\\Desktop\\Blog\\Blog.Shared\\Blog.Shared.csproj",
+      "projectPath": "C:\\Users\\piecz\\Source\\Repos\\PiotrDabrowski232\\BlazorBlog\\Blog.Shared\\Blog.Shared.csproj",
       "packagesPath": "C:\\Users\\piecz\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\piecz\\Desktop\\Blog\\Blog.Shared\\obj\\",
+      "outputPath": "C:\\Users\\piecz\\Source\\Repos\\PiotrDabrowski232\\BlazorBlog\\Blog.Shared\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -67,7 +67,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.101\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.401\\RuntimeIdentifierGraph.json"
       }
     }
   }

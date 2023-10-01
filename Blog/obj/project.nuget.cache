@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "5jNR/JZVCusao+6WVArV6t3ZhhIgx9JiPgKpmOrMSjUcno6DCVmJ4QKTlVyrFTQKKUZfv+weM2GXqFxF9gnUNQ==",
+  "dgSpecHash": "lytL8wSLH2+JrdqB+GSBQUwkTABWsaF2bXKZ9DXO9MYMS4VtoXcfrQ1L2OFSLI4SbQ2tFZgz0BRtsLlUkf4gBg==",
   "success": true,
-  "projectFilePath": "C:\\Users\\piecz\\Desktop\\Blog\\Blog\\Blog.csproj",
+  "projectFilePath": "C:\\Users\\piecz\\Source\\Repos\\PiotrDabrowski232\\BlazorBlog\\Blog\\Blog.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\piecz\\.nuget\\packages\\automapper\\12.0.1\\automapper.12.0.1.nupkg.sha512",
     "C:\\Users\\piecz\\.nuget\\packages\\automapper.extensions.microsoft.dependencyinjection\\12.0.1\\automapper.extensions.microsoft.dependencyinjection.12.0.1.nupkg.sha512",
