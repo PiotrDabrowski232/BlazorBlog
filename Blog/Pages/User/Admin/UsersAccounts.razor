@@ -6,11 +6,11 @@
 @inject NavigationManager navManager
 @inject NotificationService NotificationService
 @inject IUserService _userService
-
+@inject DialogService DialogService
 
 @code {
     IEnumerable<AdminUserManagementDto> users;
-
+    string adminPassworToConfirmOperation;
     [CascadingParameter]
     private Task<AuthenticationState> authenticationState { get; set; }
 
@@ -43,14 +43,30 @@
 
     private Task Reborn(Guid id)
     {
-
         var result = _userService.GiveAccountBack(id);
-        return Task.CompletedTask;
+        return result;
     }
 
     private Task ChangeRole()
     {
         return Task.CompletedTask;
+    }
+
+    async Task ShowInlineDialog(Guid Id)
+    {
+        var result = await DialogService.OpenAsync("Reborn Account", ds =>
+    @<RadzenStack Gap="1.5rem">
+        <p>If You want reborn User With Id: <b>@Id</b> pass correct password and submit</p>
+        <RadzenStack Orientation="Orientation.Vertical" Gap="0.5rem" AlignItems="AlignItems.Start" JustifyContent="JustifyContent.SpaceBetween">
+            <RadzenPassword @bind-Value=@adminPassworToConfirmOperation Placeholder="Enter password..." AutoComplete="false" />
+
+            <RadzenStack Orientation="Orientation.Horizontal">
+                <RadzenButton Text="Submit" Click="() => Reborn(Id)" Style="width: 80px;" />
+                <RadzenButton Text="Cancel" Click="() => ds.Close(false)" ButtonStyle="ButtonStyle.Light" />
+            </RadzenStack>
+
+        </RadzenStack>
+    </RadzenStack>);
     }
 }
 
@@ -81,7 +97,7 @@
                 <div class="btn-group" role="group" aria-label="Basic mixed styles example">
                     <a @onclick="() => ResetPassword()" href="javascript:void(0)"><button type="button" class="btn btn-info">Reset Password</button></a>
                     <a @onclick="() => ChangeRole()" href="javascript:void(0)"><button type="button" class="btn btn-secondary">Change Role</button></a>
-                    <a @onclick="() => Reborn(user.Id)" href="javascript:void(0)"><button type="button" class="btn btn-danger">Reborn</button></a>
+                    <a @onclick="() => ShowInlineDialog(user.Id)" href="javascript:void(0)"><button type="button" class="btn btn-danger">Reborn</button></a>
                 </div>
             </Template>
         </RadzenDataGridColumn> 
