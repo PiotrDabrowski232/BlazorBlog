@@ -1,9 +1,78 @@
 ﻿@page "/"
 
-<PageTitle>Index</PageTitle>
+@inject Blog.Logic.Services.Interfaces.IPostService _postService
+@inject Microsoft.AspNetCore.Components.NavigationManager NavigationManager
 
-<h1>Hello, world!</h1>
 
-Welcome to your new app.
+@code {
+    IEnumerable<PostDto> posts;
 
-<SurveyPrompt Title="How is Blazor working for you?" />
+    protected override async Task OnInitializedAsync()
+    {
+        posts = _postService.GetAll();
+    }
+
+    private void CheckPost(string postId)
+    {
+        NavigationManager.NavigateTo($"/{postId}");
+    }
+
+    public string TimeConverter(DateTime date)
+    {
+        var result = DateTime.Now - date;
+
+        if (result.TotalMinutes < 1)
+        {
+            return "moment ago";
+        }
+        else if (result.TotalDays >= 1)
+        {
+            return $"{(int)result.TotalDays} days ago";
+        }
+        else if (result.TotalHours >= 1)
+        {
+            return $"{(int)result.TotalHours}h ago";
+        }
+        else
+        {
+            return $"{(int)result.TotalMinutes}min ago";
+        }
+    }
+    public IOrderedEnumerable<PostDto> SortByDate()
+    {
+        return posts.OrderByDescending(post => post.CreationDate);
+    }
+}
+
+
+
+
+<div class="container m-0 p-0">
+
+    <div class="card-columns">
+
+        @foreach (var post in SortByDate())
+        {
+                <div class="card d-inline-block w-25" style="margin-left: 5.9vw; margin-top:3.2vh; height:auto;">
+
+                    <div class="card-body">
+                        <h5 class="card-title">@post.Title</h5>
+                        <p class="card-text">
+                            <span class="d-inline-block text-truncate" style="max-width: 85%;">
+                                @post.Description
+                            </span>
+                        </p>
+                        <p class="card-text"><small class="text-muted">Author: @post.CreatedBy</small></p>
+                        <p class="card-text"><small class="text-body-secondary">Last Updated: @TimeConverter((DateTime)@post.CreationDate)</small></p>
+                    </div>
+                    
+                    <RadzenStack Orientation="Orientation.Horizontal" JustifyContent="JustifyContent.End" >
+                    <a @onclick="() => CheckPost(post.Id.ToString())"><RadzenButton Variant="Variant.Flat" Text="Check Post" /></a>
+                    </RadzenStack>
+
+                </div>
+        }
+
+    </div>
+
+</div>

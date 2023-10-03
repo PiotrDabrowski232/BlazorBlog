@@ -1,0 +1,35 @@
+﻿@page "/{postId}"
+
+
+@inject Blog.Logic.Services.Interfaces.IPostService _postService
+
+@code {
+
+    [Parameter]
+    public string postId { get; set; }
+
+
+    PostDto post = new PostDto();
+
+    protected override async Task OnInitializedAsync()
+    {
+        post = _postService.GetByPostId<PostDto>(postId);
+    }
+
+}
+
+
+
+    <div class="maincontent-post">
+
+       <h2>@post.Title</h2>
+
+       <pre>@post.Description</pre>
+
+    </div>
+
+    <div class="post-attributes">
+        <p class="card-text"><small class="text-muted">Author: @post.CreatedBy</small></p>
+    </div>
+
+

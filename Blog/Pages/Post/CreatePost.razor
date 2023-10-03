@@ -1,0 +1,57 @@
+﻿@page "/CreatePost"
+
+
+@inject Blog.Logic.Services.Interfaces.IPostService _postService
+@inject Microsoft.AspNetCore.Components.NavigationManager NavManager
+@inject NotificationService NotificationService
+
+
+@code {
+
+    PostDto post = new PostDto();
+
+    [CascadingParameter]
+    private Task<AuthenticationState> authenticationState { get; set; }
+
+    private async void SendPost()
+    {
+        try
+        {
+            post.CreatedBy = authenticationState.Result.User.Identity.Name;
+            _postService.Add(post);
+            NotificationService.Notify(new NotificationMessage { Severity = NotificationSeverity.Success, Summary = "Post Added Succesfully", Duration = 2500 });
+            await Task.Delay(2500);
+            NavManager.NavigateTo("/", true);
+        }
+        catch(Exception e)
+        {
+            NotificationService.Notify(new NotificationMessage { Severity = NotificationSeverity.Error, Summary = "Some Problems Occur", Duration = 3000 });
+        }
+
+    }
+}
+
+
+<h4>Add Post for others</h4>
+
+<EditForm Model="post" style="width:100%; height:80vh;" OnValidSubmit="SendPost">
+
+    <FluentValidationValidator />
+    
+
+    <div class="form-group col-md-4 mb-2 w-100">
+        <label for="Title">Title</label>
+        <InputText type="Text" class="form-control" placeholder="Title" @bind-Value="@post.Title" />
+    </div>
+
+    <div class="form-group col-md-4 mb-2 w-100 h-75">
+        <label for="Password">Password</label>
+        <InputTextArea type="Text" class="form-control" style="height:80%" placeholder="Description" @bind-Value="@post.Description" />
+    </div>
+
+    <button type="submit" class="btn btn-primary btn-lg">Publish</button>
+
+    <div style="margin-top:2vh;">
+        <ValidationSummary />
+    </div>
+</EditForm>

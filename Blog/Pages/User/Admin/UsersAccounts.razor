@@ -1,0 +1,157 @@
+﻿@page "/UsersAccounts"
+
+@attribute [Authorize(Roles = "Admin")]
+
+
+@inject NavigationManager navManager
+@inject NotificationService NotificationService
+@inject IUserService _userService
+@inject DialogService DialogService
+
+@code {
+    IEnumerable<AdminUserManagementDto> users;
+
+    string adminPassworToConfirmOperation;
+
+    [CascadingParameter]
+    private Task<AuthenticationState> authenticationState { get; set; }
+
+    protected override async Task OnInitializedAsync()
+    {
+        users = _userService.GetAllNormalUsers();
+    }
+
+    private string isDeleted(bool yesOrNo)
+    {
+        string results = yesOrNo ? "Yes" : "No";
+        return results;
+    }
+
+    private string convertDate(DateTime? date, bool isDeleted)
+    {
+        string result;
+        if (isDeleted)
+            result = $"{(int)(DateTime.Now - (DateTime)date).TotalDays}";
+        else
+            result = "--";
+
+        return result;
+    }
+
+    private Task ResetPassword()
+    {
+        return Task.CompletedTask;
+    }
+
+    private async Task Reborn(Guid id)
+    {
+        try
+        {
+            var result = _userService.GiveAccountBack(id, adminPassworToConfirmOperation, authenticationState.Result.User.Identity.Name);
+            NotificationService.Notify(new NotificationMessage { Severity = NotificationSeverity.Success, Summary = $"Account successfully reborned", Duration = 4000 });
+            DialogService.Close(true);
+            await Task.Delay(4000);
+            navManager.NavigateTo("/UsersAccounts", true);
+        }
+        catch (Exception e)
+        {
+            NotificationService.Notify(new NotificationMessage { Severity = NotificationSeverity.Error, Summary = $"{e.Message} try again with the correct password", Duration = 4000 });
+            DialogService.Close(true);
+            return;
+        }
+}
+
+    private Task ChangeRole()
+    {
+        return Task.CompletedTask;
+    }
+
+    async Task ShowRebornDialog(Guid Id)
+    {
+        var result = await DialogService.OpenAsync("Reborn Account", ds =>
+    @<RadzenStack Gap="1.5rem">
+        <p>If You want reborn User With Id: <b>@Id</b> pass correct password and submit</p>
+        <RadzenStack Orientation="Orientation.Vertical" Gap="0.5rem" AlignItems="AlignItems.Start" JustifyContent="JustifyContent.SpaceBetween">
+            <RadzenPassword @bind-Value=@adminPassworToConfirmOperation Placeholder="Enter password..." AutoComplete="false" />
+
+            <RadzenStack Orientation="Orientation.Horizontal">
+                <RadzenButton Text="Submit" Click="() => Reborn(Id)" Style="width: 80px;" />
+                <RadzenButton Text="Cancel" Click="() => ds.Close(false)" ButtonStyle="ButtonStyle.Light" />
+            </RadzenStack>
+
+        </RadzenStack>
+    </RadzenStack>);
+    }
+
+    async Task ShowResetPasswordDialog(Guid Id)
+    {
+        var result = await DialogService.OpenAsync("Reborn Account", ds =>
+    @<RadzenStack Gap="1.5rem">
+        <p>If You want reborn User With Id: <b>@Id</b> pass correct password and submit</p>
+        <RadzenStack Orientation="Orientation.Vertical" Gap="0.5rem" AlignItems="AlignItems.Start" JustifyContent="JustifyContent.SpaceBetween">
+            <RadzenPassword @bind-Value=@adminPassworToConfirmOperation Placeholder="Enter password..." AutoComplete="false" />
+
+            <RadzenStack Orientation="Orientation.Horizontal">
+                <RadzenButton Text="Submit" Click="() => Reborn(Id)" Style="width: 80px;" />
+                <RadzenButton Text="Cancel" Click="() => ds.Close(false)" ButtonStyle="ButtonStyle.Light" />
+            </RadzenStack>
+
+        </RadzenStack>
+    </RadzenStack>);
+    }
+
+    async Task ShowChangeRoleDialog(Guid Id)
+    {
+        var result = await DialogService.OpenAsync("Reborn Account", ds =>
+    @<RadzenStack Gap="1.5rem">
+        <p>If You want reborn User With Id: <b>@Id</b> pass correct password and submit</p>
+        <RadzenStack Orientation="Orientation.Vertical" Gap="0.5rem" AlignItems="AlignItems.Start" JustifyContent="JustifyContent.SpaceBetween">
+            <RadzenPassword @bind-Value=@adminPassworToConfirmOperation Placeholder="Enter password..." AutoComplete="false" />
+
+            <RadzenStack Orientation="Orientation.Horizontal">
+                <RadzenButton Text="Submit" Click="() => Reborn(Id)" Style="width: 80px;" />
+                <RadzenButton Text="Cancel" Click="() => ds.Close(false)" ButtonStyle="ButtonStyle.Light" />
+            </RadzenStack>
+
+        </RadzenStack>
+    </RadzenStack>);
+    }
+}
+
+
+
+<RadzenDataGrid Data="@users" TItem="AdminUserManagementDto" AllowSorting="true" AllowMultiColumnSorting="true">
+    <Columns> 
+        
+        <RadzenDataGridColumn  TItem="AdminUserManagementDto" Property="Id" Frozen="true" Title="Id" />
+        <RadzenDataGridColumn TItem="AdminUserManagementDto" Property="UserName" Title="User Name" />
+
+        <RadzenDataGridColumn TItem="AdminUserManagementDto" Title="Number of days after last removal">
+            <Template Context="user">
+                @convertDate(user.DeleteDay, user.IsDeleted)
+            </Template>
+        </RadzenDataGridColumn>
+
+        <RadzenDataGridColumn TItem="AdminUserManagementDto" Title="Is Deleted?">
+            <Template Context="user">
+                @isDeleted(user.IsDeleted)
+            </Template>
+        </RadzenDataGridColumn> 
+
+        <RadzenDataGridColumn TItem="AdminUserManagementDto" Property="RoleName" Title="Role Name" />
+
+        <RadzenDataGridColumn TItem="AdminUserManagementDto" Title="Actions">
+            <Template Context="user">
+                <div class="btn-group" role="group" aria-label="Basic mixed styles example">
+                    <a @onclick="() => ResetPassword()" href="javascript:void(0)"><button type="button" class="btn btn-info">Reset Password</button></a>
+                    <a @onclick="() => ChangeRole()" href="javascript:void(0)"><button type="button" class="btn btn-secondary">Change Role</button></a>
+                    @if (user.IsDeleted)
+                    {
+                        <a @onclick="() => ShowRebornDialog(user.Id)" href="javascript:void(0)"><button type="button" class="btn btn-danger">Reborn</button></a>
+                    }
+                    </div>
+            </Template>
+        </RadzenDataGridColumn> 
+
+    </Columns>
+</RadzenDataGrid>
