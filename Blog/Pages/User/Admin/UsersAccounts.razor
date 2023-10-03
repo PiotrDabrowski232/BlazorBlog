@@ -43,18 +43,64 @@
         return Task.CompletedTask;
     }
 
-    private Task Reborn(Guid id)
+    private async Task Reborn(Guid id)
     {
-        var result = _userService.GiveAccountBack(id, adminPassworToConfirmOperation, authenticationState.Result.User.Identity.Name);
-        return result;
-    }
+        try
+        {
+            var result = _userService.GiveAccountBack(id, adminPassworToConfirmOperation, authenticationState.Result.User.Identity.Name);
+            NotificationService.Notify(new NotificationMessage { Severity = NotificationSeverity.Success, Summary = $"Account successfully reborned", Duration = 4000 });
+            DialogService.Close(true);
+            await Task.Delay(4000);
+            navManager.NavigateTo("/UsersAccounts", true);
+        }
+        catch (Exception e)
+        {
+            NotificationService.Notify(new NotificationMessage { Severity = NotificationSeverity.Error, Summary = $"{e.Message} try again with the correct password", Duration = 4000 });
+            DialogService.Close(true);
+            return;
+        }
+}
 
     private Task ChangeRole()
     {
         return Task.CompletedTask;
     }
 
-    async Task ShowInlineDialog(Guid Id)
+    async Task ShowRebornDialog(Guid Id)
+    {
+        var result = await DialogService.OpenAsync("Reborn Account", ds =>
+    @<RadzenStack Gap="1.5rem">
+        <p>If You want reborn User With Id: <b>@Id</b> pass correct password and submit</p>
+        <RadzenStack Orientation="Orientation.Vertical" Gap="0.5rem" AlignItems="AlignItems.Start" JustifyContent="JustifyContent.SpaceBetween">
+            <RadzenPassword @bind-Value=@adminPassworToConfirmOperation Placeholder="Enter password..." AutoComplete="false" />
+
+            <RadzenStack Orientation="Orientation.Horizontal">
+                <RadzenButton Text="Submit" Click="() => Reborn(Id)" Style="width: 80px;" />
+                <RadzenButton Text="Cancel" Click="() => ds.Close(false)" ButtonStyle="ButtonStyle.Light" />
+            </RadzenStack>
+
+        </RadzenStack>
+    </RadzenStack>);
+    }
+
+    async Task ShowResetPasswordDialog(Guid Id)
+    {
+        var result = await DialogService.OpenAsync("Reborn Account", ds =>
+    @<RadzenStack Gap="1.5rem">
+        <p>If You want reborn User With Id: <b>@Id</b> pass correct password and submit</p>
+        <RadzenStack Orientation="Orientation.Vertical" Gap="0.5rem" AlignItems="AlignItems.Start" JustifyContent="JustifyContent.SpaceBetween">
+            <RadzenPassword @bind-Value=@adminPassworToConfirmOperation Placeholder="Enter password..." AutoComplete="false" />
+
+            <RadzenStack Orientation="Orientation.Horizontal">
+                <RadzenButton Text="Submit" Click="() => Reborn(Id)" Style="width: 80px;" />
+                <RadzenButton Text="Cancel" Click="() => ds.Close(false)" ButtonStyle="ButtonStyle.Light" />
+            </RadzenStack>
+
+        </RadzenStack>
+    </RadzenStack>);
+    }
+
+    async Task ShowChangeRoleDialog(Guid Id)
     {
         var result = await DialogService.OpenAsync("Reborn Account", ds =>
     @<RadzenStack Gap="1.5rem">
@@ -101,7 +147,7 @@
                     <a @onclick="() => ChangeRole()" href="javascript:void(0)"><button type="button" class="btn btn-secondary">Change Role</button></a>
                     @if (user.IsDeleted)
                     {
-                        <a @onclick="() => ShowInlineDialog(user.Id)" href="javascript:void(0)"><button type="button" class="btn btn-danger">Reborn</button></a>
+                        <a @onclick="() => ShowRebornDialog(user.Id)" href="javascript:void(0)"><button type="button" class="btn btn-danger">Reborn</button></a>
                     }
                     </div>
             </Template>

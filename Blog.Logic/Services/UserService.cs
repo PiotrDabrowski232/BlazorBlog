@@ -140,7 +140,7 @@ namespace Blog.Logic.Services
             return LoginDto;
         }
 
-        public async Task<int> GiveAccountBack(Guid id, string password, string adminEmail)
+        public  Task<int> GiveAccountBack(Guid id, string password, string adminEmail)
         {
             var userPassword = _userRepository.GetByEmail(adminEmail).Password;
 
@@ -152,7 +152,7 @@ namespace Blog.Logic.Services
             }
             else
             {
-                return await _userRepository.ChangeDeleteStatus(id);
+                return _userRepository.ChangeDeleteStatus(id);
             }
             
         }
