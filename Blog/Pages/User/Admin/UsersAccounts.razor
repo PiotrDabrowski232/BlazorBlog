@@ -10,7 +10,9 @@
 
 @code {
     IEnumerable<AdminUserManagementDto> users;
+
     string adminPassworToConfirmOperation;
+
     [CascadingParameter]
     private Task<AuthenticationState> authenticationState { get; set; }
 
@@ -43,7 +45,7 @@
 
     private Task Reborn(Guid id)
     {
-        var result = _userService.GiveAccountBack(id);
+        var result = _userService.GiveAccountBack(id, adminPassworToConfirmOperation, authenticationState.Result.User.Identity.Name);
         return result;
     }
 
@@ -97,8 +99,11 @@
                 <div class="btn-group" role="group" aria-label="Basic mixed styles example">
                     <a @onclick="() => ResetPassword()" href="javascript:void(0)"><button type="button" class="btn btn-info">Reset Password</button></a>
                     <a @onclick="() => ChangeRole()" href="javascript:void(0)"><button type="button" class="btn btn-secondary">Change Role</button></a>
-                    <a @onclick="() => ShowInlineDialog(user.Id)" href="javascript:void(0)"><button type="button" class="btn btn-danger">Reborn</button></a>
-                </div>
+                    @if (user.IsDeleted)
+                    {
+                        <a @onclick="() => ShowInlineDialog(user.Id)" href="javascript:void(0)"><button type="button" class="btn btn-danger">Reborn</button></a>
+                    }
+                    </div>
             </Template>
         </RadzenDataGridColumn> 
 

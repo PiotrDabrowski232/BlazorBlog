@@ -50,13 +50,13 @@ namespace Blog.Logic.Services
 
         public IEnumerable<PostDto> GetAll()
         {
-            var postsDto = _mapper.Map<IEnumerable<PostDto>>(_postRepository.GetAll());
+            var user = _userRepository.GetAll().Where(u => !u.IsDeleted).ToDictionary(u => u.Id, u => u.Surname);
 
-            var user = _userRepository.GetAll();
+            var postsDto = _mapper.Map<IEnumerable<PostDto>>(_postRepository.GetAll().Where(p => user.Keys.Contains(p.UserId)));
 
-            foreach(var post in postsDto)
+            foreach (var post in postsDto)
             {
-                post.CreatedBy = user.FirstOrDefault(x => x.Id.Equals(post.UserId)).Surname;
+                post.CreatedBy = user.FirstOrDefault(x => x.Key.Equals(post.UserId)).Value;
                 
             }
             return postsDto;

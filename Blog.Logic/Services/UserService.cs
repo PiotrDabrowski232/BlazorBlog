@@ -140,9 +140,21 @@ namespace Blog.Logic.Services
             return LoginDto;
         }
 
-        public async Task<int> GiveAccountBack(Guid id)
+        public async Task<int> GiveAccountBack(Guid id, string password, string adminEmail)
         {
-            return await _userRepository.ChangeDeleteStatus(id);
+            var userPassword = _userRepository.GetByEmail(adminEmail).Password;
+
+            var result = _passwordHasher.VerifyHashedPassword(null, userPassword, password);
+
+            if (result == PasswordVerificationResult.Failed)
+            {
+                throw new InvalidInputException("invalid username or password");
+            }
+            else
+            {
+                return await _userRepository.ChangeDeleteStatus(id);
+            }
+            
         }
     }
 }
