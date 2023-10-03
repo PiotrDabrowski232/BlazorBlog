@@ -1,15 +1,40 @@
 ﻿@inherits LayoutComponentBase
 
+@inject NavigationManager NavManager
+@inject AuthenticationStateProvider authenticationStateProvider
+
 <PageTitle>Blog</PageTitle>
 
 <div class="page">
+
     <div class="sidebar">
         <NavMenu />
     </div>
 
+    <RadzenNotification />
     <main>
         <div class="top-row px-4">
-            <a href="https://docs.microsoft.com/aspnet/" target="_blank">About</a>
+            <AuthorizeView>
+                <Authorized> 
+                    <div style="margin-right:4vw;">
+                         <RadzenMenu>
+                            <RadzenMenuItem Icon="account_circle">
+                                <RadzenMenuItem Text="Account" Icon="info" Click="MoveToInfo"></RadzenMenuItem>
+                                <RadzenMenuItem Text="LogOut" Icon="logout" Click="Logout"></RadzenMenuItem>
+                            </RadzenMenuItem>
+                        </RadzenMenu>
+                    </div>
+
+                    <RadzenDialog />
+                    
+                </Authorized>
+
+                <NotAuthorized>
+                    <a href="AddUser">Register</a>
+                    <a href="Login">Login</a>
+                </NotAuthorized>
+            </AuthorizeView>
+
         </div>
 
         <article class="content px-4">
@@ -17,3 +42,26 @@
         </article>
     </main>
 </div>
+
+@code{
+
+    [CascadingParameter]
+    private Task<AuthenticationState> authenticationState { get; set; }
+
+    private async Task Logout()
+    {
+        var customAuthenticationStateProvider = (CustomAuthenticationStateProvider)authenticationStateProvider;
+
+        await customAuthenticationStateProvider.UpdateAuthenticationState(null);
+
+        NavManager.NavigateTo("/");
+    }
+
+    private void MoveToInfo()
+    {
+        NavManager.NavigateTo("/UserInformation", true);
+    }
+}
+
+
+

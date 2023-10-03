@@ -1,0 +1,103 @@
+﻿@page "/UserInformation"
+
+@inject Blog.Logic.Services.Interfaces.IUserService _userService
+@inject AuthenticationStateProvider authenticationStateProvider
+@inject NavigationManager navManager
+@inject DialogService DialogService
+@inject NotificationService NotificationService
+
+
+@code{
+    private UserDto userDto = new UserDto();
+    string passwordFromDelete;
+
+    [CascadingParameter]
+    private Task<AuthenticationState> authenticationState { get; set; }
+
+
+    protected override void OnInitialized()
+    {
+        var user = authenticationState.Result.User.Identity.Name;
+        userDto = _userService.GetUserByContainedString<UserDto>(user);
+    }
+
+    private async Task Logout()
+    {
+        var customAuthenticationStateProvider = (CustomAuthenticationStateProvider)authenticationStateProvider;
+
+        await customAuthenticationStateProvider.UpdateAuthenticationState(null);
+
+        navManager.NavigateTo("/", true);
+    }
+
+    private void ChangePassword(string email)
+    {
+        navManager.NavigateTo($"/ChangePassword/{email}");
+    }
+
+    private async void DeleteAccount()
+    {
+        try{
+            var result = _userService.SoftDelete(passwordFromDelete, userDto);
+            DialogService.Close(true);
+            NotificationService.Notify(new NotificationMessage { Severity = NotificationSeverity.Warning, Summary = $"Your Account was deleted sucessfully", Detail = "Dear User, your account is in deletion mode, if you wish to recover it, please contact the administrator.", Duration = 4000 });
+            await Task.Delay(4000);
+            Logout();
+        }
+        catch(Exception e)
+        {
+            NotificationService.Notify(new NotificationMessage { Severity = NotificationSeverity.Error, Summary = $"{e.Message} try again with the correct password", Duration = 4000 });
+            DialogService.Close(true);
+        }
+    }
+
+
+    async Task ShowInlineDialog()
+    {
+        var result = await DialogService.OpenAsync("Account Deletion", ds =>
+    @<RadzenStack Gap="1.5rem">
+        <p>If You want delete <b>@userDto.UserName</b> account pass correct password and submit</p>
+        <RadzenStack Orientation="Orientation.Vertical" Gap="0.5rem" AlignItems="AlignItems.Start" JustifyContent="JustifyContent.SpaceBetween">
+            <RadzenPassword @bind-Value=@passwordFromDelete Placeholder="Enter password..." AutoComplete="false" />
+
+            <RadzenStack Orientation="Orientation.Horizontal">
+                <RadzenButton Text="Submit" Click="() => DeleteAccount()" Style="width: 80px;" />
+                <RadzenButton Text="Cancel" Click="() => ds.Close(false)" ButtonStyle="ButtonStyle.Light" />
+            </RadzenStack>
+
+        </RadzenStack>
+    </RadzenStack>);
+    }
+}
+
+<h1>Your Account</h1>
+
+<h5>Name:</h5>
+<p>@userDto.Name</p>
+
+<h5>Surname:</h5>
+<p>@userDto.Surname</p>
+
+<h5>Email:</h5>
+<p>@userDto.Email</p>
+
+<h5>Username:</h5>
+<p>@userDto.UserName</p>
+
+<h5>Country:</h5>
+<p>@userDto.Country</p>
+
+<h5>City:</h5>
+<p>@userDto.City</p>
+
+
+
+<h5>Features:</h5>
+
+<div class="btn-group" role="group" aria-label="Basic mixed styles example">
+    <a @onclick="Logout" href="javascript:void(0)"><button type="button" class="btn btn-info">LogOut</button></a>
+    <a @onclick="() => ChangePassword(userDto.Email)" href="javascript:void(0)"><button type="button" class="btn btn-secondary">Change Password</button></a>
+    <a @onclick="() => ShowInlineDialog()" href="javascript:void(0)"><button type="button" class="btn btn-danger">Delete Account</button></a>
+</div>
+
+

@@ -62,3 +62,29 @@ a, .btn-link {
     .blazor-error-boundary::after {
         content: "An error has occurred."
     }
+
+#NavUsername:hover{
+    color:aqua;
+}
+
+.maincontent-post{
+    margin-top:5vh;
+    max-width:80vw;
+}
+
+.maincontent-post h2{
+    text-align: center;
+}
+
+.maincontent-post pre {
+    min-height: 70vh;
+    margin: 5vh;
+    overflow-x: auto;
+    white-space: pre-wrap;
+    word-wrap: break-word;
+    font-size: 15px;
+}
+
+.post-attributes{
+    margin-bottom:4vh;
+}

@@ -1,0 +1,64 @@
+﻿@page "/Login"
+
+@using Blog.Logic.Dto.UserDtos
+@using Blog.Logic.Authentication
+
+@inject IJSRuntime JS
+@inject AuthenticationStateProvider authenticationStateProvider
+@inject Blog.Logic.Services.Interfaces.IUserService _userService
+@inject NavigationManager NavManager
+@inject NotificationService NotificationService
+
+@code {
+    public LoginUserDto user = new LoginUserDto();
+
+    private async Task Authenticate()
+    {
+        try
+        {
+            var userAccount = _userService.VerifyUser(user);
+            var customAuthStateProvider = (CustomAuthenticationStateProvider)authenticationStateProvider;
+
+            await customAuthStateProvider.UpdateAuthenticationState(new UserSession
+        {
+            Email = userAccount.Email,
+            Role = userAccount.Role
+        });
+
+            NavManager.NavigateTo("/", true);
+
+        }catch(Exception e)
+        {
+            NotificationService.Notify(new NotificationMessage { Severity = NotificationSeverity.Error, Summary = $"{e.Message}", Duration = 4000 });
+        }
+    }
+
+}
+
+
+
+<div style="margin-top:25vh; margin-left:32.5vw;">
+
+    <EditForm Model="user" OnValidSubmit="Authenticate">
+
+        <FluentValidationValidator />
+
+        <div class="form-group col-md-4 d-inline-block mb-2 ">
+            <label for="Email">Email</label>
+            <InputText type="email" class="form-control" placeholder="Email" @bind-Value="@user.Email" />
+            <ValidationMessage For="(()=> user.Email)" />
+        </div>
+
+        <div class="form-group col-md-4 mb-2" style="margin-top:2vh;">
+            <label for="Password">Password</label>
+            <InputText type="Password" class="form-control" placeholder="Password" @bind-Value="@user.Password" />
+            <ValidationMessage For="(()=> user.Password)" />
+        </div>
+
+        <button type="submit" style="margin-left:15vw;" class="btn btn-outline-primary">Log In</button>
+
+    </EditForm>
+
+</div>
+
+

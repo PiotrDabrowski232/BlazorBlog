@@ -1,0 +1,99 @@
+﻿@page "/AddUser"
+
+@inject Blog.Logic.Services.Interfaces.IUserService _userService
+@inject NavigationManager NavManager
+@inject NotificationService NotificationService
+
+@code{
+    private UserDto user = new UserDto();
+
+    private void ClearInputs()
+    {
+        user.Name = string.Empty;
+        user.UserName = string.Empty;
+        user.Surname = string.Empty;
+        user.Email = string.Empty;
+        user.Password = string.Empty;
+        user.ConfirmedPassword = string.Empty;
+        user.City = string.Empty;
+        user.Country = string.Empty;
+    }
+
+    private async void AddUserForm()
+    {
+        var result =_userService.Add(user);
+        if (result.IsCompletedSuccessfully)
+        {
+            NotificationService.Notify(new NotificationMessage { Severity = NotificationSeverity.Success, Summary = "Account Added Successfully", Duration = 2500 });
+            await Task.Delay(2500);
+            ClearInputs();
+            NavManager.NavigateTo("/", true);
+        }
+    }
+}
+
+
+<h3>Register User Account</h3>
+
+<EditForm Model="user" OnValidSubmit="@AddUserForm">
+
+    <FluentValidationValidator/>
+
+    <div class="form-row p-4" style="margin:6% 0% 0% 22%;">
+
+        <div class="form-group col-md-4 d-inline-block mb-2">
+              <label for="Name">Name</label>
+            <InputText type="text" class="form-control" placeholder="Name" @bind-Value="@user.Name"></InputText>
+        </div>
+        <div class="form-group col-md-4 d-inline-block mb-2 ">
+                <label for="Surname">Surname</label>
+            <InputText type="text" class="form-control" placeholder="Surname" @bind-Value="user.Surname" />
+        </div>
+
+        <div class="form-group col-md-4 d-inline-block mb-2 ">
+            <label for="Email">Email</label>
+            <InputText type="email" class="form-control" placeholder="Email" @bind-Value="@user.Email" />
+        </div>
+        <div class="form-group col-md-4 d-inline-block mb-2">
+            <label for="Username">UserName</label>
+            <InputText type="text" class="form-control" placeholder="UserName" @bind-Value="user.UserName" />
+        </div>
+
+        <div class="form-group col-md-4 mb-2">
+            <label for="Password">Password</label>
+            <InputText type="Password" class="form-control" placeholder="Password" @bind-Value="@user.Password" />
+        </div>
+        <div class="form-group col-md-4 mb-2">
+            <label for="ConfirmedPassword">Confirm Password</label>
+            <InputText type="Password" class="form-control" placeholder="Confirm Password" @bind-Value="user.ConfirmedPassword" />
+        </div>
+
+
+        <div class="form-group col-md-4 mb-2">
+            <label for="Gender">Gender</label>
+            <select @bind="user.Gender" class="form-control">
+                @foreach (var gender in Enum.GetValues(typeof(Blog.Data.Models.Enums.Gender)))
+                {
+                    <option value="@gender">@gender</option>
+                }
+            </select>
+        </div>
+
+        <div class="form-group col-md-4 d-inline-block mb-2">
+            <label for="City">City</label>
+            <InputText type="text" class="form-control" placeholder="City" @bind-Value="@user.City" />
+        </div>
+        <div class="form-group col-md-4 d-inline-block mb-2">
+            <label for="Country">Country</label>
+            <InputText type="text" class="form-control" placeholder="Country" @bind-Value="user.Country" />
+        </div>
+
+            <ValidationSummary />
+
+        <button type="submit" class="btn btn-primary  d-flex">Submit</button>
+        
+
+        
+  </div>
+    
+</EditForm>
