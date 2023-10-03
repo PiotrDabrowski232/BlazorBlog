@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\piecz\\Desktop\\Blog\\Blog.Logic\\Blog.Logic.csproj": {}
+    "C:\\Users\\piecz\\Source\\Repos\\PiotrDabrowski232\\BlazorBlog\\Blog.Logic\\Blog.Logic.csproj": {}
   },
   "projects": {
-    "C:\\Users\\piecz\\Desktop\\Blog\\Blog.Logic\\Blog.Logic.csproj": {
+    "C:\\Users\\piecz\\Source\\Repos\\PiotrDabrowski232\\BlazorBlog\\Blog.Logic\\Blog.Logic.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\piecz\\Desktop\\Blog\\Blog.Logic\\Blog.Logic.csproj",
+        "projectUniqueName": "C:\\Users\\piecz\\Source\\Repos\\PiotrDabrowski232\\BlazorBlog\\Blog.Logic\\Blog.Logic.csproj",
         "projectName": "Blog.Logic",
-        "projectPath": "C:\\Users\\piecz\\Desktop\\Blog\\Blog.Logic\\Blog.Logic.csproj",
+        "projectPath": "C:\\Users\\piecz\\Source\\Repos\\PiotrDabrowski232\\BlazorBlog\\Blog.Logic\\Blog.Logic.csproj",
         "packagesPath": "C:\\Users\\piecz\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\piecz\\Desktop\\Blog\\Blog.Logic\\obj\\",
+        "outputPath": "C:\\Users\\piecz\\Source\\Repos\\PiotrDabrowski232\\BlazorBlog\\Blog.Logic\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -60,7 +60,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.101\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.401\\RuntimeIdentifierGraph.json"
         }
       }
     }

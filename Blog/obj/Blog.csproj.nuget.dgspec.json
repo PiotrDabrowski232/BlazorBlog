@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\piecz\\Desktop\\Blog\\Blog\\Blog.csproj": {}
+    "C:\\Users\\piecz\\Source\\Repos\\PiotrDabrowski232\\BlazorBlog\\Blog\\Blog.csproj": {}
   },
   "projects": {
-    "C:\\Users\\piecz\\Desktop\\Blog\\Blog\\Blog.csproj": {
+    "C:\\Users\\piecz\\Source\\Repos\\PiotrDabrowski232\\BlazorBlog\\Blog\\Blog.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\piecz\\Desktop\\Blog\\Blog\\Blog.csproj",
+        "projectUniqueName": "C:\\Users\\piecz\\Source\\Repos\\PiotrDabrowski232\\BlazorBlog\\Blog\\Blog.csproj",
         "projectName": "Blog",
-        "projectPath": "C:\\Users\\piecz\\Desktop\\Blog\\Blog\\Blog.csproj",
+        "projectPath": "C:\\Users\\piecz\\Source\\Repos\\PiotrDabrowski232\\BlazorBlog\\Blog\\Blog.csproj",
         "packagesPath": "C:\\Users\\piecz\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\piecz\\Desktop\\Blog\\Blog\\obj\\",
+        "outputPath": "C:\\Users\\piecz\\Source\\Repos\\PiotrDabrowski232\\BlazorBlog\\Blog\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -63,7 +63,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.101\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.401\\RuntimeIdentifierGraph.json"
         }
       }
     }
