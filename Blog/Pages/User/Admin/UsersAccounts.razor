@@ -9,12 +9,11 @@
 @inject DialogService DialogService
 
 @code {
-
     IEnumerable<AdminUserManagementDto> users;
 
     private string adminPassworToConfirmOperation;
-    
-    private string newPasswordForUser;
+
+    private AdminUserManagementDto user = new AdminUserManagementDto();
 
     [CascadingParameter]
     private Task<AuthenticationState> authenticationState { get; set; }
@@ -24,13 +23,13 @@
         users = _userService.GetAllNormalUsers();
     }
 
-    private string isDeleted(bool yesOrNo)
+    private string IsDeleted(bool yesOrNo)
     {
         string results = yesOrNo ? "Yes" : "No";
         return results;
     }
 
-    private string convertDate(DateTime? date, bool isDeleted)
+    private string ConvertDate(DateTime? date, bool isDeleted)
     {
         string result;
         if (isDeleted)
@@ -41,9 +40,21 @@
         return result;
     }
 
-    private Task ResetPassword(Guid id)
+    private async Task ResetPassword(Guid id)
     {
-        return Task.CompletedTask;
+        try
+        {
+            var result = _userService.ResetUserPasswordFromAdminView(id, user.NewPasswordForNormalUser, adminPassworToConfirmOperation, authenticationState.Result.User.Identity.Name);
+            NotificationService.Notify(new NotificationMessage { Severity = NotificationSeverity.Success, Summary = $"Password for user {id} changed", Duration = 4000 });
+            DialogService.Close(true);
+            await Task.Delay(4000);
+        }
+        catch (Exception e)
+        {
+            NotificationService.Notify(new NotificationMessage { Severity = NotificationSeverity.Error, Summary = $"{e.Message} try again with the correct password", Duration = 4000 });
+            DialogService.Close(true);
+            return;
+        }
     }
 
     private async Task Reborn(Guid id)
@@ -90,17 +101,20 @@
     {
         var result = await DialogService.OpenAsync("Reset Password", ds =>
     @<RadzenStack Gap="1.5rem">
-        <p>Do you want change password for User With Id: <b>@Id</b> pass correct password's and submit</p>
-        <RadzenStack Orientation="Orientation.Vertical" Gap="0.5rem" AlignItems="AlignItems.Start" JustifyContent="JustifyContent.SpaceBetween">
-            <RadzenPassword @bind-Value=@adminPassworToConfirmOperation Placeholder="Enter Your password..." AutoComplete="false" />
-            <RadzenPassword @bind-Value=@newPasswordForUser Placeholder="New user password..." AutoComplete="false" />
+        <EditForm Model="user" OnValidSubmit="() => ResetPassword(Id)">
+            <ValidationSummary />
+            <FluentValidationValidator />
+            <p>Do you want to change the password for User With Id: <b>@Id</b>? Enter your password and the new user password and submit.</p>
+            <RadzenStack Orientation="Orientation.Vertical" Gap="0.5rem" AlignItems="AlignItems.Start" JustifyContent="JustifyContent.SpaceBetween">
+                <RadzenPassword @bind-Value="adminPassworToConfirmOperation" Placeholder="Enter your password..." AutoComplete="false" />
+                <RadzenPassword @bind-Value="user.NewPasswordForNormalUser" Placeholder="New user password..." AutoComplete="false" />
 
-            <RadzenStack Orientation="Orientation.Horizontal">
-                <RadzenButton Text="Submit" Click="() => ResetPassword(Id)" Style="width: 80px;" />
-                <RadzenButton Text="Cancel" Click="() => ds.Close(false)" ButtonStyle="ButtonStyle.Light" />
+                <RadzenStack Orientation="Orientation.Horizontal">
+                    <RadzenButton Text="Submit" Style="width: 80px;" />
+                    <RadzenButton Text="Cancel" Click="() => ds.Close(false)" ButtonStyle="ButtonStyle.Light" />
+                </RadzenStack>
             </RadzenStack>
-
-        </RadzenStack>
+        </EditForm>
     </RadzenStack>);
     }
 
@@ -132,13 +146,13 @@
 
         <RadzenDataGridColumn TItem="AdminUserManagementDto" Title="Number of days after last removal">
             <Template Context="user">
-                @convertDate(user.DeleteDay, user.IsDeleted)
+                @ConvertDate(user.DeleteDay, user.IsDeleted)
             </Template>
         </RadzenDataGridColumn>
 
         <RadzenDataGridColumn TItem="AdminUserManagementDto" Title="Is Deleted?">
             <Template Context="user">
-                @isDeleted(user.IsDeleted)
+                @IsDeleted(user.IsDeleted)
             </Template>
         </RadzenDataGridColumn> 
 

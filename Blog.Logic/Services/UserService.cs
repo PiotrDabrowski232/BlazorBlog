@@ -37,7 +37,7 @@ namespace Blog.Logic.Services
 
             var isCorrect = _passwordHasher.VerifyHashedPassword(null, adminPasswordFromRepo, password);
 
-            var result = (isCorrect == PasswordVerificationResult.Failed) ? true : false;
+            var result = (isCorrect == PasswordVerificationResult.Failed) ? false : true;
             return result;
         }
 
@@ -152,30 +152,25 @@ namespace Blog.Logic.Services
 
         public Task<int> GiveAccountBack(Guid id, string password, string adminEmail)
         {
-            var userPasswordFromRepo = _userRepository.GetByEmail(adminEmail).Password;
-
-            var result = _passwordHasher.VerifyHashedPassword(null, userPasswordFromRepo, password);
-
-            if (result == PasswordVerificationResult.Failed)
-            {
-                throw new InvalidInputException("invalid username or password");
-            }
-            else
+            if (ConfirmAdminBeforeOperation(adminEmail, password))
             {
                 return _userRepository.ChangeDeleteStatus(id);
             }
-
+            else
+            {
+                throw new InvalidInputException("invalid username or password");
+            }
         }
 
-        public Task<int> ResetUserPasswordFromAdminView(Guid id, string Uesrpassword, string adminPassword, string adminName)
+        public Task ResetUserPasswordFromAdminView(Guid id, string uesrPassword, string adminPassword, string adminName)
         {
             if (ConfirmAdminBeforeOperation(adminName, adminPassword))
             {
-                throw new InvalidInputException("invalid username or password");
+                return _userRepository.UpdatingForgottenPassword(id, _passwordHasher.HashPassword(null, uesrPassword));
             }
             else
             {
-                return _userRepository.ChangeDeleteStatus(id);
+               throw new InvalidInputException("invalid username or password"); 
             }
         }
     }

@@ -16,7 +16,7 @@ namespace Blog.Logic.Services.Interfaces
         public T GetUserByContainedString<T>(string email) where T : class;
         public LoginUserDto VerifyUser(LoginUserDto dto);
         public Task<int> GiveAccountBack(Guid id, string password, string adminEmail);
-        public Task<int> ResetUserPasswordFromAdminView(Guid id, string Uesrpassword, string adminPassword, string adminName);
+        public Task ResetUserPasswordFromAdminView(Guid id, string Uesrpassword, string adminPassword, string adminName);
        
     }
 }
