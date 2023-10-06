@@ -15,6 +15,7 @@ using Microsoft.AspNetCore.Components.Authorization;
 using Blog.Logic.Authentication;
 using Radzen;
 using Blog.Logic.Dto.Validators.UserValidator;
+using Blog.Logic.Services.BackgroundServices;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -31,13 +32,10 @@ builder.Services.AddScoped<AuthenticationStateProvider, CustomAuthenticationStat
 builder.Services.AddScoped<UserSession>();
 
 
-
-
 // Dependency Injections Reposiotries
 builder.Services.AddScoped<IUserRepository, UserRepository>();
 builder.Services.AddScoped<IRoleRepository, RoleReposiotry>();
 builder.Services.AddScoped<IPostRepository, PostRepository>();
-
 
 
 // Dependency Injections Services
@@ -46,12 +44,13 @@ builder.Services.AddScoped<IRoleService, RoleService>();
 builder.Services.AddScoped<IPostService, PostService>();
 builder.Services.AddScoped<IPasswordHasher<User>, PasswordHasher<User>>();
 builder.Services.AddScoped<IValidator<UserDto>, UserDtoValidator>();
+builder.Services.AddHostedService<BackgoundDeleting>();
+
 
 //DbContext
 var connectionString = builder.Configuration.GetConnectionString("DefaultConnection");
 builder.Services.AddDbContext<BlogDbContext>(options => options.UseSqlServer(connectionString)
 .UseQueryTrackingBehavior(QueryTrackingBehavior.NoTracking));
-
 
 
 //Automapper
