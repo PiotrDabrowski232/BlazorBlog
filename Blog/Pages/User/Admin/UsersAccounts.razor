@@ -44,7 +44,7 @@
     {
         try
         {
-            var result = _userService.ResetUserPasswordFromAdminView(id, user.NewPasswordForNormalUser, adminPassworToConfirmOperation, authenticationState.Result.User.Identity.Name);
+            var result = _userService.ResetUserPasswordFromAdminView(id, user.NewPasswordForUser, adminPassworToConfirmOperation, authenticationState.Result.User.Identity.Name);
             NotificationService.Notify(new NotificationMessage { Severity = NotificationSeverity.Success, Summary = $"Password for user {id} changed", Duration = 4000 });
             DialogService.Close(true);
             await Task.Delay(4000);
@@ -107,10 +107,10 @@
             <p>Do you want to change the password for User With Id: <b>@Id</b>? Enter your password and the new user password and submit.</p>
             <RadzenStack Orientation="Orientation.Vertical" Gap="0.5rem" AlignItems="AlignItems.Start" JustifyContent="JustifyContent.SpaceBetween">
                 <RadzenPassword @bind-Value="adminPassworToConfirmOperation" Placeholder="Enter your password..." AutoComplete="false" />
-                <RadzenPassword @bind-Value="user.NewPasswordForNormalUser" Placeholder="New user password..." AutoComplete="false" />
+                <RadzenPassword @bind-Value="user.NewPasswordForUser" Placeholder="New user password..." AutoComplete="false" />
 
                 <RadzenStack Orientation="Orientation.Horizontal">
-                    <RadzenButton Text="Submit" Style="width: 80px;" />
+                    <RadzenButton Text="Submit" ButtonType="ButtonType.Submit" Style="width: 80px;" />
                     <RadzenButton Text="Cancel" Click="() => ds.Close(false)" ButtonStyle="ButtonStyle.Light" />
                 </RadzenStack>
             </RadzenStack>
