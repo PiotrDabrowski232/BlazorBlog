@@ -29,7 +29,7 @@
     }
     private void PassToEdit(string id)
     {
-        navManager.NavigateTo($"EditPost/{id}", forceLoad: true);
+        navManager.NavigateTo($"EditPost/{id}", true);
     }
 
     private void DeletePost(Guid id)

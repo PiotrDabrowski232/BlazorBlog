@@ -29,7 +29,7 @@
             StateHasChanged();
             NotificationService.Notify(new NotificationMessage { Severity = NotificationSeverity.Success, Summary = "Post Updated Succesfully", Duration = 2500 });
             await Task.Delay(2000);
-            NavigationManager.NavigateTo("/MyPost");
+            NavigationManager.NavigateTo("/MyPost", true);
         }
         catch(Exception e)
         {

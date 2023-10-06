@@ -8,8 +8,7 @@
     [Parameter]
     public string postId { get; set; }
 
-
-    PostDto post = new PostDto();
+    private PostDto post = new PostDto();
 
     protected override async Task OnInitializedAsync()
     {
@@ -17,8 +16,6 @@
     }
 
 }
-
-
 
     <div class="maincontent-post">
 
