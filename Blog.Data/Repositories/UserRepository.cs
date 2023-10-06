@@ -24,9 +24,18 @@ namespace Blog.Data.Repositories
         public Task<int> ChangeDeleteStatus(Guid id)
         {
             var user = _context.Set<User>().FirstOrDefault(u => u.Id == id);
-
             user.IsDeleted = false;
             _context.Update(user);
+
+            return _context.SaveChangesAsync();
+        }
+
+        public Task UpdatingForgottenPassword(Guid id, string userPassword)
+        {
+            var user = _context.Set<User>().Find(id);
+            user.Password = userPassword;
+            _context.Update(user);
+
             return _context.SaveChangesAsync();
         }
 

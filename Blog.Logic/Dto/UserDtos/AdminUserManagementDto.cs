@@ -14,6 +14,7 @@ namespace Blog.Logic.Dto.UserDtos
         public DateTime? DeleteDay { get; set; }
         public Guid RoleId { get; set; }
         public string RoleName { get; set; }
+        public string NewPasswordForUser { get; set; }
 
     }
 }
