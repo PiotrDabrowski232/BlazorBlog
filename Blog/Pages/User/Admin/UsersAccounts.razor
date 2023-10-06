@@ -75,11 +75,6 @@
         }
 }
 
-    private Task ChangeRole(Guid id)
-    {
-        return Task.CompletedTask;
-    }
-
     async Task ShowRebornDialog(Guid Id)
     {
         var result = await DialogService.OpenAsync("Reborn Account", ds =>
@@ -118,22 +113,6 @@
     </RadzenStack>);
     }
 
-    async Task ShowChangeRoleDialog(Guid Id)
-    {
-        var result = await DialogService.OpenAsync("Change Role", ds =>
-    @<RadzenStack Gap="1.5rem">
-        <p>If You want reborn User With Id: <b>@Id</b> pass correct password and submit</p>
-        <RadzenStack Orientation="Orientation.Vertical" Gap="0.5rem" AlignItems="AlignItems.Start" JustifyContent="JustifyContent.SpaceBetween">
-            <RadzenPassword @bind-Value=@adminPassworToConfirmOperation Placeholder="Enter password..." AutoComplete="false" />
-
-            <RadzenStack Orientation="Orientation.Horizontal">
-                <RadzenButton Text="Submit" Click="() => Reborn(Id)" Style="width: 80px;" />
-                <RadzenButton Text="Cancel" Click="() => ds.Close(false)" ButtonStyle="ButtonStyle.Light" />
-            </RadzenStack>
-
-        </RadzenStack>
-    </RadzenStack>);
-    }
 }
 
 
@@ -161,11 +140,13 @@
         <RadzenDataGridColumn TItem="AdminUserManagementDto" Title="Actions">
             <Template Context="user">
                 <div class="btn-group" role="group" aria-label="Basic mixed styles example">
-                    <a @onclick="() => ShowResetPasswordDialog(user.Id)" href="javascript:void(0)"><button type="button" class="btn btn-info">Reset Password</button></a>
-                    <a @onclick="() => ShowChangeRoleDialog(user.Id)" href="javascript:void(0)"><button type="button" class="btn btn-secondary">Change Role</button></a>
                     @if (user.IsDeleted)
                     {
                         <a @onclick="() => ShowRebornDialog(user.Id)" href="javascript:void(0)"><button type="button" class="btn btn-danger">Reborn</button></a>
+                    }
+                    else
+                    {
+                        <a @onclick="() => ShowResetPasswordDialog(user.Id)" href="javascript:void(0)"><button type="button" class="btn btn-info">Reset Password</button></a>
                     }
                     </div>
             </Template>
