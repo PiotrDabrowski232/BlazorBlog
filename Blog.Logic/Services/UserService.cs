@@ -31,6 +31,16 @@ namespace Blog.Logic.Services
             return _mapper.Map<IEnumerable<T>>(_userRepository.GetAll());
         }
 
+        private bool ConfirmAdminBeforeOperation(string adminName, string password)
+        {
+            var adminPasswordFromRepo = _userRepository.GetByEmail(adminName).Password;
+
+            var isCorrect = _passwordHasher.VerifyHashedPassword(null, adminPasswordFromRepo, password);
+
+            var result = (isCorrect == PasswordVerificationResult.Failed) ? false : true;
+            return result;
+        }
+
         public Task Add(UserDto userDto)
         {
             User user = _mapper.Map<User>(userDto);
@@ -38,7 +48,7 @@ namespace Blog.Logic.Services
             user.Password = _passwordHasher.HashPassword(user, user.Password);
 
             return _userRepository.Add(user);
-            
+
         }
 
         public void Delete(int id)
@@ -58,7 +68,7 @@ namespace Blog.Logic.Services
             {
                 var user = _mapper.Map<User>(userDto);
                 user.DeleteDay = DateTime.Now;
-                user.IsDeleted= true;
+                user.IsDeleted = true;
                 _userRepository.Update(user);
                 return Task.CompletedTask;
             }
@@ -74,7 +84,7 @@ namespace Blog.Logic.Services
         {
             var user = GetUserByContainedString<User>(userDto.Email);
             var result = _passwordHasher.VerifyHashedPassword(user, user.Password, userDto.OldPassword);
-            
+
             if (result == PasswordVerificationResult.Failed)
             {
                 throw new InvalidInputException("Incorrect password");
@@ -95,7 +105,7 @@ namespace Blog.Logic.Services
 
             var filteredUsers = GetAll<AdminUserManagementDto>()
                 .Where(u => u.RoleId != 2.ToGuid())
-                .ToList(); 
+                .ToList();
 
             foreach (var user in filteredUsers)
             {
@@ -140,21 +150,28 @@ namespace Blog.Logic.Services
             return LoginDto;
         }
 
-        public  Task<int> GiveAccountBack(Guid id, string password, string adminEmail)
+        public Task<int> GiveAccountBack(Guid id, string password, string adminEmail)
         {
-            var userPassword = _userRepository.GetByEmail(adminEmail).Password;
-
-            var result = _passwordHasher.VerifyHashedPassword(null, userPassword, password);
-
-            if (result == PasswordVerificationResult.Failed)
-            {
-                throw new InvalidInputException("invalid username or password");
-            }
-            else
+            if (ConfirmAdminBeforeOperation(adminEmail, password))
             {
                 return _userRepository.ChangeDeleteStatus(id);
             }
-            
+            else
+            {
+                throw new InvalidInputException("invalid username or password");
+            }
+        }
+
+        public Task ResetUserPasswordFromAdminView(Guid id, string uesrPassword, string adminPassword, string adminName)
+        {
+            if (ConfirmAdminBeforeOperation(adminName, adminPassword))
+            {
+                return _userRepository.UpdatingForgottenPassword(id, _passwordHasher.HashPassword(null, uesrPassword));
+            }
+            else
+            {
+               throw new InvalidInputException("invalid username or password"); 
+            }
         }
     }
 }
