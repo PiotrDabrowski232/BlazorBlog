@@ -16,5 +16,7 @@ namespace Blog.Data.Repositories.Interfaces
         public Task<int> ChangeDeleteStatus(Guid id);
 
         public Task UpdatingForgottenPassword(Guid id, string userPassword);
+
+        public void RemoveUsers(IEnumerable<User> users);
     }
 }
