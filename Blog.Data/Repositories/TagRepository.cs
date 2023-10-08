@@ -9,9 +9,9 @@ using System.Threading.Tasks;
 
 namespace Blog.Data.Repositories
 {
-    public class TagReposiotry : GenericRepository<Tag>, IGenericRepository<Tag>, ITagRepository
+    public class TagRepository : GenericRepository<Tag>, IGenericRepository<Tag>, ITagRepository
     {
-        public TagReposiotry(BlogDbContext context) : base(context)
+        public TagRepository(BlogDbContext context) : base(context)
         {
         }
     }

@@ -1,10 +1,4 @@
-﻿using Blog.Data.Models;
-using Blog.Logic.Dto;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using Blog.Logic.Dto;
 
 namespace Blog.Logic.Services.Interfaces
 {

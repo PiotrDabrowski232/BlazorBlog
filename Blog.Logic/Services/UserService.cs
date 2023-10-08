@@ -26,6 +26,7 @@ namespace Blog.Logic.Services
             _roleRepository = roleRepository;
         }
 
+        #region private methods
         private IEnumerable<T> GetAll<T>() where T : class
         {
             return _mapper.Map<IEnumerable<T>>(_userRepository.GetAll());
@@ -40,6 +41,10 @@ namespace Blog.Logic.Services
             var result = (isCorrect == PasswordVerificationResult.Failed) ? false : true;
             return result;
         }
+
+        #endregion private methods
+
+        #region public methods
 
         public Task Add(UserDto userDto)
         {
@@ -182,5 +187,7 @@ namespace Blog.Logic.Services
                 return Enumerable.Empty<User>();
             }
         }
+        
+        #endregion public methods
     }
 }

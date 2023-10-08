@@ -16,7 +16,9 @@ namespace Blog.Logic.Services
             _mapper = mapper;
         }
 
+        #region public methods
 
+        
         public IEnumerable<RoleDto> GetAll()
         {
             var roles = _roleRepository.GetAll();
@@ -27,5 +29,6 @@ namespace Blog.Logic.Services
         {
             return _mapper.Map<RoleDto>(_roleRepository.Get(roleId));
         }
+        #endregion public methods
     }
 }
