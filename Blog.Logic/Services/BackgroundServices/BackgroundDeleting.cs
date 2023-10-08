@@ -2,15 +2,16 @@
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
+using Microsoft.IdentityModel.Tokens;
 
 namespace Blog.Logic.Services.BackgroundServices
 {
-    public class BackgoundDeleting : BackgroundService
+    public class BackgroundDeleting : BackgroundService
     {
-        private ILogger<BackgoundDeleting> _logger;
+        private ILogger<BackgroundDeleting> _logger;
         private IServiceProvider _serviceProvider;
 
-        public BackgoundDeleting(ILogger<BackgoundDeleting> logger, IServiceProvider serviceProvider)
+        public BackgroundDeleting(ILogger<BackgroundDeleting> logger, IServiceProvider serviceProvider)
         {
             _logger = logger;
             _serviceProvider = serviceProvider;
@@ -23,9 +24,11 @@ namespace Blog.Logic.Services.BackgroundServices
                 using (var scope = _serviceProvider.CreateScope())
                 {
                     var scopedService = scope.ServiceProvider.GetService<IUserService>();
-                    
-                    _logger.LogInformation("DELETING USER");
-                    await Task.Delay(TimeSpan.FromSeconds(2), stoppingToken);
+                    if (!scopedService.CheckUsersToDelete().IsNullOrEmpty())
+                    {
+                        _logger.LogInformation("Deleted Users");
+                    }
+                    await Task.Delay(TimeSpan.FromHours(4), stoppingToken);
                 }
             }
         }

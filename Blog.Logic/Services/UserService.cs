@@ -51,11 +51,6 @@ namespace Blog.Logic.Services
 
         }
 
-        public void Delete(int id)
-        {
-            throw new NotImplementedException();
-        }
-
         public Task SoftDelete(string password, UserDto userDto)
         {
             var samePasswords = _passwordHasher.VerifyHashedPassword(null, userDto.Password, password);
@@ -170,7 +165,21 @@ namespace Blog.Logic.Services
             }
             else
             {
-               throw new InvalidInputException("invalid username or password"); 
+                throw new InvalidInputException("invalid username or password");
+            }
+        }
+
+        public IEnumerable<User>? CheckUsersToDelete()
+        {
+            var usersToDelete = _userRepository.GetAll().Where(u => u.IsDeleted && u.DeleteDay.Value.Day >= 30);
+            if (usersToDelete.Any())
+            {
+                _userRepository.RemoveUsers(usersToDelete);
+                return usersToDelete;
+            }
+            else
+            {
+                return Enumerable.Empty<User>();
             }
         }
     }

@@ -39,5 +39,10 @@ namespace Blog.Data.Repositories
             return _context.SaveChangesAsync();
         }
 
+        public void RemoveUsers(IEnumerable<User> users)
+        {
+            _context.users.RemoveRange(users);
+            _context.SaveChanges();
+        }
     }
 }

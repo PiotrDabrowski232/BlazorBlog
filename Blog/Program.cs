@@ -44,7 +44,7 @@ builder.Services.AddScoped<IRoleService, RoleService>();
 builder.Services.AddScoped<IPostService, PostService>();
 builder.Services.AddScoped<IPasswordHasher<User>, PasswordHasher<User>>();
 builder.Services.AddScoped<IValidator<UserDto>, UserDtoValidator>();
-builder.Services.AddHostedService<BackgoundDeleting>();
+builder.Services.AddHostedService<BackgroundDeleting>();
 
 
 //DbContext
