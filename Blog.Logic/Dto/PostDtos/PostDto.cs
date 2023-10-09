@@ -15,5 +15,7 @@ namespace Blog.Logic.Dto.PostDtos
 
         public Guid UserId { get; set; }  
         public string CreatedBy { get; set; }
+
+        public string? TagName {  get; set; }
     }
 }

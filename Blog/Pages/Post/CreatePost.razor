@@ -45,11 +45,17 @@
     </div>
 
     <div class="form-group col-md-4 mb-2 w-100 h-75">
-        <label for="Password">Password</label>
+        <label for="Description">Description</label>
         <InputTextArea type="Text" class="form-control" style="height:80%" placeholder="Description" @bind-Value="@post.Description" />
     </div>
 
+    <div class="form-group col-md-4 mb-5 w-100">
+        <label for="Tags">Tags</label>
+        <InputText style="width:45vw;" type="Text" class="form-control" placeholder="Tags separate by white space or #" @bind-Value="@post.TagName" />
+    </div>
+
     <button type="submit" class="btn btn-primary btn-lg">Publish</button>
+
 
     <div style="margin-top:2vh;">
         <ValidationSummary />

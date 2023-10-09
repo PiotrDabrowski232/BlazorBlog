@@ -11,11 +11,15 @@ namespace Blog.Logic.Services
         private readonly IPostRepository _postRepository;
         private readonly IMapper _mapper;
         private readonly IUserRepository _userRepository;
-        public PostService(IPostRepository postRepository, IMapper mapper, IUserRepository userRepository)
+        private readonly ITagPostsRepository _tagPostsRepository;
+
+        public PostService(IPostRepository postRepository, IMapper mapper, IUserRepository userRepository,
+            ITagPostsRepository tagPostsRepository)
         {
             _postRepository = postRepository;
             _mapper = mapper;
             _userRepository = userRepository;
+            _tagPostsRepository = tagPostsRepository;
         }
 
         #region private methods
