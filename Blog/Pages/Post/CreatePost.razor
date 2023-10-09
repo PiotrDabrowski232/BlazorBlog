@@ -20,7 +20,7 @@
         try
         {
             post.CreatedBy = authenticationState.Result.User.Identity.Name;
-            _postService.Add(post);
+            _postService.Add(post, selectedTags);
             NotificationService.Notify(new NotificationMessage { Severity = NotificationSeverity.Success, Summary = "Post Added Succesfully", Duration = 2500 });
             await Task.Delay(2500);
             NavManager.NavigateTo("/", true);

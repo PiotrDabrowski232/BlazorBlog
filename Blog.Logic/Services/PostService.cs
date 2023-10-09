@@ -29,13 +29,15 @@ namespace Blog.Logic.Services
 
 
         #region public methods
-        public void Add(PostDto postDto)
+        public void Add(PostDto postDto, IList<string>? tags)
         {
             postDto.Id = Guid.NewGuid();
             var post = _mapper.Map<Posts>(postDto);
             post.CreationDate = DateTime.Now;
             post.UserId = _userRepository.GetByEmail(postDto.CreatedBy).Id;
 
+            if (!tags.IsNullOrEmpty())
+                _tagPostsService.AddTagsToPost(tags, postDto.Id);
             _postRepository.Add(post);
 
         }
