@@ -19,7 +19,10 @@ namespace Blog.Logic.Services
         #endregion private methods
 
         #region public methods
-
+        public void AddTagsToPost(string tagsName, Guid postId)
+        {
+            var separateTags = tagsName.Split(' ');
+        }
         #endregion public methods
     }
 }

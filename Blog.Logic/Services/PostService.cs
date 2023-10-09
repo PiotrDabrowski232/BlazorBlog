@@ -3,6 +3,7 @@ using Blog.Data.Models;
 using Blog.Data.Repositories.Interfaces;
 using Blog.Logic.Dto.PostDtos;
 using Blog.Logic.Services.Interfaces;
+using Microsoft.IdentityModel.Tokens;
 
 namespace Blog.Logic.Services
 {
@@ -11,15 +12,15 @@ namespace Blog.Logic.Services
         private readonly IPostRepository _postRepository;
         private readonly IMapper _mapper;
         private readonly IUserRepository _userRepository;
-        private readonly ITagPostsRepository _tagPostsRepository;
+        private readonly ITagPostsService _tagPostsService;
 
         public PostService(IPostRepository postRepository, IMapper mapper, IUserRepository userRepository,
-            ITagPostsRepository tagPostsRepository)
+            ITagPostsService tagPostsService)
         {
             _postRepository = postRepository;
             _mapper = mapper;
             _userRepository = userRepository;
-            _tagPostsRepository = tagPostsRepository;
+            _tagPostsService = tagPostsService;
         }
 
         #region private methods
