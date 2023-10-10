@@ -1,5 +1,6 @@
 ﻿
 using Blog.Logic.Dto.PostDtos;
+using Blog.Data.Models;
 
 namespace Blog.Logic.Services.Interfaces
 {

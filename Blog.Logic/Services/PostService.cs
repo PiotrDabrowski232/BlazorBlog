@@ -36,10 +36,10 @@ namespace Blog.Logic.Services
             post.CreationDate = DateTime.Now;
             post.UserId = _userRepository.GetByEmail(postDto.CreatedBy).Id;
 
-            if (!tags.IsNullOrEmpty())
-                _tagPostsService.AddTagsToPost(tags, postDto.Id);
             _postRepository.Add(post);
 
+            if (!tags.IsNullOrEmpty())
+                _tagPostsService.AddTagsToPost(tags, post.Id);
         }
 
         public void Delete(Guid id)

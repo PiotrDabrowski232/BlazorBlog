@@ -93,7 +93,7 @@ namespace Blog.Data.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("Tag");
+                    b.ToTable("tag");
                 });
 
             modelBuilder.Entity("Blog.Data.Models.TagPosts", b =>
@@ -104,14 +104,11 @@ namespace Blog.Data.Migrations
                     b.Property<Guid>("PostId")
                         .HasColumnType("uniqueidentifier");
 
-                    b.Property<Guid>("PostsId")
-                        .HasColumnType("uniqueidentifier");
-
                     b.HasKey("TagId", "PostId");
 
-                    b.HasIndex("PostsId");
+                    b.HasIndex("PostId");
 
-                    b.ToTable("TagPosts");
+                    b.ToTable("tagPosts");
                 });
 
             modelBuilder.Entity("Blog.Data.Models.User", b =>
@@ -200,21 +197,21 @@ namespace Blog.Data.Migrations
 
             modelBuilder.Entity("Blog.Data.Models.TagPosts", b =>
                 {
-                    b.HasOne("Blog.Data.Models.Posts", "Posts")
+                    b.HasOne("Blog.Data.Models.Posts", "Post")
                         .WithMany("Tags")
-                        .HasForeignKey("PostsId")
+                        .HasForeignKey("PostId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.HasOne("Blog.Data.Models.Tag", "Tags")
+                    b.HasOne("Blog.Data.Models.Tag", "Tag")
                         .WithMany("Posts")
                         .HasForeignKey("TagId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.Navigation("Posts");
+                    b.Navigation("Post");
 
-                    b.Navigation("Tags");
+                    b.Navigation("Tag");
                 });
 
             modelBuilder.Entity("Blog.Data.Models.User", b =>

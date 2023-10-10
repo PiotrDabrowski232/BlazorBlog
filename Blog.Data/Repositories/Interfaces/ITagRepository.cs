@@ -9,6 +9,6 @@ namespace Blog.Data.Repositories.Interfaces
 {
     public interface ITagRepository : IGenericRepository<Tag>
     {
-
+        public void Add(IList<Tag> tag);
     }
 }

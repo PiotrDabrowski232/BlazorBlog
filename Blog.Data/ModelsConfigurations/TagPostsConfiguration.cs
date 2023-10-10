@@ -1,9 +1,6 @@
 ﻿using Blog.Data.Models;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
-using Microsoft.AspNetCore.Identity;
-using System;
-using Blog.Logic.Extensions;
 
 namespace Blog.Data.ModelsConfigurations
 {
@@ -11,7 +8,15 @@ namespace Blog.Data.ModelsConfigurations
     { 
         public void Configure(EntityTypeBuilder<TagPosts> builder)
         {
-            builder.HasKey(tp => new { tp.TagId, tp.PostId});
+            builder.HasKey(tp => new { tp.TagId, tp.PostId });
+
+            builder.HasOne(tp => tp.Post)
+                .WithMany(p => p.Tags)
+                .HasForeignKey(tp => tp.PostId);
+
+            builder.HasOne(tp => tp.Tag)
+                .WithMany(t => t.Posts)
+                .HasForeignKey(tp => tp.TagId);
         }
     }
 }

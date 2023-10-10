@@ -9,5 +9,10 @@ namespace Blog.Data.Repositories
         public TagPostsRepository(BlogDbContext context) : base(context)
         {
         }
+        public void AddTagsToPost(IList<TagPosts> tagPosts)
+        {
+            _context.AddRange(tagPosts);
+            _context.SaveChanges();
+        }
     }
 }
