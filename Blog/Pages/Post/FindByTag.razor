@@ -1,0 +1,26 @@
+﻿@page "/FindByTag"
+
+
+
+@code {
+    PostSearchDto postSearch = new PostSearchDto();
+}
+
+
+<h4>Add Post for others</h4>
+
+<EditForm Model="postSearch">
+
+    <div class="form-group col-md-4 mb-2 w-25 h-75">
+        <label for="Title">Title of searching post</label>
+        <InputText type="Text" class="form-control" placeholder="Title" @bind-Value="@postSearch.Title" />
+    </div>
+
+    <div class="form-group col-md-4 mb-2 w-75 h-75">
+        <label for="TagNames">Tag Names</label>
+        <InputText type="Text" class="form-control" placeholder="Tag Names" @bind-Value="@postSearch.TagName" />
+    </div>
+
+    <button type="submit" class="btn btn-primary btn-lg">Find</button>
+</EditForm>
+
