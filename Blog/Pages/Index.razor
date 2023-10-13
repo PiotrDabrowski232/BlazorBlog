@@ -6,10 +6,34 @@
 
 @code {
     IEnumerable<PostDto> posts;
+    PostSearchDto postSearch = new PostSearchDto();
 
     protected override async Task OnInitializedAsync()
     {
         posts = _postService.GetAll();
+    }
+
+    public void PostFinder()
+    {
+        try
+        {
+            posts = _postService.FindPosts(postSearch.Title, MakeItList());  
+        }
+        catch(Exception ex)
+        {
+            
+        }
+
+    }
+
+    private IList<string> MakeItList()
+    {
+        if (!string.IsNullOrWhiteSpace(postSearch.TagName))
+        {
+            return postSearch.TagName.Split(' ', StringSplitOptions.RemoveEmptyEntries).Distinct().ToList();
+        }
+
+        return new List<string>();
     }
 
     public void CheckPost(string postId)
@@ -45,32 +69,45 @@
 }
 
 
+<EditForm Model="postSearch" OnSubmit="PostFinder">
 
+    <div class="form-group col-md-4 mb-2 w-25 h-75">
+        <label for="Title">Title of searching post</label>
+        <InputText type="Text" class="form-control" placeholder="Title" @bind-Value="@postSearch.Title" />
+    </div>
+
+    <div class="form-group col-md-4 mb-2 w-75 h-75">
+        <label for="TagNames">Tag Names</label>
+        <InputText type="Text" class="form-control" placeholder="Tag Names" @bind-Value="@postSearch.TagName" />
+    </div>
+
+    <button type="submit" class="btn btn-primary btn-lg">Find</button>
+</EditForm>
 
 <div class="container m-0 p-0">
 
     <div class="card-columns">
 
-        @foreach (var post in SortByDate())
+        @foreach (var post in posts)
         {
-                <div class="card d-inline-block w-25" style="margin-left: 5.9vw; margin-top:3.2vh; height:auto;">
+            <div class="card d-inline-block w-25" style="margin-left: 5.9vw; margin-top:3.2vh; height:auto;">
 
-                    <div class="card-body">
-                        <h5 class="card-title">@post.Title</h5>
-                        <p class="card-text">
-                            <span class="d-inline-block text-truncate" style="max-width: 85%;">
-                                @post.Description
-                            </span>
-                        </p>
-                        <p class="card-text"><small class="text-muted">Author: @post.CreatedBy</small></p>
-                        <p class="card-text"><small class="text-body-secondary">Last Updated: @TimeConverter((DateTime)@post.CreationDate)</small></p>
-                    </div>
-                    
-                    <RadzenStack Orientation="Orientation.Horizontal" JustifyContent="JustifyContent.End" >
-                    <a @onclick="() => CheckPost(post.Id.ToString())"><RadzenButton Variant="Variant.Flat" Text="Check Post" /></a>
-                    </RadzenStack>
-
+                <div class="card-body">
+                    <h5 class="card-title">@post.Title</h5>
+                    <p class="card-text">
+                        <span class="d-inline-block text-truncate" style="max-width: 85%;">
+                            @post.Description
+                        </span>
+                    </p>
+                    <p class="card-text"><small class="text-muted">Author: @post.CreatedBy</small></p>
+                    <p class="card-text"><small class="text-body-secondary">Last Updated: @TimeConverter((DateTime)@post.CreationDate)</small></p>
                 </div>
+
+                <RadzenStack Orientation="Orientation.Horizontal" JustifyContent="JustifyContent.End">
+                    <a @onclick="() => CheckPost(post.Id.ToString())"><RadzenButton Variant="Variant.Flat" Text="Check Post" /></a>
+                </RadzenStack>
+
+            </div>
         }
 
     </div>

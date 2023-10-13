@@ -35,12 +35,13 @@ namespace Blog.Logic.Services
         public IEnumerable<Guid> GetPostsByTagsName(IList<string> tagsName)
         {
             var tagsId = tagsName
-            .Select(n => _tagService.GetAllTags().First(t => t.Name == n).Id)
-            .ToList();
+            .Select(n => _tagService.GetAllTags().FirstOrDefault(t => t.Name == n).Id)
+            .ToList(); //poprawić zeby wybierało z tagservice najpierw
 
-            var posts = _tagPostsRepository.GetAll().Where(p => tagsId.Contains(p.TagId)).Select(p=>p.PostId).Distinct().ToList();
+            var posts = _tagPostsRepository.GetAll().Where(p => tagsId.Contains(p.TagId)).Select(p => p.PostId).Distinct().ToList();
 
             return posts;
+
         }
         #endregion public methods
     }
