@@ -12,7 +12,7 @@
         posts = _postService.GetAll();
     }
 
-    private void CheckPost(string postId)
+    public void CheckPost(string postId)
     {
         NavigationManager.NavigateTo($"/{postId}");
     }
