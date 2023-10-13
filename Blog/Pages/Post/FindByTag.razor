@@ -1,9 +1,20 @@
 ﻿@page "/FindByTag"
 
-
+@inject Blog.Logic.Services.Interfaces.IPostService _postService
+@inject Microsoft.AspNetCore.Components.NavigationManager NavigationManager
+@inject NotificationService NotificationService
 
 @code {
     PostSearchDto postSearch = new PostSearchDto();
+
+    public void PostFinder(){
+        _postService.FindPosts(postSearch.Title, MakeItList());
+    }
+
+    private IList<string> MakeItList()
+    {
+       return postSearch.TagName.Split(' ', StringSplitOptions.RemoveEmptyEntries).Distinct().ToList(); 
+    }
 }
 
 

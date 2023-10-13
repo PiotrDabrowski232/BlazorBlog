@@ -10,5 +10,7 @@ namespace Blog.Data.Repositories.Interfaces
     public interface ITagPostsRepository : IGenericRepository<TagPosts>
     {
         public void AddTagsToPost(IList<TagPosts> tagPosts);
+
+
     }
 }

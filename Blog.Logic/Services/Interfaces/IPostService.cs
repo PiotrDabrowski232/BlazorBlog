@@ -10,5 +10,6 @@ namespace Blog.Logic.Services.Interfaces
         public void Delete(Guid id);
         public Task<IEnumerable<PostDto>> GetAllEditableAndDeletableByUser(string userEmail);
         public T GetByPostId<T>(string Id) where T : class;
+        public IEnumerable<PostDto> FindPosts(string? postName, IList<string>? tagsName);
     }
 }

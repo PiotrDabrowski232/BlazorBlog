@@ -31,6 +31,17 @@ namespace Blog.Logic.Services
 
             _tagPostsRepository.AddTagsToPost(tagPost);
         }
+
+        public IEnumerable<Guid> GetPostsByTagsName(IList<string> tagsName)
+        {
+            var tagsId = tagsName
+            .Select(n => _tagService.GetAllTags().First(t => t.Name == n).Id)
+            .ToList();
+
+            var posts = _tagPostsRepository.GetAll().Where(p => tagsId.Contains(p.TagId));
+
+            return tagsId;
+        }
         #endregion public methods
     }
 }

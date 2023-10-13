@@ -84,6 +84,26 @@ namespace Blog.Logic.Services
             
             return post;
         }
+
+        public IEnumerable<PostDto> FindPosts(string? postName, IList<string>? tagsName)
+        {
+            var posts = _postRepository.GetAll();
+
+            IEnumerable<Posts> filteredPosts;
+
+            if (!postName.IsNullOrEmpty())
+            {
+                posts = posts.Where(p => p.Title == postName);
+            }
+            if (!tagsName.IsNullOrEmpty())
+            {
+                posts = posts.Where(p => _tagPostsService.GetPostsByTagsName(tagsName).Contains(p.Id));
+            }
+
+            return _mapper.Map<IEnumerable<PostDto>>(posts);
+        }
     }
+
+
     #endregion public method
 }
