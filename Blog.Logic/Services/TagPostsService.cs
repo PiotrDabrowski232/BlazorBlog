@@ -38,9 +38,9 @@ namespace Blog.Logic.Services
             .Select(n => _tagService.GetAllTags().First(t => t.Name == n).Id)
             .ToList();
 
-            var posts = _tagPostsRepository.GetAll().Where(p => tagsId.Contains(p.TagId));
+            var posts = _tagPostsRepository.GetAll().Where(p => tagsId.Contains(p.TagId)).Select(p=>p.PostId).Distinct();
 
-            return tagsId;
+            return posts;
         }
         #endregion public methods
     }

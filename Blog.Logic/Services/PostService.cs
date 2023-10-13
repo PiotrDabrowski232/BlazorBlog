@@ -97,7 +97,8 @@ namespace Blog.Logic.Services
             }
             if (!tagsName.IsNullOrEmpty())
             {
-                posts = posts.Where(p => _tagPostsService.GetPostsByTagsName(tagsName).Contains(p.Id));
+                var postsIDs = _tagPostsService.GetPostsByTagsName(tagsName);
+                posts = posts.Where(p => postsIDs.Contains(p.Id)); // nie daje rezultatów sprawdzić
             }
 
             return _mapper.Map<IEnumerable<PostDto>>(posts);
