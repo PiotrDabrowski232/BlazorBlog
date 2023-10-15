@@ -10,12 +10,14 @@ namespace Blog.Logic.Services
         private readonly ITagPostsRepository _tagPostsRepository;
         private readonly IMapper _mapper;
         private readonly ITagService _tagService;
+        private readonly ITagRepository _tagRepository;
 
-        public TagPostsService(ITagPostsRepository tagPostsService, IMapper mapper, ITagService tagService)
+        public TagPostsService(ITagPostsRepository tagPostsService, IMapper mapper, ITagService tagService, ITagRepository tagRepository)
         {
             _mapper = mapper;
             _tagPostsRepository = tagPostsService;
             _tagService = tagService;
+            _tagRepository = tagRepository;
         }
 
         #region private methods
@@ -34,14 +36,17 @@ namespace Blog.Logic.Services
 
         public IEnumerable<Guid> GetPostsByTagsName(IList<string> tagsName)
         {
-            var tagsId = tagsName
-            .Select(n => _tagService.GetAllTags().FirstOrDefault(t => t.Name == n).Id)
-            .ToList(); //poprawić zeby wybierało z tagservice najpierw
+            var tagsId = _tagRepository.GetAll()
+                .Where(t => tagsName.Contains(t.Name))
+                .Select(t => t.Id)
+                .ToList();
 
-            var posts = _tagPostsRepository.GetAll().Where(p => tagsId.Contains(p.TagId)).Select(p => p.PostId).Distinct().ToList();
+            var postIds = _tagPostsRepository.GetAll()
+                .Where(p => tagsId.Contains(p.TagId))
+                .Select(p => p.PostId)
+                .Distinct();
 
-            return posts;
-
+            return postIds;
         }
         #endregion public methods
     }

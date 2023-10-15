@@ -87,9 +87,7 @@ namespace Blog.Logic.Services
 
         public IEnumerable<PostDto> FindPosts(string? postName, IList<string>? tagsName)
         {
-            var posts = _postRepository.GetAll();
-
-            IEnumerable<Posts> filteredPosts;
+            var posts = GetAll();
 
             if (!postName.IsNullOrEmpty())
             {
@@ -101,7 +99,7 @@ namespace Blog.Logic.Services
                 posts = posts.Where(p => postsIDs.Contains(p.Id)); 
             }
 
-            return _mapper.Map<IEnumerable<PostDto>>(posts);
+            return posts;
         }
     }
 

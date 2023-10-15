@@ -20,10 +20,7 @@ namespace Blog.Logic.Services
         #endregion private methods
 
         #region public methods
-        public IEnumerable<Tag> GetAllTags()
-        {
-            return _tagRepository.GetAll();
-        }
+        
 
         public IEnumerable<Tag> Add(IList<string> tagNames)
         {
