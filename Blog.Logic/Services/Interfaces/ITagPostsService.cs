@@ -1,8 +1,4 @@
-﻿
-using Blog.Logic.Dto.PostDtos;
-using Blog.Data.Models;
-
-namespace Blog.Logic.Services.Interfaces
+﻿namespace Blog.Logic.Services.Interfaces
 {
     public interface ITagPostsService
     {

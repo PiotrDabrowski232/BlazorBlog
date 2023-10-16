@@ -2,6 +2,7 @@
 
 @inject Blog.Logic.Services.Interfaces.IPostService _postService
 @inject Microsoft.AspNetCore.Components.NavigationManager NavigationManager
+@inject NotificationService NotificationService
 
 
 @code {
@@ -18,11 +19,11 @@
         try
         {
             posts = _postService.FindPosts(postSearch.Title, MakeItList());
-            
+            NotificationService.Notify(new NotificationMessage { Severity = NotificationSeverity.Success, Summary = $"Found {posts.Count()} posts", Duration = 2500 });
         }
         catch(Exception ex)
         {
-            
+            NotificationService.Notify(new NotificationMessage { Severity = NotificationSeverity.Success, Summary = $"Error: {ex.Message}", Duration = 2500 });
         }
 
     }
