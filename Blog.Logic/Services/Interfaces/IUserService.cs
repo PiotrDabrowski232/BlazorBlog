@@ -1,6 +1,5 @@
 ﻿using Blog.Data.Models;
 using Blog.Logic.Dto.UserDtos;
-using Microsoft.AspNet.Identity;
 
 namespace Blog.Logic.Services.Interfaces
 {

@@ -3,6 +3,7 @@ using Blog.Data.Models;
 using Blog.Data.Repositories.Interfaces;
 using Blog.Logic.Dto.PostDtos;
 using Blog.Logic.Services.Interfaces;
+using Microsoft.IdentityModel.Tokens;
 
 namespace Blog.Logic.Services
 {
@@ -11,11 +12,15 @@ namespace Blog.Logic.Services
         private readonly IPostRepository _postRepository;
         private readonly IMapper _mapper;
         private readonly IUserRepository _userRepository;
-        public PostService(IPostRepository postRepository, IMapper mapper, IUserRepository userRepository)
+        private readonly ITagPostsService _tagPostsService;
+
+        public PostService(IPostRepository postRepository, IMapper mapper, IUserRepository userRepository,
+            ITagPostsService tagPostsService)
         {
             _postRepository = postRepository;
             _mapper = mapper;
             _userRepository = userRepository;
+            _tagPostsService = tagPostsService;
         }
 
         #region private methods
@@ -24,7 +29,7 @@ namespace Blog.Logic.Services
 
 
         #region public methods
-        public void Add(PostDto postDto)
+        public void Add(PostDto postDto, IList<string>? tags)
         {
             postDto.Id = Guid.NewGuid();
             var post = _mapper.Map<Posts>(postDto);
@@ -33,6 +38,8 @@ namespace Blog.Logic.Services
 
             _postRepository.Add(post);
 
+            if (!tags.IsNullOrEmpty())
+                _tagPostsService.AddTagsToPost(tags, post.Id);
         }
 
         public void Delete(Guid id)
@@ -77,6 +84,25 @@ namespace Blog.Logic.Services
             
             return post;
         }
+
+        public IEnumerable<PostDto> FindPosts(string? postName, IList<string>? tagsName)
+        {
+            var posts = GetAll();
+
+            if (!postName.IsNullOrEmpty())
+            {
+                posts = posts.Where(p => p.Title == postName);
+            }
+            if (!tagsName.IsNullOrEmpty())
+            {
+                var postsIDs = _tagPostsService.GetPostsByTagsName(tagsName);
+                posts = posts.Where(p => postsIDs.Contains(p.Id)); 
+            }
+
+            return posts;
+        }
     }
+
+
     #endregion public method
 }
