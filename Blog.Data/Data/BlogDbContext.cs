@@ -15,7 +15,8 @@ namespace Blog.Data.Data
         public DbSet<User> users { get; set; }
         public DbSet<Posts> post { get; set; }
         public DbSet<Roles> roles { get; set; }
-
+        public DbSet<Tag> tag { get; set; }
+        public DbSet<TagPosts> tagPosts { get; set; }
         protected override void OnModelCreating(ModelBuilder builder)
         {
             base.OnModelCreating(builder);

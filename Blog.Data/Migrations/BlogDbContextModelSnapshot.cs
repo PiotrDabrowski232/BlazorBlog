@@ -81,6 +81,36 @@ namespace Blog.Data.Migrations
                         });
                 });
 
+            modelBuilder.Entity("Blog.Data.Models.Tag", b =>
+                {
+                    b.Property<Guid>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<string>("Name")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("tag");
+                });
+
+            modelBuilder.Entity("Blog.Data.Models.TagPosts", b =>
+                {
+                    b.Property<Guid>("TagId")
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<Guid>("PostId")
+                        .HasColumnType("uniqueidentifier");
+
+                    b.HasKey("TagId", "PostId");
+
+                    b.HasIndex("PostId");
+
+                    b.ToTable("tagPosts");
+                });
+
             modelBuilder.Entity("Blog.Data.Models.User", b =>
                 {
                     b.Property<Guid>("Id")
@@ -165,6 +195,25 @@ namespace Blog.Data.Migrations
                     b.Navigation("User");
                 });
 
+            modelBuilder.Entity("Blog.Data.Models.TagPosts", b =>
+                {
+                    b.HasOne("Blog.Data.Models.Posts", "Post")
+                        .WithMany("Tags")
+                        .HasForeignKey("PostId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("Blog.Data.Models.Tag", "Tag")
+                        .WithMany("Posts")
+                        .HasForeignKey("TagId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Post");
+
+                    b.Navigation("Tag");
+                });
+
             modelBuilder.Entity("Blog.Data.Models.User", b =>
                 {
                     b.HasOne("Blog.Data.Models.Roles", "Role")
@@ -174,6 +223,16 @@ namespace Blog.Data.Migrations
                         .IsRequired();
 
                     b.Navigation("Role");
+                });
+
+            modelBuilder.Entity("Blog.Data.Models.Posts", b =>
+                {
+                    b.Navigation("Tags");
+                });
+
+            modelBuilder.Entity("Blog.Data.Models.Tag", b =>
+                {
+                    b.Navigation("Posts");
                 });
 
             modelBuilder.Entity("Blog.Data.Models.User", b =>

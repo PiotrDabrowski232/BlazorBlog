@@ -8,7 +8,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 namespace Blog.Data.Migrations
 {
     /// <inheritdoc />
-    public partial class Init : Migration
+    public partial class TagPostsInit : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
@@ -23,6 +23,18 @@ namespace Blog.Data.Migrations
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_roles", x => x.RoleId);
+                });
+
+            migrationBuilder.CreateTable(
+                name: "tag",
+                columns: table => new
+                {
+                    Id = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
+                    Name = table.Column<string>(type: "nvarchar(max)", nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_tag", x => x.Id);
                 });
 
             migrationBuilder.CreateTable(
@@ -74,6 +86,30 @@ namespace Blog.Data.Migrations
                         onDelete: ReferentialAction.Cascade);
                 });
 
+            migrationBuilder.CreateTable(
+                name: "tagPosts",
+                columns: table => new
+                {
+                    PostId = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
+                    TagId = table.Column<Guid>(type: "uniqueidentifier", nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_tagPosts", x => new { x.TagId, x.PostId });
+                    table.ForeignKey(
+                        name: "FK_tagPosts_post_PostId",
+                        column: x => x.PostId,
+                        principalTable: "post",
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Cascade);
+                    table.ForeignKey(
+                        name: "FK_tagPosts_tag_TagId",
+                        column: x => x.TagId,
+                        principalTable: "tag",
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Cascade);
+                });
+
             migrationBuilder.InsertData(
                 table: "roles",
                 columns: new[] { "RoleId", "Name" },
@@ -95,6 +131,11 @@ namespace Blog.Data.Migrations
                 column: "UserId");
 
             migrationBuilder.CreateIndex(
+                name: "IX_tagPosts_PostId",
+                table: "tagPosts",
+                column: "PostId");
+
+            migrationBuilder.CreateIndex(
                 name: "IX_users_RoleId",
                 table: "users",
                 column: "RoleId");
@@ -104,7 +145,13 @@ namespace Blog.Data.Migrations
         protected override void Down(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.DropTable(
+                name: "tagPosts");
+
+            migrationBuilder.DropTable(
                 name: "post");
+
+            migrationBuilder.DropTable(
+                name: "tag");
 
             migrationBuilder.DropTable(
                 name: "users");
