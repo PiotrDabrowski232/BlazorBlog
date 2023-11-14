@@ -309,6 +309,10 @@
         "net6.0": {
           "targetAlias": "net6.0",
           "dependencies": {
+            "Moq": {
+              "target": "Package",
+              "version": "[4.20.69, )"
+            },
             "NUnit": {
               "target": "Package",
               "version": "[3.14.0, )"
