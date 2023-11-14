@@ -41,3 +41,17 @@ C:\Users\piecz\Source\Repos\PiotrDabrowski232\BlazorBlog\Blog.Shared\obj\Debug\n
 C:\Users\piecz\Source\Repos\PiotrDabrowski232\BlazorBlog\Blog.Shared\obj\Debug\net6.0\Blog.Shared.pdb
 C:\Users\piecz\Source\Repos\PiotrDabrowski232\BlazorBlog\Blog.Shared\obj\Debug\net6.0\Blog.Shared.genruntimeconfig.cache
 C:\Users\piecz\Source\Repos\PiotrDabrowski232\BlazorBlog\Blog.Shared\obj\Debug\net6.0\ref\Blog.Shared.dll
+C:\Users\Piotr\Source\Repos\PiotrDabrowski232\BlazorBlog\Blog.Shared\bin\Debug\net6.0\Blog.Shared.exe
+C:\Users\Piotr\Source\Repos\PiotrDabrowski232\BlazorBlog\Blog.Shared\bin\Debug\net6.0\Blog.Shared.deps.json
+C:\Users\Piotr\Source\Repos\PiotrDabrowski232\BlazorBlog\Blog.Shared\bin\Debug\net6.0\Blog.Shared.runtimeconfig.json
+C:\Users\Piotr\Source\Repos\PiotrDabrowski232\BlazorBlog\Blog.Shared\bin\Debug\net6.0\Blog.Shared.dll
+C:\Users\Piotr\Source\Repos\PiotrDabrowski232\BlazorBlog\Blog.Shared\bin\Debug\net6.0\Blog.Shared.pdb
+C:\Users\Piotr\Source\Repos\PiotrDabrowski232\BlazorBlog\Blog.Shared\obj\Debug\net6.0\Blog.Shared.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Piotr\Source\Repos\PiotrDabrowski232\BlazorBlog\Blog.Shared\obj\Debug\net6.0\Blog.Shared.AssemblyInfoInputs.cache
+C:\Users\Piotr\Source\Repos\PiotrDabrowski232\BlazorBlog\Blog.Shared\obj\Debug\net6.0\Blog.Shared.AssemblyInfo.cs
+C:\Users\Piotr\Source\Repos\PiotrDabrowski232\BlazorBlog\Blog.Shared\obj\Debug\net6.0\Blog.Shared.csproj.CoreCompileInputs.cache
+C:\Users\Piotr\Source\Repos\PiotrDabrowski232\BlazorBlog\Blog.Shared\obj\Debug\net6.0\Blog.Shared.dll
+C:\Users\Piotr\Source\Repos\PiotrDabrowski232\BlazorBlog\Blog.Shared\obj\Debug\net6.0\refint\Blog.Shared.dll
+C:\Users\Piotr\Source\Repos\PiotrDabrowski232\BlazorBlog\Blog.Shared\obj\Debug\net6.0\Blog.Shared.pdb
+C:\Users\Piotr\Source\Repos\PiotrDabrowski232\BlazorBlog\Blog.Shared\obj\Debug\net6.0\Blog.Shared.genruntimeconfig.cache
+C:\Users\Piotr\Source\Repos\PiotrDabrowski232\BlazorBlog\Blog.Shared\obj\Debug\net6.0\ref\Blog.Shared.dll

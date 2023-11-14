@@ -1,7 +1,9 @@
 {
   "ExpandedNodes": [
-    ""
+    "",
+    "\\Blog",
+    "\\Blog\\Pages"
   ],
-  "SelectedNode": "\\Blog.sln",
+  "SelectedNode": "\\Blog\\Pages\\Index.razor",
   "PreviewInSolutionExplorer": false
 }

@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "6SeKhM1kabvHmtQjTx/vRm3ELLjuGrUld99I/NCf1eg=",
+  "Hash": "N1zWmzMjCTkRGLET/3De51XmmQyJTTm4LeynndTTI1c=",
   "Source": "Blog",
   "BasePath": "_content/Blog",
   "Mode": "Default",
@@ -10,17 +10,17 @@
     {
       "Name": "Blog\\wwwroot",
       "Source": "Blog",
-      "ContentRoot": "C:\\Users\\piecz\\Source\\Repos\\PiotrDabrowski232\\BlazorBlog\\Blog\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\Piotr\\Source\\Repos\\PiotrDabrowski232\\BlazorBlog\\Blog\\wwwroot\\",
       "BasePath": "_content/Blog",
       "Pattern": "**"
     }
   ],
   "Assets": [
     {
-      "Identity": "C:\\Users\\piecz\\.nuget\\packages\\blazorise.bootstrap\\1.2.4\\staticwebassets\\blazorise.bootstrap.css",
+      "Identity": "C:\\Users\\Piotr\\.nuget\\packages\\blazorise.bootstrap\\1.2.4\\staticwebassets\\blazorise.bootstrap.css",
       "SourceId": "Blazorise.Bootstrap",
       "SourceType": "Package",
-      "ContentRoot": "C:\\Users\\piecz\\.nuget\\packages\\blazorise.bootstrap\\1.2.4\\staticwebassets\\",
+      "ContentRoot": "C:\\Users\\Piotr\\.nuget\\packages\\blazorise.bootstrap\\1.2.4\\staticwebassets\\",
       "BasePath": "_content/Blazorise.Bootstrap",
       "RelativePath": "blazorise.bootstrap.css",
       "AssetKind": "All",
@@ -31,13 +31,13 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "C:\\Users\\piecz\\.nuget\\packages\\blazorise.bootstrap\\1.2.4\\staticwebassets\\blazorise.bootstrap.css"
+      "OriginalItemSpec": "C:\\Users\\Piotr\\.nuget\\packages\\blazorise.bootstrap\\1.2.4\\staticwebassets\\blazorise.bootstrap.css"
     },
     {
-      "Identity": "C:\\Users\\piecz\\.nuget\\packages\\blazorise.bootstrap\\1.2.4\\staticwebassets\\blazorise.bootstrap.min.css",
+      "Identity": "C:\\Users\\Piotr\\.nuget\\packages\\blazorise.bootstrap\\1.2.4\\staticwebassets\\blazorise.bootstrap.min.css",
       "SourceId": "Blazorise.Bootstrap",
       "SourceType": "Package",
-      "ContentRoot": "C:\\Users\\piecz\\.nuget\\packages\\blazorise.bootstrap\\1.2.4\\staticwebassets\\",
+      "ContentRoot": "C:\\Users\\Piotr\\.nuget\\packages\\blazorise.bootstrap\\1.2.4\\staticwebassets\\",
       "BasePath": "_content/Blazorise.Bootstrap",
       "RelativePath": "blazorise.bootstrap.min.css",
       "AssetKind": "All",
@@ -48,13 +48,13 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "C:\\Users\\piecz\\.nuget\\packages\\blazorise.bootstrap\\1.2.4\\staticwebassets\\blazorise.bootstrap.min.css"
+      "OriginalItemSpec": "C:\\Users\\Piotr\\.nuget\\packages\\blazorise.bootstrap\\1.2.4\\staticwebassets\\blazorise.bootstrap.min.css"
     },
     {
-      "Identity": "C:\\Users\\piecz\\.nuget\\packages\\blazorise.bootstrap\\1.2.4\\staticwebassets\\modal.js",
+      "Identity": "C:\\Users\\Piotr\\.nuget\\packages\\blazorise.bootstrap\\1.2.4\\staticwebassets\\modal.js",
       "SourceId": "Blazorise.Bootstrap",
       "SourceType": "Package",
-      "ContentRoot": "C:\\Users\\piecz\\.nuget\\packages\\blazorise.bootstrap\\1.2.4\\staticwebassets\\",
+      "ContentRoot": "C:\\Users\\Piotr\\.nuget\\packages\\blazorise.bootstrap\\1.2.4\\staticwebassets\\",
       "BasePath": "_content/Blazorise.Bootstrap",
       "RelativePath": "modal.js",
       "AssetKind": "All",
@@ -65,13 +65,13 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "C:\\Users\\piecz\\.nuget\\packages\\blazorise.bootstrap\\1.2.4\\staticwebassets\\modal.js"
+      "OriginalItemSpec": "C:\\Users\\Piotr\\.nuget\\packages\\blazorise.bootstrap\\1.2.4\\staticwebassets\\modal.js"
     },
     {
-      "Identity": "C:\\Users\\piecz\\.nuget\\packages\\blazorise.bootstrap\\1.2.4\\staticwebassets\\tooltip.js",
+      "Identity": "C:\\Users\\Piotr\\.nuget\\packages\\blazorise.bootstrap\\1.2.4\\staticwebassets\\tooltip.js",
       "SourceId": "Blazorise.Bootstrap",
       "SourceType": "Package",
-      "ContentRoot": "C:\\Users\\piecz\\.nuget\\packages\\blazorise.bootstrap\\1.2.4\\staticwebassets\\",
+      "ContentRoot": "C:\\Users\\Piotr\\.nuget\\packages\\blazorise.bootstrap\\1.2.4\\staticwebassets\\",
       "BasePath": "_content/Blazorise.Bootstrap",
       "RelativePath": "tooltip.js",
       "AssetKind": "All",
@@ -82,13 +82,13 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "C:\\Users\\piecz\\.nuget\\packages\\blazorise.bootstrap\\1.2.4\\staticwebassets\\tooltip.js"
+      "OriginalItemSpec": "C:\\Users\\Piotr\\.nuget\\packages\\blazorise.bootstrap\\1.2.4\\staticwebassets\\tooltip.js"
     },
     {
-      "Identity": "C:\\Users\\piecz\\.nuget\\packages\\blazorise\\1.2.4\\staticwebassets\\blazorise.css",
+      "Identity": "C:\\Users\\Piotr\\.nuget\\packages\\blazorise\\1.2.4\\staticwebassets\\blazorise.css",
       "SourceId": "Blazorise",
       "SourceType": "Package",
-      "ContentRoot": "C:\\Users\\piecz\\.nuget\\packages\\blazorise\\1.2.4\\staticwebassets\\",
+      "ContentRoot": "C:\\Users\\Piotr\\.nuget\\packages\\blazorise\\1.2.4\\staticwebassets\\",
       "BasePath": "_content/Blazorise",
       "RelativePath": "blazorise.css",
       "AssetKind": "All",
@@ -99,13 +99,13 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "C:\\Users\\piecz\\.nuget\\packages\\blazorise\\1.2.4\\staticwebassets\\blazorise.css"
+      "OriginalItemSpec": "C:\\Users\\Piotr\\.nuget\\packages\\blazorise\\1.2.4\\staticwebassets\\blazorise.css"
     },
     {
-      "Identity": "C:\\Users\\piecz\\.nuget\\packages\\blazorise\\1.2.4\\staticwebassets\\blazorise.min.css",
+      "Identity": "C:\\Users\\Piotr\\.nuget\\packages\\blazorise\\1.2.4\\staticwebassets\\blazorise.min.css",
       "SourceId": "Blazorise",
       "SourceType": "Package",
-      "ContentRoot": "C:\\Users\\piecz\\.nuget\\packages\\blazorise\\1.2.4\\staticwebassets\\",
+      "ContentRoot": "C:\\Users\\Piotr\\.nuget\\packages\\blazorise\\1.2.4\\staticwebassets\\",
       "BasePath": "_content/Blazorise",
       "RelativePath": "blazorise.min.css",
       "AssetKind": "All",
@@ -116,13 +116,13 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "C:\\Users\\piecz\\.nuget\\packages\\blazorise\\1.2.4\\staticwebassets\\blazorise.min.css"
+      "OriginalItemSpec": "C:\\Users\\Piotr\\.nuget\\packages\\blazorise\\1.2.4\\staticwebassets\\blazorise.min.css"
     },
     {
-      "Identity": "C:\\Users\\piecz\\.nuget\\packages\\blazorise\\1.2.4\\staticwebassets\\breakpoint.js",
+      "Identity": "C:\\Users\\Piotr\\.nuget\\packages\\blazorise\\1.2.4\\staticwebassets\\breakpoint.js",
       "SourceId": "Blazorise",
       "SourceType": "Package",
-      "ContentRoot": "C:\\Users\\piecz\\.nuget\\packages\\blazorise\\1.2.4\\staticwebassets\\",
+      "ContentRoot": "C:\\Users\\Piotr\\.nuget\\packages\\blazorise\\1.2.4\\staticwebassets\\",
       "BasePath": "_content/Blazorise",
       "RelativePath": "breakpoint.js",
       "AssetKind": "All",
@@ -133,13 +133,13 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "C:\\Users\\piecz\\.nuget\\packages\\blazorise\\1.2.4\\staticwebassets\\breakpoint.js"
+      "OriginalItemSpec": "C:\\Users\\Piotr\\.nuget\\packages\\blazorise\\1.2.4\\staticwebassets\\breakpoint.js"
     },
     {
-      "Identity": "C:\\Users\\piecz\\.nuget\\packages\\blazorise\\1.2.4\\staticwebassets\\button.js",
+      "Identity": "C:\\Users\\Piotr\\.nuget\\packages\\blazorise\\1.2.4\\staticwebassets\\button.js",
       "SourceId": "Blazorise",
       "SourceType": "Package",
-      "ContentRoot": "C:\\Users\\piecz\\.nuget\\packages\\blazorise\\1.2.4\\staticwebassets\\",
+      "ContentRoot": "C:\\Users\\Piotr\\.nuget\\packages\\blazorise\\1.2.4\\staticwebassets\\",
       "BasePath": "_content/Blazorise",
       "RelativePath": "button.js",
       "AssetKind": "All",
@@ -150,13 +150,13 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "C:\\Users\\piecz\\.nuget\\packages\\blazorise\\1.2.4\\staticwebassets\\button.js"
+      "OriginalItemSpec": "C:\\Users\\Piotr\\.nuget\\packages\\blazorise\\1.2.4\\staticwebassets\\button.js"
     },
     {
-      "Identity": "C:\\Users\\piecz\\.nuget\\packages\\blazorise\\1.2.4\\staticwebassets\\closable.js",
+      "Identity": "C:\\Users\\Piotr\\.nuget\\packages\\blazorise\\1.2.4\\staticwebassets\\closable.js",
       "SourceId": "Blazorise",
       "SourceType": "Package",
-      "ContentRoot": "C:\\Users\\piecz\\.nuget\\packages\\blazorise\\1.2.4\\staticwebassets\\",
+      "ContentRoot": "C:\\Users\\Piotr\\.nuget\\packages\\blazorise\\1.2.4\\staticwebassets\\",
       "BasePath": "_content/Blazorise",
       "RelativePath": "closable.js",
       "AssetKind": "All",
@@ -167,13 +167,13 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "C:\\Users\\piecz\\.nuget\\packages\\blazorise\\1.2.4\\staticwebassets\\closable.js"
+      "OriginalItemSpec": "C:\\Users\\Piotr\\.nuget\\packages\\blazorise\\1.2.4\\staticwebassets\\closable.js"
     },
     {
-      "Identity": "C:\\Users\\piecz\\.nuget\\packages\\blazorise\\1.2.4\\staticwebassets\\colorPicker.js",
+      "Identity": "C:\\Users\\Piotr\\.nuget\\packages\\blazorise\\1.2.4\\staticwebassets\\colorPicker.js",
       "SourceId": "Blazorise",
       "SourceType": "Package",
-      "ContentRoot": "C:\\Users\\piecz\\.nuget\\packages\\blazorise\\1.2.4\\staticwebassets\\",
+      "ContentRoot": "C:\\Users\\Piotr\\.nuget\\packages\\blazorise\\1.2.4\\staticwebassets\\",
       "BasePath": "_content/Blazorise",
       "RelativePath": "colorPicker.js",
       "AssetKind": "All",
@@ -184,13 +184,13 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "C:\\Users\\piecz\\.nuget\\packages\\blazorise\\1.2.4\\staticwebassets\\colorPicker.js"
+      "OriginalItemSpec": "C:\\Users\\Piotr\\.nuget\\packages\\blazorise\\1.2.4\\staticwebassets\\colorPicker.js"
     },
     {
-      "Identity": "C:\\Users\\piecz\\.nuget\\packages\\blazorise\\1.2.4\\staticwebassets\\datePicker.js",
+      "Identity": "C:\\Users\\Piotr\\.nuget\\packages\\blazorise\\1.2.4\\staticwebassets\\datePicker.js",
       "SourceId": "Blazorise",
       "SourceType": "Package",
-      "ContentRoot": "C:\\Users\\piecz\\.nuget\\packages\\blazorise\\1.2.4\\staticwebassets\\",
+      "ContentRoot": "C:\\Users\\Piotr\\.nuget\\packages\\blazorise\\1.2.4\\staticwebassets\\",
       "BasePath": "_content/Blazorise",
       "RelativePath": "datePicker.js",
       "AssetKind": "All",
@@ -201,13 +201,13 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "C:\\Users\\piecz\\.nuget\\packages\\blazorise\\1.2.4\\staticwebassets\\datePicker.js"
+      "OriginalItemSpec": "C:\\Users\\Piotr\\.nuget\\packages\\blazorise\\1.2.4\\staticwebassets\\datePicker.js"
     },
     {
-      "Identity": "C:\\Users\\piecz\\.nuget\\packages\\blazorise\\1.2.4\\staticwebassets\\dragDrop.js",
+      "Identity": "C:\\Users\\Piotr\\.nuget\\packages\\blazorise\\1.2.4\\staticwebassets\\dragDrop.js",
       "SourceId": "Blazorise",
       "SourceType": "Package",
-      "ContentRoot": "C:\\Users\\piecz\\.nuget\\packages\\blazorise\\1.2.4\\staticwebassets\\",
+      "ContentRoot": "C:\\Users\\Piotr\\.nuget\\packages\\blazorise\\1.2.4\\staticwebassets\\",
       "BasePath": "_content/Blazorise",
       "RelativePath": "dragDrop.js",
       "AssetKind": "All",
@@ -218,13 +218,13 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "C:\\Users\\piecz\\.nuget\\packages\\blazorise\\1.2.4\\staticwebassets\\dragDrop.js"
+      "OriginalItemSpec": "C:\\Users\\Piotr\\.nuget\\packages\\blazorise\\1.2.4\\staticwebassets\\dragDrop.js"
     },
     {
-      "Identity": "C:\\Users\\piecz\\.nuget\\packages\\blazorise\\1.2.4\\staticwebassets\\dropdown.js",
+      "Identity": "C:\\Users\\Piotr\\.nuget\\packages\\blazorise\\1.2.4\\staticwebassets\\dropdown.js",
       "SourceId": "Blazorise",
       "SourceType": "Package",
-      "ContentRoot": "C:\\Users\\piecz\\.nuget\\packages\\blazorise\\1.2.4\\staticwebassets\\",
+      "ContentRoot": "C:\\Users\\Piotr\\.nuget\\packages\\blazorise\\1.2.4\\staticwebassets\\",
       "BasePath": "_content/Blazorise",
       "RelativePath": "dropdown.js",
       "AssetKind": "All",
@@ -235,13 +235,13 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "C:\\Users\\piecz\\.nuget\\packages\\blazorise\\1.2.4\\staticwebassets\\dropdown.js"
+      "OriginalItemSpec": "C:\\Users\\Piotr\\.nuget\\packages\\blazorise\\1.2.4\\staticwebassets\\dropdown.js"
     },
     {
-      "Identity": "C:\\Users\\piecz\\.nuget\\packages\\blazorise\\1.2.4\\staticwebassets\\fileEdit.js",
+      "Identity": "C:\\Users\\Piotr\\.nuget\\packages\\blazorise\\1.2.4\\staticwebassets\\fileEdit.js",
       "SourceId": "Blazorise",
       "SourceType": "Package",
-      "ContentRoot": "C:\\Users\\piecz\\.nuget\\packages\\blazorise\\1.2.4\\staticwebassets\\",
+      "ContentRoot": "C:\\Users\\Piotr\\.nuget\\packages\\blazorise\\1.2.4\\staticwebassets\\",
       "BasePath": "_content/Blazorise",
       "RelativePath": "fileEdit.js",
       "AssetKind": "All",
@@ -252,13 +252,13 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "C:\\Users\\piecz\\.nuget\\packages\\blazorise\\1.2.4\\staticwebassets\\fileEdit.js"
+      "OriginalItemSpec": "C:\\Users\\Piotr\\.nuget\\packages\\blazorise\\1.2.4\\staticwebassets\\fileEdit.js"
     },
     {
-      "Identity": "C:\\Users\\piecz\\.nuget\\packages\\blazorise\\1.2.4\\staticwebassets\\filePicker.js",
+      "Identity": "C:\\Users\\Piotr\\.nuget\\packages\\blazorise\\1.2.4\\staticwebassets\\filePicker.js",
       "SourceId": "Blazorise",
       "SourceType": "Package",
-      "ContentRoot": "C:\\Users\\piecz\\.nuget\\packages\\blazorise\\1.2.4\\staticwebassets\\",
+      "ContentRoot": "C:\\Users\\Piotr\\.nuget\\packages\\blazorise\\1.2.4\\staticwebassets\\",
       "BasePath": "_content/Blazorise",
       "RelativePath": "filePicker.js",
       "AssetKind": "All",
@@ -269,13 +269,13 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "C:\\Users\\piecz\\.nuget\\packages\\blazorise\\1.2.4\\staticwebassets\\filePicker.js"
+      "OriginalItemSpec": "C:\\Users\\Piotr\\.nuget\\packages\\blazorise\\1.2.4\\staticwebassets\\filePicker.js"
     },
     {
-      "Identity": "C:\\Users\\piecz\\.nuget\\packages\\blazorise\\1.2.4\\staticwebassets\\inputMask.js",
+      "Identity": "C:\\Users\\Piotr\\.nuget\\packages\\blazorise\\1.2.4\\staticwebassets\\inputMask.js",
       "SourceId": "Blazorise",
       "SourceType": "Package",
-      "ContentRoot": "C:\\Users\\piecz\\.nuget\\packages\\blazorise\\1.2.4\\staticwebassets\\",
+      "ContentRoot": "C:\\Users\\Piotr\\.nuget\\packages\\blazorise\\1.2.4\\staticwebassets\\",
       "BasePath": "_content/Blazorise",
       "RelativePath": "inputMask.js",
       "AssetKind": "All",
@@ -286,13 +286,13 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "C:\\Users\\piecz\\.nuget\\packages\\blazorise\\1.2.4\\staticwebassets\\inputMask.js"
+      "OriginalItemSpec": "C:\\Users\\Piotr\\.nuget\\packages\\blazorise\\1.2.4\\staticwebassets\\inputMask.js"
     },
     {
-      "Identity": "C:\\Users\\piecz\\.nuget\\packages\\blazorise\\1.2.4\\staticwebassets\\io.js",
+      "Identity": "C:\\Users\\Piotr\\.nuget\\packages\\blazorise\\1.2.4\\staticwebassets\\io.js",
       "SourceId": "Blazorise",
       "SourceType": "Package",
-      "ContentRoot": "C:\\Users\\piecz\\.nuget\\packages\\blazorise\\1.2.4\\staticwebassets\\",
+      "ContentRoot": "C:\\Users\\Piotr\\.nuget\\packages\\blazorise\\1.2.4\\staticwebassets\\",
       "BasePath": "_content/Blazorise",
       "RelativePath": "io.js",
       "AssetKind": "All",
@@ -303,13 +303,13 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "C:\\Users\\piecz\\.nuget\\packages\\blazorise\\1.2.4\\staticwebassets\\io.js"
+      "OriginalItemSpec": "C:\\Users\\Piotr\\.nuget\\packages\\blazorise\\1.2.4\\staticwebassets\\io.js"
     },
     {
-      "Identity": "C:\\Users\\piecz\\.nuget\\packages\\blazorise\\1.2.4\\staticwebassets\\memoEdit.js",
+      "Identity": "C:\\Users\\Piotr\\.nuget\\packages\\blazorise\\1.2.4\\staticwebassets\\memoEdit.js",
       "SourceId": "Blazorise",
       "SourceType": "Package",
-      "ContentRoot": "C:\\Users\\piecz\\.nuget\\packages\\blazorise\\1.2.4\\staticwebassets\\",
+      "ContentRoot": "C:\\Users\\Piotr\\.nuget\\packages\\blazorise\\1.2.4\\staticwebassets\\",
       "BasePath": "_content/Blazorise",
       "RelativePath": "memoEdit.js",
       "AssetKind": "All",
@@ -320,13 +320,13 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "C:\\Users\\piecz\\.nuget\\packages\\blazorise\\1.2.4\\staticwebassets\\memoEdit.js"
+      "OriginalItemSpec": "C:\\Users\\Piotr\\.nuget\\packages\\blazorise\\1.2.4\\staticwebassets\\memoEdit.js"
     },
     {
-      "Identity": "C:\\Users\\piecz\\.nuget\\packages\\blazorise\\1.2.4\\staticwebassets\\numericPicker.js",
+      "Identity": "C:\\Users\\Piotr\\.nuget\\packages\\blazorise\\1.2.4\\staticwebassets\\numericPicker.js",
       "SourceId": "Blazorise",
       "SourceType": "Package",
-      "ContentRoot": "C:\\Users\\piecz\\.nuget\\packages\\blazorise\\1.2.4\\staticwebassets\\",
+      "ContentRoot": "C:\\Users\\Piotr\\.nuget\\packages\\blazorise\\1.2.4\\staticwebassets\\",
       "BasePath": "_content/Blazorise",
       "RelativePath": "numericPicker.js",
       "AssetKind": "All",
@@ -337,13 +337,13 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "C:\\Users\\piecz\\.nuget\\packages\\blazorise\\1.2.4\\staticwebassets\\numericPicker.js"
+      "OriginalItemSpec": "C:\\Users\\Piotr\\.nuget\\packages\\blazorise\\1.2.4\\staticwebassets\\numericPicker.js"
     },
     {
-      "Identity": "C:\\Users\\piecz\\.nuget\\packages\\blazorise\\1.2.4\\staticwebassets\\observer.js",
+      "Identity": "C:\\Users\\Piotr\\.nuget\\packages\\blazorise\\1.2.4\\staticwebassets\\observer.js",
       "SourceId": "Blazorise",
       "SourceType": "Package",
-      "ContentRoot": "C:\\Users\\piecz\\.nuget\\packages\\blazorise\\1.2.4\\staticwebassets\\",
+      "ContentRoot": "C:\\Users\\Piotr\\.nuget\\packages\\blazorise\\1.2.4\\staticwebassets\\",
       "BasePath": "_content/Blazorise",
       "RelativePath": "observer.js",
       "AssetKind": "All",
@@ -354,13 +354,13 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "C:\\Users\\piecz\\.nuget\\packages\\blazorise\\1.2.4\\staticwebassets\\observer.js"
+      "OriginalItemSpec": "C:\\Users\\Piotr\\.nuget\\packages\\blazorise\\1.2.4\\staticwebassets\\observer.js"
     },
     {
-      "Identity": "C:\\Users\\piecz\\.nuget\\packages\\blazorise\\1.2.4\\staticwebassets\\popper.js",
+      "Identity": "C:\\Users\\Piotr\\.nuget\\packages\\blazorise\\1.2.4\\staticwebassets\\popper.js",
       "SourceId": "Blazorise",
       "SourceType": "Package",
-      "ContentRoot": "C:\\Users\\piecz\\.nuget\\packages\\blazorise\\1.2.4\\staticwebassets\\",
+      "ContentRoot": "C:\\Users\\Piotr\\.nuget\\packages\\blazorise\\1.2.4\\staticwebassets\\",
       "BasePath": "_content/Blazorise",
       "RelativePath": "popper.js",
       "AssetKind": "All",
@@ -371,13 +371,13 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "C:\\Users\\piecz\\.nuget\\packages\\blazorise\\1.2.4\\staticwebassets\\popper.js"
+      "OriginalItemSpec": "C:\\Users\\Piotr\\.nuget\\packages\\blazorise\\1.2.4\\staticwebassets\\popper.js"
     },
     {
-      "Identity": "C:\\Users\\piecz\\.nuget\\packages\\blazorise\\1.2.4\\staticwebassets\\table.js",
+      "Identity": "C:\\Users\\Piotr\\.nuget\\packages\\blazorise\\1.2.4\\staticwebassets\\table.js",
       "SourceId": "Blazorise",
       "SourceType": "Package",
-      "ContentRoot": "C:\\Users\\piecz\\.nuget\\packages\\blazorise\\1.2.4\\staticwebassets\\",
+      "ContentRoot": "C:\\Users\\Piotr\\.nuget\\packages\\blazorise\\1.2.4\\staticwebassets\\",
       "BasePath": "_content/Blazorise",
       "RelativePath": "table.js",
       "AssetKind": "All",
@@ -388,13 +388,13 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "C:\\Users\\piecz\\.nuget\\packages\\blazorise\\1.2.4\\staticwebassets\\table.js"
+      "OriginalItemSpec": "C:\\Users\\Piotr\\.nuget\\packages\\blazorise\\1.2.4\\staticwebassets\\table.js"
     },
     {
-      "Identity": "C:\\Users\\piecz\\.nuget\\packages\\blazorise\\1.2.4\\staticwebassets\\textEdit.js",
+      "Identity": "C:\\Users\\Piotr\\.nuget\\packages\\blazorise\\1.2.4\\staticwebassets\\textEdit.js",
       "SourceId": "Blazorise",
       "SourceType": "Package",
-      "ContentRoot": "C:\\Users\\piecz\\.nuget\\packages\\blazorise\\1.2.4\\staticwebassets\\",
+      "ContentRoot": "C:\\Users\\Piotr\\.nuget\\packages\\blazorise\\1.2.4\\staticwebassets\\",
       "BasePath": "_content/Blazorise",
       "RelativePath": "textEdit.js",
       "AssetKind": "All",
@@ -405,13 +405,13 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "C:\\Users\\piecz\\.nuget\\packages\\blazorise\\1.2.4\\staticwebassets\\textEdit.js"
+      "OriginalItemSpec": "C:\\Users\\Piotr\\.nuget\\packages\\blazorise\\1.2.4\\staticwebassets\\textEdit.js"
     },
     {
-      "Identity": "C:\\Users\\piecz\\.nuget\\packages\\blazorise\\1.2.4\\staticwebassets\\theme.js",
+      "Identity": "C:\\Users\\Piotr\\.nuget\\packages\\blazorise\\1.2.4\\staticwebassets\\theme.js",
       "SourceId": "Blazorise",
       "SourceType": "Package",
-      "ContentRoot": "C:\\Users\\piecz\\.nuget\\packages\\blazorise\\1.2.4\\staticwebassets\\",
+      "ContentRoot": "C:\\Users\\Piotr\\.nuget\\packages\\blazorise\\1.2.4\\staticwebassets\\",
       "BasePath": "_content/Blazorise",
       "RelativePath": "theme.js",
       "AssetKind": "All",
@@ -422,13 +422,13 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "C:\\Users\\piecz\\.nuget\\packages\\blazorise\\1.2.4\\staticwebassets\\theme.js"
+      "OriginalItemSpec": "C:\\Users\\Piotr\\.nuget\\packages\\blazorise\\1.2.4\\staticwebassets\\theme.js"
     },
     {
-      "Identity": "C:\\Users\\piecz\\.nuget\\packages\\blazorise\\1.2.4\\staticwebassets\\timePicker.js",
+      "Identity": "C:\\Users\\Piotr\\.nuget\\packages\\blazorise\\1.2.4\\staticwebassets\\timePicker.js",
       "SourceId": "Blazorise",
       "SourceType": "Package",
-      "ContentRoot": "C:\\Users\\piecz\\.nuget\\packages\\blazorise\\1.2.4\\staticwebassets\\",
+      "ContentRoot": "C:\\Users\\Piotr\\.nuget\\packages\\blazorise\\1.2.4\\staticwebassets\\",
       "BasePath": "_content/Blazorise",
       "RelativePath": "timePicker.js",
       "AssetKind": "All",
@@ -439,13 +439,13 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "C:\\Users\\piecz\\.nuget\\packages\\blazorise\\1.2.4\\staticwebassets\\timePicker.js"
+      "OriginalItemSpec": "C:\\Users\\Piotr\\.nuget\\packages\\blazorise\\1.2.4\\staticwebassets\\timePicker.js"
     },
     {
-      "Identity": "C:\\Users\\piecz\\.nuget\\packages\\blazorise\\1.2.4\\staticwebassets\\tooltip.js",
+      "Identity": "C:\\Users\\Piotr\\.nuget\\packages\\blazorise\\1.2.4\\staticwebassets\\tooltip.js",
       "SourceId": "Blazorise",
       "SourceType": "Package",
-      "ContentRoot": "C:\\Users\\piecz\\.nuget\\packages\\blazorise\\1.2.4\\staticwebassets\\",
+      "ContentRoot": "C:\\Users\\Piotr\\.nuget\\packages\\blazorise\\1.2.4\\staticwebassets\\",
       "BasePath": "_content/Blazorise",
       "RelativePath": "tooltip.js",
       "AssetKind": "All",
@@ -456,13 +456,13 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "C:\\Users\\piecz\\.nuget\\packages\\blazorise\\1.2.4\\staticwebassets\\tooltip.js"
+      "OriginalItemSpec": "C:\\Users\\Piotr\\.nuget\\packages\\blazorise\\1.2.4\\staticwebassets\\tooltip.js"
     },
     {
-      "Identity": "C:\\Users\\piecz\\.nuget\\packages\\blazorise\\1.2.4\\staticwebassets\\utilities.js",
+      "Identity": "C:\\Users\\Piotr\\.nuget\\packages\\blazorise\\1.2.4\\staticwebassets\\utilities.js",
       "SourceId": "Blazorise",
       "SourceType": "Package",
-      "ContentRoot": "C:\\Users\\piecz\\.nuget\\packages\\blazorise\\1.2.4\\staticwebassets\\",
+      "ContentRoot": "C:\\Users\\Piotr\\.nuget\\packages\\blazorise\\1.2.4\\staticwebassets\\",
       "BasePath": "_content/Blazorise",
       "RelativePath": "utilities.js",
       "AssetKind": "All",
@@ -473,13 +473,13 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "C:\\Users\\piecz\\.nuget\\packages\\blazorise\\1.2.4\\staticwebassets\\utilities.js"
+      "OriginalItemSpec": "C:\\Users\\Piotr\\.nuget\\packages\\blazorise\\1.2.4\\staticwebassets\\utilities.js"
     },
     {
-      "Identity": "C:\\Users\\piecz\\.nuget\\packages\\blazorise\\1.2.4\\staticwebassets\\validators\\DateTimeMaskValidator.js",
+      "Identity": "C:\\Users\\Piotr\\.nuget\\packages\\blazorise\\1.2.4\\staticwebassets\\validators\\DateTimeMaskValidator.js",
       "SourceId": "Blazorise",
       "SourceType": "Package",
-      "ContentRoot": "C:\\Users\\piecz\\.nuget\\packages\\blazorise\\1.2.4\\staticwebassets\\",
+      "ContentRoot": "C:\\Users\\Piotr\\.nuget\\packages\\blazorise\\1.2.4\\staticwebassets\\",
       "BasePath": "_content/Blazorise",
       "RelativePath": "validators/DateTimeMaskValidator.js",
       "AssetKind": "All",
@@ -490,13 +490,13 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "C:\\Users\\piecz\\.nuget\\packages\\blazorise\\1.2.4\\staticwebassets\\validators\\DateTimeMaskValidator.js"
+      "OriginalItemSpec": "C:\\Users\\Piotr\\.nuget\\packages\\blazorise\\1.2.4\\staticwebassets\\validators\\DateTimeMaskValidator.js"
     },
     {
-      "Identity": "C:\\Users\\piecz\\.nuget\\packages\\blazorise\\1.2.4\\staticwebassets\\validators\\NoValidator.js",
+      "Identity": "C:\\Users\\Piotr\\.nuget\\packages\\blazorise\\1.2.4\\staticwebassets\\validators\\NoValidator.js",
       "SourceId": "Blazorise",
       "SourceType": "Package",
-      "ContentRoot": "C:\\Users\\piecz\\.nuget\\packages\\blazorise\\1.2.4\\staticwebassets\\",
+      "ContentRoot": "C:\\Users\\Piotr\\.nuget\\packages\\blazorise\\1.2.4\\staticwebassets\\",
       "BasePath": "_content/Blazorise",
       "RelativePath": "validators/NoValidator.js",
       "AssetKind": "All",
@@ -507,13 +507,13 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "C:\\Users\\piecz\\.nuget\\packages\\blazorise\\1.2.4\\staticwebassets\\validators\\NoValidator.js"
+      "OriginalItemSpec": "C:\\Users\\Piotr\\.nuget\\packages\\blazorise\\1.2.4\\staticwebassets\\validators\\NoValidator.js"
     },
     {
-      "Identity": "C:\\Users\\piecz\\.nuget\\packages\\blazorise\\1.2.4\\staticwebassets\\validators\\NumericMaskValidator.js",
+      "Identity": "C:\\Users\\Piotr\\.nuget\\packages\\blazorise\\1.2.4\\staticwebassets\\validators\\NumericMaskValidator.js",
       "SourceId": "Blazorise",
       "SourceType": "Package",
-      "ContentRoot": "C:\\Users\\piecz\\.nuget\\packages\\blazorise\\1.2.4\\staticwebassets\\",
+      "ContentRoot": "C:\\Users\\Piotr\\.nuget\\packages\\blazorise\\1.2.4\\staticwebassets\\",
       "BasePath": "_content/Blazorise",
       "RelativePath": "validators/NumericMaskValidator.js",
       "AssetKind": "All",
@@ -524,13 +524,13 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "C:\\Users\\piecz\\.nuget\\packages\\blazorise\\1.2.4\\staticwebassets\\validators\\NumericMaskValidator.js"
+      "OriginalItemSpec": "C:\\Users\\Piotr\\.nuget\\packages\\blazorise\\1.2.4\\staticwebassets\\validators\\NumericMaskValidator.js"
     },
     {
-      "Identity": "C:\\Users\\piecz\\.nuget\\packages\\blazorise\\1.2.4\\staticwebassets\\validators\\RegExMaskValidator.js",
+      "Identity": "C:\\Users\\Piotr\\.nuget\\packages\\blazorise\\1.2.4\\staticwebassets\\validators\\RegExMaskValidator.js",
       "SourceId": "Blazorise",
       "SourceType": "Package",
-      "ContentRoot": "C:\\Users\\piecz\\.nuget\\packages\\blazorise\\1.2.4\\staticwebassets\\",
+      "ContentRoot": "C:\\Users\\Piotr\\.nuget\\packages\\blazorise\\1.2.4\\staticwebassets\\",
       "BasePath": "_content/Blazorise",
       "RelativePath": "validators/RegExMaskValidator.js",
       "AssetKind": "All",
@@ -541,13 +541,13 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "C:\\Users\\piecz\\.nuget\\packages\\blazorise\\1.2.4\\staticwebassets\\validators\\RegExMaskValidator.js"
+      "OriginalItemSpec": "C:\\Users\\Piotr\\.nuget\\packages\\blazorise\\1.2.4\\staticwebassets\\validators\\RegExMaskValidator.js"
     },
     {
-      "Identity": "C:\\Users\\piecz\\.nuget\\packages\\blazorise\\1.2.4\\staticwebassets\\vendors\\autoNumeric.js",
+      "Identity": "C:\\Users\\Piotr\\.nuget\\packages\\blazorise\\1.2.4\\staticwebassets\\vendors\\autoNumeric.js",
       "SourceId": "Blazorise",
       "SourceType": "Package",
-      "ContentRoot": "C:\\Users\\piecz\\.nuget\\packages\\blazorise\\1.2.4\\staticwebassets\\",
+      "ContentRoot": "C:\\Users\\Piotr\\.nuget\\packages\\blazorise\\1.2.4\\staticwebassets\\",
       "BasePath": "_content/Blazorise",
       "RelativePath": "vendors/autoNumeric.js",
       "AssetKind": "All",
@@ -558,13 +558,13 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "C:\\Users\\piecz\\.nuget\\packages\\blazorise\\1.2.4\\staticwebassets\\vendors\\autoNumeric.js"
+      "OriginalItemSpec": "C:\\Users\\Piotr\\.nuget\\packages\\blazorise\\1.2.4\\staticwebassets\\vendors\\autoNumeric.js"
     },
     {
-      "Identity": "C:\\Users\\piecz\\.nuget\\packages\\blazorise\\1.2.4\\staticwebassets\\vendors\\Behave.js",
+      "Identity": "C:\\Users\\Piotr\\.nuget\\packages\\blazorise\\1.2.4\\staticwebassets\\vendors\\Behave.js",
       "SourceId": "Blazorise",
       "SourceType": "Package",
-      "ContentRoot": "C:\\Users\\piecz\\.nuget\\packages\\blazorise\\1.2.4\\staticwebassets\\",
+      "ContentRoot": "C:\\Users\\Piotr\\.nuget\\packages\\blazorise\\1.2.4\\staticwebassets\\",
       "BasePath": "_content/Blazorise",
       "RelativePath": "vendors/Behave.js",
       "AssetKind": "All",
@@ -575,13 +575,13 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "C:\\Users\\piecz\\.nuget\\packages\\blazorise\\1.2.4\\staticwebassets\\vendors\\Behave.js"
+      "OriginalItemSpec": "C:\\Users\\Piotr\\.nuget\\packages\\blazorise\\1.2.4\\staticwebassets\\vendors\\Behave.js"
     },
     {
-      "Identity": "C:\\Users\\piecz\\.nuget\\packages\\blazorise\\1.2.4\\staticwebassets\\vendors\\flatpickr.js",
+      "Identity": "C:\\Users\\Piotr\\.nuget\\packages\\blazorise\\1.2.4\\staticwebassets\\vendors\\flatpickr.js",
       "SourceId": "Blazorise",
       "SourceType": "Package",
-      "ContentRoot": "C:\\Users\\piecz\\.nuget\\packages\\blazorise\\1.2.4\\staticwebassets\\",
+      "ContentRoot": "C:\\Users\\Piotr\\.nuget\\packages\\blazorise\\1.2.4\\staticwebassets\\",
       "BasePath": "_content/Blazorise",
       "RelativePath": "vendors/flatpickr.js",
       "AssetKind": "All",
@@ -592,13 +592,13 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "C:\\Users\\piecz\\.nuget\\packages\\blazorise\\1.2.4\\staticwebassets\\vendors\\flatpickr.js"
+      "OriginalItemSpec": "C:\\Users\\Piotr\\.nuget\\packages\\blazorise\\1.2.4\\staticwebassets\\vendors\\flatpickr.js"
     },
     {
-      "Identity": "C:\\Users\\piecz\\.nuget\\packages\\blazorise\\1.2.4\\staticwebassets\\vendors\\inputmask.js",
+      "Identity": "C:\\Users\\Piotr\\.nuget\\packages\\blazorise\\1.2.4\\staticwebassets\\vendors\\inputmask.js",
       "SourceId": "Blazorise",
       "SourceType": "Package",
-      "ContentRoot": "C:\\Users\\piecz\\.nuget\\packages\\blazorise\\1.2.4\\staticwebassets\\",
+      "ContentRoot": "C:\\Users\\Piotr\\.nuget\\packages\\blazorise\\1.2.4\\staticwebassets\\",
       "BasePath": "_content/Blazorise",
       "RelativePath": "vendors/inputmask.js",
       "AssetKind": "All",
@@ -609,13 +609,13 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "C:\\Users\\piecz\\.nuget\\packages\\blazorise\\1.2.4\\staticwebassets\\vendors\\inputmask.js"
+      "OriginalItemSpec": "C:\\Users\\Piotr\\.nuget\\packages\\blazorise\\1.2.4\\staticwebassets\\vendors\\inputmask.js"
     },
     {
-      "Identity": "C:\\Users\\piecz\\.nuget\\packages\\blazorise\\1.2.4\\staticwebassets\\vendors\\jsencrypt.js",
+      "Identity": "C:\\Users\\Piotr\\.nuget\\packages\\blazorise\\1.2.4\\staticwebassets\\vendors\\jsencrypt.js",
       "SourceId": "Blazorise",
       "SourceType": "Package",
-      "ContentRoot": "C:\\Users\\piecz\\.nuget\\packages\\blazorise\\1.2.4\\staticwebassets\\",
+      "ContentRoot": "C:\\Users\\Piotr\\.nuget\\packages\\blazorise\\1.2.4\\staticwebassets\\",
       "BasePath": "_content/Blazorise",
       "RelativePath": "vendors/jsencrypt.js",
       "AssetKind": "All",
@@ -626,13 +626,13 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "C:\\Users\\piecz\\.nuget\\packages\\blazorise\\1.2.4\\staticwebassets\\vendors\\jsencrypt.js"
+      "OriginalItemSpec": "C:\\Users\\Piotr\\.nuget\\packages\\blazorise\\1.2.4\\staticwebassets\\vendors\\jsencrypt.js"
     },
     {
-      "Identity": "C:\\Users\\piecz\\.nuget\\packages\\blazorise\\1.2.4\\staticwebassets\\vendors\\Pickr.js",
+      "Identity": "C:\\Users\\Piotr\\.nuget\\packages\\blazorise\\1.2.4\\staticwebassets\\vendors\\Pickr.js",
       "SourceId": "Blazorise",
       "SourceType": "Package",
-      "ContentRoot": "C:\\Users\\piecz\\.nuget\\packages\\blazorise\\1.2.4\\staticwebassets\\",
+      "ContentRoot": "C:\\Users\\Piotr\\.nuget\\packages\\blazorise\\1.2.4\\staticwebassets\\",
       "BasePath": "_content/Blazorise",
       "RelativePath": "vendors/Pickr.js",
       "AssetKind": "All",
@@ -643,13 +643,13 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "C:\\Users\\piecz\\.nuget\\packages\\blazorise\\1.2.4\\staticwebassets\\vendors\\Pickr.js"
+      "OriginalItemSpec": "C:\\Users\\Piotr\\.nuget\\packages\\blazorise\\1.2.4\\staticwebassets\\vendors\\Pickr.js"
     },
     {
-      "Identity": "C:\\Users\\piecz\\.nuget\\packages\\blazorise\\1.2.4\\staticwebassets\\vendors\\sha512.js",
+      "Identity": "C:\\Users\\Piotr\\.nuget\\packages\\blazorise\\1.2.4\\staticwebassets\\vendors\\sha512.js",
       "SourceId": "Blazorise",
       "SourceType": "Package",
-      "ContentRoot": "C:\\Users\\piecz\\.nuget\\packages\\blazorise\\1.2.4\\staticwebassets\\",
+      "ContentRoot": "C:\\Users\\Piotr\\.nuget\\packages\\blazorise\\1.2.4\\staticwebassets\\",
       "BasePath": "_content/Blazorise",
       "RelativePath": "vendors/sha512.js",
       "AssetKind": "All",
@@ -660,13 +660,13 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "C:\\Users\\piecz\\.nuget\\packages\\blazorise\\1.2.4\\staticwebassets\\vendors\\sha512.js"
+      "OriginalItemSpec": "C:\\Users\\Piotr\\.nuget\\packages\\blazorise\\1.2.4\\staticwebassets\\vendors\\sha512.js"
     },
     {
-      "Identity": "C:\\Users\\piecz\\.nuget\\packages\\radzen.blazor\\4.15.10\\staticwebassets\\css\\dark.css",
+      "Identity": "C:\\Users\\Piotr\\.nuget\\packages\\radzen.blazor\\4.15.10\\staticwebassets\\css\\dark.css",
       "SourceId": "Radzen.Blazor",
       "SourceType": "Package",
-      "ContentRoot": "C:\\Users\\piecz\\.nuget\\packages\\radzen.blazor\\4.15.10\\staticwebassets\\",
+      "ContentRoot": "C:\\Users\\Piotr\\.nuget\\packages\\radzen.blazor\\4.15.10\\staticwebassets\\",
       "BasePath": "_content/Radzen.Blazor",
       "RelativePath": "css/dark.css",
       "AssetKind": "All",
@@ -677,13 +677,13 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "C:\\Users\\piecz\\.nuget\\packages\\radzen.blazor\\4.15.10\\staticwebassets\\css\\dark.css"
+      "OriginalItemSpec": "C:\\Users\\Piotr\\.nuget\\packages\\radzen.blazor\\4.15.10\\staticwebassets\\css\\dark.css"
     },
     {
-      "Identity": "C:\\Users\\piecz\\.nuget\\packages\\radzen.blazor\\4.15.10\\staticwebassets\\css\\dark-base.css",
+      "Identity": "C:\\Users\\Piotr\\.nuget\\packages\\radzen.blazor\\4.15.10\\staticwebassets\\css\\dark-base.css",
       "SourceId": "Radzen.Blazor",
       "SourceType": "Package",
-      "ContentRoot": "C:\\Users\\piecz\\.nuget\\packages\\radzen.blazor\\4.15.10\\staticwebassets\\",
+      "ContentRoot": "C:\\Users\\Piotr\\.nuget\\packages\\radzen.blazor\\4.15.10\\staticwebassets\\",
       "BasePath": "_content/Radzen.Blazor",
       "RelativePath": "css/dark-base.css",
       "AssetKind": "All",
@@ -694,13 +694,13 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "C:\\Users\\piecz\\.nuget\\packages\\radzen.blazor\\4.15.10\\staticwebassets\\css\\dark-base.css"
+      "OriginalItemSpec": "C:\\Users\\Piotr\\.nuget\\packages\\radzen.blazor\\4.15.10\\staticwebassets\\css\\dark-base.css"
     },
     {
-      "Identity": "C:\\Users\\piecz\\.nuget\\packages\\radzen.blazor\\4.15.10\\staticwebassets\\css\\default.css",
+      "Identity": "C:\\Users\\Piotr\\.nuget\\packages\\radzen.blazor\\4.15.10\\staticwebassets\\css\\default.css",
       "SourceId": "Radzen.Blazor",
       "SourceType": "Package",
-      "ContentRoot": "C:\\Users\\piecz\\.nuget\\packages\\radzen.blazor\\4.15.10\\staticwebassets\\",
+      "ContentRoot": "C:\\Users\\Piotr\\.nuget\\packages\\radzen.blazor\\4.15.10\\staticwebassets\\",
       "BasePath": "_content/Radzen.Blazor",
       "RelativePath": "css/default.css",
       "AssetKind": "All",
@@ -711,13 +711,13 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "C:\\Users\\piecz\\.nuget\\packages\\radzen.blazor\\4.15.10\\staticwebassets\\css\\default.css"
+      "OriginalItemSpec": "C:\\Users\\Piotr\\.nuget\\packages\\radzen.blazor\\4.15.10\\staticwebassets\\css\\default.css"
     },
     {
-      "Identity": "C:\\Users\\piecz\\.nuget\\packages\\radzen.blazor\\4.15.10\\staticwebassets\\css\\default-base.css",
+      "Identity": "C:\\Users\\Piotr\\.nuget\\packages\\radzen.blazor\\4.15.10\\staticwebassets\\css\\default-base.css",
       "SourceId": "Radzen.Blazor",
       "SourceType": "Package",
-      "ContentRoot": "C:\\Users\\piecz\\.nuget\\packages\\radzen.blazor\\4.15.10\\staticwebassets\\",
+      "ContentRoot": "C:\\Users\\Piotr\\.nuget\\packages\\radzen.blazor\\4.15.10\\staticwebassets\\",
       "BasePath": "_content/Radzen.Blazor",
       "RelativePath": "css/default-base.css",
       "AssetKind": "All",
@@ -728,13 +728,13 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "C:\\Users\\piecz\\.nuget\\packages\\radzen.blazor\\4.15.10\\staticwebassets\\css\\default-base.css"
+      "OriginalItemSpec": "C:\\Users\\Piotr\\.nuget\\packages\\radzen.blazor\\4.15.10\\staticwebassets\\css\\default-base.css"
     },
     {
-      "Identity": "C:\\Users\\piecz\\.nuget\\packages\\radzen.blazor\\4.15.10\\staticwebassets\\css\\humanistic.css",
+      "Identity": "C:\\Users\\Piotr\\.nuget\\packages\\radzen.blazor\\4.15.10\\staticwebassets\\css\\humanistic.css",
       "SourceId": "Radzen.Blazor",
       "SourceType": "Package",
-      "ContentRoot": "C:\\Users\\piecz\\.nuget\\packages\\radzen.blazor\\4.15.10\\staticwebassets\\",
+      "ContentRoot": "C:\\Users\\Piotr\\.nuget\\packages\\radzen.blazor\\4.15.10\\staticwebassets\\",
       "BasePath": "_content/Radzen.Blazor",
       "RelativePath": "css/humanistic.css",
       "AssetKind": "All",
@@ -745,13 +745,13 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "C:\\Users\\piecz\\.nuget\\packages\\radzen.blazor\\4.15.10\\staticwebassets\\css\\humanistic.css"
+      "OriginalItemSpec": "C:\\Users\\Piotr\\.nuget\\packages\\radzen.blazor\\4.15.10\\staticwebassets\\css\\humanistic.css"
     },
     {
-      "Identity": "C:\\Users\\piecz\\.nuget\\packages\\radzen.blazor\\4.15.10\\staticwebassets\\css\\humanistic-base.css",
+      "Identity": "C:\\Users\\Piotr\\.nuget\\packages\\radzen.blazor\\4.15.10\\staticwebassets\\css\\humanistic-base.css",
       "SourceId": "Radzen.Blazor",
       "SourceType": "Package",
-      "ContentRoot": "C:\\Users\\piecz\\.nuget\\packages\\radzen.blazor\\4.15.10\\staticwebassets\\",
+      "ContentRoot": "C:\\Users\\Piotr\\.nuget\\packages\\radzen.blazor\\4.15.10\\staticwebassets\\",
       "BasePath": "_content/Radzen.Blazor",
       "RelativePath": "css/humanistic-base.css",
       "AssetKind": "All",
@@ -762,13 +762,13 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "C:\\Users\\piecz\\.nuget\\packages\\radzen.blazor\\4.15.10\\staticwebassets\\css\\humanistic-base.css"
+      "OriginalItemSpec": "C:\\Users\\Piotr\\.nuget\\packages\\radzen.blazor\\4.15.10\\staticwebassets\\css\\humanistic-base.css"
     },
     {
-      "Identity": "C:\\Users\\piecz\\.nuget\\packages\\radzen.blazor\\4.15.10\\staticwebassets\\css\\material.css",
+      "Identity": "C:\\Users\\Piotr\\.nuget\\packages\\radzen.blazor\\4.15.10\\staticwebassets\\css\\material.css",
       "SourceId": "Radzen.Blazor",
       "SourceType": "Package",
-      "ContentRoot": "C:\\Users\\piecz\\.nuget\\packages\\radzen.blazor\\4.15.10\\staticwebassets\\",
+      "ContentRoot": "C:\\Users\\Piotr\\.nuget\\packages\\radzen.blazor\\4.15.10\\staticwebassets\\",
       "BasePath": "_content/Radzen.Blazor",
       "RelativePath": "css/material.css",
       "AssetKind": "All",
@@ -779,13 +779,13 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "C:\\Users\\piecz\\.nuget\\packages\\radzen.blazor\\4.15.10\\staticwebassets\\css\\material.css"
+      "OriginalItemSpec": "C:\\Users\\Piotr\\.nuget\\packages\\radzen.blazor\\4.15.10\\staticwebassets\\css\\material.css"
     },
     {
-      "Identity": "C:\\Users\\piecz\\.nuget\\packages\\radzen.blazor\\4.15.10\\staticwebassets\\css\\material-base.css",
+      "Identity": "C:\\Users\\Piotr\\.nuget\\packages\\radzen.blazor\\4.15.10\\staticwebassets\\css\\material-base.css",
       "SourceId": "Radzen.Blazor",
       "SourceType": "Package",
-      "ContentRoot": "C:\\Users\\piecz\\.nuget\\packages\\radzen.blazor\\4.15.10\\staticwebassets\\",
+      "ContentRoot": "C:\\Users\\Piotr\\.nuget\\packages\\radzen.blazor\\4.15.10\\staticwebassets\\",
       "BasePath": "_content/Radzen.Blazor",
       "RelativePath": "css/material-base.css",
       "AssetKind": "All",
@@ -796,13 +796,13 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "C:\\Users\\piecz\\.nuget\\packages\\radzen.blazor\\4.15.10\\staticwebassets\\css\\material-base.css"
+      "OriginalItemSpec": "C:\\Users\\Piotr\\.nuget\\packages\\radzen.blazor\\4.15.10\\staticwebassets\\css\\material-base.css"
     },
     {
-      "Identity": "C:\\Users\\piecz\\.nuget\\packages\\radzen.blazor\\4.15.10\\staticwebassets\\css\\software.css",
+      "Identity": "C:\\Users\\Piotr\\.nuget\\packages\\radzen.blazor\\4.15.10\\staticwebassets\\css\\software.css",
       "SourceId": "Radzen.Blazor",
       "SourceType": "Package",
-      "ContentRoot": "C:\\Users\\piecz\\.nuget\\packages\\radzen.blazor\\4.15.10\\staticwebassets\\",
+      "ContentRoot": "C:\\Users\\Piotr\\.nuget\\packages\\radzen.blazor\\4.15.10\\staticwebassets\\",
       "BasePath": "_content/Radzen.Blazor",
       "RelativePath": "css/software.css",
       "AssetKind": "All",
@@ -813,13 +813,13 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "C:\\Users\\piecz\\.nuget\\packages\\radzen.blazor\\4.15.10\\staticwebassets\\css\\software.css"
+      "OriginalItemSpec": "C:\\Users\\Piotr\\.nuget\\packages\\radzen.blazor\\4.15.10\\staticwebassets\\css\\software.css"
     },
     {
-      "Identity": "C:\\Users\\piecz\\.nuget\\packages\\radzen.blazor\\4.15.10\\staticwebassets\\css\\software-base.css",
+      "Identity": "C:\\Users\\Piotr\\.nuget\\packages\\radzen.blazor\\4.15.10\\staticwebassets\\css\\software-base.css",
       "SourceId": "Radzen.Blazor",
       "SourceType": "Package",
-      "ContentRoot": "C:\\Users\\piecz\\.nuget\\packages\\radzen.blazor\\4.15.10\\staticwebassets\\",
+      "ContentRoot": "C:\\Users\\Piotr\\.nuget\\packages\\radzen.blazor\\4.15.10\\staticwebassets\\",
       "BasePath": "_content/Radzen.Blazor",
       "RelativePath": "css/software-base.css",
       "AssetKind": "All",
@@ -830,13 +830,13 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "C:\\Users\\piecz\\.nuget\\packages\\radzen.blazor\\4.15.10\\staticwebassets\\css\\software-base.css"
+      "OriginalItemSpec": "C:\\Users\\Piotr\\.nuget\\packages\\radzen.blazor\\4.15.10\\staticwebassets\\css\\software-base.css"
     },
     {
-      "Identity": "C:\\Users\\piecz\\.nuget\\packages\\radzen.blazor\\4.15.10\\staticwebassets\\css\\standard.css",
+      "Identity": "C:\\Users\\Piotr\\.nuget\\packages\\radzen.blazor\\4.15.10\\staticwebassets\\css\\standard.css",
       "SourceId": "Radzen.Blazor",
       "SourceType": "Package",
-      "ContentRoot": "C:\\Users\\piecz\\.nuget\\packages\\radzen.blazor\\4.15.10\\staticwebassets\\",
+      "ContentRoot": "C:\\Users\\Piotr\\.nuget\\packages\\radzen.blazor\\4.15.10\\staticwebassets\\",
       "BasePath": "_content/Radzen.Blazor",
       "RelativePath": "css/standard.css",
       "AssetKind": "All",
@@ -847,13 +847,13 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "C:\\Users\\piecz\\.nuget\\packages\\radzen.blazor\\4.15.10\\staticwebassets\\css\\standard.css"
+      "OriginalItemSpec": "C:\\Users\\Piotr\\.nuget\\packages\\radzen.blazor\\4.15.10\\staticwebassets\\css\\standard.css"
     },
     {
-      "Identity": "C:\\Users\\piecz\\.nuget\\packages\\radzen.blazor\\4.15.10\\staticwebassets\\css\\standard-base.css",
+      "Identity": "C:\\Users\\Piotr\\.nuget\\packages\\radzen.blazor\\4.15.10\\staticwebassets\\css\\standard-base.css",
       "SourceId": "Radzen.Blazor",
       "SourceType": "Package",
-      "ContentRoot": "C:\\Users\\piecz\\.nuget\\packages\\radzen.blazor\\4.15.10\\staticwebassets\\",
+      "ContentRoot": "C:\\Users\\Piotr\\.nuget\\packages\\radzen.blazor\\4.15.10\\staticwebassets\\",
       "BasePath": "_content/Radzen.Blazor",
       "RelativePath": "css/standard-base.css",
       "AssetKind": "All",
@@ -864,13 +864,13 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "C:\\Users\\piecz\\.nuget\\packages\\radzen.blazor\\4.15.10\\staticwebassets\\css\\standard-base.css"
+      "OriginalItemSpec": "C:\\Users\\Piotr\\.nuget\\packages\\radzen.blazor\\4.15.10\\staticwebassets\\css\\standard-base.css"
     },
     {
-      "Identity": "C:\\Users\\piecz\\.nuget\\packages\\radzen.blazor\\4.15.10\\staticwebassets\\fonts\\MaterialIcons-Regular.woff",
+      "Identity": "C:\\Users\\Piotr\\.nuget\\packages\\radzen.blazor\\4.15.10\\staticwebassets\\fonts\\MaterialIcons-Regular.woff",
       "SourceId": "Radzen.Blazor",
       "SourceType": "Package",
-      "ContentRoot": "C:\\Users\\piecz\\.nuget\\packages\\radzen.blazor\\4.15.10\\staticwebassets\\",
+      "ContentRoot": "C:\\Users\\Piotr\\.nuget\\packages\\radzen.blazor\\4.15.10\\staticwebassets\\",
       "BasePath": "_content/Radzen.Blazor",
       "RelativePath": "fonts/MaterialIcons-Regular.woff",
       "AssetKind": "All",
@@ -881,13 +881,13 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "C:\\Users\\piecz\\.nuget\\packages\\radzen.blazor\\4.15.10\\staticwebassets\\fonts\\MaterialIcons-Regular.woff"
+      "OriginalItemSpec": "C:\\Users\\Piotr\\.nuget\\packages\\radzen.blazor\\4.15.10\\staticwebassets\\fonts\\MaterialIcons-Regular.woff"
     },
     {
-      "Identity": "C:\\Users\\piecz\\.nuget\\packages\\radzen.blazor\\4.15.10\\staticwebassets\\fonts\\roboto-v15-latin-300.woff",
+      "Identity": "C:\\Users\\Piotr\\.nuget\\packages\\radzen.blazor\\4.15.10\\staticwebassets\\fonts\\roboto-v15-latin-300.woff",
       "SourceId": "Radzen.Blazor",
       "SourceType": "Package",
-      "ContentRoot": "C:\\Users\\piecz\\.nuget\\packages\\radzen.blazor\\4.15.10\\staticwebassets\\",
+      "ContentRoot": "C:\\Users\\Piotr\\.nuget\\packages\\radzen.blazor\\4.15.10\\staticwebassets\\",
       "BasePath": "_content/Radzen.Blazor",
       "RelativePath": "fonts/roboto-v15-latin-300.woff",
       "AssetKind": "All",
@@ -898,13 +898,13 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "C:\\Users\\piecz\\.nuget\\packages\\radzen.blazor\\4.15.10\\staticwebassets\\fonts\\roboto-v15-latin-300.woff"
+      "OriginalItemSpec": "C:\\Users\\Piotr\\.nuget\\packages\\radzen.blazor\\4.15.10\\staticwebassets\\fonts\\roboto-v15-latin-300.woff"
     },
     {
-      "Identity": "C:\\Users\\piecz\\.nuget\\packages\\radzen.blazor\\4.15.10\\staticwebassets\\fonts\\roboto-v15-latin-700.woff",
+      "Identity": "C:\\Users\\Piotr\\.nuget\\packages\\radzen.blazor\\4.15.10\\staticwebassets\\fonts\\roboto-v15-latin-700.woff",
       "SourceId": "Radzen.Blazor",
       "SourceType": "Package",
-      "ContentRoot": "C:\\Users\\piecz\\.nuget\\packages\\radzen.blazor\\4.15.10\\staticwebassets\\",
+      "ContentRoot": "C:\\Users\\Piotr\\.nuget\\packages\\radzen.blazor\\4.15.10\\staticwebassets\\",
       "BasePath": "_content/Radzen.Blazor",
       "RelativePath": "fonts/roboto-v15-latin-700.woff",
       "AssetKind": "All",
@@ -915,13 +915,13 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "C:\\Users\\piecz\\.nuget\\packages\\radzen.blazor\\4.15.10\\staticwebassets\\fonts\\roboto-v15-latin-700.woff"
+      "OriginalItemSpec": "C:\\Users\\Piotr\\.nuget\\packages\\radzen.blazor\\4.15.10\\staticwebassets\\fonts\\roboto-v15-latin-700.woff"
     },
     {
-      "Identity": "C:\\Users\\piecz\\.nuget\\packages\\radzen.blazor\\4.15.10\\staticwebassets\\fonts\\roboto-v15-latin-regular.woff",
+      "Identity": "C:\\Users\\Piotr\\.nuget\\packages\\radzen.blazor\\4.15.10\\staticwebassets\\fonts\\roboto-v15-latin-regular.woff",
       "SourceId": "Radzen.Blazor",
       "SourceType": "Package",
-      "ContentRoot": "C:\\Users\\piecz\\.nuget\\packages\\radzen.blazor\\4.15.10\\staticwebassets\\",
+      "ContentRoot": "C:\\Users\\Piotr\\.nuget\\packages\\radzen.blazor\\4.15.10\\staticwebassets\\",
       "BasePath": "_content/Radzen.Blazor",
       "RelativePath": "fonts/roboto-v15-latin-regular.woff",
       "AssetKind": "All",
@@ -932,13 +932,13 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "C:\\Users\\piecz\\.nuget\\packages\\radzen.blazor\\4.15.10\\staticwebassets\\fonts\\roboto-v15-latin-regular.woff"
+      "OriginalItemSpec": "C:\\Users\\Piotr\\.nuget\\packages\\radzen.blazor\\4.15.10\\staticwebassets\\fonts\\roboto-v15-latin-regular.woff"
     },
     {
-      "Identity": "C:\\Users\\piecz\\.nuget\\packages\\radzen.blazor\\4.15.10\\staticwebassets\\fonts\\roboto-v30-latin-300.woff",
+      "Identity": "C:\\Users\\Piotr\\.nuget\\packages\\radzen.blazor\\4.15.10\\staticwebassets\\fonts\\roboto-v30-latin-300.woff",
       "SourceId": "Radzen.Blazor",
       "SourceType": "Package",
-      "ContentRoot": "C:\\Users\\piecz\\.nuget\\packages\\radzen.blazor\\4.15.10\\staticwebassets\\",
+      "ContentRoot": "C:\\Users\\Piotr\\.nuget\\packages\\radzen.blazor\\4.15.10\\staticwebassets\\",
       "BasePath": "_content/Radzen.Blazor",
       "RelativePath": "fonts/roboto-v30-latin-300.woff",
       "AssetKind": "All",
@@ -949,13 +949,13 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "C:\\Users\\piecz\\.nuget\\packages\\radzen.blazor\\4.15.10\\staticwebassets\\fonts\\roboto-v30-latin-300.woff"
+      "OriginalItemSpec": "C:\\Users\\Piotr\\.nuget\\packages\\radzen.blazor\\4.15.10\\staticwebassets\\fonts\\roboto-v30-latin-300.woff"
     },
     {
-      "Identity": "C:\\Users\\piecz\\.nuget\\packages\\radzen.blazor\\4.15.10\\staticwebassets\\fonts\\roboto-v30-latin-500.woff",
+      "Identity": "C:\\Users\\Piotr\\.nuget\\packages\\radzen.blazor\\4.15.10\\staticwebassets\\fonts\\roboto-v30-latin-500.woff",
       "SourceId": "Radzen.Blazor",
       "SourceType": "Package",
-      "ContentRoot": "C:\\Users\\piecz\\.nuget\\packages\\radzen.blazor\\4.15.10\\staticwebassets\\",
+      "ContentRoot": "C:\\Users\\Piotr\\.nuget\\packages\\radzen.blazor\\4.15.10\\staticwebassets\\",
       "BasePath": "_content/Radzen.Blazor",
       "RelativePath": "fonts/roboto-v30-latin-500.woff",
       "AssetKind": "All",
@@ -966,13 +966,13 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "C:\\Users\\piecz\\.nuget\\packages\\radzen.blazor\\4.15.10\\staticwebassets\\fonts\\roboto-v30-latin-500.woff"
+      "OriginalItemSpec": "C:\\Users\\Piotr\\.nuget\\packages\\radzen.blazor\\4.15.10\\staticwebassets\\fonts\\roboto-v30-latin-500.woff"
     },
     {
-      "Identity": "C:\\Users\\piecz\\.nuget\\packages\\radzen.blazor\\4.15.10\\staticwebassets\\fonts\\roboto-v30-latin-700.woff",
+      "Identity": "C:\\Users\\Piotr\\.nuget\\packages\\radzen.blazor\\4.15.10\\staticwebassets\\fonts\\roboto-v30-latin-700.woff",
       "SourceId": "Radzen.Blazor",
       "SourceType": "Package",
-      "ContentRoot": "C:\\Users\\piecz\\.nuget\\packages\\radzen.blazor\\4.15.10\\staticwebassets\\",
+      "ContentRoot": "C:\\Users\\Piotr\\.nuget\\packages\\radzen.blazor\\4.15.10\\staticwebassets\\",
       "BasePath": "_content/Radzen.Blazor",
       "RelativePath": "fonts/roboto-v30-latin-700.woff",
       "AssetKind": "All",
@@ -983,13 +983,13 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "C:\\Users\\piecz\\.nuget\\packages\\radzen.blazor\\4.15.10\\staticwebassets\\fonts\\roboto-v30-latin-700.woff"
+      "OriginalItemSpec": "C:\\Users\\Piotr\\.nuget\\packages\\radzen.blazor\\4.15.10\\staticwebassets\\fonts\\roboto-v30-latin-700.woff"
     },
     {
-      "Identity": "C:\\Users\\piecz\\.nuget\\packages\\radzen.blazor\\4.15.10\\staticwebassets\\fonts\\roboto-v30-latin-regular.woff",
+      "Identity": "C:\\Users\\Piotr\\.nuget\\packages\\radzen.blazor\\4.15.10\\staticwebassets\\fonts\\roboto-v30-latin-regular.woff",
       "SourceId": "Radzen.Blazor",
       "SourceType": "Package",
-      "ContentRoot": "C:\\Users\\piecz\\.nuget\\packages\\radzen.blazor\\4.15.10\\staticwebassets\\",
+      "ContentRoot": "C:\\Users\\Piotr\\.nuget\\packages\\radzen.blazor\\4.15.10\\staticwebassets\\",
       "BasePath": "_content/Radzen.Blazor",
       "RelativePath": "fonts/roboto-v30-latin-regular.woff",
       "AssetKind": "All",
@@ -1000,13 +1000,13 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "C:\\Users\\piecz\\.nuget\\packages\\radzen.blazor\\4.15.10\\staticwebassets\\fonts\\roboto-v30-latin-regular.woff"
+      "OriginalItemSpec": "C:\\Users\\Piotr\\.nuget\\packages\\radzen.blazor\\4.15.10\\staticwebassets\\fonts\\roboto-v30-latin-regular.woff"
     },
     {
-      "Identity": "C:\\Users\\piecz\\.nuget\\packages\\radzen.blazor\\4.15.10\\staticwebassets\\fonts\\SourceSansPro-Black.woff",
+      "Identity": "C:\\Users\\Piotr\\.nuget\\packages\\radzen.blazor\\4.15.10\\staticwebassets\\fonts\\SourceSansPro-Black.woff",
       "SourceId": "Radzen.Blazor",
       "SourceType": "Package",
-      "ContentRoot": "C:\\Users\\piecz\\.nuget\\packages\\radzen.blazor\\4.15.10\\staticwebassets\\",
+      "ContentRoot": "C:\\Users\\Piotr\\.nuget\\packages\\radzen.blazor\\4.15.10\\staticwebassets\\",
       "BasePath": "_content/Radzen.Blazor",
       "RelativePath": "fonts/SourceSansPro-Black.woff",
       "AssetKind": "All",
@@ -1017,13 +1017,13 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "C:\\Users\\piecz\\.nuget\\packages\\radzen.blazor\\4.15.10\\staticwebassets\\fonts\\SourceSansPro-Black.woff"
+      "OriginalItemSpec": "C:\\Users\\Piotr\\.nuget\\packages\\radzen.blazor\\4.15.10\\staticwebassets\\fonts\\SourceSansPro-Black.woff"
     },
     {
-      "Identity": "C:\\Users\\piecz\\.nuget\\packages\\radzen.blazor\\4.15.10\\staticwebassets\\fonts\\SourceSansPro-BlackIt.woff",
+      "Identity": "C:\\Users\\Piotr\\.nuget\\packages\\radzen.blazor\\4.15.10\\staticwebassets\\fonts\\SourceSansPro-BlackIt.woff",
       "SourceId": "Radzen.Blazor",
       "SourceType": "Package",
-      "ContentRoot": "C:\\Users\\piecz\\.nuget\\packages\\radzen.blazor\\4.15.10\\staticwebassets\\",
+      "ContentRoot": "C:\\Users\\Piotr\\.nuget\\packages\\radzen.blazor\\4.15.10\\staticwebassets\\",
       "BasePath": "_content/Radzen.Blazor",
       "RelativePath": "fonts/SourceSansPro-BlackIt.woff",
       "AssetKind": "All",
@@ -1034,13 +1034,13 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "C:\\Users\\piecz\\.nuget\\packages\\radzen.blazor\\4.15.10\\staticwebassets\\fonts\\SourceSansPro-BlackIt.woff"
+      "OriginalItemSpec": "C:\\Users\\Piotr\\.nuget\\packages\\radzen.blazor\\4.15.10\\staticwebassets\\fonts\\SourceSansPro-BlackIt.woff"
     },
     {
-      "Identity": "C:\\Users\\piecz\\.nuget\\packages\\radzen.blazor\\4.15.10\\staticwebassets\\fonts\\SourceSansPro-Bold.woff",
+      "Identity": "C:\\Users\\Piotr\\.nuget\\packages\\radzen.blazor\\4.15.10\\staticwebassets\\fonts\\SourceSansPro-Bold.woff",
       "SourceId": "Radzen.Blazor",
       "SourceType": "Package",
-      "ContentRoot": "C:\\Users\\piecz\\.nuget\\packages\\radzen.blazor\\4.15.10\\staticwebassets\\",
+      "ContentRoot": "C:\\Users\\Piotr\\.nuget\\packages\\radzen.blazor\\4.15.10\\staticwebassets\\",
       "BasePath": "_content/Radzen.Blazor",
       "RelativePath": "fonts/SourceSansPro-Bold.woff",
       "AssetKind": "All",
@@ -1051,13 +1051,13 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "C:\\Users\\piecz\\.nuget\\packages\\radzen.blazor\\4.15.10\\staticwebassets\\fonts\\SourceSansPro-Bold.woff"
+      "OriginalItemSpec": "C:\\Users\\Piotr\\.nuget\\packages\\radzen.blazor\\4.15.10\\staticwebassets\\fonts\\SourceSansPro-Bold.woff"
     },
     {
-      "Identity": "C:\\Users\\piecz\\.nuget\\packages\\radzen.blazor\\4.15.10\\staticwebassets\\fonts\\SourceSansPro-BoldIt.woff",
+      "Identity": "C:\\Users\\Piotr\\.nuget\\packages\\radzen.blazor\\4.15.10\\staticwebassets\\fonts\\SourceSansPro-BoldIt.woff",
       "SourceId": "Radzen.Blazor",
       "SourceType": "Package",
-      "ContentRoot": "C:\\Users\\piecz\\.nuget\\packages\\radzen.blazor\\4.15.10\\staticwebassets\\",
+      "ContentRoot": "C:\\Users\\Piotr\\.nuget\\packages\\radzen.blazor\\4.15.10\\staticwebassets\\",
       "BasePath": "_content/Radzen.Blazor",
       "RelativePath": "fonts/SourceSansPro-BoldIt.woff",
       "AssetKind": "All",
@@ -1068,13 +1068,13 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "C:\\Users\\piecz\\.nuget\\packages\\radzen.blazor\\4.15.10\\staticwebassets\\fonts\\SourceSansPro-BoldIt.woff"
+      "OriginalItemSpec": "C:\\Users\\Piotr\\.nuget\\packages\\radzen.blazor\\4.15.10\\staticwebassets\\fonts\\SourceSansPro-BoldIt.woff"
     },
     {
-      "Identity": "C:\\Users\\piecz\\.nuget\\packages\\radzen.blazor\\4.15.10\\staticwebassets\\fonts\\SourceSansPro-ExtraLight.woff",
+      "Identity": "C:\\Users\\Piotr\\.nuget\\packages\\radzen.blazor\\4.15.10\\staticwebassets\\fonts\\SourceSansPro-ExtraLight.woff",
       "SourceId": "Radzen.Blazor",
       "SourceType": "Package",
-      "ContentRoot": "C:\\Users\\piecz\\.nuget\\packages\\radzen.blazor\\4.15.10\\staticwebassets\\",
+      "ContentRoot": "C:\\Users\\Piotr\\.nuget\\packages\\radzen.blazor\\4.15.10\\staticwebassets\\",
       "BasePath": "_content/Radzen.Blazor",
       "RelativePath": "fonts/SourceSansPro-ExtraLight.woff",
       "AssetKind": "All",
@@ -1085,13 +1085,13 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "C:\\Users\\piecz\\.nuget\\packages\\radzen.blazor\\4.15.10\\staticwebassets\\fonts\\SourceSansPro-ExtraLight.woff"
+      "OriginalItemSpec": "C:\\Users\\Piotr\\.nuget\\packages\\radzen.blazor\\4.15.10\\staticwebassets\\fonts\\SourceSansPro-ExtraLight.woff"
     },
     {
-      "Identity": "C:\\Users\\piecz\\.nuget\\packages\\radzen.blazor\\4.15.10\\staticwebassets\\fonts\\SourceSansPro-ExtraLightIt.woff",
+      "Identity": "C:\\Users\\Piotr\\.nuget\\packages\\radzen.blazor\\4.15.10\\staticwebassets\\fonts\\SourceSansPro-ExtraLightIt.woff",
       "SourceId": "Radzen.Blazor",
       "SourceType": "Package",
-      "ContentRoot": "C:\\Users\\piecz\\.nuget\\packages\\radzen.blazor\\4.15.10\\staticwebassets\\",
+      "ContentRoot": "C:\\Users\\Piotr\\.nuget\\packages\\radzen.blazor\\4.15.10\\staticwebassets\\",
       "BasePath": "_content/Radzen.Blazor",
       "RelativePath": "fonts/SourceSansPro-ExtraLightIt.woff",
       "AssetKind": "All",
@@ -1102,13 +1102,13 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "C:\\Users\\piecz\\.nuget\\packages\\radzen.blazor\\4.15.10\\staticwebassets\\fonts\\SourceSansPro-ExtraLightIt.woff"
+      "OriginalItemSpec": "C:\\Users\\Piotr\\.nuget\\packages\\radzen.blazor\\4.15.10\\staticwebassets\\fonts\\SourceSansPro-ExtraLightIt.woff"
     },
     {
-      "Identity": "C:\\Users\\piecz\\.nuget\\packages\\radzen.blazor\\4.15.10\\staticwebassets\\fonts\\SourceSansPro-It.woff",
+      "Identity": "C:\\Users\\Piotr\\.nuget\\packages\\radzen.blazor\\4.15.10\\staticwebassets\\fonts\\SourceSansPro-It.woff",
       "SourceId": "Radzen.Blazor",
       "SourceType": "Package",
-      "ContentRoot": "C:\\Users\\piecz\\.nuget\\packages\\radzen.blazor\\4.15.10\\staticwebassets\\",
+      "ContentRoot": "C:\\Users\\Piotr\\.nuget\\packages\\radzen.blazor\\4.15.10\\staticwebassets\\",
       "BasePath": "_content/Radzen.Blazor",
       "RelativePath": "fonts/SourceSansPro-It.woff",
       "AssetKind": "All",
@@ -1119,13 +1119,13 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "C:\\Users\\piecz\\.nuget\\packages\\radzen.blazor\\4.15.10\\staticwebassets\\fonts\\SourceSansPro-It.woff"
+      "OriginalItemSpec": "C:\\Users\\Piotr\\.nuget\\packages\\radzen.blazor\\4.15.10\\staticwebassets\\fonts\\SourceSansPro-It.woff"
     },
     {
-      "Identity": "C:\\Users\\piecz\\.nuget\\packages\\radzen.blazor\\4.15.10\\staticwebassets\\fonts\\SourceSansPro-Light.woff",
+      "Identity": "C:\\Users\\Piotr\\.nuget\\packages\\radzen.blazor\\4.15.10\\staticwebassets\\fonts\\SourceSansPro-Light.woff",
       "SourceId": "Radzen.Blazor",
       "SourceType": "Package",
-      "ContentRoot": "C:\\Users\\piecz\\.nuget\\packages\\radzen.blazor\\4.15.10\\staticwebassets\\",
+      "ContentRoot": "C:\\Users\\Piotr\\.nuget\\packages\\radzen.blazor\\4.15.10\\staticwebassets\\",
       "BasePath": "_content/Radzen.Blazor",
       "RelativePath": "fonts/SourceSansPro-Light.woff",
       "AssetKind": "All",
@@ -1136,13 +1136,13 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "C:\\Users\\piecz\\.nuget\\packages\\radzen.blazor\\4.15.10\\staticwebassets\\fonts\\SourceSansPro-Light.woff"
+      "OriginalItemSpec": "C:\\Users\\Piotr\\.nuget\\packages\\radzen.blazor\\4.15.10\\staticwebassets\\fonts\\SourceSansPro-Light.woff"
     },
     {
-      "Identity": "C:\\Users\\piecz\\.nuget\\packages\\radzen.blazor\\4.15.10\\staticwebassets\\fonts\\SourceSansPro-LightIt.woff",
+      "Identity": "C:\\Users\\Piotr\\.nuget\\packages\\radzen.blazor\\4.15.10\\staticwebassets\\fonts\\SourceSansPro-LightIt.woff",
       "SourceId": "Radzen.Blazor",
       "SourceType": "Package",
-      "ContentRoot": "C:\\Users\\piecz\\.nuget\\packages\\radzen.blazor\\4.15.10\\staticwebassets\\",
+      "ContentRoot": "C:\\Users\\Piotr\\.nuget\\packages\\radzen.blazor\\4.15.10\\staticwebassets\\",
       "BasePath": "_content/Radzen.Blazor",
       "RelativePath": "fonts/SourceSansPro-LightIt.woff",
       "AssetKind": "All",
@@ -1153,13 +1153,13 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "C:\\Users\\piecz\\.nuget\\packages\\radzen.blazor\\4.15.10\\staticwebassets\\fonts\\SourceSansPro-LightIt.woff"
+      "OriginalItemSpec": "C:\\Users\\Piotr\\.nuget\\packages\\radzen.blazor\\4.15.10\\staticwebassets\\fonts\\SourceSansPro-LightIt.woff"
     },
     {
-      "Identity": "C:\\Users\\piecz\\.nuget\\packages\\radzen.blazor\\4.15.10\\staticwebassets\\fonts\\SourceSansPro-Regular.woff",
+      "Identity": "C:\\Users\\Piotr\\.nuget\\packages\\radzen.blazor\\4.15.10\\staticwebassets\\fonts\\SourceSansPro-Regular.woff",
       "SourceId": "Radzen.Blazor",
       "SourceType": "Package",
-      "ContentRoot": "C:\\Users\\piecz\\.nuget\\packages\\radzen.blazor\\4.15.10\\staticwebassets\\",
+      "ContentRoot": "C:\\Users\\Piotr\\.nuget\\packages\\radzen.blazor\\4.15.10\\staticwebassets\\",
       "BasePath": "_content/Radzen.Blazor",
       "RelativePath": "fonts/SourceSansPro-Regular.woff",
       "AssetKind": "All",
@@ -1170,13 +1170,13 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "C:\\Users\\piecz\\.nuget\\packages\\radzen.blazor\\4.15.10\\staticwebassets\\fonts\\SourceSansPro-Regular.woff"
+      "OriginalItemSpec": "C:\\Users\\Piotr\\.nuget\\packages\\radzen.blazor\\4.15.10\\staticwebassets\\fonts\\SourceSansPro-Regular.woff"
     },
     {
-      "Identity": "C:\\Users\\piecz\\.nuget\\packages\\radzen.blazor\\4.15.10\\staticwebassets\\fonts\\SourceSansPro-Semibold.woff",
+      "Identity": "C:\\Users\\Piotr\\.nuget\\packages\\radzen.blazor\\4.15.10\\staticwebassets\\fonts\\SourceSansPro-Semibold.woff",
       "SourceId": "Radzen.Blazor",
       "SourceType": "Package",
-      "ContentRoot": "C:\\Users\\piecz\\.nuget\\packages\\radzen.blazor\\4.15.10\\staticwebassets\\",
+      "ContentRoot": "C:\\Users\\Piotr\\.nuget\\packages\\radzen.blazor\\4.15.10\\staticwebassets\\",
       "BasePath": "_content/Radzen.Blazor",
       "RelativePath": "fonts/SourceSansPro-Semibold.woff",
       "AssetKind": "All",
@@ -1187,13 +1187,13 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "C:\\Users\\piecz\\.nuget\\packages\\radzen.blazor\\4.15.10\\staticwebassets\\fonts\\SourceSansPro-Semibold.woff"
+      "OriginalItemSpec": "C:\\Users\\Piotr\\.nuget\\packages\\radzen.blazor\\4.15.10\\staticwebassets\\fonts\\SourceSansPro-Semibold.woff"
     },
     {
-      "Identity": "C:\\Users\\piecz\\.nuget\\packages\\radzen.blazor\\4.15.10\\staticwebassets\\fonts\\SourceSansPro-SemiboldIt.woff",
+      "Identity": "C:\\Users\\Piotr\\.nuget\\packages\\radzen.blazor\\4.15.10\\staticwebassets\\fonts\\SourceSansPro-SemiboldIt.woff",
       "SourceId": "Radzen.Blazor",
       "SourceType": "Package",
-      "ContentRoot": "C:\\Users\\piecz\\.nuget\\packages\\radzen.blazor\\4.15.10\\staticwebassets\\",
+      "ContentRoot": "C:\\Users\\Piotr\\.nuget\\packages\\radzen.blazor\\4.15.10\\staticwebassets\\",
       "BasePath": "_content/Radzen.Blazor",
       "RelativePath": "fonts/SourceSansPro-SemiboldIt.woff",
       "AssetKind": "All",
@@ -1204,13 +1204,13 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "C:\\Users\\piecz\\.nuget\\packages\\radzen.blazor\\4.15.10\\staticwebassets\\fonts\\SourceSansPro-SemiboldIt.woff"
+      "OriginalItemSpec": "C:\\Users\\Piotr\\.nuget\\packages\\radzen.blazor\\4.15.10\\staticwebassets\\fonts\\SourceSansPro-SemiboldIt.woff"
     },
     {
-      "Identity": "C:\\Users\\piecz\\.nuget\\packages\\radzen.blazor\\4.15.10\\staticwebassets\\Radzen.Blazor.js",
+      "Identity": "C:\\Users\\Piotr\\.nuget\\packages\\radzen.blazor\\4.15.10\\staticwebassets\\Radzen.Blazor.js",
       "SourceId": "Radzen.Blazor",
       "SourceType": "Package",
-      "ContentRoot": "C:\\Users\\piecz\\.nuget\\packages\\radzen.blazor\\4.15.10\\staticwebassets\\",
+      "ContentRoot": "C:\\Users\\Piotr\\.nuget\\packages\\radzen.blazor\\4.15.10\\staticwebassets\\",
       "BasePath": "_content/Radzen.Blazor",
       "RelativePath": "Radzen.Blazor.js",
       "AssetKind": "All",
@@ -1221,13 +1221,13 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "C:\\Users\\piecz\\.nuget\\packages\\radzen.blazor\\4.15.10\\staticwebassets\\Radzen.Blazor.js"
+      "OriginalItemSpec": "C:\\Users\\Piotr\\.nuget\\packages\\radzen.blazor\\4.15.10\\staticwebassets\\Radzen.Blazor.js"
     },
     {
-      "Identity": "C:\\Users\\piecz\\Source\\Repos\\PiotrDabrowski232\\BlazorBlog\\Blog\\obj\\Debug\\net6.0\\scopedcss\\bundle\\Blog.styles.css",
+      "Identity": "C:\\Users\\Piotr\\Source\\Repos\\PiotrDabrowski232\\BlazorBlog\\Blog\\obj\\Debug\\net6.0\\scopedcss\\bundle\\Blog.styles.css",
       "SourceId": "Blog",
       "SourceType": "Computed",
-      "ContentRoot": "C:\\Users\\piecz\\Source\\Repos\\PiotrDabrowski232\\BlazorBlog\\Blog\\obj\\Debug\\net6.0\\scopedcss\\bundle\\",
+      "ContentRoot": "C:\\Users\\Piotr\\Source\\Repos\\PiotrDabrowski232\\BlazorBlog\\Blog\\obj\\Debug\\net6.0\\scopedcss\\bundle\\",
       "BasePath": "_content/Blog",
       "RelativePath": "Blog.styles.css",
       "AssetKind": "All",
@@ -1238,13 +1238,13 @@
       "AssetTraitValue": "ApplicationBundle",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "C:\\Users\\piecz\\Source\\Repos\\PiotrDabrowski232\\BlazorBlog\\Blog\\obj\\Debug\\net6.0\\scopedcss\\bundle\\Blog.styles.css"
+      "OriginalItemSpec": "C:\\Users\\Piotr\\Source\\Repos\\PiotrDabrowski232\\BlazorBlog\\Blog\\obj\\Debug\\net6.0\\scopedcss\\bundle\\Blog.styles.css"
     },
     {
-      "Identity": "C:\\Users\\piecz\\Source\\Repos\\PiotrDabrowski232\\BlazorBlog\\Blog\\obj\\Debug\\net6.0\\scopedcss\\projectbundle\\Blog.bundle.scp.css",
+      "Identity": "C:\\Users\\Piotr\\Source\\Repos\\PiotrDabrowski232\\BlazorBlog\\Blog\\obj\\Debug\\net6.0\\scopedcss\\projectbundle\\Blog.bundle.scp.css",
       "SourceId": "Blog",
       "SourceType": "Computed",
-      "ContentRoot": "C:\\Users\\piecz\\Source\\Repos\\PiotrDabrowski232\\BlazorBlog\\Blog\\obj\\Debug\\net6.0\\scopedcss\\projectbundle\\",
+      "ContentRoot": "C:\\Users\\Piotr\\Source\\Repos\\PiotrDabrowski232\\BlazorBlog\\Blog\\obj\\Debug\\net6.0\\scopedcss\\projectbundle\\",
       "BasePath": "_content/Blog",
       "RelativePath": "Blog.bundle.scp.css",
       "AssetKind": "All",
@@ -1255,13 +1255,13 @@
       "AssetTraitValue": "ProjectBundle",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "C:\\Users\\piecz\\Source\\Repos\\PiotrDabrowski232\\BlazorBlog\\Blog\\obj\\Debug\\net6.0\\scopedcss\\projectbundle\\Blog.bundle.scp.css"
+      "OriginalItemSpec": "C:\\Users\\Piotr\\Source\\Repos\\PiotrDabrowski232\\BlazorBlog\\Blog\\obj\\Debug\\net6.0\\scopedcss\\projectbundle\\Blog.bundle.scp.css"
     },
     {
-      "Identity": "C:\\Users\\piecz\\Source\\Repos\\PiotrDabrowski232\\BlazorBlog\\Blog\\wwwroot\\css\\bootstrap\\bootstrap.min.css",
+      "Identity": "C:\\Users\\Piotr\\Source\\Repos\\PiotrDabrowski232\\BlazorBlog\\Blog\\wwwroot\\css\\bootstrap\\bootstrap.min.css",
       "SourceId": "Blog",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\piecz\\Source\\Repos\\PiotrDabrowski232\\BlazorBlog\\Blog\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\Piotr\\Source\\Repos\\PiotrDabrowski232\\BlazorBlog\\Blog\\wwwroot\\",
       "BasePath": "_content/Blog",
       "RelativePath": "css/bootstrap/bootstrap.min.css",
       "AssetKind": "All",
@@ -1275,10 +1275,10 @@
       "OriginalItemSpec": "wwwroot\\css\\bootstrap\\bootstrap.min.css"
     },
     {
-      "Identity": "C:\\Users\\piecz\\Source\\Repos\\PiotrDabrowski232\\BlazorBlog\\Blog\\wwwroot\\css\\bootstrap\\bootstrap.min.css.map",
+      "Identity": "C:\\Users\\Piotr\\Source\\Repos\\PiotrDabrowski232\\BlazorBlog\\Blog\\wwwroot\\css\\bootstrap\\bootstrap.min.css.map",
       "SourceId": "Blog",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\piecz\\Source\\Repos\\PiotrDabrowski232\\BlazorBlog\\Blog\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\Piotr\\Source\\Repos\\PiotrDabrowski232\\BlazorBlog\\Blog\\wwwroot\\",
       "BasePath": "_content/Blog",
       "RelativePath": "css/bootstrap/bootstrap.min.css.map",
       "AssetKind": "All",
@@ -1292,10 +1292,10 @@
       "OriginalItemSpec": "wwwroot\\css\\bootstrap\\bootstrap.min.css.map"
     },
     {
-      "Identity": "C:\\Users\\piecz\\Source\\Repos\\PiotrDabrowski232\\BlazorBlog\\Blog\\wwwroot\\css\\open-iconic\\font\\css\\open-iconic-bootstrap.min.css",
+      "Identity": "C:\\Users\\Piotr\\Source\\Repos\\PiotrDabrowski232\\BlazorBlog\\Blog\\wwwroot\\css\\open-iconic\\font\\css\\open-iconic-bootstrap.min.css",
       "SourceId": "Blog",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\piecz\\Source\\Repos\\PiotrDabrowski232\\BlazorBlog\\Blog\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\Piotr\\Source\\Repos\\PiotrDabrowski232\\BlazorBlog\\Blog\\wwwroot\\",
       "BasePath": "_content/Blog",
       "RelativePath": "css/open-iconic/font/css/open-iconic-bootstrap.min.css",
       "AssetKind": "All",
@@ -1309,10 +1309,10 @@
       "OriginalItemSpec": "wwwroot\\css\\open-iconic\\font\\css\\open-iconic-bootstrap.min.css"
     },
     {
-      "Identity": "C:\\Users\\piecz\\Source\\Repos\\PiotrDabrowski232\\BlazorBlog\\Blog\\wwwroot\\css\\open-iconic\\font\\fonts\\open-iconic.eot",
+      "Identity": "C:\\Users\\Piotr\\Source\\Repos\\PiotrDabrowski232\\BlazorBlog\\Blog\\wwwroot\\css\\open-iconic\\font\\fonts\\open-iconic.eot",
       "SourceId": "Blog",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\piecz\\Source\\Repos\\PiotrDabrowski232\\BlazorBlog\\Blog\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\Piotr\\Source\\Repos\\PiotrDabrowski232\\BlazorBlog\\Blog\\wwwroot\\",
       "BasePath": "_content/Blog",
       "RelativePath": "css/open-iconic/font/fonts/open-iconic.eot",
       "AssetKind": "All",
@@ -1326,10 +1326,10 @@
       "OriginalItemSpec": "wwwroot\\css\\open-iconic\\font\\fonts\\open-iconic.eot"
     },
     {
-      "Identity": "C:\\Users\\piecz\\Source\\Repos\\PiotrDabrowski232\\BlazorBlog\\Blog\\wwwroot\\css\\open-iconic\\font\\fonts\\open-iconic.otf",
+      "Identity": "C:\\Users\\Piotr\\Source\\Repos\\PiotrDabrowski232\\BlazorBlog\\Blog\\wwwroot\\css\\open-iconic\\font\\fonts\\open-iconic.otf",
       "SourceId": "Blog",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\piecz\\Source\\Repos\\PiotrDabrowski232\\BlazorBlog\\Blog\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\Piotr\\Source\\Repos\\PiotrDabrowski232\\BlazorBlog\\Blog\\wwwroot\\",
       "BasePath": "_content/Blog",
       "RelativePath": "css/open-iconic/font/fonts/open-iconic.otf",
       "AssetKind": "All",
@@ -1343,10 +1343,10 @@
       "OriginalItemSpec": "wwwroot\\css\\open-iconic\\font\\fonts\\open-iconic.otf"
     },
     {
-      "Identity": "C:\\Users\\piecz\\Source\\Repos\\PiotrDabrowski232\\BlazorBlog\\Blog\\wwwroot\\css\\open-iconic\\font\\fonts\\open-iconic.svg",
+      "Identity": "C:\\Users\\Piotr\\Source\\Repos\\PiotrDabrowski232\\BlazorBlog\\Blog\\wwwroot\\css\\open-iconic\\font\\fonts\\open-iconic.svg",
       "SourceId": "Blog",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\piecz\\Source\\Repos\\PiotrDabrowski232\\BlazorBlog\\Blog\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\Piotr\\Source\\Repos\\PiotrDabrowski232\\BlazorBlog\\Blog\\wwwroot\\",
       "BasePath": "_content/Blog",
       "RelativePath": "css/open-iconic/font/fonts/open-iconic.svg",
       "AssetKind": "All",
@@ -1360,10 +1360,10 @@
       "OriginalItemSpec": "wwwroot\\css\\open-iconic\\font\\fonts\\open-iconic.svg"
     },
     {
-      "Identity": "C:\\Users\\piecz\\Source\\Repos\\PiotrDabrowski232\\BlazorBlog\\Blog\\wwwroot\\css\\open-iconic\\font\\fonts\\open-iconic.ttf",
+      "Identity": "C:\\Users\\Piotr\\Source\\Repos\\PiotrDabrowski232\\BlazorBlog\\Blog\\wwwroot\\css\\open-iconic\\font\\fonts\\open-iconic.ttf",
       "SourceId": "Blog",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\piecz\\Source\\Repos\\PiotrDabrowski232\\BlazorBlog\\Blog\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\Piotr\\Source\\Repos\\PiotrDabrowski232\\BlazorBlog\\Blog\\wwwroot\\",
       "BasePath": "_content/Blog",
       "RelativePath": "css/open-iconic/font/fonts/open-iconic.ttf",
       "AssetKind": "All",
@@ -1377,10 +1377,10 @@
       "OriginalItemSpec": "wwwroot\\css\\open-iconic\\font\\fonts\\open-iconic.ttf"
     },
     {
-      "Identity": "C:\\Users\\piecz\\Source\\Repos\\PiotrDabrowski232\\BlazorBlog\\Blog\\wwwroot\\css\\open-iconic\\font\\fonts\\open-iconic.woff",
+      "Identity": "C:\\Users\\Piotr\\Source\\Repos\\PiotrDabrowski232\\BlazorBlog\\Blog\\wwwroot\\css\\open-iconic\\font\\fonts\\open-iconic.woff",
       "SourceId": "Blog",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\piecz\\Source\\Repos\\PiotrDabrowski232\\BlazorBlog\\Blog\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\Piotr\\Source\\Repos\\PiotrDabrowski232\\BlazorBlog\\Blog\\wwwroot\\",
       "BasePath": "_content/Blog",
       "RelativePath": "css/open-iconic/font/fonts/open-iconic.woff",
       "AssetKind": "All",
@@ -1394,10 +1394,10 @@
       "OriginalItemSpec": "wwwroot\\css\\open-iconic\\font\\fonts\\open-iconic.woff"
     },
     {
-      "Identity": "C:\\Users\\piecz\\Source\\Repos\\PiotrDabrowski232\\BlazorBlog\\Blog\\wwwroot\\css\\open-iconic\\FONT-LICENSE",
+      "Identity": "C:\\Users\\Piotr\\Source\\Repos\\PiotrDabrowski232\\BlazorBlog\\Blog\\wwwroot\\css\\open-iconic\\FONT-LICENSE",
       "SourceId": "Blog",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\piecz\\Source\\Repos\\PiotrDabrowski232\\BlazorBlog\\Blog\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\Piotr\\Source\\Repos\\PiotrDabrowski232\\BlazorBlog\\Blog\\wwwroot\\",
       "BasePath": "_content/Blog",
       "RelativePath": "css/open-iconic/FONT-LICENSE",
       "AssetKind": "All",
@@ -1411,10 +1411,10 @@
       "OriginalItemSpec": "wwwroot\\css\\open-iconic\\FONT-LICENSE"
     },
     {
-      "Identity": "C:\\Users\\piecz\\Source\\Repos\\PiotrDabrowski232\\BlazorBlog\\Blog\\wwwroot\\css\\open-iconic\\ICON-LICENSE",
+      "Identity": "C:\\Users\\Piotr\\Source\\Repos\\PiotrDabrowski232\\BlazorBlog\\Blog\\wwwroot\\css\\open-iconic\\ICON-LICENSE",
       "SourceId": "Blog",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\piecz\\Source\\Repos\\PiotrDabrowski232\\BlazorBlog\\Blog\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\Piotr\\Source\\Repos\\PiotrDabrowski232\\BlazorBlog\\Blog\\wwwroot\\",
       "BasePath": "_content/Blog",
       "RelativePath": "css/open-iconic/ICON-LICENSE",
       "AssetKind": "All",
@@ -1428,10 +1428,10 @@
       "OriginalItemSpec": "wwwroot\\css\\open-iconic\\ICON-LICENSE"
     },
     {
-      "Identity": "C:\\Users\\piecz\\Source\\Repos\\PiotrDabrowski232\\BlazorBlog\\Blog\\wwwroot\\css\\open-iconic\\README.md",
+      "Identity": "C:\\Users\\Piotr\\Source\\Repos\\PiotrDabrowski232\\BlazorBlog\\Blog\\wwwroot\\css\\open-iconic\\README.md",
       "SourceId": "Blog",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\piecz\\Source\\Repos\\PiotrDabrowski232\\BlazorBlog\\Blog\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\Piotr\\Source\\Repos\\PiotrDabrowski232\\BlazorBlog\\Blog\\wwwroot\\",
       "BasePath": "_content/Blog",
       "RelativePath": "css/open-iconic/README.md",
       "AssetKind": "All",
@@ -1445,10 +1445,10 @@
       "OriginalItemSpec": "wwwroot\\css\\open-iconic\\README.md"
     },
     {
-      "Identity": "C:\\Users\\piecz\\Source\\Repos\\PiotrDabrowski232\\BlazorBlog\\Blog\\wwwroot\\css\\site.css",
+      "Identity": "C:\\Users\\Piotr\\Source\\Repos\\PiotrDabrowski232\\BlazorBlog\\Blog\\wwwroot\\css\\site.css",
       "SourceId": "Blog",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\piecz\\Source\\Repos\\PiotrDabrowski232\\BlazorBlog\\Blog\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\Piotr\\Source\\Repos\\PiotrDabrowski232\\BlazorBlog\\Blog\\wwwroot\\",
       "BasePath": "_content/Blog",
       "RelativePath": "css/site.css",
       "AssetKind": "All",
@@ -1462,10 +1462,10 @@
       "OriginalItemSpec": "wwwroot\\css\\site.css"
     },
     {
-      "Identity": "C:\\Users\\piecz\\Source\\Repos\\PiotrDabrowski232\\BlazorBlog\\Blog\\wwwroot\\favicon.ico",
+      "Identity": "C:\\Users\\Piotr\\Source\\Repos\\PiotrDabrowski232\\BlazorBlog\\Blog\\wwwroot\\favicon.ico",
       "SourceId": "Blog",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\piecz\\Source\\Repos\\PiotrDabrowski232\\BlazorBlog\\Blog\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\Piotr\\Source\\Repos\\PiotrDabrowski232\\BlazorBlog\\Blog\\wwwroot\\",
       "BasePath": "_content/Blog",
       "RelativePath": "favicon.ico",
       "AssetKind": "All",
