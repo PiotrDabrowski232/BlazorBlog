@@ -8,11 +8,11 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Folder Include="ServicesTest\" />
+    <PackageReference Include="NUnit" Version="3.14.0" />
   </ItemGroup>
 
   <ItemGroup>
-    <PackageReference Include="NUnit" Version="3.14.0" />
+    <ProjectReference Include="..\Blog.Logic\Blog.Logic.csproj" />
   </ItemGroup>
 
 </Project>
