@@ -11,6 +11,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Blog.Logic.Dto.UserDtos;
+using Blog.Data.Models.Enums;
+using Blog.Logic.Extensions;
+using Microsoft.AspNet.Identity;
 
 namespace Blog.UnitTests.ServicesTests
 {
@@ -33,25 +36,62 @@ namespace Blog.UnitTests.ServicesTests
         }
 
         [Fact]
-        public void AddingUser_ReturnCompletedTask()
+        public void AddingEmptyUser_ReturnedFaultedResult()
         {
             // Arrange
             UserDto userDto = new UserDto();
-            User user = new User();
 
             // Act
-            _userRepository.Setup(u => u.Add(It.IsAny<User>())).Returns(Task.CompletedTask);
 
             var result = _userService.Add(userDto);
 
             // Assert
-            _userRepository.Verify(u => u.Add(It.IsAny<User>()), Times.Once());
 
-            // Since you're using a new Guid for user.Id, you cannot verify GetById with user.Id
-            // Instead, you can verify if GetById is called once with any Guid
-            _userRepository.Verify(u => u.GetById(It.IsAny<Guid>()), Times.Once());
+            Assert.True(result.IsFaulted);
+        }
 
-            Assert.True(result.IsCompletedSuccessfully);
+        [Fact]
+        public void GetAllNormalUsers_ReturnedUserWithBasicRole()
+        {
+            //Areange
+            var roles = new List<Roles>()
+            {
+            new Roles{ RoleId = 1.ToGuid(), Name = UserRoles.BasicUser.ToString() },
+            new Roles{ RoleId = 2.ToGuid(), Name = UserRoles.Admin.ToString()},
+            new Roles{ RoleId = 3.ToGuid(), Name = UserRoles.SuperUser.ToString()}
+            };
+
+            _roleRepository.Setup(l => l.GetAll()).Returns(roles);
+
+            _userRepository.Setup(u => u.GetAll()).Returns(It.IsAny<IEnumerable<User>>);
+
+            //Act
+
+            var result = _userService.GetAllNormalUsers();
+
+
+            //Assert
+
+            _roleRepository.Verify(r => r.GetAll(), Times.Once);
+
+            _userRepository.Verify(u => u.GetAll(), Times.Once);
+
+            Assert.NotNull(result);
+
+            Assert.All(result, user =>
+            {
+                Assert.NotEqual(2.ToGuid(), user.RoleId);
+            });
+        }
+
+        [Fact]
+        public void GetUserById_ReturnUserWithConcreteId()
+        {
+            //Arrange
+
+            //Assert
+
+            //Act
         }
     }
 }
