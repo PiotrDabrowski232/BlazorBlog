@@ -88,7 +88,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.403\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.100\\RuntimeIdentifierGraph.json"
         }
       }
     },
@@ -174,14 +174,6 @@
               "suppressParent": "All",
               "target": "Package",
               "version": "[7.0.9, )"
-            },
-            "xunit.extensibility.core": {
-              "target": "Package",
-              "version": "[2.5.0, )"
-            },
-            "xunit.extensibility.execution": {
-              "target": "Package",
-              "version": "[2.5.0, )"
             }
           },
           "imports": [
@@ -200,7 +192,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.403\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.100\\RuntimeIdentifierGraph.json"
         }
       }
     },
@@ -260,7 +252,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.403\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.100\\RuntimeIdentifierGraph.json"
         }
       }
     },
@@ -293,6 +285,9 @@
           "net6.0": {
             "targetAlias": "net6.0",
             "projectReferences": {
+              "C:\\Users\\Piotr\\source\\repos\\PiotrDabrowski232\\BlazorBlog\\Blog.Data\\Blog.Data.csproj": {
+                "projectPath": "C:\\Users\\Piotr\\source\\repos\\PiotrDabrowski232\\BlazorBlog\\Blog.Data\\Blog.Data.csproj"
+              },
               "C:\\Users\\Piotr\\source\\repos\\PiotrDabrowski232\\BlazorBlog\\Blog.Logic\\Blog.Logic.csproj": {
                 "projectPath": "C:\\Users\\Piotr\\source\\repos\\PiotrDabrowski232\\BlazorBlog\\Blog.Logic\\Blog.Logic.csproj"
               }
@@ -309,13 +304,33 @@
         "net6.0": {
           "targetAlias": "net6.0",
           "dependencies": {
+            "Microsoft.NET.Test.Sdk": {
+              "target": "Package",
+              "version": "[17.5.0, )"
+            },
             "Moq": {
               "target": "Package",
               "version": "[4.20.69, )"
             },
-            "NUnit": {
+            "coverlet.collector": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
               "target": "Package",
-              "version": "[3.14.0, )"
+              "version": "[3.2.0, )"
+            },
+            "xunit": {
+              "target": "Package",
+              "version": "[2.4.2, )"
+            },
+            "xunit.extensibility.core": {
+              "target": "Package",
+              "version": "[2.6.2, )"
+            },
+            "xunit.runner.visualstudio": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[2.4.5, )"
             }
           },
           "imports": [
@@ -334,7 +349,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.403\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.100\\RuntimeIdentifierGraph.json"
         }
       }
     }

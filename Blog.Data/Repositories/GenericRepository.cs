@@ -15,8 +15,8 @@ namespace Blog.Data.Repositories
 
         public async Task Add(T entity)
         {
-            _context.Set<T>().AddAsync(entity);
-            _context.SaveChanges();
+            _context.Set<T>().Add(entity);
+            _context.SaveChangesAsync();
         }
 
         public T Get(Guid id)

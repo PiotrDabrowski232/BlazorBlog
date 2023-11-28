@@ -46,14 +46,12 @@ namespace Blog.Logic.Services
 
         #region public methods
 
-        public Task Add(UserDto userDto)
+        public async Task Add(UserDto userDto)
         {
             User user = _mapper.Map<User>(userDto);
             user.Id = Guid.NewGuid();
             user.Password = _passwordHasher.HashPassword(user, user.Password);
-
-            return _userRepository.Add(user);
-
+            _userRepository.Add(user);
         }
 
         public Task SoftDelete(string password, UserDto userDto)
