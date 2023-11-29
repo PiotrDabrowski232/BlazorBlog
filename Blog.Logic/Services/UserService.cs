@@ -118,7 +118,8 @@ namespace Blog.Logic.Services
 
         public T GetUserById<T>(Guid id) where T : class
         {
-            return _mapper.Map<T>(_userRepository.GetById(id));
+            var user = _mapper.Map<T>(_userRepository.GetById(id));
+            return user;
         }
 
         public T GetUserByContainedString<T>(string email) where T : class

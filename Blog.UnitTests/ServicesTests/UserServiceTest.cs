@@ -5,15 +5,10 @@ using Blog.Logic.Services.Interfaces;
 using Blog.Logic.Services;
 using Microsoft.AspNetCore.Identity;
 using Moq;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using Blog.Logic.Dto.UserDtos;
 using Blog.Data.Models.Enums;
 using Blog.Logic.Extensions;
-using Microsoft.AspNet.Identity;
+using Blog.Logic.AutoMapper;
 
 namespace Blog.UnitTests.ServicesTests
 {
@@ -33,6 +28,8 @@ namespace Blog.UnitTests.ServicesTests
             _mapper = new Mock<IMapper>();
             _passwordHasher = new Mock<IPasswordHasher<User>>();
             _userService = new UserService(_userRepository.Object, _mapper.Object, _passwordHasher.Object, _roleRepository.Object);
+
+
         }
 
         [Fact]
@@ -80,18 +77,48 @@ namespace Blog.UnitTests.ServicesTests
 
             Assert.All(result, user =>
             {
+                Assert.Equal(1.ToGuid(), user.RoleId);
                 Assert.NotEqual(2.ToGuid(), user.RoleId);
+                Assert.NotEqual(3.ToGuid(), user.RoleId);
             });
         }
 
         [Fact]
         public void GetUserById_ReturnUserWithConcreteId()
         {
-            //Arrange
+            // Arrange
+            var userId = Guid.NewGuid();
+            var user = new User
+            {
+                Id = userId,
+                Name = "test",
+                Surname = "test",
+                Email = "test@o2.pl",
+                City = "Test",
+                Country = "Test",
+                UserName = "Test",
+                Password = "Test123!",
+                IsDeleted = false,
+            };
 
-            //Assert
+            _mapper.Setup(m => m.Map<UserDto>(It.IsAny<User>())).Returns((User source) => new UserDto
+            {
+                Id = source.Id,
+            });
 
-            //Act
+            _userRepository.Setup(u => u.GetById(userId)).Returns(user);
+
+            // Act
+            var result = _userService.GetUserById<UserDto>(userId);
+
+            // Assert
+            _userRepository.Verify(u => u.GetById(userId), Times.Once);
+
+
+            Assert.NotNull(result);
         }
+
+        
+
     }
 }
