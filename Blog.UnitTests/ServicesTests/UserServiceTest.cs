@@ -47,6 +47,7 @@ namespace Blog.UnitTests.ServicesTests
             Assert.True(result.IsFaulted);
         }
 
+
         [Fact]
         public void GetAllNormalUsers_ReturnedUserWithBasicRole()
         {
@@ -83,8 +84,9 @@ namespace Blog.UnitTests.ServicesTests
             });
         }
 
+
         [Fact]
-        public void GetUserById_ReturnUserWithConcreteId()
+        public void GetUserById_ReturnNotNullUser()
         {
             // Arrange
             var userId = Guid.NewGuid();
@@ -108,17 +110,58 @@ namespace Blog.UnitTests.ServicesTests
 
             _userRepository.Setup(u => u.GetById(userId)).Returns(user);
 
+
             // Act
             var result = _userService.GetUserById<UserDto>(userId);
+
 
             // Assert
             _userRepository.Verify(u => u.GetById(userId), Times.Once);
 
-
             Assert.NotNull(result);
         }
 
-        
+
+        [Fact]
+        public void GetUserByContainedString_ReturnedNotNullUser()
+        {
+            // Arrange
+            var userId = Guid.NewGuid();
+            var user = new User
+            {
+                Id = userId,
+                Name = "test",
+                Surname = "test",
+                Email = "test@o2.pl",
+                City = "Test",
+                Country = "Test",
+                UserName = "Test",
+                Password = "Test123!",
+                IsDeleted = false,
+            };
+
+            _mapper.Setup(m => m.Map<UserDto>(It.IsAny<User>())).Returns((User source) => new UserDto
+            {
+                Email = source.Email,
+            });
+
+            _userRepository.Setup(u => u.GetByEmail(user.Email)).Returns(user);
+
+
+            // Act
+            var result = _userService.GetUserByContainedString<UserDto>(user.Email);
+
+
+            // Assert
+            _userRepository.Verify(u => u.GetByEmail(user.Email), Times.Once);
+
+            Assert.NotNull(result);
+
+        }
+
+
+
+
 
     }
 }

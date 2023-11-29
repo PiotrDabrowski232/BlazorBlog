@@ -1,6 +1,9 @@
 {
   "ExpandedNodes": [
-    ""
+    "",
+    "\\Blog.UnitTests",
+    "\\Blog.UnitTests\\ServicesTests"
   ],
+  "SelectedNode": "\\Blog.UnitTests\\ServicesTests\\UserServiceTest.cs",
   "PreviewInSolutionExplorer": false
 }
