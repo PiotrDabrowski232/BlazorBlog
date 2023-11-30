@@ -235,5 +235,39 @@ namespace Blog.UnitTests.ServicesTests
             Assert.Equal(result.IsCompleted, true);
 
         }
+
+
+        [Fact]
+        public async Task ChangePassword_ReturnedInvalidInputException()
+        {
+            //Arrange
+
+            var userPassword = new PasswordUserDto()
+            {
+                Email = "email@gmail.com",
+                OldPassword = "Test123!",
+                NewPassword = "NewTest123!"
+            };
+
+            var newHashedPassword = "NewTest123!Hashed";
+
+            var existingUser = new User
+            {
+                Email = userPassword.Email,
+                Password = "HashedPassword"
+            };
+
+            _userRepository.Setup(u => u.GetByEmail(It.IsAny<string>())).Returns(existingUser);
+
+            _passwordHasher.Setup(p => p.VerifyHashedPassword(existingUser, existingUser.Password, userPassword.OldPassword)).Returns(PasswordVerificationResult.Failed);
+
+            //Act
+
+            await Assert.ThrowsAsync<InvalidInputException>(() => _userService.ChangePassword(userPassword));
+
+
+            //Assert
+            _userRepository.Verify(u => u.Update(It.IsAny<User>()), Times.Never);
+        }
     }
 }
