@@ -332,5 +332,31 @@ namespace Blog.UnitTests.ServicesTests
         }
 
 
+        [Fact]
+        public void VerifyUser_Returned_IsNullOrDeletedAccount()
+        {
+            //Arrange
+            var loginDto = new LoginUserDto()
+            {
+                Email = "test@gmail.pl",
+            };
+
+            var users = new List<User>()
+            {
+                new User(){ }
+            };
+
+            _userRepository.Setup(u => u.GetAll()).Returns(users);
+
+
+            //Act
+
+            var exceptionMessage = Assert.Throws<IsNullOrDeletedAccount>(() => _userService.VerifyUser(loginDto));
+
+
+            //Assert
+
+            Assert.Equal("Account does not exist", exceptionMessage.Message);
+        }
     }
 }
