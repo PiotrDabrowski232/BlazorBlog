@@ -137,7 +137,7 @@ namespace Blog.Logic.Services
 
             if (user is null || user.IsDeleted)
             {
-                throw new InvalidInputException("invalid username or password");
+                throw new IsNullOrDeletedAccount("Account does not exist");
             }
 
             var result = _passwordHasher.VerifyHashedPassword(user, user.Password, LoginDto.Password);

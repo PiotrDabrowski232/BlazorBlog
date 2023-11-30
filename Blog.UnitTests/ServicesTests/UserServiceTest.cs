@@ -10,6 +10,7 @@ using Blog.Data.Models.Enums;
 using Blog.Logic.Extensions;
 using Blog.Logic.AutoMapper;
 using Blog.Logic.Exceptions;
+using Microsoft.Identity.Client;
 
 namespace Blog.UnitTests.ServicesTests
 {
@@ -269,5 +270,67 @@ namespace Blog.UnitTests.ServicesTests
             //Assert
             _userRepository.Verify(u => u.Update(It.IsAny<User>()), Times.Never);
         }
+
+
+        [Fact]
+        public void VerifyUser_Returned_ObjectLoginUser()
+        {
+            //Arrange
+            var loginDto = new LoginUserDto()
+            {
+                Email = "test@gmail.pl",
+            };
+
+            var users = new List<User>()
+            {
+                new User(){ Email = loginDto.Email}
+            };
+
+            _userRepository.Setup(u => u.GetAll()).Returns(users);
+
+            _passwordHasher.Setup(p => p.VerifyHashedPassword(It.IsAny<User>(), It.IsAny<string>(), It.IsAny<string>())).Returns(PasswordVerificationResult.Success);
+
+
+            //Act
+
+            var result = _userService.VerifyUser(loginDto);
+
+
+            //Assert
+
+            Assert.Equal(loginDto.Email, result.Email);
+        }
+
+
+        [Fact]
+        public void VerifyUser_Returned_InvalidInputException()
+        {
+            //Arrange
+            var loginDto = new LoginUserDto()
+            {
+                Email = "test@gmail.pl",
+            };
+
+            var users = new List<User>()
+            {
+                new User(){ Email = loginDto.Email}
+            };
+
+            _userRepository.Setup(u => u.GetAll()).Returns(users);
+
+            _passwordHasher.Setup(p => p.VerifyHashedPassword(It.IsAny<User>(), It.IsAny<string>(), It.IsAny<string>())).Returns(PasswordVerificationResult.Failed);
+
+
+            //Act
+
+            var exceptionMessage = Assert.Throws<InvalidInputException>(() => _userService.VerifyUser(loginDto));
+
+
+            //Assert
+
+            Assert.Equal("invalid username or password", exceptionMessage.Message);
+        }
+
+
     }
 }
