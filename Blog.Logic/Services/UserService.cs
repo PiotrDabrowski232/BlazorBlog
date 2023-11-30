@@ -48,7 +48,7 @@ namespace Blog.Logic.Services
 
         public async Task Add(UserDto userDto)
         {
-            User user = _mapper.Map<User>(userDto);
+            User user = _mapper.Map<User>(userDto); 
             user.Id = Guid.NewGuid();
             user.Password = _passwordHasher.HashPassword(user, user.Password);
             _userRepository.Add(user);
@@ -65,17 +65,21 @@ namespace Blog.Logic.Services
             else
             {
                 var user = _mapper.Map<User>(userDto);
-                user.DeleteDay = DateTime.Now;
-                user.IsDeleted = true;
-                _userRepository.Update(user);
+
+                if (user != null)
+                {
+                    user.DeleteDay = DateTime.Now;
+                    user.IsDeleted = true;
+                    _userRepository.Update(user);
+                }
+                else
+                {
+                    throw new ApplicationException("Some Different Errors");
+                }
+
                 return Task.CompletedTask;
             }
 
-        }
-
-        public User Edit(UserDto user)
-        {
-            throw new NotImplementedException();
         }
 
         public Task ChangePassword(PasswordUserDto userDto)
@@ -94,7 +98,6 @@ namespace Blog.Logic.Services
             }
 
             return Task.FromResult(result);
-
         }
 
         public IEnumerable<AdminUserManagementDto> GetAllNormalUsers()

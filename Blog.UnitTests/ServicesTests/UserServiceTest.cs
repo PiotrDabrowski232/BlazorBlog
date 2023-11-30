@@ -9,6 +9,7 @@ using Blog.Logic.Dto.UserDtos;
 using Blog.Data.Models.Enums;
 using Blog.Logic.Extensions;
 using Blog.Logic.AutoMapper;
+using Blog.Logic.Exceptions;
 
 namespace Blog.UnitTests.ServicesTests
 {
@@ -92,15 +93,7 @@ namespace Blog.UnitTests.ServicesTests
             var userId = Guid.NewGuid();
             var user = new User
             {
-                Id = userId,
-                Name = "test",
-                Surname = "test",
-                Email = "test@o2.pl",
-                City = "Test",
-                Country = "Test",
-                UserName = "Test",
-                Password = "Test123!",
-                IsDeleted = false,
+                Id = userId
             };
 
             _mapper.Setup(m => m.Map<UserDto>(It.IsAny<User>())).Returns((User source) => new UserDto
@@ -129,15 +122,7 @@ namespace Blog.UnitTests.ServicesTests
             var userId = Guid.NewGuid();
             var user = new User
             {
-                Id = userId,
-                Name = "test",
-                Surname = "test",
                 Email = "test@o2.pl",
-                City = "Test",
-                Country = "Test",
-                UserName = "Test",
-                Password = "Test123!",
-                IsDeleted = false,
             };
 
             _mapper.Setup(m => m.Map<UserDto>(It.IsAny<User>())).Returns((User source) => new UserDto
@@ -156,12 +141,60 @@ namespace Blog.UnitTests.ServicesTests
             _userRepository.Verify(u => u.GetByEmail(user.Email), Times.Once);
 
             Assert.NotNull(result);
-
         }
 
 
+        [Fact]
+        public async Task SoftDelete_ValidPassword_MarksUserAsDeleted()
+        {
+            // Arrange
+            var user = new UserDto()
+            {
+                Password = "Password123!"
+            };
+
+            _passwordHasher.Setup(u => u.VerifyHashedPassword(null, It.IsAny<string>(), It.IsAny<string>())).Returns(PasswordVerificationResult.Success);
+
+            _mapper.Setup(m => m.Map<User>(user)).Returns((UserDto source) => new User
+            {
+                Id = source.Id,
+                UserName = source.UserName,
+                IsDeleted = false,
+                DeleteDay = null
+            });
+
+            _userRepository.Setup(u => u.Update(It.IsAny<User>()));
 
 
+            // Act
+            await _userService.SoftDelete(user.Password, user);
 
+
+            // Assert
+            _passwordHasher.Verify(u => u.VerifyHashedPassword(null, It.IsAny<string>(), It.IsAny<string>()), Times.Once);
+
+            _userRepository.Verify(u => u.Update(It.Is<User>(u => u.IsDeleted && u.DeleteDay.Value.Date == DateTime.Now.Date)), Times.Once);
+        }
+
+
+        [Fact]
+        public async Task SoftDelete_InValidPassword_ThrowsInvalidInputException()
+        {
+            // Arrange
+            var user = new UserDto()
+            {
+                Password = "InvalidPassword"
+            };
+
+            _passwordHasher.Setup(p => p.VerifyHashedPassword(null, It.IsAny<string>(), It.IsAny<string>())).Returns(PasswordVerificationResult.Failed);
+
+            //Act
+
+            await Assert.ThrowsAsync<InvalidInputException>(() => _userService.SoftDelete(user.Password, user));
+
+            //Assert
+
+            _userRepository.Verify(u => u.Update(It.IsAny<User>()), Times.Never);
+        }
     }
 }
