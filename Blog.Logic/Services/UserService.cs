@@ -84,7 +84,7 @@ namespace Blog.Logic.Services
 
         public Task ChangePassword(PasswordUserDto userDto)
         {
-            var user = GetUserByContainedString<User>(userDto.Email);
+            var user = _userRepository.GetByEmail(userDto.Email);
             var result = _passwordHasher.VerifyHashedPassword(user, user.Password, userDto.OldPassword);
 
             if (result == PasswordVerificationResult.Failed)
@@ -127,7 +127,8 @@ namespace Blog.Logic.Services
 
         public T GetUserByContainedString<T>(string email) where T : class
         {
-            return _mapper.Map<T>(_userRepository.GetByEmail(email));
+            var user = _mapper.Map<T>(_userRepository.GetByEmail(email));
+            return user;
         }
 
         public LoginUserDto VerifyUser(LoginUserDto LoginDto)
