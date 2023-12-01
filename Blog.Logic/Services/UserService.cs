@@ -161,7 +161,7 @@ namespace Blog.Logic.Services
             }
             else
             {
-                throw new InvalidInputException("invalid username or password");
+                throw new InvalidInputException("You have entered the wrong password");
             }
         }
 

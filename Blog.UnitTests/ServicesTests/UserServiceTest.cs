@@ -358,5 +358,61 @@ namespace Blog.UnitTests.ServicesTests
 
             Assert.Equal("Account does not exist", exceptionMessage.Message);
         }
+
+
+        [Fact]
+        public void GiveAccountBack_Returned_TaskIntSuccess()
+        {
+            //Arrange
+
+            var admin = new User()
+            {
+                Password = "Admin123!",
+                Email = "admin@o2.pl",
+            };
+
+            _userRepository.Setup(u => u.GetByEmail(admin.Email)).Returns(admin);
+
+            _passwordHasher.Setup(p => p.VerifyHashedPassword(null, It.IsAny<string>(), It.IsAny<string>())).Returns(PasswordVerificationResult.Success);
+
+            _userRepository.Setup( u => u.ChangeDeleteStatus(It.IsAny<Guid>())).Returns(Task.FromResult(0));
+
+
+            //Act
+
+            var result = _userService.GiveAccountBack(Guid.NewGuid(), admin.Password, admin.Email);
+
+            //Assert
+
+            Assert.Equal(0, result.Result);
+        }
+
+        [Fact]
+        public async Task GiveAccountBack_Returned_InvalidInputException()
+        {
+            //Arrange
+
+            var admin = new User()
+            {
+                Password = "Admin123!",
+                Email = "admin@o2.pl",
+            };
+
+            _userRepository.Setup(u => u.GetByEmail(admin.Email)).Returns(admin);
+
+            _passwordHasher.Setup(p => p.VerifyHashedPassword(null, It.IsAny<string>(), It.IsAny<string>())).Returns(PasswordVerificationResult.Failed);
+
+            _userRepository.Setup(u => u.ChangeDeleteStatus(It.IsAny<Guid>())).Returns(Task.FromResult(0));
+
+
+            //Act
+
+            var exception = await Assert.ThrowsAsync<InvalidInputException>(() => _userService.GiveAccountBack(It.IsAny<Guid>(),admin.Password, admin.Email));
+
+            //Assert
+
+            Assert.Equal("You have entered the wrong password", exception.Message);
+        }
+
     }
 }
