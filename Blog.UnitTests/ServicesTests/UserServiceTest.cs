@@ -414,5 +414,18 @@ namespace Blog.UnitTests.ServicesTests
             Assert.Equal("You have entered the wrong password", exception.Message);
         }
 
+
+        [Fact]
+        public void ResetUserPasswordFromAdminView_Returned_CompletedTaskSuccess()
+        {
+
+        }
+
+
+        [Fact]
+        public void ResetUserPasswordFromAdminView_Returned_InvalidInputException()
+        {
+
+        }
     }
 }
