@@ -387,6 +387,7 @@ namespace Blog.UnitTests.ServicesTests
             Assert.Equal(0, result.Result);
         }
 
+
         [Fact]
         public async Task GiveAccountBack_Returned_InvalidInputException()
         {
@@ -418,14 +419,37 @@ namespace Blog.UnitTests.ServicesTests
         [Fact]
         public void ResetUserPasswordFromAdminView_Returned_CompletedTaskSuccess()
         {
+            //Arrange
 
+            var admin = new User()
+            {
+                Password = "Admin123!",
+                Email = "admin@o2.pl",
+            };
+            _userRepository.Setup(u => u.GetByEmail(admin.Email)).Returns(admin);
+
+            _passwordHasher.Setup(p => p.VerifyHashedPassword(null, It.IsAny<string>(), It.IsAny<string>())).Returns(PasswordVerificationResult.Success);
+
+            _userRepository.Setup(u => u.UpdatingForgottenPassword(It.IsAny<Guid>(), It.IsAny<string>())).Returns(Task.CompletedTask);
+
+            //Act
+
+            var result = _userService.ResetUserPasswordFromAdminView(It.IsAny<Guid>(),It.IsAny<string>(),admin.Password,admin.Email);
+
+            //Assert
+
+            Assert.Equal(Task.CompletedTask.IsCompletedSuccessfully, result.IsCompletedSuccessfully);
         }
 
 
         [Fact]
         public void ResetUserPasswordFromAdminView_Returned_InvalidInputException()
         {
+            //Arrange
 
+            //Act
+
+            //Assert
         }
     }
 }
