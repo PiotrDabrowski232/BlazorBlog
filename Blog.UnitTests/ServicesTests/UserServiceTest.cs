@@ -443,13 +443,27 @@ namespace Blog.UnitTests.ServicesTests
 
 
         [Fact]
-        public void ResetUserPasswordFromAdminView_Returned_InvalidInputException()
+        public async Task ResetUserPasswordFromAdminView_Returned_InvalidInputException()
         {
             //Arrange
 
+            var admin = new User()
+            {
+                Password = "Admin123!",
+                Email = "admin@o2.pl",
+            };
+            _userRepository.Setup(u => u.GetByEmail(admin.Email)).Returns(admin);
+
+            _passwordHasher.Setup(p => p.VerifyHashedPassword(null, It.IsAny<string>(), It.IsAny<string>())).Returns(PasswordVerificationResult.Failed);
+
+
             //Act
 
+            var result = await Assert.ThrowsAsync<InvalidInputException>(()=> _userService.ResetUserPasswordFromAdminView(It.IsAny<Guid>(), It.IsAny<string>(), admin.Password, admin.Email));
+
             //Assert
+
+            Assert.Equal(result.Message, "invalid username or password");
         }
     }
 }
