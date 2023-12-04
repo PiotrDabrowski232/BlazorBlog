@@ -30,8 +30,6 @@ namespace Blog.UnitTests.ServicesTests
             _mapper = new Mock<IMapper>();
             _passwordHasher = new Mock<IPasswordHasher<User>>();
             _userService = new UserService(_userRepository.Object, _mapper.Object, _passwordHasher.Object, _roleRepository.Object);
-
-
         }
 
         [Fact]

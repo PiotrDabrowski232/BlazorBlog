@@ -3,13 +3,7 @@ using Blog.Data.Models;
 using Blog.Data.Repositories.Interfaces;
 using Blog.Logic.Services;
 using Blog.Logic.Services.Interfaces;
-using Microsoft.Identity.Client;
 using Moq;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Blog.UnitTests.ServicesTests
 {
