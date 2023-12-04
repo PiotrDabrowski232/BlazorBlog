@@ -27,7 +27,8 @@ namespace Blog.Logic.Services
 
         public RoleDto GetRole(Guid roleId)
         {
-            return _mapper.Map<RoleDto>(_roleRepository.Get(roleId));
+            var role = _roleRepository.Get(roleId);
+            return _mapper.Map<RoleDto>(role);
         }
         #endregion public methods
     }

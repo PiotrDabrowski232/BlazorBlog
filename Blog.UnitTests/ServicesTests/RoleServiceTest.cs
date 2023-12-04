@@ -60,5 +60,39 @@ namespace Blog.UnitTests.ServicesTests
             Assert.Equal(roles.Count,result.Count());
             _roleRepository.Verify(r => r.GetAll(), Times.Once);
         }
+
+
+        [Fact]
+        public void GetRole_Returned_ConcreteRole()
+        {
+            //Arrange
+            var roles = new List<Roles>()
+            {
+                new Roles(){RoleId =1.ToGuid(), Name = UserRoles.BasicUser.ToString() },
+                new Roles(){RoleId =2.ToGuid(), Name = UserRoles.Admin.ToString() },
+                new Roles(){RoleId =3.ToGuid(), Name = UserRoles.SuperUser.ToString() }
+            };
+
+            _roleRepository.Setup(r => r.Get(It.IsAny<Guid>()))
+                   .Returns((Guid roleId) => roles.FirstOrDefault(role => role.RoleId == roleId));
+
+            _mapper.Setup(m => m.Map<RoleDto>(It.IsAny<Roles>())).Returns((Roles source) => new RoleDto()
+            {
+                Id = source.RoleId,
+                Name = source.Name,
+            });
+
+
+            //Act
+
+            var result = _roleService.GetRole(1.ToGuid());
+
+
+            //Assert
+            Assert.NotNull(result);
+            Assert.Equal(roles[0].Name, result.Name);
+
+            _roleRepository.Verify(r => r.Get(It.IsAny<Guid>()), Times.Once);
+        }
     }
 }
