@@ -63,5 +63,40 @@ namespace Blog.UnitTests.ServicesTests
         }
 
 
+        [Fact]
+        public void GetPostByTagsName_Returned_PostsWithConcreteTags()
+        {
+            //Arrange
+
+            var tagsNames = new List<string> { "string1", "string2", "string3", "string4" };
+
+            var tags = tagsNames.Select(tagName => new Tag { Name = tagName, }).ToList();
+
+            var tagsId = tags.Select(tag => tag.Id).ToList();
+
+            var postIds = new List<Guid> { Guid.NewGuid(), Guid.NewGuid(), Guid.NewGuid() };
+
+            _tagRepository.Setup(t => t.GetAll()).Returns(tags);
+
+            var tagsPosts = postIds.Select(postId => new TagPosts { TagId = tagsId.First(), PostId = postId }).ToList();
+
+            _tagPostsRepository.Setup(tp => tp.GetAll()).Returns(tagsPosts);
+
+            //Act
+
+            var result = _tagPostsService.GetPostsByTagsName(tagsNames);
+
+            //Assert
+
+            Assert.NotNull(result);
+            Assert.Equal(result.Count(), postIds.Count);
+            Assert.True(postIds.All(result.Contains));
+
+            _tagPostsRepository.Verify(tp => tp.GetAll(), Times.Once);
+
+            _tagRepository.Verify(t => t.GetAll(), Times.Once);
+
+        }
+
     }
 }
