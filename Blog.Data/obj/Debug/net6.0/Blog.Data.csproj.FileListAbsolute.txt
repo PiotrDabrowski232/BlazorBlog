@@ -318,3 +318,4 @@ C:\Users\Piotr\Source\Repos\PiotrDabrowski232\BlazorBlog\Blog.Data\obj\Debug\net
 C:\Users\Piotr\Source\Repos\PiotrDabrowski232\BlazorBlog\Blog.Data\obj\Debug\net6.0\Blog.Data.pdb
 C:\Users\Piotr\Source\Repos\PiotrDabrowski232\BlazorBlog\Blog.Data\obj\Debug\net6.0\Blog.Data.genruntimeconfig.cache
 C:\Users\Piotr\Source\Repos\PiotrDabrowski232\BlazorBlog\Blog.Data\obj\Debug\net6.0\ref\Blog.Data.dll
+C:\Users\Piotr\Source\Repos\PiotrDabrowski232\BlazorBlog\Blog.Data\obj\Debug\net6.0\Blog.Data.sourcelink.json

@@ -331,9 +331,6 @@ C:\Users\Piotr\Source\Repos\PiotrDabrowski232\BlazorBlog\Blog.Logic\bin\Debug\ne
 C:\Users\Piotr\Source\Repos\PiotrDabrowski232\BlazorBlog\Blog.Logic\bin\Debug\net6.0\System.Text.Encodings.Web.dll
 C:\Users\Piotr\Source\Repos\PiotrDabrowski232\BlazorBlog\Blog.Logic\bin\Debug\net6.0\System.Text.Json.dll
 C:\Users\Piotr\Source\Repos\PiotrDabrowski232\BlazorBlog\Blog.Logic\bin\Debug\net6.0\System.Windows.Extensions.dll
-C:\Users\Piotr\Source\Repos\PiotrDabrowski232\BlazorBlog\Blog.Logic\bin\Debug\net6.0\xunit.abstractions.dll
-C:\Users\Piotr\Source\Repos\PiotrDabrowski232\BlazorBlog\Blog.Logic\bin\Debug\net6.0\xunit.core.dll
-C:\Users\Piotr\Source\Repos\PiotrDabrowski232\BlazorBlog\Blog.Logic\bin\Debug\net6.0\xunit.execution.dotnet.dll
 C:\Users\Piotr\Source\Repos\PiotrDabrowski232\BlazorBlog\Blog.Logic\bin\Debug\net6.0\runtimes\unix\lib\netcoreapp3.1\Microsoft.Data.SqlClient.dll
 C:\Users\Piotr\Source\Repos\PiotrDabrowski232\BlazorBlog\Blog.Logic\bin\Debug\net6.0\runtimes\win\lib\netcoreapp3.1\Microsoft.Data.SqlClient.dll
 C:\Users\Piotr\Source\Repos\PiotrDabrowski232\BlazorBlog\Blog.Logic\bin\Debug\net6.0\runtimes\win-arm\native\Microsoft.Data.SqlClient.SNI.dll
@@ -362,3 +359,4 @@ C:\Users\Piotr\Source\Repos\PiotrDabrowski232\BlazorBlog\Blog.Logic\obj\Debug\ne
 C:\Users\Piotr\Source\Repos\PiotrDabrowski232\BlazorBlog\Blog.Logic\obj\Debug\net6.0\Blog.Logic.pdb
 C:\Users\Piotr\Source\Repos\PiotrDabrowski232\BlazorBlog\Blog.Logic\obj\Debug\net6.0\Blog.Logic.genruntimeconfig.cache
 C:\Users\Piotr\Source\Repos\PiotrDabrowski232\BlazorBlog\Blog.Logic\obj\Debug\net6.0\ref\Blog.Logic.dll
+C:\Users\Piotr\Source\Repos\PiotrDabrowski232\BlazorBlog\Blog.Logic\obj\Debug\net6.0\Blog.Logic.sourcelink.json

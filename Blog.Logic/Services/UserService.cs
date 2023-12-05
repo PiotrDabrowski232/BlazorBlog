@@ -46,14 +46,12 @@ namespace Blog.Logic.Services
 
         #region public methods
 
-        public Task Add(UserDto userDto)
+        public async Task Add(UserDto userDto)
         {
-            User user = _mapper.Map<User>(userDto);
+            User user = _mapper.Map<User>(userDto); 
             user.Id = Guid.NewGuid();
             user.Password = _passwordHasher.HashPassword(user, user.Password);
-
-            return _userRepository.Add(user);
-
+            _userRepository.Add(user);
         }
 
         public Task SoftDelete(string password, UserDto userDto)
@@ -67,22 +65,26 @@ namespace Blog.Logic.Services
             else
             {
                 var user = _mapper.Map<User>(userDto);
-                user.DeleteDay = DateTime.Now;
-                user.IsDeleted = true;
-                _userRepository.Update(user);
+
+                if (user != null)
+                {
+                    user.DeleteDay = DateTime.Now;
+                    user.IsDeleted = true;
+                    _userRepository.Update(user);
+                }
+                else
+                {
+                    throw new ApplicationException("Some Different Errors");
+                }
+
                 return Task.CompletedTask;
             }
 
         }
 
-        public User Edit(UserDto user)
-        {
-            throw new NotImplementedException();
-        }
-
         public Task ChangePassword(PasswordUserDto userDto)
         {
-            var user = GetUserByContainedString<User>(userDto.Email);
+            var user = _userRepository.GetByEmail(userDto.Email);
             var result = _passwordHasher.VerifyHashedPassword(user, user.Password, userDto.OldPassword);
 
             if (result == PasswordVerificationResult.Failed)
@@ -96,7 +98,6 @@ namespace Blog.Logic.Services
             }
 
             return Task.FromResult(result);
-
         }
 
         public IEnumerable<AdminUserManagementDto> GetAllNormalUsers()
@@ -120,12 +121,14 @@ namespace Blog.Logic.Services
 
         public T GetUserById<T>(Guid id) where T : class
         {
-            return _mapper.Map<T>(_userRepository.GetById(id));
+            var user = _mapper.Map<T>(_userRepository.GetById(id));
+            return user;
         }
 
         public T GetUserByContainedString<T>(string email) where T : class
         {
-            return _mapper.Map<T>(_userRepository.GetByEmail(email));
+            var user = _mapper.Map<T>(_userRepository.GetByEmail(email));
+            return user;
         }
 
         public LoginUserDto VerifyUser(LoginUserDto LoginDto)
@@ -134,7 +137,7 @@ namespace Blog.Logic.Services
 
             if (user is null || user.IsDeleted)
             {
-                throw new InvalidInputException("invalid username or password");
+                throw new IsNullOrDeletedAccount("Account does not exist");
             }
 
             var result = _passwordHasher.VerifyHashedPassword(user, user.Password, LoginDto.Password);
@@ -158,7 +161,7 @@ namespace Blog.Logic.Services
             }
             else
             {
-                throw new InvalidInputException("invalid username or password");
+                throw new InvalidInputException("You have entered the wrong password");
             }
         }
 

@@ -1,9 +1,9 @@
 {
   "ExpandedNodes": [
     "",
-    "\\Blog",
-    "\\Blog\\Pages"
+    "\\Blog.Logic",
+    "\\Blog.Logic\\Services"
   ],
-  "SelectedNode": "\\Blog\\Pages\\Index.razor",
+  "SelectedNode": "\\Blog.sln",
   "PreviewInSolutionExplorer": false
 }

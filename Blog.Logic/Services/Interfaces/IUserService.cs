@@ -7,7 +7,6 @@ namespace Blog.Logic.Services.Interfaces
     {
         public IEnumerable<AdminUserManagementDto> GetAllNormalUsers();
         public Task Add(UserDto user);
-        public User Edit(UserDto user);
         public Task ChangePassword(PasswordUserDto userDto);
         public Task SoftDelete(string password, UserDto user);
         public T GetUserById<T>(Guid id) where T : class;

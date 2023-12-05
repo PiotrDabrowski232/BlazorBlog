@@ -80,9 +80,9 @@ namespace Blog.Logic.Services
 
         public T GetByPostId<T>(string Id) where T : class
         {
-            var post = _mapper.Map<T>(GetAll().FirstOrDefault(p => Id.Equals(p.Id.ToString())));
-            
-            return post;
+            var post = GetAll().FirstOrDefault(p => Id.Equals(p.Id.ToString()));
+            var mappedPost = _mapper.Map<T>(post);
+            return mappedPost;
         }
 
         public IEnumerable<PostDto> FindPosts(string? postName, IList<string>? tagsName)
