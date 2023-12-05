@@ -9,87 +9,87 @@ build_property.EnforceExtendedAnalyzerRules =
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = Blog
 build_property.RootNamespace = Blog
-build_property.ProjectDir = C:\Users\Piotr\source\repos\PiotrDabrowski232\BlazorBlog\Blog\
+build_property.ProjectDir = C:\Users\Piotr\Source\Repos\PiotrDabrowski232\BlazorBlog\Blog\
 build_property.EnableComHosting = 
 build_property.EnableGeneratedComInterfaceComImportInterop = 
 build_property.RazorLangVersion = 6.0
 build_property.SupportLocalizedComponentNames = 
 build_property.GenerateRazorMetadataSourceChecksumAttributes = 
-build_property.MSBuildProjectDirectory = C:\Users\Piotr\source\repos\PiotrDabrowski232\BlazorBlog\Blog
+build_property.MSBuildProjectDirectory = C:\Users\Piotr\Source\Repos\PiotrDabrowski232\BlazorBlog\Blog
 build_property._RazorSourceGeneratorDebug = 
 
-[C:/Users/Piotr/source/repos/PiotrDabrowski232/BlazorBlog/Blog/App.razor]
+[C:/Users/Piotr/Source/Repos/PiotrDabrowski232/BlazorBlog/Blog/App.razor]
 build_metadata.AdditionalFiles.TargetPath = QXBwLnJhem9y
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Piotr/source/repos/PiotrDabrowski232/BlazorBlog/Blog/Pages/Index.razor]
+[C:/Users/Piotr/Source/Repos/PiotrDabrowski232/BlazorBlog/Blog/Pages/Index.razor]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcSW5kZXgucmF6b3I=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Piotr/source/repos/PiotrDabrowski232/BlazorBlog/Blog/Pages/Post/CreatePost.razor]
+[C:/Users/Piotr/Source/Repos/PiotrDabrowski232/BlazorBlog/Blog/Pages/Post/CreatePost.razor]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcUG9zdFxDcmVhdGVQb3N0LnJhem9y
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Piotr/source/repos/PiotrDabrowski232/BlazorBlog/Blog/Pages/Post/EditPost.razor]
+[C:/Users/Piotr/Source/Repos/PiotrDabrowski232/BlazorBlog/Blog/Pages/Post/EditPost.razor]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcUG9zdFxFZGl0UG9zdC5yYXpvcg==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Piotr/source/repos/PiotrDabrowski232/BlazorBlog/Blog/Pages/Post/MyPost.razor]
+[C:/Users/Piotr/Source/Repos/PiotrDabrowski232/BlazorBlog/Blog/Pages/Post/MyPost.razor]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcUG9zdFxNeVBvc3QucmF6b3I=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Piotr/source/repos/PiotrDabrowski232/BlazorBlog/Blog/Pages/Post/Post.razor]
+[C:/Users/Piotr/Source/Repos/PiotrDabrowski232/BlazorBlog/Blog/Pages/Post/Post.razor]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcUG9zdFxQb3N0LnJhem9y
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Piotr/source/repos/PiotrDabrowski232/BlazorBlog/Blog/Pages/User/AddUser.razor]
+[C:/Users/Piotr/Source/Repos/PiotrDabrowski232/BlazorBlog/Blog/Pages/User/AddUser.razor]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcVXNlclxBZGRVc2VyLnJhem9y
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Piotr/source/repos/PiotrDabrowski232/BlazorBlog/Blog/Pages/User/Admin/UsersAccounts.razor]
+[C:/Users/Piotr/Source/Repos/PiotrDabrowski232/BlazorBlog/Blog/Pages/User/Admin/UsersAccounts.razor]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcVXNlclxBZG1pblxVc2Vyc0FjY291bnRzLnJhem9y
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Piotr/source/repos/PiotrDabrowski232/BlazorBlog/Blog/Pages/User/ChangePassword.razor]
+[C:/Users/Piotr/Source/Repos/PiotrDabrowski232/BlazorBlog/Blog/Pages/User/ChangePassword.razor]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcVXNlclxDaGFuZ2VQYXNzd29yZC5yYXpvcg==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Piotr/source/repos/PiotrDabrowski232/BlazorBlog/Blog/Pages/User/Information.razor]
+[C:/Users/Piotr/Source/Repos/PiotrDabrowski232/BlazorBlog/Blog/Pages/User/Information.razor]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcVXNlclxJbmZvcm1hdGlvbi5yYXpvcg==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Piotr/source/repos/PiotrDabrowski232/BlazorBlog/Blog/Pages/User/Login.razor]
+[C:/Users/Piotr/Source/Repos/PiotrDabrowski232/BlazorBlog/Blog/Pages/User/Login.razor]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcVXNlclxMb2dpbi5yYXpvcg==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Piotr/source/repos/PiotrDabrowski232/BlazorBlog/Blog/Shared/SurveyPrompt.razor]
+[C:/Users/Piotr/Source/Repos/PiotrDabrowski232/BlazorBlog/Blog/Shared/SurveyPrompt.razor]
 build_metadata.AdditionalFiles.TargetPath = U2hhcmVkXFN1cnZleVByb21wdC5yYXpvcg==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Piotr/source/repos/PiotrDabrowski232/BlazorBlog/Blog/_Imports.razor]
+[C:/Users/Piotr/Source/Repos/PiotrDabrowski232/BlazorBlog/Blog/_Imports.razor]
 build_metadata.AdditionalFiles.TargetPath = X0ltcG9ydHMucmF6b3I=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Piotr/source/repos/PiotrDabrowski232/BlazorBlog/Blog/Shared/MainLayout.razor]
+[C:/Users/Piotr/Source/Repos/PiotrDabrowski232/BlazorBlog/Blog/Shared/MainLayout.razor]
 build_metadata.AdditionalFiles.TargetPath = U2hhcmVkXE1haW5MYXlvdXQucmF6b3I=
 build_metadata.AdditionalFiles.CssScope = b-l8awx6406m
 
-[C:/Users/Piotr/source/repos/PiotrDabrowski232/BlazorBlog/Blog/Shared/NavMenu.razor]
+[C:/Users/Piotr/Source/Repos/PiotrDabrowski232/BlazorBlog/Blog/Shared/NavMenu.razor]
 build_metadata.AdditionalFiles.TargetPath = U2hhcmVkXE5hdk1lbnUucmF6b3I=
 build_metadata.AdditionalFiles.CssScope = b-xnnuo1jkhh
 
-[C:/Users/Piotr/source/repos/PiotrDabrowski232/BlazorBlog/Blog/Pages/Error.cshtml]
+[C:/Users/Piotr/Source/Repos/PiotrDabrowski232/BlazorBlog/Blog/Pages/Error.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcRXJyb3IuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Piotr/source/repos/PiotrDabrowski232/BlazorBlog/Blog/Pages/_Host.cshtml]
+[C:/Users/Piotr/Source/Repos/PiotrDabrowski232/BlazorBlog/Blog/Pages/_Host.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcX0hvc3QuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Piotr/source/repos/PiotrDabrowski232/BlazorBlog/Blog/Pages/_Layout.cshtml]
+[C:/Users/Piotr/Source/Repos/PiotrDabrowski232/BlazorBlog/Blog/Pages/_Layout.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcX0xheW91dC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Piotr/source/repos/PiotrDabrowski232/BlazorBlog/Blog/Pages/_ViewImports.cshtml]
+[C:/Users/Piotr/Source/Repos/PiotrDabrowski232/BlazorBlog/Blog/Pages/_ViewImports.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcX1ZpZXdJbXBvcnRzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
