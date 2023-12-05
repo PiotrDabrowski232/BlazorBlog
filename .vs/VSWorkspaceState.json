@@ -1,7 +1,8 @@
 {
   "ExpandedNodes": [
-    ""
+    "",
+    "\\Blog"
   ],
-  "SelectedNode": "\\Blog.sln",
+  "SelectedNode": "\\Blog\\Blog.csproj",
   "PreviewInSolutionExplorer": false
 }
