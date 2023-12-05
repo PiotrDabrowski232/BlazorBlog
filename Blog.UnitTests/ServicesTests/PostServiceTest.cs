@@ -1,6 +1,5 @@
 ﻿using AutoMapper;
 using Blog.Data.Models;
-using Blog.Data.Repositories;
 using Blog.Data.Repositories.Interfaces;
 using Blog.Logic.Dto.PostDtos;
 using Blog.Logic.Services;
@@ -42,7 +41,7 @@ namespace Blog.UnitTests.ServicesTests
                 Title = source.Title,
                 Id = source.Id,
                 CreationDate = currentDateTime
-            }) ;
+            });
 
             _userRepository.Setup(u => u.GetByEmail(postDto.CreatedBy)).Returns(user);
 
@@ -55,10 +54,40 @@ namespace Blog.UnitTests.ServicesTests
 
             _postRepository.Verify(p => p.Add(It.Is<Posts>(post =>
                 post.Id == postDto.Id &&
-                post.CreationDate.Date == currentDateTime.Date &&  
+                post.CreationDate.Date == currentDateTime.Date &&
                 post.UserId == user.Id &&
                 post.Description == postDto.Description &&
                 post.Title == postDto.Title)), Times.Once);
         }
+
+
+        [Fact]
+        public void UpdatePost_UpadtingPost()
+        {
+            //Arrange
+            var postId = Guid.NewGuid();
+            var postdto = new PostDto() { Id = postId };
+            var post = new Posts() {Id = postId };
+
+            _mapper.Setup(m => m.Map<Posts>(It.IsAny<PostDto>())).Returns(post);
+            _postRepository.Setup(p => p.Get(postId)).Returns(post);
+            _postRepository.Setup(p => p.Update(post));
+
+            //Act
+            _postService.UpdatePost(postdto);
+
+            //Assert
+            _postRepository.Verify(p => p.Get(postId), Times.Once);
+            _postRepository.Verify(p => p.Update(post), Times.Once);
+        }
+
+
+
+
+
+
+
+
+
     }
 }
