@@ -4704,9 +4704,9 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Piotr\\source\\repos\\PiotrDabrowski232\\BlazorBlog\\Blog.UnitTests\\Blog.UnitTests.csproj",
+      "projectUniqueName": "C:\\Users\\Piotr\\Source\\Repos\\PiotrDabrowski232\\BlazorBlog\\Blog.UnitTests\\Blog.UnitTests.csproj",
       "projectName": "Blog.UnitTests",
-      "projectPath": "C:\\Users\\Piotr\\source\\repos\\PiotrDabrowski232\\BlazorBlog\\Blog.UnitTests\\Blog.UnitTests.csproj",
+      "projectPath": "C:\\Users\\Piotr\\Source\\Repos\\PiotrDabrowski232\\BlazorBlog\\Blog.UnitTests\\Blog.UnitTests.csproj",
       "packagesPath": "C:\\Users\\Piotr\\.nuget\\packages\\",
       "outputPath": "C:\\Users\\Piotr\\source\\repos\\PiotrDabrowski232\\BlazorBlog\\Blog.UnitTests\\obj\\",
       "projectStyle": "PackageReference",
@@ -4730,8 +4730,8 @@
         "net6.0": {
           "targetAlias": "net6.0",
           "projectReferences": {
-            "C:\\Users\\Piotr\\source\\repos\\PiotrDabrowski232\\BlazorBlog\\Blog.Logic\\Blog.Logic.csproj": {
-              "projectPath": "C:\\Users\\Piotr\\source\\repos\\PiotrDabrowski232\\BlazorBlog\\Blog.Logic\\Blog.Logic.csproj"
+            "C:\\Users\\Piotr\\Source\\Repos\\PiotrDabrowski232\\BlazorBlog\\Blog.Logic\\Blog.Logic.csproj": {
+              "projectPath": "C:\\Users\\Piotr\\Source\\Repos\\PiotrDabrowski232\\BlazorBlog\\Blog.Logic\\Blog.Logic.csproj"
             }
           }
         }
@@ -4767,7 +4767,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.403\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.100\\RuntimeIdentifierGraph.json"
       }
     }
   },

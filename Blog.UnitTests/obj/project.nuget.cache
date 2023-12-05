@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "KeoSFgvs7nmscKusNHK04zZY13fnLm/lXJUmLTLhtQ6DvpBp1X4M8antfweHx/rBXiw5amG4ACpM9BSPgQj5QA==",
+  "dgSpecHash": "eThOQir/ZocZPGHoV6I4nmcF6q3QaHHYbUdy/fswwYauLjgtbb8pyK71oSlwPNx9SidME5hkrpFhKzXEfh69tg==",
   "success": true,
-  "projectFilePath": "C:\\Users\\Piotr\\source\\repos\\PiotrDabrowski232\\BlazorBlog\\Blog.UnitTests\\Blog.UnitTests.csproj",
+  "projectFilePath": "C:\\Users\\Piotr\\Source\\Repos\\PiotrDabrowski232\\BlazorBlog\\Blog.UnitTests\\Blog.UnitTests.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Piotr\\.nuget\\packages\\automapper\\12.0.1\\automapper.12.0.1.nupkg.sha512",
     "C:\\Users\\Piotr\\.nuget\\packages\\automapper.extensions.microsoft.dependencyinjection\\12.0.1\\automapper.extensions.microsoft.dependencyinjection.12.0.1.nupkg.sha512",

@@ -362,3 +362,4 @@ C:\Users\Piotr\Source\Repos\PiotrDabrowski232\BlazorBlog\Blog.Logic\obj\Debug\ne
 C:\Users\Piotr\Source\Repos\PiotrDabrowski232\BlazorBlog\Blog.Logic\obj\Debug\net6.0\Blog.Logic.pdb
 C:\Users\Piotr\Source\Repos\PiotrDabrowski232\BlazorBlog\Blog.Logic\obj\Debug\net6.0\Blog.Logic.genruntimeconfig.cache
 C:\Users\Piotr\Source\Repos\PiotrDabrowski232\BlazorBlog\Blog.Logic\obj\Debug\net6.0\ref\Blog.Logic.dll
+C:\Users\Piotr\Source\Repos\PiotrDabrowski232\BlazorBlog\Blog.Logic\obj\Debug\net6.0\Blog.Logic.sourcelink.json
