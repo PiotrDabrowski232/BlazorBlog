@@ -27,7 +27,7 @@ namespace Blog.UnitTests.ServicesTests
         }
 
         [Fact]
-        public void c()
+        public void Add_PostForUser()
         {
             //Arrange
 
