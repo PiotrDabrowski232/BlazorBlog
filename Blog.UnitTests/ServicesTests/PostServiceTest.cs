@@ -1,6 +1,7 @@
 ﻿using AutoMapper;
 using Blog.Data.Models;
 using Blog.Data.Repositories.Interfaces;
+using Blog.Logic.Dto;
 using Blog.Logic.Dto.PostDtos;
 using Blog.Logic.Services;
 using Blog.Logic.Services.Interfaces;
@@ -67,7 +68,7 @@ namespace Blog.UnitTests.ServicesTests
             //Arrange
             var postId = Guid.NewGuid();
             var postdto = new PostDto() { Id = postId };
-            var post = new Posts() {Id = postId };
+            var post = new Posts() { Id = postId };
 
             _mapper.Setup(m => m.Map<Posts>(It.IsAny<PostDto>())).Returns(post);
             _postRepository.Setup(p => p.Get(postId)).Returns(post);
@@ -82,12 +83,49 @@ namespace Blog.UnitTests.ServicesTests
         }
 
 
+        [Fact]
+        public void GetAll_GetsAllPosts()
+        {
+            var users = new List<User>() 
+            {
+            new User(){Id=Guid.NewGuid(),IsDeleted=false, Surname = "Test"},
+            new User(){Id=Guid.NewGuid(),IsDeleted=false, Surname = "Test1"},
+            new User(){Id=Guid.NewGuid(),IsDeleted=false, Surname = "Test3"},
+            };
 
+            var posts = new List<Posts>()
+            {
+               new Posts(){ Id = Guid.NewGuid(), UserId = users[0].Id },
+               new Posts(){ Id = Guid.NewGuid(), UserId = users[1].Id },
+               new Posts(){ Id = Guid.NewGuid(), UserId = users[2].Id },
+            };
 
+            _userRepository.Setup(u => u.GetAll()).Returns(users);
 
+            _postRepository.Setup(p => p.GetAll()).Returns(posts);
 
+            _mapper.Setup(m => m.Map<IEnumerable<PostDto>>(It.IsAny<IEnumerable<Posts>>())).Returns((IEnumerable<Posts> source)=> 
+                source.Select(post => new PostDto
+                {
+                    Id = post.Id,
+                    UserId = post.UserId,
 
+                }));
 
+            //Act
+
+            var result = _postService.GetAll();
+
+            //Assert
+
+            Assert.NotNull(result);
+            Assert.Equal(result.Count(), posts.Count); 
+            Assert.IsType<List<PostDto>>(result.ToList());
+
+            _postRepository.Verify(p => p.GetAll(), Times.Once);
+            _userRepository.Verify(p => p.GetAll(), Times.Once);
+
+        }
 
     }
 }
