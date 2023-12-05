@@ -9,6 +9,7 @@ using Microsoft.AspNetCore.Components.Authorization;
 using Blog.Logic.Authentication;
 using Radzen;
 using Blog.Configuration;
+using Microsoft.OpenApi.Models;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -48,7 +49,14 @@ builder.Services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());
 builder.Services.AddRadzenComponents();
 
 //Swager
-builder.Services.AddSwaggerGen();
+builder.Services.AddSwaggerGen(options =>
+{
+    options.SwaggerDoc("v1", new OpenApiInfo
+    {
+        Version = "v1",
+        Title = "BlazorBlog Api",
+    });
+});
 
 
 var app = builder.Build();
