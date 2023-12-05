@@ -124,8 +124,45 @@ namespace Blog.UnitTests.ServicesTests
 
             _postRepository.Verify(p => p.GetAll(), Times.Once);
             _userRepository.Verify(p => p.GetAll(), Times.Once);
-
         }
 
+
+        [Fact]
+        public void GetAllEditableAndDeletableByUser_ReturnedUserPosts()
+        {
+            //Assert
+            var users = new List<User>()
+            {
+            new User(){Id=Guid.NewGuid(),IsDeleted=false, Email = "Test@gmail.com"},
+            new User(){Id=Guid.NewGuid(),IsDeleted=false, Email = "Test1@gmail.com"},
+            new User(){Id=Guid.NewGuid(),IsDeleted=false, Email = "Test3@gmail.com"},
+            };
+
+            var posts = new List<Posts>()
+            {
+               new Posts(){ Id = Guid.NewGuid(), UserId = users[0].Id },
+               new Posts(){ Id = Guid.NewGuid(), UserId = users[0].Id },
+               new Posts(){ Id = Guid.NewGuid(), UserId = users[0].Id },
+            };
+
+
+
+            _userRepository.Setup(u => u.GetAll()).Returns(users);
+            _postRepository.Setup(p => p.GetAll()).Returns(posts);
+
+
+            //Act
+
+            var result = _postService.GetAllEditableAndDeletableByUser(users[0].Email);
+
+            //Assert
+
+            Assert.NotNull(result);
+            Assert.IsType<Task<IEnumerable<PostDto>>>(result);
+            Assert.Equal(Task.CompletedTask.IsCompleted, result.IsCompleted);
+
+            _userRepository.Verify(u => u.GetAll(), Times.Exactly(2));
+            _postRepository.Verify(u => u.GetAll(), Times.Once);
+        }
     }
 }
