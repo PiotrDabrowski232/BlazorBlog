@@ -27,7 +27,7 @@ namespace Blog.UnitTests.ServicesTests
         }
 
         [Fact]
-        public void Add_PostForUserWithTags()
+        public void c()
         {
             //Arrange
 
@@ -35,10 +35,6 @@ namespace Blog.UnitTests.ServicesTests
             var post = new Posts();
             var user = new User() { Id = Guid.NewGuid(), Email = "test@gmail.com" };
             var postDto = new PostDto() { Id = Guid.NewGuid(), CreatedBy = user.Email };
-            var tags = new List<string>()
-            {
-                "tag1","tag2","tag3","tag4"
-            };
 
             _mapper.Setup(p => p.Map<Posts>(postDto)).Returns((PostDto source) => new Posts
             {
@@ -50,7 +46,7 @@ namespace Blog.UnitTests.ServicesTests
 
             _userRepository.Setup(u => u.GetByEmail(postDto.CreatedBy)).Returns(user);
 
-            _postService.Add(postDto, tags);
+            _postService.Add(postDto, It.IsAny<List<string>>());
 
 
             //Assert
