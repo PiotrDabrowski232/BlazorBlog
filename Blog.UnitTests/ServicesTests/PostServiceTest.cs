@@ -145,8 +145,6 @@ namespace Blog.UnitTests.ServicesTests
                new Posts(){ Id = Guid.NewGuid(), UserId = users[0].Id },
             };
 
-
-
             _userRepository.Setup(u => u.GetAll()).Returns(users);
             _postRepository.Setup(p => p.GetAll()).Returns(posts);
 
@@ -154,6 +152,7 @@ namespace Blog.UnitTests.ServicesTests
             //Act
 
             var result = _postService.GetAllEditableAndDeletableByUser(users[0].Email);
+
 
             //Assert
 
@@ -163,6 +162,55 @@ namespace Blog.UnitTests.ServicesTests
 
             _userRepository.Verify(u => u.GetAll(), Times.Exactly(2));
             _postRepository.Verify(u => u.GetAll(), Times.Once);
+        }
+
+
+        [Fact]
+        public void FindPosts_ReturnsFilteredPosts()
+        {
+            // Arrange
+            var users = new List<User>()
+                {
+                    new User() { Id = Guid.NewGuid(), IsDeleted = false, Surname = "Test" },
+                    new User() { Id = Guid.NewGuid(), IsDeleted = false, Surname = "Test1" },
+                    new User() { Id = Guid.NewGuid(), IsDeleted = false, Surname = "Test3" },
+                };
+
+            var posts = new List<Posts>()
+                {
+                    new Posts() { Id = Guid.NewGuid(), UserId = users[0].Id, Title = "Post1" },
+                    new Posts() { Id = Guid.NewGuid(), UserId = users[0].Id, Title = "Post2" },
+                    new Posts() { Id = Guid.NewGuid(), UserId = users[1].Id, Title = "Post3" },
+                };
+
+            _tagPostsService.Setup(t => t.GetPostsByTagsName(It.IsAny<IList<string>>())).Returns(posts.Select(p => p.Id).ToList());
+
+            _userRepository.Setup(u => u.GetAll()).Returns(users);
+            _postRepository.Setup(p => p.GetAll()).Returns(posts);
+
+            _mapper.Setup(m => m.Map<IEnumerable<PostDto>>(It.IsAny<IEnumerable<Posts>>())).Returns((IEnumerable<Posts> source) =>
+                source.Select(post => new PostDto
+                {
+                    Id = post.Id,
+                    UserId = post.UserId,
+                    Title = post.Title
+                }));
+
+            var postName = "Post1";
+            var tagsName = new List<string> { "tag1", "tag2" };
+
+            // Act
+            var result = _postService.FindPosts(postName, tagsName);
+
+            // Assert
+            Assert.NotNull(result);
+            Assert.IsAssignableFrom<IEnumerable<PostDto>>(result);
+            Assert.Equal(1, result.Count()); 
+            Assert.Equal(posts[0].Id, result.First().Id);
+
+            _userRepository.Verify(u => u.GetAll(), Times.Once);
+            _postRepository.Verify(p => p.GetAll(), Times.Once);
+            _tagPostsService.Verify(t => t.GetPostsByTagsName(tagsName), Times.Once);
         }
     }
 }
