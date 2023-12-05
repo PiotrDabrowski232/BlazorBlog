@@ -2,10 +2,8 @@
   "ExpandedNodes": [
     "",
     "\\Blog.Logic",
-    "\\Blog.Logic\\Services",
-    "\\Blog.UnitTests",
-    "\\Blog.UnitTests\\ServicesTests"
+    "\\Blog.Logic\\Services"
   ],
-  "SelectedNode": "\\Blog.Logic\\Services\\TagService.cs",
+  "SelectedNode": "\\Blog.Logic\\Services\\PostService.cs",
   "PreviewInSolutionExplorer": false
 }
