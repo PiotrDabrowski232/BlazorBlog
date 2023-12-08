@@ -44,7 +44,15 @@ namespace Blog.ApiControllers
          {
              var result = _userService.GetUserById<UserDto>(Guid.Parse(Id));
              return result;
-         }
+        }
+
+        [Route("/UserEmail/")]
+        [HttpGet]
+        public UserDto GetUserByEmail([FromQuery] string email)
+        {
+            var result = _userService.GetUserByContainedString<UserDto>(email);
+            return result;
+        }
 
 
         [Route("/SendUser")]
@@ -69,7 +77,25 @@ namespace Blog.ApiControllers
             }
             catch (Exception ex)
             {
-                return BadRequest(ex.Message);
+                return NotFound(ex.Message);
+            }
+        }
+
+
+        [Route("/DeleteAccount/")]
+        [HttpDelete]
+        public IActionResult Delete([FromBody] DeleteUserApiDto user) 
+        {
+            try
+            {
+                var serviceUser = _userService.GetUserByContainedString<UserDto>(user.Email);
+                var result = _userService.SoftDelete(user.Password, serviceUser);
+
+                return result.IsCompletedSuccessfully ? Ok() : NotFound();
+            }
+            catch (Exception ex)
+            {
+                return NotFound(ex.Message);
             }
         }
     }
