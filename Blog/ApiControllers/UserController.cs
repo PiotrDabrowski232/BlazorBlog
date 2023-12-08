@@ -46,6 +46,7 @@ namespace Blog.ApiControllers
              return result;
         }
 
+
         [Route("/UserEmail/")]
         [HttpGet]
         public UserDto GetUserByEmail([FromQuery] string email)
