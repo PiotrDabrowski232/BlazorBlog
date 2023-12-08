@@ -27,11 +27,6 @@ namespace Blog.Logic.Services
         }
 
         #region private methods
-        private IEnumerable<T> GetAll<T>() where T : class
-        {
-            return _mapper.Map<IEnumerable<T>>(_userRepository.GetAll());
-        }
-
         private bool ConfirmAdminBeforeOperation(string adminName, string password)
         {
             var adminPasswordFromRepo = _userRepository.GetByEmail(adminName).Password;
@@ -45,6 +40,11 @@ namespace Blog.Logic.Services
         #endregion private methods
 
         #region public methods
+
+        public IEnumerable<T> GetAll<T>() where T : class
+        {
+            return _mapper.Map<IEnumerable<T>>(_userRepository.GetAll());
+        }
 
         public Task Add(UserDto userDto)
         {
