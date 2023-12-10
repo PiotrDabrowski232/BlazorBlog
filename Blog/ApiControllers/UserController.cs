@@ -38,7 +38,7 @@ namespace Blog.ApiControllers
         }
 
 
-         [Route("/User/")]
+         [Route("/User")]
          [HttpGet]
          public UserDto GetUser([FromQuery] string Id)
          {
@@ -47,7 +47,7 @@ namespace Blog.ApiControllers
         }
 
 
-        [Route("/UserEmail/")]
+        [Route("/UserEmail")]
         [HttpGet]
         public UserDto GetUserByEmail([FromQuery] string email)
         {
@@ -66,7 +66,7 @@ namespace Blog.ApiControllers
         }
 
 
-        [Route("/ChangePassword/")]
+        [Route("/ChangePassword")]
         [HttpPut]
         public ActionResult Put([FromBody] PasswordUserDto user)
         {
@@ -83,7 +83,7 @@ namespace Blog.ApiControllers
         }
 
 
-        [Route("/DeleteAccount/")]
+        [Route("/DeleteAccount")]
         [HttpDelete]
         public IActionResult Delete([FromBody] DeleteUserApiDto user) 
         {
