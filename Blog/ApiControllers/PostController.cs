@@ -88,5 +88,14 @@ namespace Blog.ApiControllers
             var result = _postService.GetByPostId<PostDto>(id);
             return result;
         }
+
+
+        [Route("/FindPost")]
+        [HttpGet]
+        public ActionResult<IEnumerable<PostDto>> FindPost([FromBody] FindPostApiDto post)
+        {
+            var result = _postService.FindPosts(post.PostName, post.TagsName);
+            return Ok(result);
+        }
     }
 }
