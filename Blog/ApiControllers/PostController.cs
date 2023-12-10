@@ -53,7 +53,22 @@ namespace Blog.ApiControllers
             {
                 return BadRequest(ex.Message);
             }
+        }
 
+
+        [Route("/UpdatePost")]
+        [HttpPut]
+        public IActionResult Put([FromBody]PostDto post)
+        {
+            try
+            {
+                _postService.UpdatePost(post);
+                return Ok(post);
+            }
+            catch (Exception ex)
+            {
+                return BadRequest(ex.Message);
+            }
         }
     }
 }
