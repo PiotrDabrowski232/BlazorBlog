@@ -70,5 +70,14 @@ namespace Blog.ApiControllers
                 return BadRequest(ex.Message);
             }
         }
+
+
+        [Route("/GetUserPosts")]
+        [HttpGet]
+        public ActionResult<Task<IEnumerable<PostDto>>> GetAllUserPosts([FromBody] string userEmail)
+        {
+                var result = _postService.GetAllEditableAndDeletableByUser(userEmail);
+                return result;
+        }
     }
 }
