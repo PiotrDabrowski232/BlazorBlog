@@ -35,14 +35,14 @@ namespace Blog.ApiControllers
         [HttpGet]
         public IEnumerable<PostDto> GetAllPosts()
         {
-            var result =  _postService.GetAll();
+            var result = _postService.GetAll();
             return result;
         }
 
 
         [Route("/DeletePost")]
         [HttpDelete]
-        public IActionResult Delete([FromBody]string id)
+        public IActionResult Delete([FromBody] string id)
         {
             try
             {
@@ -58,7 +58,7 @@ namespace Blog.ApiControllers
 
         [Route("/UpdatePost")]
         [HttpPut]
-        public IActionResult Put([FromBody]PostDto post)
+        public IActionResult Put([FromBody] PostDto post)
         {
             try
             {
@@ -76,8 +76,17 @@ namespace Blog.ApiControllers
         [HttpGet]
         public ActionResult<Task<IEnumerable<PostDto>>> GetAllUserPosts([FromBody] string userEmail)
         {
-                var result = _postService.GetAllEditableAndDeletableByUser(userEmail);
-                return result;
+            var result = _postService.GetAllEditableAndDeletableByUser(userEmail);
+            return result;
+        }
+
+
+        [Route("/GetPost")]
+        [HttpGet]
+        public ActionResult<PostDto> GetByPostId([FromQuery] string id)
+        {
+            var result = _postService.GetByPostId<PostDto>(id);
+            return result;
         }
     }
 }
