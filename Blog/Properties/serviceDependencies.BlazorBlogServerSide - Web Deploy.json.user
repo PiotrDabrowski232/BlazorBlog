@@ -1,0 +1,36 @@
+{
+  "dependencies": {
+    "mssql2": {
+      "restored": true,
+      "restoreTime": "2023-12-11T14:02:19.3479858Z"
+    },
+    "mssql3": {
+      "restored": true,
+      "restoreTime": "2023-12-11T13:52:11.1830713Z"
+    },
+    "identityapp1": {
+      "restored": true,
+      "restoreTime": "2023-12-11T13:52:19.0982588Z"
+    },
+    "mssql1": {
+      "restored": true,
+      "restoreTime": "2023-12-11T13:52:15.2703637Z"
+    },
+    "signalr1": {
+      "restored": true,
+      "restoreTime": "2023-12-11T13:52:21.9533105Z"
+    }
+  },
+  "parameters": {
+    "mssql2.resourceGroupName": {
+      "Name": "mssql2.resourceGroupName",
+      "Type": "resourceGroup",
+      "Value": "BlazorBlog"
+    },
+    "mssql2.subscriptionId": {
+      "Name": "mssql2.subscriptionId",
+      "Type": "subscription",
+      "Value": "e3137142-d2b3-47ff-9631-b7360c1f4a64"
+    }
+  }
+}
