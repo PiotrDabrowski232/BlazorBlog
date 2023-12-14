@@ -17,6 +17,7 @@ namespace Blog.Configuration
             Services.AddScoped<IRoleService, RoleService>();
             Services.AddScoped<IPostService, PostService>();
             Services.AddScoped<ITagService, TagService>();
+            Services.AddScoped<IAzureQueueMessageSender, AzureQueueMessageSender>();
             Services.AddScoped<ITagPostsService, TagPostsService>();
             Services.AddScoped<IPasswordHasher<User>, PasswordHasher<User>>();
             Services.AddScoped<IValidator<UserDto>, UserDtoValidator>();

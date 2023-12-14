@@ -519,3 +519,7 @@ C:\Users\Piotr\Source\Repos\PiotrDabrowski232\BlazorBlog\Blog\obj\Debug\net6.0\B
 C:\Users\Piotr\Source\Repos\PiotrDabrowski232\BlazorBlog\Blog\obj\Debug\net6.0\Blog.genruntimeconfig.cache
 C:\Users\Piotr\Source\Repos\PiotrDabrowski232\BlazorBlog\Blog\obj\Debug\net6.0\ref\Blog.dll
 C:\Users\Piotr\Source\Repos\PiotrDabrowski232\BlazorBlog\Blog\obj\Debug\net6.0\Blog.sourcelink.json
+C:\Users\Piotr\Source\Repos\PiotrDabrowski232\BlazorBlog\Blog\bin\Debug\net6.0\Azure.Core.Amqp.dll
+C:\Users\Piotr\Source\Repos\PiotrDabrowski232\BlazorBlog\Blog\bin\Debug\net6.0\Azure.Messaging.ServiceBus.dll
+C:\Users\Piotr\Source\Repos\PiotrDabrowski232\BlazorBlog\Blog\bin\Debug\net6.0\Microsoft.Azure.Amqp.dll
+C:\Users\Piotr\Source\Repos\PiotrDabrowski232\BlazorBlog\Blog\bin\Debug\net6.0\System.Diagnostics.DiagnosticSource.dll

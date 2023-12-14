@@ -16,14 +16,16 @@ namespace Blog.Logic.Services
         private readonly IRoleRepository _roleRepository;
         private readonly IMapper _mapper;
         private readonly IPasswordHasher<User> _passwordHasher;
+        private readonly IAzureQueueMessageSender _messageSender;
 
 
-        public UserService(IUserRepository userRepository, IMapper mapper, IPasswordHasher<User> passwordHasher, IRoleRepository roleRepository)
+        public UserService(IUserRepository userRepository, IMapper mapper, IPasswordHasher<User> passwordHasher, IRoleRepository roleRepository, IAzureQueueMessageSender messageSender)
         {
             _userRepository = userRepository;
             _mapper = mapper;
             _passwordHasher = passwordHasher;
             _roleRepository = roleRepository;
+            _messageSender = messageSender;
         }
 
         #region private methods
@@ -146,7 +148,7 @@ namespace Blog.Logic.Services
 
             LoginDto.Username = user.UserName;
             LoginDto.Role = _mapper.Map<RoleDto>(_roleRepository.Get(user.RoleId));
-
+            _messageSender.SendMessageAsync("UserLogged");
             return LoginDto;
         }
 

@@ -88,3 +88,7 @@ C:\Users\Piotr\Source\Repos\PiotrDabrowski232\BlazorBlog\Blog.UnitTests\obj\Debu
 C:\Users\Piotr\Source\Repos\PiotrDabrowski232\BlazorBlog\Blog.UnitTests\obj\Debug\net6.0\Blog.UnitTests.pdb
 C:\Users\Piotr\Source\Repos\PiotrDabrowski232\BlazorBlog\Blog.UnitTests\obj\Debug\net6.0\Blog.UnitTests.genruntimeconfig.cache
 C:\Users\Piotr\Source\Repos\PiotrDabrowski232\BlazorBlog\Blog.UnitTests\obj\Debug\net6.0\ref\Blog.UnitTests.dll
+C:\Users\Piotr\Source\Repos\PiotrDabrowski232\BlazorBlog\Blog.UnitTests\bin\Debug\net6.0\Azure.Core.Amqp.dll
+C:\Users\Piotr\Source\Repos\PiotrDabrowski232\BlazorBlog\Blog.UnitTests\bin\Debug\net6.0\Azure.Messaging.ServiceBus.dll
+C:\Users\Piotr\Source\Repos\PiotrDabrowski232\BlazorBlog\Blog.UnitTests\bin\Debug\net6.0\Microsoft.Azure.Amqp.dll
+C:\Users\Piotr\Source\Repos\PiotrDabrowski232\BlazorBlog\Blog.UnitTests\bin\Debug\net6.0\System.Diagnostics.DiagnosticSource.dll
