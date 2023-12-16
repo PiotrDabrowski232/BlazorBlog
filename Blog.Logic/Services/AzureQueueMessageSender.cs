@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace Blog.Logic.Services.Interfaces
 {
-    public class AzureQueueMessageSender:IAzureQueueMessageSender
+    public class AzureQueueMessageSender : IAzureQueueMessageSender
     {
         private readonly string _connectionString;
 
@@ -17,14 +17,14 @@ namespace Blog.Logic.Services.Interfaces
             _connectionString = configuration.GetConnectionString("ServiceBus");
         }
 
-        public async Task SendMessageAsync(string message)
+        public async Task SendMessageAsync(string message, string queueName)
         {
             var clientOptions = new ServiceBusClientOptions()
             {
                 TransportType = ServiceBusTransportType.AmqpWebSockets
             };
             var client = new ServiceBusClient(_connectionString, clientOptions);
-            var sender = client.CreateSender("verificationqueue");
+            var sender = client.CreateSender(queueName);
 
             var messageBatch = await sender.CreateMessageBatchAsync();
             if (!messageBatch.TryAddMessage(new ServiceBusMessage(message)))

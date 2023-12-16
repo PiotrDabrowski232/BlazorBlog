@@ -8,6 +8,6 @@ namespace Blog.Logic.Services.Interfaces
 {
     public interface IAzureQueueMessageSender
     {
-        public Task SendMessageAsync(string message);
+        public Task SendMessageAsync(string message, string queueName);
     }
 }

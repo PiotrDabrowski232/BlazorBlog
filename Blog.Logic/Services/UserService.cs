@@ -148,7 +148,7 @@ namespace Blog.Logic.Services
 
             LoginDto.Username = user.UserName;
             LoginDto.Role = _mapper.Map<RoleDto>(_roleRepository.Get(user.RoleId));
-            _messageSender.SendMessageAsync("UserLogged");
+            _messageSender.SendMessageAsync("UserLogged", "verificationqueue");
             return LoginDto;
         }
 
