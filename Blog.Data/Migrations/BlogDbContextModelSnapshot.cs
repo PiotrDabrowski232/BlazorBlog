@@ -140,6 +140,14 @@ namespace Blog.Data.Migrations
                         .HasColumnType("bit")
                         .HasDefaultValue(false);
 
+                    b.Property<bool>("IsVerified")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("bit")
+                        .HasDefaultValue(false);
+
+                    b.Property<DateTime?>("LastLogginDate")
+                        .HasColumnType("datetime2");
+
                     b.Property<string>("Name")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
@@ -161,6 +169,9 @@ namespace Blog.Data.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
+                    b.Property<int>("VerificationCode")
+                        .HasColumnType("int");
+
                     b.HasKey("Id");
 
                     b.HasIndex("RoleId");
@@ -176,11 +187,13 @@ namespace Blog.Data.Migrations
                             Email = "admin@o2.pl",
                             Gender = 0,
                             IsDeleted = false,
+                            IsVerified = true,
                             Name = "Admin",
                             Password = "AQAAAAEAACcQAAAAEBDU71c8+fcaiTIOHxOllMb1YQRsFBUzkhV0/zTMHmv9rc4V6hOUA1CVZJobQ1J6Vg==",
                             RoleId = new Guid("00000002-0000-0000-0000-000000000000"),
                             Surname = "Admin",
-                            UserName = "Admin"
+                            UserName = "Admin",
+                            VerificationCode = 0
                         });
                 });
 

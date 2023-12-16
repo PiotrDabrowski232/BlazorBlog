@@ -69,7 +69,7 @@ namespace Blog.Logic.Services
             else
             {
                 var user = _mapper.Map<User>(userDto);
-                user.DeleteDay = DateTime.Now;
+                user.DeleteDay = DateTime.Now.Date;
                 user.IsDeleted = true;
                 _userRepository.Update(user);
                 return Task.CompletedTask;

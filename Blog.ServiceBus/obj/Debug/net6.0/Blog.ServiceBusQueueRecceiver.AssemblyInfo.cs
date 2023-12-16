@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("Blog.ServiceBusQueueRecceiver")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+ce618a584146ca005258e1bc8fb3a6c0245c3710")]
 [assembly: System.Reflection.AssemblyProductAttribute("Blog.ServiceBusQueueRecceiver")]
 [assembly: System.Reflection.AssemblyTitleAttribute("Blog.ServiceBusQueueRecceiver")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

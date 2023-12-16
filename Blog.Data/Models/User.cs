@@ -19,8 +19,13 @@ namespace Blog.Data.Models
         public string Password { get; set; }
         public string Country { get; set; }
         public string City { get; set; }
+        public DateTime? LastLogginDate { get; set; }
+
         public bool IsDeleted { get; set; }
         public DateTime? DeleteDay { get; set; }
+
+        public bool IsVerified { get; set; }
+        public int VerificationCode { get; set; }
 
         public Guid RoleId { get; set; }
         public virtual Roles Role { get; set; }
