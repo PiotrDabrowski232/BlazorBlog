@@ -7,6 +7,7 @@ using Blog.Logic.Exceptions;
 using Blog.Logic.Extensions;
 using Blog.Logic.Services.Interfaces;
 using Microsoft.AspNetCore.Identity;
+using System.Text;
 
 namespace Blog.Logic.Services
 {
@@ -44,6 +45,25 @@ namespace Blog.Logic.Services
             return result;
         }
 
+        private string GenerateUniqueCode()
+        {
+            const string characters = "0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ"; 
+            const int codeLength = 6;
+
+            Random random = new Random();
+            StringBuilder codeBuilder = new StringBuilder();
+
+            for (int i = 0; i < codeLength; i++)
+            {
+                int randomIndex = random.Next(characters.Length);
+                char randomChar = characters[randomIndex];
+                codeBuilder.Append(randomChar);
+            }
+
+            string generatedCode = codeBuilder.ToString();
+            return generatedCode;
+        }
+
         #endregion private methods
 
         #region public methods
@@ -53,6 +73,7 @@ namespace Blog.Logic.Services
             User user = _mapper.Map<User>(userDto);
             user.Id = Guid.NewGuid();
             user.Password = _passwordHasher.HashPassword(user, user.Password);
+            user.VerificationCode = GenerateUniqueCode();
 
             return _userRepository.Add(user);
 
@@ -137,6 +158,11 @@ namespace Blog.Logic.Services
             if (user is null || user.IsDeleted)
             {
                 throw new InvalidInputException("invalid username or password");
+            }
+
+            if (!user.IsVerified)
+            {
+                throw new NotVerifiedUserException("Enter the verification code that was sent to your mailbox");
             }
 
             var result = _passwordHasher.VerifyHashedPassword(user, user.Password, LoginDto.Password);
