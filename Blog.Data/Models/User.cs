@@ -25,7 +25,7 @@ namespace Blog.Data.Models
         public DateTime? DeleteDay { get; set; }
 
         public bool IsVerified { get; set; }
-        public string VerificationCode { get; set; }
+        public string? VerificationCode { get; set; }
 
         public Guid RoleId { get; set; }
         public virtual Roles Role { get; set; }

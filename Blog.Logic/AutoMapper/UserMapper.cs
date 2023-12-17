@@ -1,5 +1,7 @@
 ﻿using AutoMapper;
 using Blog.Data.Models;
+using Blog.Logic.Dto;
+using Blog.Logic.Dto.Messages;
 using Blog.Logic.Dto.UserDtos;
 
 namespace Blog.Logic.AutoMapper
@@ -19,6 +21,9 @@ namespace Blog.Logic.AutoMapper
 
             CreateMap<User, AdminUserManagementDto>();
             CreateMap<AdminUserManagementDto, User>();
+
+            CreateMap<User, MessageDto>();
+            CreateMap<MessageDto, User>();
         }
     }
 }

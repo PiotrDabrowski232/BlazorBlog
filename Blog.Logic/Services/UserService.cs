@@ -2,12 +2,14 @@
 using Blog.Data.Models;
 using Blog.Data.Repositories.Interfaces;
 using Blog.Logic.Dto;
+using Blog.Logic.Dto.Messages;
 using Blog.Logic.Dto.UserDtos;
 using Blog.Logic.Exceptions;
 using Blog.Logic.Extensions;
 using Blog.Logic.Services.Interfaces;
 using Microsoft.AspNetCore.Identity;
 using System.Text;
+using System.Text.Json;
 
 namespace Blog.Logic.Services
 {
@@ -64,6 +66,12 @@ namespace Blog.Logic.Services
             return generatedCode;
         }
 
+        private string PreparedMessage(User user)
+        {
+            var message = _mapper.Map<MessageDto>(user);
+            var jsonOutput = JsonSerializer.Serialize(message);
+            return jsonOutput;
+        }
         #endregion private methods
 
         #region public methods
@@ -75,8 +83,9 @@ namespace Blog.Logic.Services
             user.Password = _passwordHasher.HashPassword(user, user.Password);
             user.VerificationCode = GenerateUniqueCode();
 
-            return _userRepository.Add(user);
+            _messageSender.SendMessageAsync(PreparedMessage(user), "verificationqueue");
 
+            return _userRepository.Add(user);
         }
 
         public Task SoftDelete(string password, UserDto userDto)
@@ -174,7 +183,6 @@ namespace Blog.Logic.Services
 
             LoginDto.Username = user.UserName;
             LoginDto.Role = _mapper.Map<RoleDto>(_roleRepository.Get(user.RoleId));
-            _messageSender.SendMessageAsync("UserLogged", "verificationqueue");
             return LoginDto;
         }
 
