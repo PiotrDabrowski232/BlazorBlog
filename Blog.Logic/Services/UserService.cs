@@ -171,7 +171,7 @@ namespace Blog.Logic.Services
 
             if (!user.IsVerified)
             {
-                throw new NotVerifiedUserException("Enter the verification code that was sent to your mailbox");
+                throw new NotVerifiedUserException("account not verified");
             }
 
             var result = _passwordHasher.VerifyHashedPassword(user, user.Password, LoginDto.Password);
