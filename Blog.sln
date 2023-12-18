@@ -13,7 +13,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Blog.Shared", "Blog.Shared\
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Blog.UnitTests", "Blog.UnitTests\Blog.UnitTests.csproj", "{42BC9F05-0BCD-489F-89D9-20E4BBCDBDD8}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Blog.ServiceBusQueueRecceiver", "Blog.ServiceBus\Blog.ServiceBusQueueRecceiver.csproj", "{54750C4F-CF8A-433C-9C1C-C00326411DFC}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Blog.ServiceBusQueueRecceiver", "Blog.ServiceBus\Blog.ServiceBusQueueRecceiver.csproj", "{54750C4F-CF8A-433C-9C1C-C00326411DFC}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

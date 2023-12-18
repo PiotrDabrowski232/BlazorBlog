@@ -1,0 +1,20 @@
+﻿@page "/Verify"
+
+
+@inject NavigationManager NavManager
+@inject NotificationService NotificationService
+
+@code {
+    
+    private string UserEmail { get; set; }
+
+    protected override void OnInitialized()
+    {
+        UserEmail = NavManager.Uri.Split("?UserEmail=")[1];
+    }
+}
+
+
+<h1>Hello verify</h1>
+
+
