@@ -181,6 +181,9 @@ namespace Blog.Logic.Services
                 throw new InvalidInputException("invalid username or password");
             }
 
+            user.LastLogginDate = DateTime.Now;
+            _userRepository.Update(user);
+
             LoginDto.Username = user.UserName;
             LoginDto.Role = _mapper.Map<RoleDto>(_roleRepository.Get(user.RoleId));
             return LoginDto;
@@ -224,6 +227,20 @@ namespace Blog.Logic.Services
             }
         }
         
+        public Task AccountVerification(string email, string code)
+        {
+           var user = _userRepository.GetByEmail(email);
+            if(user.VerificationCode == code)
+            {
+                user.IsVerified = true;
+                _userRepository.Update(user);
+                return Task.CompletedTask;
+            }
+            else 
+            {
+                throw new InvalidInputException("Invalid Verification Code");
+            }
+        }
         #endregion public methods
     }
 }

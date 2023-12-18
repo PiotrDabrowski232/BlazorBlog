@@ -1,5 +1,6 @@
 ﻿@page "/Verify"
 @inject NavigationManager NavManager
+@inject IUserService _userService
 @inject NotificationService NotificationService
 
 <div class="container">
@@ -42,8 +43,22 @@
         UserEmail = NavManager.Uri.Split("?UserEmail=")[1];
     }
 
-    private void VerifyCode()
+    private async void VerifyCode()
     {
-        // Your verification code logic here
+        try
+        {
+            var result = _userService.AccountVerification(UserEmail, VerificationCode);
+            if (result.IsCompletedSuccessfully)
+            {
+                NotificationService.Notify(new NotificationMessage { Severity = NotificationSeverity.Success, Summary = $"Account Verified", Duration = 2500 });
+                await Task.Delay(2500);
+                NavManager.NavigateTo($"/Login");
+            }
+        }
+        catch(Exception e)
+        {
+            NotificationService.Notify(new NotificationMessage { Severity = NotificationSeverity.Warning, Summary = $"{e.Message}", Duration = 2500 });
+            await Task.Delay(2500);
+        }
     }
 }

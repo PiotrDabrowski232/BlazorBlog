@@ -16,5 +16,6 @@ namespace Blog.Logic.Services.Interfaces
         public Task<int> GiveAccountBack(Guid id, string password, string adminEmail);
         public Task ResetUserPasswordFromAdminView(Guid id, string Uesrpassword, string adminPassword, string adminName);
         public IEnumerable<User>? CheckUsersToDelete();
+        public Task AccountVerification(string email, string code);
     }
 }
