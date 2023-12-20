@@ -1,15 +1,15 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Piotr\\source\\repos\\PiotrDabrowski232\\BlazorBlog\\Blog.ServiceBus\\Blog.ServiceBusQueueRecceiver.csproj": {}
+    "C:\\Users\\Piotr\\Source\\Repos\\PiotrDabrowski232\\BlazorBlog\\Blog.ServiceBus\\Blog.ServiceBusQueueRecceiver.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Piotr\\source\\repos\\PiotrDabrowski232\\BlazorBlog\\Blog.ServiceBus\\Blog.ServiceBusQueueRecceiver.csproj": {
+    "C:\\Users\\Piotr\\Source\\Repos\\PiotrDabrowski232\\BlazorBlog\\Blog.ServiceBus\\Blog.ServiceBusQueueRecceiver.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Piotr\\source\\repos\\PiotrDabrowski232\\BlazorBlog\\Blog.ServiceBus\\Blog.ServiceBusQueueRecceiver.csproj",
+        "projectUniqueName": "C:\\Users\\Piotr\\Source\\Repos\\PiotrDabrowski232\\BlazorBlog\\Blog.ServiceBus\\Blog.ServiceBusQueueRecceiver.csproj",
         "projectName": "Blog.ServiceBusQueueRecceiver",
-        "projectPath": "C:\\Users\\Piotr\\source\\repos\\PiotrDabrowski232\\BlazorBlog\\Blog.ServiceBus\\Blog.ServiceBusQueueRecceiver.csproj",
+        "projectPath": "C:\\Users\\Piotr\\Source\\Repos\\PiotrDabrowski232\\BlazorBlog\\Blog.ServiceBus\\Blog.ServiceBusQueueRecceiver.csproj",
         "packagesPath": "C:\\Users\\Piotr\\.nuget\\packages\\",
         "outputPath": "C:\\Users\\Piotr\\source\\repos\\PiotrDabrowski232\\BlazorBlog\\Blog.ServiceBus\\obj\\",
         "projectStyle": "PackageReference",

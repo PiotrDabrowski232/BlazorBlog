@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "UkrzrJpD/W8hb2vWIqIQ2EqjUe3dpvpvaSuIdlZNWLqXPc70MTtedPCq0DUfoG/pNUua2HKlzzGw66yQK7sSag==",
+  "dgSpecHash": "iriq8PIHbUjcuDOXZTwC2Y11i40T/UkOLg62Cg0Y0gFFVI2sw9jzkjc2v40N5fj1KFhBY7FLrIr2tTLXmLQObg==",
   "success": true,
-  "projectFilePath": "C:\\Users\\Piotr\\source\\repos\\PiotrDabrowski232\\BlazorBlog\\Blog.ServiceBus\\Blog.ServiceBusQueueRecceiver.csproj",
+  "projectFilePath": "C:\\Users\\Piotr\\Source\\Repos\\PiotrDabrowski232\\BlazorBlog\\Blog.ServiceBus\\Blog.ServiceBusQueueRecceiver.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Piotr\\.nuget\\packages\\azure.core\\1.36.0\\azure.core.1.36.0.nupkg.sha512",
     "C:\\Users\\Piotr\\.nuget\\packages\\azure.core.amqp\\1.0.0\\azure.core.amqp.1.0.0.nupkg.sha512",
