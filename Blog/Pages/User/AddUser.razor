@@ -24,10 +24,11 @@
         var result =_userService.Add(user);
         if (result.IsCompletedSuccessfully)
         {
-            NotificationService.Notify(new NotificationMessage { Severity = NotificationSeverity.Success, Summary = "Account Added Successfully", Duration = 2500 });
+            NotificationService.Notify(new NotificationMessage { Severity = NotificationSeverity.Success, Summary = "Verification code has been sent to your mailbox", Duration = 2500 });
             await Task.Delay(2500);
+            
+            NavManager.NavigateTo($"/Verify?UserEmail={user.Email}", true);
             ClearInputs();
-            NavManager.NavigateTo("/", true);
         }
     }
 }

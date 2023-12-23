@@ -2,11 +2,14 @@
 using Blog.Data.Models;
 using Blog.Data.Repositories.Interfaces;
 using Blog.Logic.Dto;
+using Blog.Logic.Dto.Messages;
 using Blog.Logic.Dto.UserDtos;
 using Blog.Logic.Exceptions;
 using Blog.Logic.Extensions;
 using Blog.Logic.Services.Interfaces;
 using Microsoft.AspNetCore.Identity;
+using Newtonsoft.Json;
+using System.Text;
 
 namespace Blog.Logic.Services
 {
@@ -16,14 +19,16 @@ namespace Blog.Logic.Services
         private readonly IRoleRepository _roleRepository;
         private readonly IMapper _mapper;
         private readonly IPasswordHasher<User> _passwordHasher;
+        private readonly IAzureQueueMessageSender _messageSender;
 
 
-        public UserService(IUserRepository userRepository, IMapper mapper, IPasswordHasher<User> passwordHasher, IRoleRepository roleRepository)
+        public UserService(IUserRepository userRepository, IMapper mapper, IPasswordHasher<User> passwordHasher, IRoleRepository roleRepository, IAzureQueueMessageSender messageSender)
         {
             _userRepository = userRepository;
             _mapper = mapper;
             _passwordHasher = passwordHasher;
             _roleRepository = roleRepository;
+            _messageSender = messageSender;
         }
 
         #region private methods
@@ -42,6 +47,31 @@ namespace Blog.Logic.Services
             return result;
         }
 
+        private string GenerateUniqueCode()
+        {
+            const string characters = "0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ"; 
+            const int codeLength = 6;
+
+            Random random = new Random();
+            StringBuilder codeBuilder = new StringBuilder();
+
+            for (int i = 0; i < codeLength; i++)
+            {
+                int randomIndex = random.Next(characters.Length);
+                char randomChar = characters[randomIndex];
+                codeBuilder.Append(randomChar);
+            }
+
+            string generatedCode = codeBuilder.ToString();
+            return generatedCode;
+        }
+
+        private string PreparedMessage(User user)
+        {
+            var message = _mapper.Map<MessageDto>(user);
+            var jsonOutput = JsonConvert.SerializeObject(message);
+            return jsonOutput;
+        }
         #endregion private methods
 
         #region public methods
@@ -51,9 +81,11 @@ namespace Blog.Logic.Services
             User user = _mapper.Map<User>(userDto);
             user.Id = Guid.NewGuid();
             user.Password = _passwordHasher.HashPassword(user, user.Password);
+            user.VerificationCode = GenerateUniqueCode();
+
+            _messageSender.SendMessageAsync(PreparedMessage(user), "verificationqueue");
 
             return _userRepository.Add(user);
-
         }
 
         public Task SoftDelete(string password, UserDto userDto)
@@ -67,7 +99,7 @@ namespace Blog.Logic.Services
             else
             {
                 var user = _mapper.Map<User>(userDto);
-                user.DeleteDay = DateTime.Now;
+                user.DeleteDay = DateTime.Now.Date;
                 user.IsDeleted = true;
                 _userRepository.Update(user);
                 return Task.CompletedTask;
@@ -137,6 +169,11 @@ namespace Blog.Logic.Services
                 throw new InvalidInputException("invalid username or password");
             }
 
+            if (!user.IsVerified)
+            {
+                throw new NotVerifiedUserException("account not verified");
+            }
+
             var result = _passwordHasher.VerifyHashedPassword(user, user.Password, LoginDto.Password);
 
             if (result == PasswordVerificationResult.Failed)
@@ -144,9 +181,11 @@ namespace Blog.Logic.Services
                 throw new InvalidInputException("invalid username or password");
             }
 
+            user.LastLogginDate = DateTime.Now;
+            _userRepository.Update(user);
+
             LoginDto.Username = user.UserName;
             LoginDto.Role = _mapper.Map<RoleDto>(_roleRepository.Get(user.RoleId));
-
             return LoginDto;
         }
 
@@ -188,6 +227,20 @@ namespace Blog.Logic.Services
             }
         }
         
+        public Task AccountVerification(string email, string code)
+        {
+           var user = _userRepository.GetByEmail(email);
+            if(user.VerificationCode == code)
+            {
+                user.IsVerified = true;
+                _userRepository.Update(user);
+                return Task.CompletedTask;
+            }
+            else 
+            {
+                throw new InvalidInputException("Invalid Verification Code");
+            }
+        }
         #endregion public methods
     }
 }

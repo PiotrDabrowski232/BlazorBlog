@@ -22,7 +22,12 @@ namespace Blog.Configuration
             Services.AddScoped<IValidator<UserDto>, UserDtoValidator>();
             Services.AddHostedService<BackgroundDeleting>();
 
+            //Azure 
+            Services.AddScoped<IKeyVaultService, KeyVaultService>();
+            Services.AddScoped<IAzureQueueMessageSender, AzureQueueMessageSender>();
+
             return Services;
+
         }
     }
 }

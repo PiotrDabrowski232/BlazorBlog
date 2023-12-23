@@ -3670,11 +3670,19 @@
   "project": {
     "version": "1.0.0",
     "restore": {
+<<<<<<< HEAD
       "projectUniqueName": "C:\\Users\\Piotr\\Source\\Repos\\PiotrDabrowski232\\BlazorBlog\\Blog.ServiceBus\\Blog.ServiceBusQueueRecceiver.csproj",
       "projectName": "Blog.ServiceBusQueueRecceiver",
       "projectPath": "C:\\Users\\Piotr\\Source\\Repos\\PiotrDabrowski232\\BlazorBlog\\Blog.ServiceBus\\Blog.ServiceBusQueueRecceiver.csproj",
       "packagesPath": "C:\\Users\\Piotr\\.nuget\\packages\\",
       "outputPath": "C:\\Users\\Piotr\\Source\\Repos\\PiotrDabrowski232\\BlazorBlog\\Blog.ServiceBus\\obj\\",
+=======
+      "projectUniqueName": "C:\\Users\\Piotr\\source\\repos\\PiotrDabrowski232\\BlazorBlog\\Blog.ServiceBus\\Blog.ServiceBusQueueRecceiver.csproj",
+      "projectName": "Blog.ServiceBusQueueRecceiver",
+      "projectPath": "C:\\Users\\Piotr\\source\\repos\\PiotrDabrowski232\\BlazorBlog\\Blog.ServiceBus\\Blog.ServiceBusQueueRecceiver.csproj",
+      "packagesPath": "C:\\Users\\Piotr\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\Piotr\\source\\repos\\PiotrDabrowski232\\BlazorBlog\\Blog.ServiceBus\\obj\\",
+>>>>>>> 7bbe9d71adf50746ed041acc4510cf1239cfc586
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"

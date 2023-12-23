@@ -26,6 +26,9 @@ namespace Blog.Data.ModelsConfigurations
             builder.Property(u => u.IsDeleted)
                 .HasDefaultValue(false);
 
+            builder.Property(u => u.IsVerified)
+                .HasDefaultValue(false);
+
 
             builder.HasData(new User()
             {
@@ -38,6 +41,7 @@ namespace Blog.Data.ModelsConfigurations
                 RoleId = 2.ToGuid(),
                 City = "City",
                 Country = "Country",
+                IsVerified = true,
             }) ;
         }
     }
