@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "iriq8PIHbUjcuDOXZTwC2Y11i40T/UkOLg62Cg0Y0gFFVI2sw9jzkjc2v40N5fj1KFhBY7FLrIr2tTLXmLQObg==",
+  "dgSpecHash": "E6Lm+2UFPc80PeI5MAlDwzM6OgPofBu5uEUQqSLyKP6HdCbP31ubKNpGP9TdBGA77s7e8XIbb5CbqR9/+96MKg==",
   "success": true,
   "projectFilePath": "C:\\Users\\Piotr\\Source\\Repos\\PiotrDabrowski232\\BlazorBlog\\Blog.ServiceBus\\Blog.ServiceBusQueueRecceiver.csproj",
   "expectedPackageFiles": [

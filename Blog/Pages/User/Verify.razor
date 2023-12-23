@@ -52,7 +52,7 @@
             {
                 NotificationService.Notify(new NotificationMessage { Severity = NotificationSeverity.Success, Summary = $"Account Verified", Duration = 2500 });
                 await Task.Delay(2500);
-                NavManager.NavigateTo($"/Login");
+                NavManager.NavigateTo($"/Login", true);
             }
         }
         catch(Exception e)

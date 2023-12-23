@@ -8,8 +8,8 @@ using Blog.Logic.Exceptions;
 using Blog.Logic.Extensions;
 using Blog.Logic.Services.Interfaces;
 using Microsoft.AspNetCore.Identity;
+using Newtonsoft.Json;
 using System.Text;
-using System.Text.Json;
 
 namespace Blog.Logic.Services
 {
@@ -69,7 +69,7 @@ namespace Blog.Logic.Services
         private string PreparedMessage(User user)
         {
             var message = _mapper.Map<MessageDto>(user);
-            var jsonOutput = JsonSerializer.Serialize(message);
+            var jsonOutput = JsonConvert.SerializeObject(message);
             return jsonOutput;
         }
         #endregion private methods
