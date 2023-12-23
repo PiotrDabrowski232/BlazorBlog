@@ -36,7 +36,7 @@ builder.Services.AddServices();
 
 
 //DbContext
-var connectionString = builder.Configuration.GetConnectionString("DefaultConnection");
+var connectionString = builder.Configuration.GetConnectionString("LocalDatabase");
 builder.Services.AddDbContext<BlogDbContext>(options => options.UseSqlServer(connectionString)
 .UseQueryTrackingBehavior(QueryTrackingBehavior.NoTracking));
 

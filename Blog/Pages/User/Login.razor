@@ -2,6 +2,7 @@
 
 @using Blog.Logic.Dto.UserDtos
 @using Blog.Logic.Authentication
+@using Blog.Logic.Exceptions
 
 @inject IJSRuntime JS
 @inject AuthenticationStateProvider authenticationStateProvider
@@ -27,7 +28,14 @@
 
             NavManager.NavigateTo("/", true);
 
-        }catch(Exception e)
+        }
+        catch (NotVerifiedUserException e)
+        {
+            NotificationService.Notify(new NotificationMessage { Severity = NotificationSeverity.Error, Summary = $"{e.Message}", Duration = 4000 });
+            await Task.Delay(4000);
+            NavManager.NavigateTo($"/Verify?UserEmail={user.Email}", true);
+        }
+        catch(Exception e)
         {
             NotificationService.Notify(new NotificationMessage { Severity = NotificationSeverity.Error, Summary = $"{e.Message}", Duration = 4000 });
         }
