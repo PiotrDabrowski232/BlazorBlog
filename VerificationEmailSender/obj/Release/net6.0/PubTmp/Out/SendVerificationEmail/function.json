@@ -1,0 +1,17 @@
+{
+  "generatedBy": "Microsoft.NET.Sdk.Functions.Generator-4.1.1",
+  "configurationSource": "attributes",
+  "bindings": [
+    {
+      "type": "serviceBusTrigger",
+      "connection": "VerificationQueue",
+      "queueName": "verificationqueue",
+      "isSessionsEnabled": false,
+      "autoComplete": true,
+      "name": "myQueueItem"
+    }
+  ],
+  "disabled": false,
+  "scriptFile": "../bin/VerificationEmailSender.dll",
+  "entryPoint": "VerificationEmailSender.Function1.Run"
+}
